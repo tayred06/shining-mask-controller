@@ -1,0 +1,6 @@
+Flask
+requests
+pytest
+bleak
+pycryptodome
+Pillow
