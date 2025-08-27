@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "exported_at": "2025-08-21T21:12:18.623357",
+    "description": "Configuration du masque LED"
+  },
+  "display": {
+    "font_size": 12,
+    "auto_fit": true,
+    "bold_text": true
+  },
+  "decorations": {
+    "show_decorations": true,
+    "decoration_style": "tata_pattern",
+    "decoration_color": {
+      "r": 255,
+      "g": 165,
+      "b": 0,
+      "name": "ORANGE"
+    }
+  },
+  "text": {
+    "text_color": {
+      "r": 255,
+      "g": 255,
+      "b": 0,
+      "name": "JAUNE"
+    }
+  }
+}

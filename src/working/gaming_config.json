@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "exported_at": "2025-08-21T21:12:18.622683",
+    "description": "Configuration du masque LED"
+  },
+  "display": {
+    "font_size": 14,
+    "auto_fit": false,
+    "bold_text": true
+  },
+  "decorations": {
+    "show_decorations": true,
+    "decoration_style": "blocks",
+    "decoration_color": {
+      "r": 0,
+      "g": 255,
+      "b": 255,
+      "name": "CYAN"
+    }
+  },
+  "text": {
+    "text_color": {
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "name": "ROUGE"
+    }
+  }
+}
