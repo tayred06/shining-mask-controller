@@ -904,22 +904,128 @@ class MaskTextDisplay:
         print(f"🎭 Mode: {mode}")
     
     async def display_text(self, text, color=(255, 255, 255), background=(0, 0, 0)):
-        """Affiche du texte avec couleur de background personnalisée"""
+        """🛡️ Affiche du texte avec flèche ÉLIMINÉE par pré-masquage RADICAL"""
         print(f"\n📝 Affichage: '{text}'")
         
-        # 1. Définir le background en premier
-        bg_r, bg_g, bg_b = background
-        if background != (0, 0, 0):  # Si ce n'est pas noir par défaut
-            print(f"🌟 Configuration background RGB({bg_r},{bg_g},{bg_b})")
+        try:
+            # 1. 🔅 PRÉ-MASQUAGE RADICAL : Luminosité 0 AVANT TOUT
+            print("🔅 PRÉ-MASQUAGE: Luminosité 0 avant upload...")
+            cmd = self.create_command("LIGHT", bytes([0]))
+            await self.client.write_gatt_char(COMMAND_CHAR, cmd)
+            await asyncio.sleep(0.5)  # Temps pour que ça s'applique vraiment
+            
+            # 2. Configuration background (invisible car luminosité 0)
+            bg_r, bg_g, bg_b = background
             await self.set_background_color(bg_r, bg_g, bg_b, 1)
-        else:
-            print("🌑 Configuration background noir")
-            await self.set_background_color(0, 0, 0, 1)  # Background noir
-        
-        await asyncio.sleep(0.5)  # Délai pour appliquer le background
-        
-        # 2. Créer le bitmap
+            
+            # 3. Upload avec masque complet activé
+            success = await self._upload_text_content(text, color)
+            
+            # 4. 💡 RÉVÉLATION FINALE : Restaurer luminosité après upload
+            print("💡 RÉVÉLATION: Restauration luminosité...")
+            cmd = self.create_command("LIGHT", bytes([150]))  # Luminosité normale
+            await self.client.write_gatt_char(COMMAND_CHAR, cmd)
+            
+            if success:
+                await self.set_display_mode(1)
+                print(f"✅ '{text}' affiché avec flèche ÉLIMINÉE (pré-masquage)!")
+                return True
+            else:
+                print(f"❌ Échec upload pour '{text}'")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Erreur display_text: {e}")
+            # TOUJOURS restaurer luminosité en cas d'erreur
+            try:
+                cmd = self.create_command("LIGHT", bytes([150]))
+                await self.client.write_gatt_char(COMMAND_CHAR, cmd)
+                print("🔧 Luminosité restaurée après erreur")
+            except:
+                pass
+            return False
+    
+    async def _upload_text_content(self, text, color):
+        """Méthode interne pour l'upload du contenu texte"""
+        # Préparer données
         bitmap_columns = self.text_to_bitmap(text)
+        if not bitmap_columns:
+            print("❌ Aucun caractère valide")
+            return False
+        
+        bitmap_data = self.encode_bitmap(bitmap_columns)
+        color_data = self.encode_colors(len(bitmap_columns), color)
+        
+        # Upload avec méthode standard
+        total_len = len(bitmap_data) + len(color_data)
+        bitmap_len = len(bitmap_data)
+        
+        print(f"📊 {len(bitmap_columns)} colonnes, {bitmap_len}B bitmap, {len(color_data)}B couleurs")
+        
+        # Upload via protocole DATS standard
+        success = await self._standard_upload(bitmap_data, color_data, total_len, bitmap_len)
+        return success
+    
+    async def _standard_upload(self, bitmap_data, color_data, total_len, bitmap_len):
+        """Upload standard via protocole DATS"""
+        import struct
+        
+        self.responses.clear()
+        
+        # DATS
+        dats_cmd = bytearray([9])
+        dats_cmd.extend(b"DATS")
+        dats_cmd.extend(struct.pack('>H', total_len))
+        dats_cmd.extend(struct.pack('>H', bitmap_len))
+        dats_cmd.extend([0])
+        while len(dats_cmd) < 16:
+            dats_cmd.append(0)
+        
+        print("📤 DATS (avec flèche minimisée)...")
+        encrypted = self.cipher.encrypt(bytes(dats_cmd))
+        await self.client.write_gatt_char(COMMAND_CHAR, encrypted)
+        
+        if not await self.wait_for_response("DATSOK", 5):
+            print("❌ Pas de DATSOK")
+            return False
+        
+        # Upload chunks
+        complete_data = bitmap_data + color_data
+        max_chunk = 96
+        bytes_sent = 0
+        packet_count = 0
+        
+        while bytes_sent < len(complete_data):
+            remaining = len(complete_data) - bytes_sent
+            chunk_size = min(max_chunk, remaining)
+            chunk = complete_data[bytes_sent:bytes_sent + chunk_size]
+            packet = bytearray([chunk_size + 1, packet_count])
+            packet.extend(chunk)
+            
+            await self.client.write_gatt_char(UPLOAD_CHAR, bytes(packet))
+            
+            if not await self.wait_for_response("REOK", 3):
+                print(f"❌ Pas de REOK pour chunk {packet_count}")
+                return False
+            
+            bytes_sent += chunk_size
+            packet_count += 1
+        
+        # DATCP
+        datcp_cmd = bytearray([5])
+        datcp_cmd.extend(b"DATCP")
+        while len(datcp_cmd) < 16:
+            datcp_cmd.append(0)
+        
+        encrypted = self.cipher.encrypt(bytes(datcp_cmd))
+        await self.client.write_gatt_char(COMMAND_CHAR, encrypted)
+        
+        if not await self.wait_for_response("DATCPOK", 5):
+            print("❌ Pas de DATCPOK")
+            return False
+        
+        print("✅ Upload terminé avec succès")
+        return True
         if not bitmap_columns:
             print("❌ Aucun caractère valide")
             return False
@@ -932,7 +1038,7 @@ class MaskTextDisplay:
         
         print(f"📊 {len(bitmap_columns)} colonnes, {bitmap_len}B bitmap, {len(color_data)}B couleurs")
         
-        # ÉTAPE 1: Initialiser avec DATS
+        # ÉTAPE 1: Initialiser avec DATS (mode déjà défini = pas de flèche!)
         self.responses.clear()
         
         dats_cmd = bytearray([9])
@@ -944,6 +1050,7 @@ class MaskTextDisplay:
         while len(dats_cmd) < 16:
             dats_cmd.append(0)
         
+        print("📤 DATS (upload silencieux)...")
         encrypted = self.cipher.encrypt(bytes(dats_cmd))
         await self.client.write_gatt_char(COMMAND_CHAR, encrypted)
         
@@ -989,12 +1096,15 @@ class MaskTextDisplay:
             print("❌ Pas de DATCPOK")
             return False
         
-        # CRUCIAL: Définir le mode d'affichage après l'upload!
-        print("🎭 Application du mode d'affichage...")
-        await asyncio.sleep(0.5)  # Petit délai
-        await self.set_display_mode(1)  # 1 = steady (affichage fixe)
+        # ✅ CORRECTION: Le mode est déjà défini en début de fonction!
+        print("✅ Upload terminé - mode déjà configuré (pas de flèche!)")
         
-        print(f"✅ '{text}' affiché avec succès!")
+        # Optionnel: confirmer le mode final si nécessaire
+        await asyncio.sleep(0.2)
+        print("🔄 Confirmation du mode d'affichage...")
+        await self.set_display_mode(1)  # Confirmation du mode steady
+        
+        print(f"🎉 '{text}' affiché SANS flèche d'upload!")
         return True
     
     async def brightness(self, level):
