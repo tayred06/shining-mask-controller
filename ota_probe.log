@@ -1,1139 +1,1375 @@
-[19:49:47.310] 🔗 Connexion et préparation des notifications…
-[19:49:56.192] 🧭 Services avant_sonde: 3 services
-[19:49:56.192]   • Service 0000fff0-0000-1000-8000-00805f9b34fb
-[19:49:56.192]      - Char d44bc439-abfd-45a2-b575-925416129600 [write,write-without-response]
-[19:49:56.192]      - Char d44bc439-abfd-45a2-b575-92541612960a [write,write-without-response]
-[19:49:56.192]      - Char d44bc439-abfd-45a2-b575-92541612960b [write,write-without-response]
-[19:49:56.192]      - Char d44bc439-abfd-45a2-b575-925416129601 [notify]
-[19:49:56.193]   • Service 0000fd00-0000-1000-8000-00805f9b34fb
-[19:49:56.193]      - Char 0000fd01-0000-1000-8000-00805f9b34fb [write]
-[19:49:56.193]      - Char 0000fd02-0000-1000-8000-00805f9b34fb [write,notify]
-[19:49:56.193]   • Service 0000ae00-0000-1000-8000-00805f9b34fb
-[19:49:56.193]      - Char 0000ae01-0000-1000-8000-00805f9b34fb [write-without-response]
-[19:49:56.193]      - Char 0000ae02-0000-1000-8000-00805f9b34fb [notify]
-[19:49:56.222] 🔔 Notifications activées sur 0000fd02-0000-1000-8000-00805f9b34fb
-[19:49:56.255] 🔔 Notifications activées sur 0000ae02-0000-1000-8000-00805f9b34fb
-[19:49:56.255] 🧪 Préflight LIGHT…
-[19:49:56.283] 📤 LIGHT (1B args)
-[19:49:56.585] 🕳️ Aucune notification nouvelle
-[19:49:56.656] 📤 LIGHT (1B args)
-[19:49:56.958] 🕳️ Aucune notification nouvelle
-[19:49:56.958] 🔍 Groupe 1: introspection
-[19:49:57.016] 📤 FWVER (0B args)
-[19:49:57.618] 🕳️ Aucune notification nouvelle
-[19:49:57.676] 📤 VER (0B args)
-[19:49:58.278] 🕳️ Aucune notification nouvelle
-[19:49:58.337] 📤 VERS (0B args)
-[19:49:58.938] 🕳️ Aucune notification nouvelle
-[19:49:58.996] 📤 INFO (0B args)
-[19:49:59.597] 🕳️ Aucune notification nouvelle
-[19:49:59.656] 📤 STAT (0B args)
-[19:50:00.258] 🕳️ Aucune notification nouvelle
-[19:50:00.319] 📤 SYS (0B args)
-[19:50:00.920] 🕳️ Aucune notification nouvelle
-[19:50:01.008] 📤 DBG (0B args)
-[19:50:01.610] 🕳️ Aucune notification nouvelle
-[19:50:01.610] 🧪 Groupe 2: sonde modes OTA/bootloader
-[19:50:01.666] 📤 OTA (1B args)
-[19:50:02.668] 🕳️ Aucune notification nouvelle
-[19:50:02.717] 📤 OTA (1B args)
-[19:50:03.718] 🕳️ Aucune notification nouvelle
-[19:50:03.857] 📤 OTAMODE (0B args)
-[19:50:04.859] 🕳️ Aucune notification nouvelle
-[19:50:04.907] 📤 UPDATE (0B args)
-[19:50:05.908] 🕳️ Aucune notification nouvelle
-[19:50:05.956] 📤 UPDT (0B args)
-[19:50:06.958] 🕳️ Aucune notification nouvelle
-[19:50:07.006] 📤 UPGD (0B args)
-[19:50:08.008] 🕳️ Aucune notification nouvelle
-[19:50:08.057] 📤 FLASH (0B args)
-[19:50:09.058] 🕳️ Aucune notification nouvelle
-[19:50:09.137] 📤 BOOT (0B args)
-[19:50:10.138] 🕳️ Aucune notification nouvelle
-[19:50:10.187] 📤 PROGRAM (0B args)
-[19:50:11.188] 🕳️ Aucune notification nouvelle
-[19:50:11.237] 📤 READY (0B args)
-[19:50:12.238] 🕳️ Aucune notification nouvelle
-[19:50:12.238] 🧪 Groupe 2b: pings bruts sur FD01/AE01
-[19:50:12.317] 📤 RAW->34fb 00
-[19:50:12.819] 📤 RAW->34fb 00
-[19:50:12.918] 📡 AE02 notif: 012314b7b11821455340af7127241c0db0
-[19:50:12.919] 🔓 AE02 dec: 6de7df6f3ea461ccfe73ab9032e6d08e | m..o>.a..s..2...
-[19:50:13.368] 📤 RAW->34fb 01
-[19:50:13.869] 📤 RAW->34fb 01
-[19:50:14.418] 📤 RAW->34fb aa
-[19:50:14.920] 📤 RAW->34fb aa
-[19:50:15.467] 📤 RAW->34fb 4f544101
-[19:50:15.969] 📤 RAW->34fb 4f544101
-[19:50:16.517] 📤 RAW->34fb 50494e47
-[19:50:17.019] 📤 RAW->34fb 50494e47
-[19:50:17.520] 🧪 Groupe 2c: motif chiffré OTA sur FD/AE
-[19:50:17.627] 📤 RAW->34fb 4673b4509f94581a7f475bb2e9bea86a
-[19:50:18.429] 📤 RAW->34fb 4673b4509f94581a7f475bb2e9bea86a
-[19:50:19.231] 📤 RAW->34fb 00
-[19:50:19.337] 📡 AE02 notif: 01d092ef09da93c4354fdfc0bbc85f1141
-[19:50:19.338] 🔓 AE02 dec: 40c31433f660d50c9a4d8e1ba9e7d0f6 | @..3.`...M......
-[19:50:19.338] 🧩 Token AE02: d092ef09da93c4354fdfc0bbc85f1141
-[19:50:19.398] 📤 RAW->34fb d092ef09da93c4354fdfc0bbc85f1141
-[19:50:19.999] 📤 RAW->34fb d092ef09da93c4354fdfc0bbc85f1141
-[19:50:20.658] 📤 RAW->34fb 02d092ef09da93c4354fdfc0bbc85f11
-[19:50:21.588] 📤 RAW->34fb 310658fa1b7a7ad8fc0732508a804b13
-[19:50:22.389] 🧪 Groupe 2d: patterns triviaux sur FD02 (write+notify)
-[19:50:22.458] 📤 RAW->34fb 00
-[19:50:23.120] 📤 RAW->34fb 01
-[19:50:23.837] 📤 RAW->34fb 55
-[19:50:24.497] 📤 RAW->34fb aa
-[19:50:25.158] 📤 RAW->34fb 0100
-[19:50:25.818] 📤 RAW->34fb 0001
-[19:50:26.419] 🧪 Groupe 2e: motifs ASCII courts sur FD02/AE01
-[19:50:26.477] 📤 RAW->34fb 444655
-[19:50:26.979] 📤 RAW->34fb 444655
-[19:50:27.617] 📤 RAW->34fb 4f5441
-[19:50:28.118] 📤 RAW->34fb 4f5441
-[19:50:28.668] 📤 RAW->34fb 424f4f54
-[19:50:29.170] 📤 RAW->34fb 424f4f54
-[19:50:29.747] 📤 RAW->34fb 50494e47
-[19:50:30.249] 📤 RAW->34fb 50494e47
-[19:50:30.796] 📤 RAW->34fb 48454c4c4f
-[19:50:31.298] 📤 RAW->34fb 48454c4c4f
-[19:50:31.800] 🔁 Groupe 3: re-check status après sonde OTA
-[19:50:31.877] 📤 STAT (0B args)
-[19:50:32.478] 🕳️ Aucune notification nouvelle
-[19:50:32.537] 📤 INFO (0B args)
-[19:50:33.137] 🕳️ Aucune notification nouvelle
-[19:50:33.196] 📤 VER (0B args)
-[19:50:33.798] 🕳️ Aucune notification nouvelle
-[19:50:33.798] 🧭 Services apres_sonde: 3 services
-[19:50:33.798]   • Service 0000fff0-0000-1000-8000-00805f9b34fb
-[19:50:33.798]      - Char d44bc439-abfd-45a2-b575-925416129600 [write,write-without-response]
-[19:50:33.799]      - Char d44bc439-abfd-45a2-b575-92541612960a [write,write-without-response]
-[19:50:33.799]      - Char d44bc439-abfd-45a2-b575-92541612960b [write,write-without-response]
-[19:50:33.799]      - Char d44bc439-abfd-45a2-b575-925416129601 [notify]
-[19:50:33.799]   • Service 0000fd00-0000-1000-8000-00805f9b34fb
-[19:50:33.799]      - Char 0000fd01-0000-1000-8000-00805f9b34fb [write]
-[19:50:33.799]      - Char 0000fd02-0000-1000-8000-00805f9b34fb [write,notify]
-[19:50:33.799]   • Service 0000ae00-0000-1000-8000-00805f9b34fb
-[19:50:33.799]      - Char 0000ae01-0000-1000-8000-00805f9b34fb [write-without-response]
-[19:50:33.799]      - Char 0000ae02-0000-1000-8000-00805f9b34fb [notify]
-[19:50:33.799] 🔎 Scan périphériques post-OTA (3s)…
-[19:50:36.910] 🧩 Aucun périphérique DFU/OTA détecté
-[19:50:36.911] 🧪 Sweep sûr 0x00..0x0F sur AE01 et FD02
-[19:50:36.912] 📤 RAW->34fb 00
-[19:50:36.979] 📡 AE02 notif: 01d092ef09da93c4354fdfc0bbc85f1141
-[19:50:36.979] 🔓 AE02 dec: 40c31433f660d50c9a4d8e1ba9e7d0f6 | @..3.`...M......
-[19:50:37.158] 📤 RAW->34fb 00
-[19:50:37.659] 📤 RAW->34fb 01
-[19:50:37.908] 📤 RAW->34fb 01
-[19:50:38.410] 📤 RAW->34fb 02
-[19:50:38.658] 📤 RAW->34fb 02
-[19:50:39.159] 📤 RAW->34fb 03
-[19:50:39.408] 📤 RAW->34fb 03
-[19:50:39.909] 📤 RAW->34fb 04
-[19:50:40.190] 📤 RAW->34fb 04
-[19:50:40.691] 📤 RAW->34fb 05
-[19:50:40.938] 📤 RAW->34fb 05
-[19:50:41.440] 📤 RAW->34fb 06
-[19:50:41.688] 📤 RAW->34fb 06
-[19:50:42.190] 📤 RAW->34fb 07
-[19:50:42.438] 📤 RAW->34fb 07
-[19:50:42.940] 📤 RAW->34fb 08
-[19:50:43.187] 📤 RAW->34fb 08
-[19:50:43.689] 📤 RAW->34fb 09
-[19:50:43.937] 📤 RAW->34fb 09
-[19:50:44.439] 📤 RAW->34fb 0a
-[19:50:44.688] 📤 RAW->34fb 0a
-[19:50:45.190] 📤 RAW->34fb 0b
-[19:50:45.468] 📤 RAW->34fb 0b
-[19:50:45.970] 📤 RAW->34fb 0c
-[19:50:46.249] 📤 RAW->34fb 0c
-[19:50:46.751] 📤 RAW->34fb 0d
-[19:50:47.058] 📤 RAW->34fb 0d
-[19:50:47.560] 📤 RAW->34fb 0e
-[19:50:47.807] 📤 RAW->34fb 0e
-[19:50:48.309] 📤 RAW->34fb 0f
-[19:50:48.557] 📤 RAW->34fb 0f
-[19:50:49.058] 🧪 Token-hunt: AE02 + réponses candidates
-[19:50:49.059] 🔄 Demande token AE02 (try 1/4)
-[19:50:49.059] 📤 RAW->34fb 00
-[19:50:49.097] 📡 AE02 notif: 01bf239722261d35ef7121c9814dac8650
-[19:50:49.097] 🔓 AE02 dec: 7c3e1b749575678fe5aa156bfe6e93b0 | |>.t.ug....k.n..
-[19:50:49.097] 🧩 Token AE02: bf239722261d35ef7121c9814dac8650
-[19:50:49.584] 📦 Réponse id -> FD02
-[19:50:49.637] 📤 RAW->34fb bf239722261d35ef7121c9814dac8650
-[19:50:49.789] 📦 Echo id -> AE01
-[19:50:49.789] 📤 RAW->34fb bf239722261d35ef7121c9814dac8650
-[19:50:49.941] 📦 Réplique id -> FD01
-[19:50:50.029] 📤 RAW->34fb bf239722261d35ef7121c9814dac8650
-[19:50:50.481] 📦 Réponse rev -> FD02
-[19:50:50.538] 📤 RAW->34fb 5086ac4d81c92171ef351d26229723bf
-[19:50:51.339] 📦 Echo rev -> AE01
-[19:50:51.340] 📤 RAW->34fb 5086ac4d81c92171ef351d26229723bf
-[19:50:51.941] 📦 Réplique rev -> FD01
-[19:50:52.008] 📤 RAW->34fb 5086ac4d81c92171ef351d26229723bf
-[19:50:52.809] 📦 Réponse xAA -> FD02
-[19:50:52.938] 📤 RAW->34fb 15893d888cb79f45db8b632be7062cfa
-[19:50:53.740] 📦 Echo xAA -> AE01
-[19:50:53.740] 📤 RAW->34fb 15893d888cb79f45db8b632be7062cfa
-[19:50:54.342] 📦 Réplique xAA -> FD01
-[19:50:54.408] 📤 RAW->34fb 15893d888cb79f45db8b632be7062cfa
-[19:50:55.209] 📦 Réponse aesK -> FD02
-[19:50:55.307] 📤 RAW->34fb 5eca203959c76126a818337a216f52aa
-[19:50:56.109] 📦 Echo aesK -> AE01
-[19:50:56.110] 📤 RAW->34fb 5eca203959c76126a818337a216f52aa
-[19:50:56.711] 📦 Réplique aesK -> FD01
-[19:50:56.868] 📤 RAW->34fb 5eca203959c76126a818337a216f52aa
-[19:50:57.669] 📦 Réponse aesKr -> FD02
-[19:50:57.738] 📤 RAW->34fb 788af9674b1731c8db658475ca633e08
-[19:50:58.540] 📦 Echo aesKr -> AE01
-[19:50:58.540] 📤 RAW->34fb 788af9674b1731c8db658475ca633e08
-[19:50:59.142] 📦 Réplique aesKr -> FD01
-[19:50:59.208] 📤 RAW->34fb 788af9674b1731c8db658475ca633e08
-[19:51:00.010] 📦 Réponse aes(trev) -> FD02
-[19:51:00.078] 📤 RAW->34fb 433f4c8cec01d9b491d0ce5372c50ea0
-[19:51:00.880] 📦 Echo aes(trev) -> AE01
-[19:51:00.880] 📤 RAW->34fb 433f4c8cec01d9b491d0ce5372c50ea0
-[19:51:01.482] 📦 Réplique aes(trev) -> FD01
-[19:51:01.547] 📤 RAW->34fb 433f4c8cec01d9b491d0ce5372c50ea0
-[19:51:02.349] 📦 Réponse aes(xAA) -> FD02
-[19:51:02.388] 📤 RAW->34fb 6ba32e28fab4fe2d398bfacbe3949d97
-[19:51:03.189] 📦 Echo aes(xAA) -> AE01
-[19:51:03.190] 📤 RAW->34fb 6ba32e28fab4fe2d398bfacbe3949d97
-[19:51:03.791] 📦 Réplique aes(xAA) -> FD01
-[19:51:03.828] 📤 RAW->34fb 6ba32e28fab4fe2d398bfacbe3949d97
-[19:51:04.629] 📦 Réponse decK -> FD02
-[19:51:04.728] 📤 RAW->34fb fcdf23428336563fae99f78fe552ae30
-[19:51:05.528] 📦 Echo decK -> AE01
-[19:51:05.528] 📤 RAW->34fb fcdf23428336563fae99f78fe552ae30
-[19:51:06.130] 📦 Réplique decK -> FD01
-[19:51:06.258] 📤 RAW->34fb fcdf23428336563fae99f78fe552ae30
-[19:51:07.059] 📦 Réponse cmacK -> FD02
-[19:51:07.130] 📤 RAW->34fb d263c0afea6f642a4e55e83eadd4427e
-[19:51:07.931] 📦 Echo cmacK -> AE01
-[19:51:07.932] 📤 RAW->34fb d263c0afea6f642a4e55e83eadd4427e
-[19:51:08.533] 📦 Réplique cmacK -> FD01
-[19:51:08.658] 📤 RAW->34fb d263c0afea6f642a4e55e83eadd4427e
-[19:51:09.460] 📦 Réponse 02+cmac(tok|name) -> FD02
-[19:51:09.558] 📤 RAW->34fb 0282e4318a5b42beb1fc5336da48792a5a
-[19:51:09.709] 📦 Echo 02+cmac(tok|name) -> AE01
-[19:51:09.711] 📤 RAW->34fb 0282e4318a5b42beb1fc5336da48792a5a
-[19:51:09.863] 📦 Réplique 02+cmac(tok|name) -> FD01
-[19:51:09.918] 📤 RAW->34fb 0282e4318a5b42beb1fc5336da48792a5a
-[19:51:10.370] 📦 Réponse cmac(tok|name) -> FD02
-[19:51:10.458] 📤 RAW->34fb 82e4318a5b42beb1fc5336da48792a5a
-[19:51:11.259] 📦 Echo cmac(tok|name) -> AE01
-[19:51:11.260] 📤 RAW->34fb 82e4318a5b42beb1fc5336da48792a5a
-[19:51:11.862] 📦 Réplique cmac(tok|name) -> FD01
-[19:51:11.929] 📤 RAW->34fb 82e4318a5b42beb1fc5336da48792a5a
-[19:51:12.730] 📦 Réponse aesK=tok -> FD02
-[19:51:12.830] 📤 RAW->34fb b31a379ef41cf869597e22ca58f7446e
-[19:51:13.631] 📦 Echo aesK=tok -> AE01
-[19:51:13.632] 📤 RAW->34fb b31a379ef41cf869597e22ca58f7446e
-[19:51:14.233] 📦 Réplique aesK=tok -> FD01
-[19:51:14.298] 📤 RAW->34fb b31a379ef41cf869597e22ca58f7446e
-[19:51:15.100] 📦 Réponse aesK=tok^AA -> FD02
-[19:51:15.168] 📤 RAW->34fb 2680f50feacc91ea6ce70c92de5d8a8f
-[19:51:15.969] 📦 Echo aesK=tok^AA -> AE01
-[19:51:15.970] 📤 RAW->34fb 2680f50feacc91ea6ce70c92de5d8a8f
-[19:51:16.571] 📦 Réplique aesK=tok^AA -> FD01
-[19:51:16.669] 📤 RAW->34fb 2680f50feacc91ea6ce70c92de5d8a8f
-[19:51:17.470] 📦 Réponse aesK=cmac(app,mac) -> FD02
-[19:51:17.538] 📤 RAW->34fb aeee35b3a3cbed741f4b277d74d8c7e3
-[19:51:18.339] 📦 Echo aesK=cmac(app,mac) -> AE01
-[19:51:18.340] 📤 RAW->34fb aeee35b3a3cbed741f4b277d74d8c7e3
-[19:51:18.941] 📦 Réplique aesK=cmac(app,mac) -> FD01
-[19:51:19.008] 📤 RAW->34fb aeee35b3a3cbed741f4b277d74d8c7e3
-[19:51:19.809] 📦 Réponse aesK=cmac(app,name) -> FD02
-[19:51:19.877] 📤 RAW->34fb 801d33cce2cb7a0a5677887b30f1e1a8
-[19:51:20.679] 📦 Echo aesK=cmac(app,name) -> AE01
-[19:51:20.680] 📤 RAW->34fb 801d33cce2cb7a0a5677887b30f1e1a8
-[19:51:21.281] 📦 Réplique aesK=cmac(app,name) -> FD01
-[19:51:21.347] 📤 RAW->34fb 801d33cce2cb7a0a5677887b30f1e1a8
-[19:51:22.149] 📦 Réponse aesK=app^mac -> FD02
-[19:51:22.187] 📤 RAW->34fb 5eca203959c76126a818337a216f52aa
-[19:51:22.993] 📦 Echo aesK=app^mac -> AE01
-[19:51:22.997] 📤 RAW->34fb 5eca203959c76126a818337a216f52aa
-[19:51:23.598] 📦 Réplique aesK=app^mac -> FD01
-[19:51:23.688] 📤 RAW->34fb 5eca203959c76126a818337a216f52aa
-[19:51:24.489] 📦 Réponse aesK=app^name -> FD02
-[19:51:24.527] 📤 RAW->34fb 7a2212d68882798db1b3c4457511e7d4
-[19:51:25.328] 📦 Echo aesK=app^name -> AE01
-[19:51:25.329] 📤 RAW->34fb 7a2212d68882798db1b3c4457511e7d4
-[19:51:25.931] 📦 Réplique aesK=app^name -> FD01
-[19:51:25.998] 📤 RAW->34fb 7a2212d68882798db1b3c4457511e7d4
-[19:51:26.800] 📦 Réponse tok+crc -> FD02
-[19:51:26.839] 📤 RAW->34fb bf239722261d35ef7121c9814dac865f
-[19:51:26.990] 📦 Echo tok+crc -> AE01
-[19:51:26.990] 📤 RAW->34fb bf239722261d35ef7121c9814dac865f
-[19:51:27.142] 📦 Réplique tok+crc -> FD01
-[19:51:27.198] 📤 RAW->34fb bf239722261d35ef7121c9814dac865f
-[19:51:27.649] 📦 Réponse 01+tok14+crc -> FD02
-[19:51:27.827] 📤 RAW->34fb 01bf239722261d35ef7121c9814dac99
-[19:51:28.629] 📦 Echo 01+tok14+crc -> AE01
-[19:51:28.629] 📤 RAW->34fb 01bf239722261d35ef7121c9814dac99
-[19:51:29.230] 📦 Réplique 01+tok14+crc -> FD01
-[19:51:29.298] 📤 RAW->34fb 01bf239722261d35ef7121c9814dac99
-[19:51:30.100] 📦 Réponse 10+tok14+crc -> FD02
-[19:51:30.138] 📤 RAW->34fb 10bf239722261d35ef7121c9814dac4d
-[19:51:30.940] 📦 Echo 10+tok14+crc -> AE01
-[19:51:30.941] 📤 RAW->34fb 10bf239722261d35ef7121c9814dac4d
-[19:51:31.541] 📦 Réplique 10+tok14+crc -> FD01
-[19:51:31.609] 📤 RAW->34fb 10bf239722261d35ef7121c9814dac4d
-[19:51:32.411] 📦 Réponse tok+sum -> FD02
-[19:51:32.477] 📤 RAW->34fb bf239722261d35ef7121c9814dac865d
-[19:51:33.279] 📦 Echo tok+sum -> AE01
-[19:51:33.279] 📤 RAW->34fb bf239722261d35ef7121c9814dac865d
-[19:51:33.881] 📦 Réplique tok+sum -> FD01
-[19:51:33.947] 📤 RAW->34fb bf239722261d35ef7121c9814dac865d
-[19:51:34.749] 📦 Réponse 01+tok -> FD02
-[19:51:34.848] 📤 RAW->34fb 01bf239722261d35ef7121c9814dac8650
-[19:51:34.999] 📦 Echo 01+tok -> AE01
-[19:51:35.000] 📤 RAW->34fb 01bf239722261d35ef7121c9814dac8650
-[19:51:35.151] 📦 Réplique 01+tok -> FD01
-[19:51:35.208] 📤 RAW->34fb 01bf239722261d35ef7121c9814dac8650
-[19:51:35.659] 📦 Réponse 02+tok -> FD02
-[19:51:35.718] 📤 RAW->34fb 02bf239722261d35ef7121c9814dac8650
-[19:51:36.520] 📦 Echo 02+tok -> AE01
-[19:51:36.520] 📤 RAW->34fb 02bf239722261d35ef7121c9814dac8650
-[19:51:37.122] 📦 Réplique 02+tok -> FD01
-[19:51:37.188] 📤 RAW->34fb 02bf239722261d35ef7121c9814dac8650
-[19:51:37.989] 📦 Réponse 11+tok -> FD02
-[19:51:38.058] 📤 RAW->34fb 11bf239722261d35ef7121c9814dac8650
-[19:51:38.860] 📦 Echo 11+tok -> AE01
-[19:51:38.860] 📤 RAW->34fb 11bf239722261d35ef7121c9814dac8650
-[19:51:39.462] 📦 Réplique 11+tok -> FD01
-[19:51:39.528] 📤 RAW->34fb 11bf239722261d35ef7121c9814dac8650
-[19:51:40.329] 📦 Réponse tok+01 -> FD02
-[19:51:40.367] 📤 RAW->34fb bf239722261d35ef7121c9814dac865001
-[19:51:41.169] 📦 Echo tok+01 -> AE01
-[19:51:41.170] 📤 RAW->34fb bf239722261d35ef7121c9814dac865001
-[19:51:41.771] 📦 Réplique tok+01 -> FD01
-[19:51:41.839] 📤 RAW->34fb bf239722261d35ef7121c9814dac865001
-[19:51:42.641] 📦 Réponse 02+cmac -> FD02
-[19:51:42.709] 📤 RAW->34fb 02d263c0afea6f642a4e55e83eadd4427e
-[19:51:43.510] 📦 Echo 02+cmac -> AE01
-[19:51:43.511] 📤 RAW->34fb 02d263c0afea6f642a4e55e83eadd4427e
-[19:51:44.112] 📦 Réplique 02+cmac -> FD01
-[19:51:44.208] 📤 RAW->34fb 02d263c0afea6f642a4e55e83eadd4427e
-[19:51:45.010] 📦 Réponse OTA+tok -> FD02
-[19:51:45.079] 📤 RAW->34fb 4f5441bf239722261d35ef7121c9814dac8650
-[19:51:45.880] 📦 Echo OTA+tok -> AE01
-[19:51:45.881] 📤 RAW->34fb 4f5441bf239722261d35ef7121c9814dac8650
-[19:51:46.482] 📦 Réplique OTA+tok -> FD01
-[19:51:46.579] 📤 RAW->34fb 4f5441bf239722261d35ef7121c9814dac8650
-[19:51:47.381] 📦 Réponse DFU+tok -> FD02
-[19:51:47.478] 📤 RAW->34fb 444655bf239722261d35ef7121c9814dac8650
-[19:51:48.279] 📦 Echo DFU+tok -> AE01
-[19:51:48.280] 📤 RAW->34fb 444655bf239722261d35ef7121c9814dac8650
-[19:51:48.881] 📦 Réplique DFU+tok -> FD01
-[19:51:48.917] 📤 RAW->34fb 444655bf239722261d35ef7121c9814dac8650
-[19:51:49.719] 📦 Réponse BOOT+tok -> FD02
-[19:51:49.758] 📤 RAW->34fb 424f4f54bf239722261d35ef7121c9814dac8650
-[19:51:50.560] 📦 Echo BOOT+tok -> AE01
-[19:51:50.560] 📤 RAW->34fb 424f4f54bf239722261d35ef7121c9814dac8650
-[19:51:51.162] 📦 Réplique BOOT+tok -> FD01
-[19:51:51.260] 📤 RAW->34fb 424f4f54bf239722261d35ef7121c9814dac8650
-[19:51:52.060] 📦 Réponse ERASE+tok -> FD02
-[19:51:52.189] 📤 RAW->34fb 4552415345bf239722261d35ef7121c9814dac86
-[19:51:52.990] 📦 Echo ERASE+tok -> AE01
-[19:51:52.990] 📤 RAW->34fb 4552415345bf239722261d35ef7121c9814dac86
-[19:51:53.592] 📦 Réplique ERASE+tok -> FD01
-[19:51:53.688] 📤 RAW->34fb 4552415345bf239722261d35ef7121c9814dac86
-[19:51:54.490] 📦 Réponse START+tok -> FD02
-[19:51:54.560] 📤 RAW->34fb 5354415254bf239722261d35ef7121c9814dac86
-[19:51:55.360] 📦 Echo START+tok -> AE01
-[19:51:55.361] 📤 RAW->34fb 5354415254bf239722261d35ef7121c9814dac86
-[19:51:55.963] 📦 Réplique START+tok -> FD01
-[19:51:56.028] 📤 RAW->34fb 5354415254bf239722261d35ef7121c9814dac86
-[19:51:56.829] 📦 Réponse INIT+tok -> FD02
-[19:51:56.928] 📤 RAW->34fb 494e4954bf239722261d35ef7121c9814dac8650
-[19:51:57.730] 📦 Echo INIT+tok -> AE01
-[19:51:57.731] 📤 RAW->34fb 494e4954bf239722261d35ef7121c9814dac8650
-[19:51:58.332] 📦 Réplique INIT+tok -> FD01
-[19:51:58.399] 📤 RAW->34fb 494e4954bf239722261d35ef7121c9814dac8650
-[19:51:59.200] 📦 Réponse DATA+tok -> FD02
-[19:51:59.268] 📤 RAW->34fb 44415441bf239722261d35ef7121c9814dac8650
-[19:52:00.069] 📦 Echo DATA+tok -> AE01
-[19:52:00.070] 📤 RAW->34fb 44415441bf239722261d35ef7121c9814dac8650
-[19:52:00.671] 📦 Réplique DATA+tok -> FD01
-[19:52:00.738] 📤 RAW->34fb 44415441bf239722261d35ef7121c9814dac8650
-[19:52:01.539] 📦 Réponse DONE+tok -> FD02
-[19:52:01.579] 📤 RAW->34fb 444f4e45bf239722261d35ef7121c9814dac8650
-[19:52:02.380] 📦 Echo DONE+tok -> AE01
-[19:52:02.381] 📤 RAW->34fb 444f4e45bf239722261d35ef7121c9814dac8650
-[19:52:02.982] 📦 Réplique DONE+tok -> FD01
-[19:52:03.050] 📤 RAW->34fb 444f4e45bf239722261d35ef7121c9814dac8650
-[19:52:03.851] 📦 Réponse UPDT+tok -> FD02
-[19:52:03.920] 📤 RAW->34fb 55504454bf239722261d35ef7121c9814dac8650
-[19:52:04.721] 📦 Echo UPDT+tok -> AE01
-[19:52:04.722] 📤 RAW->34fb 55504454bf239722261d35ef7121c9814dac8650
-[19:52:05.323] 📦 Réplique UPDT+tok -> FD01
-[19:52:05.388] 📤 RAW->34fb 55504454bf239722261d35ef7121c9814dac8650
-[19:52:06.190] 📦 Réponse 01+OTA+tok -> FD02
-[19:52:06.288] 📤 RAW->34fb 014f5441bf239722261d35ef7121c9814dac8650
-[19:52:07.089] 📦 Echo 01+OTA+tok -> AE01
-[19:52:07.090] 📤 RAW->34fb 014f5441bf239722261d35ef7121c9814dac8650
-[19:52:07.691] 📦 Réplique 01+OTA+tok -> FD01
-[19:52:07.759] 📤 RAW->34fb 014f5441bf239722261d35ef7121c9814dac8650
-[19:52:08.560] 📦 Réponse 01+DFU+tok -> FD02
-[19:52:08.598] 📤 RAW->34fb 01444655bf239722261d35ef7121c9814dac8650
-[19:52:09.400] 📦 Echo 01+DFU+tok -> AE01
-[19:52:09.400] 📤 RAW->34fb 01444655bf239722261d35ef7121c9814dac8650
-[19:52:10.002] 📦 Réplique 01+DFU+tok -> FD01
-[19:52:10.099] 📤 RAW->34fb 01444655bf239722261d35ef7121c9814dac8650
-[19:52:10.901] 📦 Réponse 01+BOOT+tok -> FD02
-[19:52:11.029] 📤 RAW->34fb 01424f4f54bf239722261d35ef7121c9814dac86
-[19:52:11.830] 📦 Echo 01+BOOT+tok -> AE01
-[19:52:11.831] 📤 RAW->34fb 01424f4f54bf239722261d35ef7121c9814dac86
-[19:52:12.432] 📦 Réplique 01+BOOT+tok -> FD01
-[19:52:12.469] 📤 RAW->34fb 01424f4f54bf239722261d35ef7121c9814dac86
-[19:52:13.270] 📦 Réponse 01+ERASE+tok -> FD02
-[19:52:13.308] 📤 RAW->34fb 014552415345bf239722261d35ef7121c9814dac
-[19:52:14.109] 📦 Echo 01+ERASE+tok -> AE01
-[19:52:14.110] 📤 RAW->34fb 014552415345bf239722261d35ef7121c9814dac
-[19:52:14.712] 📦 Réplique 01+ERASE+tok -> FD01
-[19:52:14.778] 📤 RAW->34fb 014552415345bf239722261d35ef7121c9814dac
-[19:52:15.580] 📦 Réponse 01+START+tok -> FD02
-[19:52:15.618] 📤 RAW->34fb 015354415254bf239722261d35ef7121c9814dac
-[19:52:16.419] 📦 Echo 01+START+tok -> AE01
-[19:52:16.420] 📤 RAW->34fb 015354415254bf239722261d35ef7121c9814dac
-[19:52:17.020] 📦 Réplique 01+START+tok -> FD01
-[19:52:17.058] 📤 RAW->34fb 015354415254bf239722261d35ef7121c9814dac
-[19:52:17.860] 🔄 Demande token AE02 (try 2/4)
-[19:52:17.861] 📤 RAW->34fb 00
-[19:52:17.898] 📡 AE02 notif: 01cb116e48ca138d32fa47b500d53052df
-[19:52:17.898] 🔓 AE02 dec: b516b1efb4c760d7d48bda06a7274756 | ......`......'GV
-[19:52:17.899] 🧩 Token AE02: cb116e48ca138d32fa47b500d53052df
-[19:52:17.900] 📦 Réponse id -> FD02
-[19:52:18.019] 📤 RAW->34fb cb116e48ca138d32fa47b500d53052df
-[19:52:18.170] 📦 Echo id -> AE01
-[19:52:18.170] 📤 RAW->34fb cb116e48ca138d32fa47b500d53052df
-[19:52:18.321] 📦 Réplique id -> FD01
-[19:52:18.379] 📤 RAW->34fb cb116e48ca138d32fa47b500d53052df
-[19:52:18.831] 📦 Réponse rev -> FD02
-[19:52:18.892] 📤 RAW->34fb df5230d500b547fa328d13ca486e11cb
-[19:52:19.693] 📦 Echo rev -> AE01
-[19:52:19.694] 📤 RAW->34fb df5230d500b547fa328d13ca486e11cb
-[19:52:20.295] 📦 Réplique rev -> FD01
-[19:52:20.359] 📤 RAW->34fb df5230d500b547fa328d13ca486e11cb
-[19:52:21.161] 📦 Réponse xAA -> FD02
-[19:52:21.260] 📤 RAW->34fb 61bbc4e260b9279850ed1faa7f9af875
-[19:52:22.061] 📦 Echo xAA -> AE01
-[19:52:22.062] 📤 RAW->34fb 61bbc4e260b9279850ed1faa7f9af875
-[19:52:22.664] 📦 Réplique xAA -> FD01
-[19:52:22.789] 📤 RAW->34fb 61bbc4e260b9279850ed1faa7f9af875
-[19:52:23.591] 📦 Réponse aesK -> FD02
-[19:52:23.694] 📤 RAW->34fb de1fff036e488738583a95058ec7f6e0
-[19:52:24.495] 📦 Echo aesK -> AE01
-[19:52:24.495] 📤 RAW->34fb de1fff036e488738583a95058ec7f6e0
-[19:52:25.096] 📦 Réplique aesK -> FD01
-[19:52:25.158] 📤 RAW->34fb de1fff036e488738583a95058ec7f6e0
-[19:52:25.960] 📦 Réponse aesKr -> FD02
-[19:52:26.001] 📤 RAW->34fb e4050bb118e3adb5a094759df4a9634b
-[19:52:26.805] 📦 Echo aesKr -> AE01
-[19:52:26.805] 📤 RAW->34fb e4050bb118e3adb5a094759df4a9634b
-[19:52:27.407] 📦 Réplique aesKr -> FD01
-[19:52:27.498] 📤 RAW->34fb e4050bb118e3adb5a094759df4a9634b
-[19:52:28.300] 📦 Réponse aes(trev) -> FD02
-[19:52:28.339] 📤 RAW->34fb 80f2e74a091af82172a19292b51785e4
-[19:52:29.141] 📦 Echo aes(trev) -> AE01
-[19:52:29.141] 📤 RAW->34fb 80f2e74a091af82172a19292b51785e4
-[19:52:29.743] 📦 Réplique aes(trev) -> FD01
-[19:52:29.839] 📤 RAW->34fb 80f2e74a091af82172a19292b51785e4
-[19:52:30.641] 📦 Réponse aes(xAA) -> FD02
-[19:52:30.680] 📤 RAW->34fb 035ac84501b4a8920d123cfbbb3d2288
-[19:52:31.482] 📦 Echo aes(xAA) -> AE01
-[19:52:31.482] 📤 RAW->34fb 035ac84501b4a8920d123cfbbb3d2288
-[19:52:32.090] 📦 Réplique aes(xAA) -> FD01
-[19:52:32.148] 📤 RAW->34fb 035ac84501b4a8920d123cfbbb3d2288
-[19:52:32.949] 📦 Réponse decK -> FD02
-[19:52:33.049] 📤 RAW->34fb 4140ab504a4799febbfaf1de3a8aad77
-[19:52:33.850] 📦 Echo decK -> AE01
-[19:52:33.851] 📤 RAW->34fb 4140ab504a4799febbfaf1de3a8aad77
-[19:52:34.452] 📦 Réplique decK -> FD01
-[19:52:34.518] 📤 RAW->34fb 4140ab504a4799febbfaf1de3a8aad77
-[19:52:35.319] 📦 Réponse cmacK -> FD02
-[19:52:35.449] 📤 RAW->34fb 891bf799cbb7a6712eef83ac272d9e35
-[19:52:36.250] 📦 Echo cmacK -> AE01
-[19:52:36.251] 📤 RAW->34fb 891bf799cbb7a6712eef83ac272d9e35
-[19:52:36.853] 📦 Réplique cmacK -> FD01
-[19:52:36.919] 📤 RAW->34fb 891bf799cbb7a6712eef83ac272d9e35
-[19:52:37.720] 📦 Réponse 02+cmac(tok|name) -> FD02
-[19:52:37.819] 📤 RAW->34fb 0256dd2f268707baf1524b5c523d640965
-[19:52:37.971] 📦 Echo 02+cmac(tok|name) -> AE01
-[19:52:37.971] 📤 RAW->34fb 0256dd2f268707baf1524b5c523d640965
-[19:52:38.122] 📦 Réplique 02+cmac(tok|name) -> FD01
-[19:52:38.178] 📤 RAW->34fb 0256dd2f268707baf1524b5c523d640965
-[19:52:38.630] 📦 Réponse cmac(tok|name) -> FD02
-[19:52:38.721] 📤 RAW->34fb 56dd2f268707baf1524b5c523d640965
-[19:52:39.523] 📦 Echo cmac(tok|name) -> AE01
-[19:52:39.523] 📤 RAW->34fb 56dd2f268707baf1524b5c523d640965
-[19:52:40.124] 📦 Réplique cmac(tok|name) -> FD01
-[19:52:40.189] 📤 RAW->34fb 56dd2f268707baf1524b5c523d640965
-[19:52:40.990] 📦 Réponse aesK=tok -> FD02
-[19:52:41.058] 📤 RAW->34fb 0422e5fa0397cc3f47f289b18579818d
-[19:52:41.860] 📦 Echo aesK=tok -> AE01
-[19:52:41.861] 📤 RAW->34fb 0422e5fa0397cc3f47f289b18579818d
-[19:52:42.462] 📦 Réplique aesK=tok -> FD01
-[19:52:42.560] 📤 RAW->34fb 0422e5fa0397cc3f47f289b18579818d
-[19:52:43.361] 📦 Réponse aesK=tok^AA -> FD02
-[19:52:43.399] 📤 RAW->34fb 8bdb218d9a35ce03a3881b29d78873b4
-[19:52:44.200] 📦 Echo aesK=tok^AA -> AE01
-[19:52:44.201] 📤 RAW->34fb 8bdb218d9a35ce03a3881b29d78873b4
-[19:52:44.802] 📦 Réplique aesK=tok^AA -> FD01
-[19:52:44.869] 📤 RAW->34fb 8bdb218d9a35ce03a3881b29d78873b4
-[19:52:45.670] 📦 Réponse aesK=cmac(app,mac) -> FD02
-[19:52:45.770] 📤 RAW->34fb 261dcd2d13e96988779d19d4eed96c87
-[19:52:46.571] 📦 Echo aesK=cmac(app,mac) -> AE01
-[19:52:46.572] 📤 RAW->34fb 261dcd2d13e96988779d19d4eed96c87
-[19:52:47.173] 📦 Réplique aesK=cmac(app,mac) -> FD01
-[19:52:47.269] 📤 RAW->34fb 261dcd2d13e96988779d19d4eed96c87
-[19:52:48.071] 📦 Réponse aesK=cmac(app,name) -> FD02
-[19:52:48.139] 📤 RAW->34fb e89be2c329fe05dabef361c2c9f194e5
-[19:52:48.940] 📦 Echo aesK=cmac(app,name) -> AE01
-[19:52:48.941] 📤 RAW->34fb e89be2c329fe05dabef361c2c9f194e5
-[19:52:49.542] 📦 Réplique aesK=cmac(app,name) -> FD01
-[19:52:49.611] 📤 RAW->34fb e89be2c329fe05dabef361c2c9f194e5
-[19:52:50.413] 📦 Réponse aesK=app^mac -> FD02
-[19:52:50.480] 📤 RAW->34fb de1fff036e488738583a95058ec7f6e0
-[19:52:51.281] 📦 Echo aesK=app^mac -> AE01
-[19:52:51.282] 📤 RAW->34fb de1fff036e488738583a95058ec7f6e0
-[19:52:51.883] 📦 Réplique aesK=app^mac -> FD01
-[19:52:51.948] 📤 RAW->34fb de1fff036e488738583a95058ec7f6e0
-[19:52:52.750] 📦 Réponse aesK=app^name -> FD02
-[19:52:52.788] 📤 RAW->34fb cd36f8deac3e5f25ca64d41e3e0678aa
-[19:52:53.590] 📦 Echo aesK=app^name -> AE01
-[19:52:53.590] 📤 RAW->34fb cd36f8deac3e5f25ca64d41e3e0678aa
-[19:52:54.192] 📦 Réplique aesK=app^name -> FD01
-[19:52:54.259] 📤 RAW->34fb cd36f8deac3e5f25ca64d41e3e0678aa
-[19:52:55.061] 📦 Réponse tok+crc -> FD02
-[19:52:55.098] 📤 RAW->34fb cb116e48ca138d32fa47b500d530523d
-[19:52:55.250] 📦 Echo tok+crc -> AE01
-[19:52:55.251] 📤 RAW->34fb cb116e48ca138d32fa47b500d530523d
-[19:52:55.402] 📦 Réplique tok+crc -> FD01
-[19:52:55.489] 📤 RAW->34fb cb116e48ca138d32fa47b500d530523d
-[19:52:55.941] 📦 Réponse 01+tok14+crc -> FD02
-[19:52:55.999] 📤 RAW->34fb 01cb116e48ca138d32fa47b500d5305b
-[19:52:56.800] 📦 Echo 01+tok14+crc -> AE01
-[19:52:56.801] 📤 RAW->34fb 01cb116e48ca138d32fa47b500d5305b
-[19:52:57.402] 📦 Réplique 01+tok14+crc -> FD01
-[19:52:57.468] 📤 RAW->34fb 01cb116e48ca138d32fa47b500d5305b
-[19:52:58.270] 📦 Réponse 10+tok14+crc -> FD02
-[19:52:58.369] 📤 RAW->34fb 10cb116e48ca138d32fa47b500d5308f
-[19:52:59.171] 📦 Echo 10+tok14+crc -> AE01
-[19:52:59.172] 📤 RAW->34fb 10cb116e48ca138d32fa47b500d5308f
-[19:52:59.773] 📦 Réplique 10+tok14+crc -> FD01
-[19:52:59.898] 📤 RAW->34fb 10cb116e48ca138d32fa47b500d5308f
-[19:53:00.700] 📦 Réponse tok+sum -> FD02
-[19:53:00.800] 📤 RAW->34fb cb116e48ca138d32fa47b500d530527b
-[19:53:01.602] 📦 Echo tok+sum -> AE01
-[19:53:01.602] 📤 RAW->34fb cb116e48ca138d32fa47b500d530527b
-[19:53:02.204] 📦 Réplique tok+sum -> FD01
-[19:53:02.360] 📤 RAW->34fb cb116e48ca138d32fa47b500d530527b
-[19:53:03.161] 📦 Réponse 01+tok -> FD02
-[19:53:03.259] 📤 RAW->34fb 01cb116e48ca138d32fa47b500d53052df
-[19:53:03.410] 📦 Echo 01+tok -> AE01
-[19:53:03.411] 📤 RAW->34fb 01cb116e48ca138d32fa47b500d53052df
-[19:53:03.563] 📦 Réplique 01+tok -> FD01
-[19:53:03.649] 📤 RAW->34fb 01cb116e48ca138d32fa47b500d53052df
-[19:53:04.100] 📦 Réponse 02+tok -> FD02
-[19:53:04.159] 📤 RAW->34fb 02cb116e48ca138d32fa47b500d53052df
-[19:53:04.961] 📦 Echo 02+tok -> AE01
-[19:53:04.961] 📤 RAW->34fb 02cb116e48ca138d32fa47b500d53052df
-[19:53:05.562] 📦 Réplique 02+tok -> FD01
-[19:53:05.689] 📤 RAW->34fb 02cb116e48ca138d32fa47b500d53052df
-[19:53:06.490] 📦 Réponse 11+tok -> FD02
-[19:53:06.588] 📤 RAW->34fb 11cb116e48ca138d32fa47b500d53052df
-[19:53:07.390] 📦 Echo 11+tok -> AE01
-[19:53:07.390] 📤 RAW->34fb 11cb116e48ca138d32fa47b500d53052df
-[19:53:07.991] 📦 Réplique 11+tok -> FD01
-[19:53:08.059] 📤 RAW->34fb 11cb116e48ca138d32fa47b500d53052df
-[19:53:08.860] 📦 Réponse tok+01 -> FD02
-[19:53:08.960] 📤 RAW->34fb cb116e48ca138d32fa47b500d53052df01
-[19:53:09.761] 📦 Echo tok+01 -> AE01
-[19:53:09.762] 📤 RAW->34fb cb116e48ca138d32fa47b500d53052df01
-[19:53:10.363] 📦 Réplique tok+01 -> FD01
-[19:53:10.429] 📤 RAW->34fb cb116e48ca138d32fa47b500d53052df01
-[19:53:11.231] 📦 Réponse 02+cmac -> FD02
-[19:53:11.360] 📤 RAW->34fb 02891bf799cbb7a6712eef83ac272d9e35
-[19:53:12.161] 📦 Echo 02+cmac -> AE01
-[19:53:12.162] 📤 RAW->34fb 02891bf799cbb7a6712eef83ac272d9e35
-[19:53:12.763] 📦 Réplique 02+cmac -> FD01
-[19:53:12.829] 📤 RAW->34fb 02891bf799cbb7a6712eef83ac272d9e35
-[19:53:13.629] 📦 Réponse OTA+tok -> FD02
-[19:53:13.669] 📤 RAW->34fb 4f5441cb116e48ca138d32fa47b500d53052df
-[19:53:14.470] 📦 Echo OTA+tok -> AE01
-[19:53:14.471] 📤 RAW->34fb 4f5441cb116e48ca138d32fa47b500d53052df
-[19:53:15.072] 📦 Réplique OTA+tok -> FD01
-[19:53:15.200] 📤 RAW->34fb 4f5441cb116e48ca138d32fa47b500d53052df
-[19:53:16.001] 📦 Réponse DFU+tok -> FD02
-[19:53:16.099] 📤 RAW->34fb 444655cb116e48ca138d32fa47b500d53052df
-[19:53:16.901] 📦 Echo DFU+tok -> AE01
-[19:53:16.902] 📤 RAW->34fb 444655cb116e48ca138d32fa47b500d53052df
-[19:53:17.502] 📦 Réplique DFU+tok -> FD01
-[19:53:17.658] 📤 RAW->34fb 444655cb116e48ca138d32fa47b500d53052df
-[19:53:18.460] 📦 Réponse BOOT+tok -> FD02
-[19:53:18.560] 📤 RAW->34fb 424f4f54cb116e48ca138d32fa47b500d53052df
-[19:53:19.361] 📦 Echo BOOT+tok -> AE01
-[19:53:19.362] 📤 RAW->34fb 424f4f54cb116e48ca138d32fa47b500d53052df
-[19:53:19.963] 📦 Réplique BOOT+tok -> FD01
-[19:53:20.029] 📤 RAW->34fb 424f4f54cb116e48ca138d32fa47b500d53052df
-[19:53:20.831] 📦 Réponse ERASE+tok -> FD02
-[19:53:20.869] 📤 RAW->34fb 4552415345cb116e48ca138d32fa47b500d53052
-[19:53:21.670] 📦 Echo ERASE+tok -> AE01
-[19:53:21.671] 📤 RAW->34fb 4552415345cb116e48ca138d32fa47b500d53052
-[19:53:22.272] 📦 Réplique ERASE+tok -> FD01
-[19:53:22.400] 📤 RAW->34fb 4552415345cb116e48ca138d32fa47b500d53052
-[19:53:23.201] 📦 Réponse START+tok -> FD02
-[19:53:23.239] 📤 RAW->34fb 5354415254cb116e48ca138d32fa47b500d53052
-[19:53:24.041] 📦 Echo START+tok -> AE01
-[19:53:24.042] 📤 RAW->34fb 5354415254cb116e48ca138d32fa47b500d53052
-[19:53:24.643] 📦 Réplique START+tok -> FD01
-[19:53:24.709] 📤 RAW->34fb 5354415254cb116e48ca138d32fa47b500d53052
-[19:53:25.510] 📦 Réponse INIT+tok -> FD02
-[19:53:25.610] 📤 RAW->34fb 494e4954cb116e48ca138d32fa47b500d53052df
-[19:53:26.411] 📦 Echo INIT+tok -> AE01
-[19:53:26.412] 📤 RAW->34fb 494e4954cb116e48ca138d32fa47b500d53052df
-[19:53:27.013] 📦 Réplique INIT+tok -> FD01
-[19:53:27.049] 📤 RAW->34fb 494e4954cb116e48ca138d32fa47b500d53052df
-[19:53:27.851] 📦 Réponse DATA+tok -> FD02
-[19:53:27.920] 📤 RAW->34fb 44415441cb116e48ca138d32fa47b500d53052df
-[19:53:28.721] 📦 Echo DATA+tok -> AE01
-[19:53:28.722] 📤 RAW->34fb 44415441cb116e48ca138d32fa47b500d53052df
-[19:53:29.323] 📦 Réplique DATA+tok -> FD01
-[19:53:29.449] 📤 RAW->34fb 44415441cb116e48ca138d32fa47b500d53052df
-[19:53:30.251] 📦 Réponse DONE+tok -> FD02
-[19:53:30.348] 📤 RAW->34fb 444f4e45cb116e48ca138d32fa47b500d53052df
-[19:53:31.150] 📦 Echo DONE+tok -> AE01
-[19:53:31.151] 📤 RAW->34fb 444f4e45cb116e48ca138d32fa47b500d53052df
-[19:53:31.752] 📦 Réplique DONE+tok -> FD01
-[19:53:31.850] 📤 RAW->34fb 444f4e45cb116e48ca138d32fa47b500d53052df
-[19:53:32.652] 📦 Réponse UPDT+tok -> FD02
-[19:53:32.750] 📤 RAW->34fb 55504454cb116e48ca138d32fa47b500d53052df
-[19:53:33.551] 📦 Echo UPDT+tok -> AE01
-[19:53:33.552] 📤 RAW->34fb 55504454cb116e48ca138d32fa47b500d53052df
-[19:53:34.153] 📦 Réplique UPDT+tok -> FD01
-[19:53:34.340] 📤 RAW->34fb 55504454cb116e48ca138d32fa47b500d53052df
-[19:53:35.142] 📦 Réponse 01+OTA+tok -> FD02
-[19:53:35.209] 📤 RAW->34fb 014f5441cb116e48ca138d32fa47b500d53052df
-[19:53:36.010] 📦 Echo 01+OTA+tok -> AE01
-[19:53:36.010] 📤 RAW->34fb 014f5441cb116e48ca138d32fa47b500d53052df
-[19:53:36.611] 📦 Réplique 01+OTA+tok -> FD01
-[19:53:36.648] 📤 RAW->34fb 014f5441cb116e48ca138d32fa47b500d53052df
-[19:53:37.450] 📦 Réponse 01+DFU+tok -> FD02
-[19:53:37.519] 📤 RAW->34fb 01444655cb116e48ca138d32fa47b500d53052df
-[19:53:38.320] 📦 Echo 01+DFU+tok -> AE01
-[19:53:38.321] 📤 RAW->34fb 01444655cb116e48ca138d32fa47b500d53052df
-[19:53:38.922] 📦 Réplique 01+DFU+tok -> FD01
-[19:53:38.989] 📤 RAW->34fb 01444655cb116e48ca138d32fa47b500d53052df
-[19:53:39.791] 📦 Réponse 01+BOOT+tok -> FD02
-[19:53:39.890] 📤 RAW->34fb 01424f4f54cb116e48ca138d32fa47b500d53052
-[19:53:40.691] 📦 Echo 01+BOOT+tok -> AE01
-[19:53:40.692] 📤 RAW->34fb 01424f4f54cb116e48ca138d32fa47b500d53052
-[19:53:41.293] 📦 Réplique 01+BOOT+tok -> FD01
-[19:53:41.389] 📤 RAW->34fb 01424f4f54cb116e48ca138d32fa47b500d53052
-[19:53:42.190] 📦 Réponse 01+ERASE+tok -> FD02
-[19:53:42.290] 📤 RAW->34fb 014552415345cb116e48ca138d32fa47b500d530
-[19:53:43.092] 📦 Echo 01+ERASE+tok -> AE01
-[19:53:43.093] 📤 RAW->34fb 014552415345cb116e48ca138d32fa47b500d530
-[19:53:43.693] 📦 Réplique 01+ERASE+tok -> FD01
-[19:53:43.790] 📤 RAW->34fb 014552415345cb116e48ca138d32fa47b500d530
-[19:53:44.592] 📦 Réponse 01+START+tok -> FD02
-[19:53:44.640] 📤 RAW->34fb 015354415254cb116e48ca138d32fa47b500d530
-[19:53:45.441] 📦 Echo 01+START+tok -> AE01
-[19:53:45.442] 📤 RAW->34fb 015354415254cb116e48ca138d32fa47b500d530
-[19:53:46.043] 📦 Réplique 01+START+tok -> FD01
-[19:53:46.100] 📤 RAW->34fb 015354415254cb116e48ca138d32fa47b500d530
-[19:53:46.901] 🔄 Demande token AE02 (try 3/4)
-[19:53:46.902] 📤 RAW->34fb 00
-[19:53:46.999] 📡 AE02 notif: 017c4701ffc1b1a1eb54293bbd9234ec00
-[19:53:46.999] 🔓 AE02 dec: 6a8923cb9caaabcbc7560b08da0a4712 | j.#......V....G.
-[19:53:46.999] 🧩 Token AE02: 7c4701ffc1b1a1eb54293bbd9234ec00
-[19:53:47.001] 📦 Réponse id -> FD02
-[19:53:47.060] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec00
-[19:53:47.211] 📦 Echo id -> AE01
-[19:53:47.212] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec00
-[19:53:47.363] 📦 Réplique id -> FD01
-[19:53:47.421] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec00
-[19:53:47.873] 📦 Réponse rev -> FD02
-[19:53:47.989] 📤 RAW->34fb 00ec3492bd3b2954eba1b1c1ff01477c
-[19:53:48.790] 📦 Echo rev -> AE01
-[19:53:48.791] 📤 RAW->34fb 00ec3492bd3b2954eba1b1c1ff01477c
-[19:53:48.830] 📡 AE02 notif: 01f308ea4dff4e9089b16f8abc8c8340ae
-[19:53:48.830] 🔓 AE02 dec: 7c62b7d2c2a58df95fa746a894563ca6 | |b......_.F..V<.
-[19:53:49.392] 📦 Réplique rev -> FD01
-[19:53:49.429] 📤 RAW->34fb 00ec3492bd3b2954eba1b1c1ff01477c
-[19:53:50.229] 📦 Réponse xAA -> FD02
-[19:53:50.330] 📤 RAW->34fb d6edab556b1b0b41fe839117389e46aa
-[19:53:51.131] 📦 Echo xAA -> AE01
-[19:53:51.132] 📤 RAW->34fb d6edab556b1b0b41fe839117389e46aa
-[19:53:51.733] 📦 Réplique xAA -> FD01
-[19:53:51.802] 📤 RAW->34fb d6edab556b1b0b41fe839117389e46aa
-[19:53:52.603] 📦 Réponse aesK -> FD02
-[19:53:52.700] 📤 RAW->34fb d35e697e4c13e978c33988b15c7e5398
-[19:53:53.502] 📦 Echo aesK -> AE01
-[19:53:53.502] 📤 RAW->34fb d35e697e4c13e978c33988b15c7e5398
-[19:53:54.103] 📦 Réplique aesK -> FD01
-[19:53:54.200] 📤 RAW->34fb d35e697e4c13e978c33988b15c7e5398
-[19:53:55.000] 📦 Réponse aesKr -> FD02
-[19:53:55.129] 📤 RAW->34fb d9a5cf89bf4a83ef3d6f2f26b4973898
-[19:53:55.931] 📦 Echo aesKr -> AE01
-[19:53:55.932] 📤 RAW->34fb d9a5cf89bf4a83ef3d6f2f26b4973898
-[19:53:56.533] 📦 Réplique aesKr -> FD01
-[19:53:56.600] 📤 RAW->34fb d9a5cf89bf4a83ef3d6f2f26b4973898
-[19:53:57.402] 📦 Réponse aes(trev) -> FD02
-[19:53:57.472] 📤 RAW->34fb 954b1b98358a34ef125aa730d97ff655
-[19:53:58.273] 📦 Echo aes(trev) -> AE01
-[19:53:58.274] 📤 RAW->34fb 954b1b98358a34ef125aa730d97ff655
-[19:53:58.875] 📦 Réplique aes(trev) -> FD01
-[19:53:58.939] 📤 RAW->34fb 954b1b98358a34ef125aa730d97ff655
-[19:53:59.741] 📦 Réponse aes(xAA) -> FD02
-[19:53:59.810] 📤 RAW->34fb 8a78404c8b5bcbcb9bb329c705e2b145
-[19:54:00.611] 📦 Echo aes(xAA) -> AE01
-[19:54:00.611] 📤 RAW->34fb 8a78404c8b5bcbcb9bb329c705e2b145
-[19:54:01.213] 📦 Réplique aes(xAA) -> FD01
-[19:54:01.250] 📤 RAW->34fb 8a78404c8b5bcbcb9bb329c705e2b145
-[19:54:02.051] 📦 Réponse decK -> FD02
-[19:54:02.089] 📤 RAW->34fb b03125a804a50e346a34dd8e6dddb3a0
-[19:54:02.891] 📦 Echo decK -> AE01
-[19:54:02.891] 📤 RAW->34fb b03125a804a50e346a34dd8e6dddb3a0
-[19:54:03.493] 📦 Réplique decK -> FD01
-[19:54:03.559] 📤 RAW->34fb b03125a804a50e346a34dd8e6dddb3a0
-[19:54:04.360] 📦 Réponse cmacK -> FD02
-[19:54:04.460] 📤 RAW->34fb 48249be9c7a278e1a049c41e505618c2
-[19:54:05.261] 📦 Echo cmacK -> AE01
-[19:54:05.262] 📤 RAW->34fb 48249be9c7a278e1a049c41e505618c2
-[19:54:05.863] 📦 Réplique cmacK -> FD01
-[19:54:05.899] 📤 RAW->34fb 48249be9c7a278e1a049c41e505618c2
-[19:54:06.701] 📦 Réponse 02+cmac(tok|name) -> FD02
-[19:54:06.739] 📤 RAW->34fb 02991ef59612743641862958f8e77a4445
-[19:54:06.891] 📦 Echo 02+cmac(tok|name) -> AE01
-[19:54:06.891] 📤 RAW->34fb 02991ef59612743641862958f8e77a4445
-[19:54:07.043] 📦 Réplique 02+cmac(tok|name) -> FD01
-[19:54:07.160] 📤 RAW->34fb 02991ef59612743641862958f8e77a4445
-[19:54:07.611] 📦 Réponse cmac(tok|name) -> FD02
-[19:54:07.669] 📤 RAW->34fb 991ef59612743641862958f8e77a4445
-[19:54:08.471] 📦 Echo cmac(tok|name) -> AE01
-[19:54:08.471] 📤 RAW->34fb 991ef59612743641862958f8e77a4445
-[19:54:09.073] 📦 Réplique cmac(tok|name) -> FD01
-[19:54:09.140] 📤 RAW->34fb 991ef59612743641862958f8e77a4445
-[19:54:09.941] 📦 Réponse aesK=tok -> FD02
-[19:54:10.040] 📤 RAW->34fb 65ddc3f27d88e2a926b21a73d64bc76d
-[19:54:10.841] 📦 Echo aesK=tok -> AE01
-[19:54:10.841] 📤 RAW->34fb 65ddc3f27d88e2a926b21a73d64bc76d
-[19:54:11.443] 📦 Réplique aesK=tok -> FD01
-[19:54:11.540] 📤 RAW->34fb 65ddc3f27d88e2a926b21a73d64bc76d
-[19:54:12.341] 📦 Réponse aesK=tok^AA -> FD02
-[19:54:12.379] 📤 RAW->34fb 095c8971e167b37bc592f248fe11e62b
-[19:54:13.181] 📦 Echo aesK=tok^AA -> AE01
-[19:54:13.181] 📤 RAW->34fb 095c8971e167b37bc592f248fe11e62b
-[19:54:13.782] 📦 Réplique aesK=tok^AA -> FD01
-[19:54:13.819] 📤 RAW->34fb 095c8971e167b37bc592f248fe11e62b
-[19:54:14.621] 📦 Réponse aesK=cmac(app,mac) -> FD02
-[19:54:14.719] 📤 RAW->34fb 5d37633672d9ed075d17099b49607589
-[19:54:15.521] 📦 Echo aesK=cmac(app,mac) -> AE01
-[19:54:15.521] 📤 RAW->34fb 5d37633672d9ed075d17099b49607589
-[19:54:16.123] 📦 Réplique aesK=cmac(app,mac) -> FD01
-[19:54:16.190] 📤 RAW->34fb 5d37633672d9ed075d17099b49607589
-[19:54:16.991] 📦 Réponse aesK=cmac(app,name) -> FD02
-[19:54:17.059] 📤 RAW->34fb 61073d034a50625cea18eae2ba836838
-[19:54:17.861] 📦 Echo aesK=cmac(app,name) -> AE01
-[19:54:17.862] 📤 RAW->34fb 61073d034a50625cea18eae2ba836838
-[19:54:18.462] 📦 Réplique aesK=cmac(app,name) -> FD01
-[19:54:18.529] 📤 RAW->34fb 61073d034a50625cea18eae2ba836838
-[19:54:19.331] 📦 Réponse aesK=app^mac -> FD02
-[19:54:19.370] 📤 RAW->34fb d35e697e4c13e978c33988b15c7e5398
-[19:54:20.172] 📦 Echo aesK=app^mac -> AE01
-[19:54:20.172] 📤 RAW->34fb d35e697e4c13e978c33988b15c7e5398
-[19:54:20.774] 📦 Réplique aesK=app^mac -> FD01
-[19:54:20.870] 📤 RAW->34fb d35e697e4c13e978c33988b15c7e5398
-[19:54:21.672] 📦 Réponse aesK=app^name -> FD02
-[19:54:21.740] 📤 RAW->34fb fa256f974b1d991fb2a0b5a1cf59401e
-[19:54:22.541] 📦 Echo aesK=app^name -> AE01
-[19:54:22.542] 📤 RAW->34fb fa256f974b1d991fb2a0b5a1cf59401e
-[19:54:23.142] 📦 Réplique aesK=app^name -> FD01
-[19:54:23.189] 📤 RAW->34fb fa256f974b1d991fb2a0b5a1cf59401e
-[19:54:24.000] 📦 Réponse tok+crc -> FD02
-[19:54:24.050] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec7b
-[19:54:24.203] 📦 Echo tok+crc -> AE01
-[19:54:24.203] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec7b
-[19:54:24.354] 📦 Réplique tok+crc -> FD01
-[19:54:24.469] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec7b
-[19:54:24.921] 📦 Réponse 01+tok14+crc -> FD02
-[19:54:24.980] 📤 RAW->34fb 017c4701ffc1b1a1eb54293bbd9234ff
-[19:54:25.782] 📦 Echo 01+tok14+crc -> AE01
-[19:54:25.784] 📤 RAW->34fb 017c4701ffc1b1a1eb54293bbd9234ff
-[19:54:26.385] 📦 Réplique 01+tok14+crc -> FD01
-[19:54:26.450] 📤 RAW->34fb 017c4701ffc1b1a1eb54293bbd9234ff
-[19:54:27.252] 📦 Réponse 10+tok14+crc -> FD02
-[19:54:27.319] 📤 RAW->34fb 107c4701ffc1b1a1eb54293bbd92342b
-[19:54:28.120] 📦 Echo 10+tok14+crc -> AE01
-[19:54:28.121] 📤 RAW->34fb 107c4701ffc1b1a1eb54293bbd92342b
-[19:54:28.722] 📦 Réplique 10+tok14+crc -> FD01
-[19:54:28.789] 📤 RAW->34fb 107c4701ffc1b1a1eb54293bbd92342b
-[19:54:29.591] 📦 Réponse tok+sum -> FD02
-[19:54:29.629] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ece8
-[19:54:30.430] 📦 Echo tok+sum -> AE01
-[19:54:30.431] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ece8
-[19:54:31.032] 📦 Réplique tok+sum -> FD01
-[19:54:31.069] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ece8
-[19:54:31.871] 📦 Réponse 01+tok -> FD02
-[19:54:31.910] 📤 RAW->34fb 017c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:32.061] 📦 Echo 01+tok -> AE01
-[19:54:32.062] 📤 RAW->34fb 017c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:32.214] 📦 Réplique 01+tok -> FD01
-[19:54:32.269] 📤 RAW->34fb 017c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:32.721] 📦 Réponse 02+tok -> FD02
-[19:54:32.779] 📤 RAW->34fb 027c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:33.581] 📦 Echo 02+tok -> AE01
-[19:54:33.581] 📤 RAW->34fb 027c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:34.183] 📦 Réplique 02+tok -> FD01
-[19:54:34.250] 📤 RAW->34fb 027c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:35.051] 📦 Réponse 11+tok -> FD02
-[19:54:35.121] 📤 RAW->34fb 117c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:35.922] 📦 Echo 11+tok -> AE01
-[19:54:35.923] 📤 RAW->34fb 117c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:36.524] 📦 Réplique 11+tok -> FD01
-[19:54:36.589] 📤 RAW->34fb 117c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:37.391] 📦 Réponse tok+01 -> FD02
-[19:54:37.430] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec0001
-[19:54:38.231] 📦 Echo tok+01 -> AE01
-[19:54:38.231] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec0001
-[19:54:38.832] 📦 Réplique tok+01 -> FD01
-[19:54:38.900] 📤 RAW->34fb 7c4701ffc1b1a1eb54293bbd9234ec0001
-[19:54:39.701] 📦 Réponse 02+cmac -> FD02
-[19:54:39.740] 📤 RAW->34fb 0248249be9c7a278e1a049c41e505618c2
-[19:54:40.541] 📦 Echo 02+cmac -> AE01
-[19:54:40.542] 📤 RAW->34fb 0248249be9c7a278e1a049c41e505618c2
-[19:54:41.143] 📦 Réplique 02+cmac -> FD01
-[19:54:41.209] 📤 RAW->34fb 0248249be9c7a278e1a049c41e505618c2
-[19:54:42.011] 📦 Réponse OTA+tok -> FD02
-[19:54:42.049] 📤 RAW->34fb 4f54417c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:42.851] 📦 Echo OTA+tok -> AE01
-[19:54:42.851] 📤 RAW->34fb 4f54417c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:43.453] 📦 Réplique OTA+tok -> FD01
-[19:54:43.520] 📤 RAW->34fb 4f54417c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:44.322] 📦 Réponse DFU+tok -> FD02
-[19:54:44.392] 📤 RAW->34fb 4446557c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:45.193] 📦 Echo DFU+tok -> AE01
-[19:54:45.194] 📤 RAW->34fb 4446557c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:45.795] 📦 Réplique DFU+tok -> FD01
-[19:54:45.861] 📤 RAW->34fb 4446557c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:46.662] 📦 Réponse BOOT+tok -> FD02
-[19:54:46.761] 📤 RAW->34fb 424f4f547c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:47.562] 📦 Echo BOOT+tok -> AE01
-[19:54:47.563] 📤 RAW->34fb 424f4f547c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:48.165] 📦 Réplique BOOT+tok -> FD01
-[19:54:48.229] 📤 RAW->34fb 424f4f547c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:49.031] 📦 Réponse ERASE+tok -> FD02
-[19:54:49.070] 📤 RAW->34fb 45524153457c4701ffc1b1a1eb54293bbd9234ec
-[19:54:49.880] 📦 Echo ERASE+tok -> AE01
-[19:54:49.882] 📤 RAW->34fb 45524153457c4701ffc1b1a1eb54293bbd9234ec
-[19:54:50.485] 📦 Réplique ERASE+tok -> FD01
-[19:54:50.540] 📤 RAW->34fb 45524153457c4701ffc1b1a1eb54293bbd9234ec
-[19:54:51.340] 📦 Réponse START+tok -> FD02
-[19:54:51.408] 📤 RAW->34fb 53544152547c4701ffc1b1a1eb54293bbd9234ec
-[19:54:52.208] 📦 Echo START+tok -> AE01
-[19:54:52.209] 📤 RAW->34fb 53544152547c4701ffc1b1a1eb54293bbd9234ec
-[19:54:52.809] 📦 Réplique START+tok -> FD01
-[19:54:52.904] 📤 RAW->34fb 53544152547c4701ffc1b1a1eb54293bbd9234ec
-[19:54:53.705] 📦 Réponse INIT+tok -> FD02
-[19:54:53.772] 📤 RAW->34fb 494e49547c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:54.573] 📦 Echo INIT+tok -> AE01
-[19:54:54.573] 📤 RAW->34fb 494e49547c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:55.174] 📦 Réplique INIT+tok -> FD01
-[19:54:55.270] 📤 RAW->34fb 494e49547c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:56.069] 📦 Réponse DATA+tok -> FD02
-[19:54:56.168] 📤 RAW->34fb 444154417c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:56.969] 📦 Echo DATA+tok -> AE01
-[19:54:56.969] 📤 RAW->34fb 444154417c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:57.572] 📦 Réplique DATA+tok -> FD01
-[19:54:57.636] 📤 RAW->34fb 444154417c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:58.443] 📦 Réponse DONE+tok -> FD02
-[19:54:58.537] 📤 RAW->34fb 444f4e457c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:59.339] 📦 Echo DONE+tok -> AE01
-[19:54:59.343] 📤 RAW->34fb 444f4e457c4701ffc1b1a1eb54293bbd9234ec00
-[19:54:59.946] 📦 Réplique DONE+tok -> FD01
-[19:55:00.027] 📤 RAW->34fb 444f4e457c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:00.837] 📦 Réponse UPDT+tok -> FD02
-[19:55:00.901] 📤 RAW->34fb 555044547c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:01.701] 📦 Echo UPDT+tok -> AE01
-[19:55:01.702] 📤 RAW->34fb 555044547c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:02.303] 📦 Réplique UPDT+tok -> FD01
-[19:55:02.339] 📤 RAW->34fb 555044547c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:03.140] 📦 Réponse 01+OTA+tok -> FD02
-[19:55:03.178] 📤 RAW->34fb 014f54417c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:03.978] 📦 Echo 01+OTA+tok -> AE01
-[19:55:03.979] 📤 RAW->34fb 014f54417c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:04.579] 📦 Réplique 01+OTA+tok -> FD01
-[19:55:04.617] 📤 RAW->34fb 014f54417c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:05.418] 📦 Réponse 01+DFU+tok -> FD02
-[19:55:05.456] 📤 RAW->34fb 014446557c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:06.256] 📦 Echo 01+DFU+tok -> AE01
-[19:55:06.257] 📤 RAW->34fb 014446557c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:06.858] 📦 Réplique 01+DFU+tok -> FD01
-[19:55:06.895] 📤 RAW->34fb 014446557c4701ffc1b1a1eb54293bbd9234ec00
-[19:55:07.696] 📦 Réponse 01+BOOT+tok -> FD02
-[19:55:07.733] 📤 RAW->34fb 01424f4f547c4701ffc1b1a1eb54293bbd9234ec
-[19:55:08.534] 📦 Echo 01+BOOT+tok -> AE01
-[19:55:08.535] 📤 RAW->34fb 01424f4f547c4701ffc1b1a1eb54293bbd9234ec
-[19:55:09.136] 📦 Réplique 01+BOOT+tok -> FD01
-[19:55:09.172] 📤 RAW->34fb 01424f4f547c4701ffc1b1a1eb54293bbd9234ec
-[19:55:09.973] 📦 Réponse 01+ERASE+tok -> FD02
-[19:55:10.012] 📤 RAW->34fb 0145524153457c4701ffc1b1a1eb54293bbd9234
-[19:55:10.812] 📦 Echo 01+ERASE+tok -> AE01
-[19:55:10.813] 📤 RAW->34fb 0145524153457c4701ffc1b1a1eb54293bbd9234
-[19:55:11.413] 📦 Réplique 01+ERASE+tok -> FD01
-[19:55:11.481] 📤 RAW->34fb 0145524153457c4701ffc1b1a1eb54293bbd9234
-[19:55:12.282] 📦 Réponse 01+START+tok -> FD02
-[19:55:12.321] 📤 RAW->34fb 0153544152547c4701ffc1b1a1eb54293bbd9234
-[19:55:13.122] 📦 Echo 01+START+tok -> AE01
-[19:55:13.124] 📤 RAW->34fb 0153544152547c4701ffc1b1a1eb54293bbd9234
-[19:55:13.725] 📦 Réplique 01+START+tok -> FD01
-[19:55:13.820] 📤 RAW->34fb 0153544152547c4701ffc1b1a1eb54293bbd9234
-[19:55:14.621] 🔄 Demande token AE02 (try 4/4)
-[19:55:14.621] 📤 RAW->34fb 00
-[19:55:14.691] 📡 AE02 notif: 01408c82b033176400fd780807f6551009
-[19:55:14.693] 🔓 AE02 dec: 747a33b965b59514b3f739090711154c | tz3.e.....9....L
-[19:55:14.694] 🧩 Token AE02: 408c82b033176400fd780807f6551009
-[19:55:14.697] 📦 Réponse id -> FD02
-[19:55:14.841] 📤 RAW->34fb 408c82b033176400fd780807f6551009
-[19:55:14.992] 📦 Echo id -> AE01
-[19:55:14.992] 📤 RAW->34fb 408c82b033176400fd780807f6551009
-[19:55:15.144] 📦 Réplique id -> FD01
-[19:55:15.229] 📤 RAW->34fb 408c82b033176400fd780807f6551009
-[19:55:15.680] 📦 Réponse rev -> FD02
-[19:55:15.738] 📤 RAW->34fb 091055f6070878fd00641733b0828c40
-[19:55:16.538] 📦 Echo rev -> AE01
-[19:55:16.539] 📤 RAW->34fb 091055f6070878fd00641733b0828c40
-[19:55:17.140] 📦 Réplique rev -> FD01
-[19:55:17.240] 📤 RAW->34fb 091055f6070878fd00641733b0828c40
-[19:55:18.041] 📦 Réponse xAA -> FD02
-[19:55:18.137] 📤 RAW->34fb ea26281a99bdceaa57d2a2ad5cffbaa3
-[19:55:18.937] 📦 Echo xAA -> AE01
-[19:55:18.938] 📤 RAW->34fb ea26281a99bdceaa57d2a2ad5cffbaa3
-[19:55:19.539] 📦 Réplique xAA -> FD01
-[19:55:19.667] 📤 RAW->34fb ea26281a99bdceaa57d2a2ad5cffbaa3
-[19:55:20.468] 📦 Réponse aesK -> FD02
-[19:55:20.567] 📤 RAW->34fb befcd995a9d5569373fe44195b69cb71
-[19:55:21.367] 📦 Echo aesK -> AE01
-[19:55:21.368] 📤 RAW->34fb befcd995a9d5569373fe44195b69cb71
-[19:55:21.968] 📦 Réplique aesK -> FD01
-[19:55:22.126] 📤 RAW->34fb befcd995a9d5569373fe44195b69cb71
-[19:55:22.926] 📦 Réponse aesKr -> FD02
-[19:55:22.996] 📤 RAW->34fb 7061fa59ac1182bc1fed5a9d9a8dc7db
-[19:55:23.796] 📦 Echo aesKr -> AE01
-[19:55:23.797] 📤 RAW->34fb 7061fa59ac1182bc1fed5a9d9a8dc7db
-[19:55:24.398] 📦 Réplique aesKr -> FD01
-[19:55:24.466] 📤 RAW->34fb 7061fa59ac1182bc1fed5a9d9a8dc7db
-[19:55:25.267] 📦 Réponse aes(trev) -> FD02
-[19:55:25.335] 📤 RAW->34fb 2a83638ffd3fe3332d05845e3535afb3
-[19:55:26.136] 📦 Echo aes(trev) -> AE01
-[19:55:26.137] 📤 RAW->34fb 2a83638ffd3fe3332d05845e3535afb3
-[19:55:26.737] 📦 Réplique aes(trev) -> FD01
-[19:55:26.807] 📤 RAW->34fb 2a83638ffd3fe3332d05845e3535afb3
-[19:55:27.608] 📦 Réponse aes(xAA) -> FD02
-[19:55:27.675] 📤 RAW->34fb 6cd56f1193eeef20ef22b60422f7b6ce
-[19:55:28.476] 📦 Echo aes(xAA) -> AE01
-[19:55:28.477] 📤 RAW->34fb 6cd56f1193eeef20ef22b60422f7b6ce
-[19:55:29.077] 📦 Réplique aes(xAA) -> FD01
-[19:55:29.205] 📤 RAW->34fb 6cd56f1193eeef20ef22b60422f7b6ce
-[19:55:30.006] 📦 Réponse decK -> FD02
-[19:55:30.044] 📤 RAW->34fb cf931f345dc4d4dc35a70734a338ba01
-[19:55:30.846] 📦 Echo decK -> AE01
-[19:55:30.846] 📤 RAW->34fb cf931f345dc4d4dc35a70734a338ba01
-[19:55:31.447] 📦 Réplique decK -> FD01
-[19:55:31.484] 📤 RAW->34fb cf931f345dc4d4dc35a70734a338ba01
-[19:55:32.285] 📦 Réponse cmacK -> FD02
-[19:55:32.324] 📤 RAW->34fb 058077892cc0668ced42015ef2f84d53
-[19:55:33.125] 📦 Echo cmacK -> AE01
-[19:55:33.126] 📤 RAW->34fb 058077892cc0668ced42015ef2f84d53
-[19:55:33.727] 📦 Réplique cmacK -> FD01
-[19:55:33.763] 📤 RAW->34fb 058077892cc0668ced42015ef2f84d53
-[19:55:34.564] 📦 Réponse 02+cmac(tok|name) -> FD02
-[19:55:34.604] 📤 RAW->34fb 02e9030773bbbb62e8639be652a48c0599
-[19:55:34.755] 📦 Echo 02+cmac(tok|name) -> AE01
-[19:55:34.755] 📤 RAW->34fb 02e9030773bbbb62e8639be652a48c0599
-[19:55:34.907] 📦 Réplique 02+cmac(tok|name) -> FD01
-[19:55:35.025] 📤 RAW->34fb 02e9030773bbbb62e8639be652a48c0599
-[19:55:35.476] 📦 Réponse cmac(tok|name) -> FD02
-[19:55:35.535] 📤 RAW->34fb e9030773bbbb62e8639be652a48c0599
-[19:55:36.335] 📦 Echo cmac(tok|name) -> AE01
-[19:55:36.335] 📤 RAW->34fb e9030773bbbb62e8639be652a48c0599
-[19:55:36.936] 📦 Réplique cmac(tok|name) -> FD01
-[19:55:37.063] 📤 RAW->34fb e9030773bbbb62e8639be652a48c0599
-[19:55:37.864] 📦 Réponse aesK=tok -> FD02
-[19:55:37.963] 📤 RAW->34fb 6ee86e4dec217bbf4710cce6acc7f9e2
-[19:55:38.764] 📦 Echo aesK=tok -> AE01
-[19:55:38.765] 📤 RAW->34fb 6ee86e4dec217bbf4710cce6acc7f9e2
-[19:55:39.366] 📦 Réplique aesK=tok -> FD01
-[19:55:39.494] 📤 RAW->34fb 6ee86e4dec217bbf4710cce6acc7f9e2
-[19:55:40.295] 📦 Réponse aesK=tok^AA -> FD02
-[19:55:40.334] 📤 RAW->34fb c0d5c4a26cb8d93fb4e35de25f70eb89
-[19:55:41.135] 📦 Echo aesK=tok^AA -> AE01
-[19:55:41.135] 📤 RAW->34fb c0d5c4a26cb8d93fb4e35de25f70eb89
-[19:55:41.737] 📦 Réplique aesK=tok^AA -> FD01
-[19:55:41.803] 📤 RAW->34fb c0d5c4a26cb8d93fb4e35de25f70eb89
-[19:55:42.605] 📦 Réponse aesK=cmac(app,mac) -> FD02
-[19:55:42.643] 📤 RAW->34fb 8b2af8e26d327124b621d71c557c1f84
-[19:55:43.444] 📦 Echo aesK=cmac(app,mac) -> AE01
-[19:55:43.444] 📤 RAW->34fb 8b2af8e26d327124b621d71c557c1f84
-[19:55:44.045] 📦 Réplique aesK=cmac(app,mac) -> FD01
-[19:55:44.113] 📤 RAW->34fb 8b2af8e26d327124b621d71c557c1f84
-[19:55:44.914] 📦 Réponse aesK=cmac(app,name) -> FD02
-[19:55:44.983] 📤 RAW->34fb 1e44fa30b0a4ce40693726d524ca0dec
-[19:55:45.784] 📦 Echo aesK=cmac(app,name) -> AE01
-[19:55:45.784] 📤 RAW->34fb 1e44fa30b0a4ce40693726d524ca0dec
-[19:55:46.385] 📦 Réplique aesK=cmac(app,name) -> FD01
-[19:55:46.452] 📤 RAW->34fb 1e44fa30b0a4ce40693726d524ca0dec
-[19:55:47.254] 📦 Réponse aesK=app^mac -> FD02
-[19:55:47.352] 📤 RAW->34fb befcd995a9d5569373fe44195b69cb71
-[19:55:48.154] 📦 Echo aesK=app^mac -> AE01
-[19:55:48.154] 📤 RAW->34fb befcd995a9d5569373fe44195b69cb71
-[19:55:48.755] 📦 Réplique aesK=app^mac -> FD01
-[19:55:48.824] 📤 RAW->34fb befcd995a9d5569373fe44195b69cb71
-[19:55:49.625] 📦 Réponse aesK=app^name -> FD02
-[19:55:49.722] 📤 RAW->34fb 233280bc085cd1ddac03b0c29159385d
-[19:55:50.523] 📦 Echo aesK=app^name -> AE01
-[19:55:50.524] 📤 RAW->34fb 233280bc085cd1ddac03b0c29159385d
-[19:55:51.124] 📦 Réplique aesK=app^name -> FD01
-[19:55:51.162] 📤 RAW->34fb 233280bc085cd1ddac03b0c29159385d
-[19:55:51.963] 📦 Réponse tok+crc -> FD02
-[19:55:52.062] 📤 RAW->34fb 408c82b033176400fd780807f6551044
-[19:55:52.214] 📦 Echo tok+crc -> AE01
-[19:55:52.214] 📤 RAW->34fb 408c82b033176400fd780807f6551044
-[19:55:52.365] 📦 Réplique tok+crc -> FD01
-[19:55:52.422] 📤 RAW->34fb 408c82b033176400fd780807f6551044
-[19:55:52.873] 📦 Réponse 01+tok14+crc -> FD02
-[19:55:52.962] 📤 RAW->34fb 01408c82b033176400fd780807f6550a
-[19:55:53.763] 📦 Echo 01+tok14+crc -> AE01
-[19:55:53.764] 📤 RAW->34fb 01408c82b033176400fd780807f6550a
-[19:55:54.365] 📦 Réplique 01+tok14+crc -> FD01
-[19:55:54.431] 📤 RAW->34fb 01408c82b033176400fd780807f6550a
-[19:55:55.233] 📦 Réponse 10+tok14+crc -> FD02
-[19:55:55.302] 📤 RAW->34fb 10408c82b033176400fd780807f655de
-[19:55:56.103] 📦 Echo 10+tok14+crc -> AE01
-[19:55:56.104] 📤 RAW->34fb 10408c82b033176400fd780807f655de
-[19:55:56.705] 📦 Réplique 10+tok14+crc -> FD01
-[19:55:56.803] 📤 RAW->34fb 10408c82b033176400fd780807f655de
-[19:55:57.604] 📦 Réponse tok+sum -> FD02
-[19:55:57.672] 📤 RAW->34fb 408c82b033176400fd780807f655108b
-[19:55:58.473] 📦 Echo tok+sum -> AE01
-[19:55:58.474] 📤 RAW->34fb 408c82b033176400fd780807f655108b
-[19:55:59.075] 📦 Réplique tok+sum -> FD01
-[19:55:59.172] 📤 RAW->34fb 408c82b033176400fd780807f655108b
-[19:55:59.973] 📦 Réponse 01+tok -> FD02
-[19:56:00.011] 📤 RAW->34fb 01408c82b033176400fd780807f6551009
-[19:56:00.162] 📦 Echo 01+tok -> AE01
-[19:56:00.163] 📤 RAW->34fb 01408c82b033176400fd780807f6551009
-[19:56:00.314] 📦 Réplique 01+tok -> FD01
-[19:56:00.372] 📤 RAW->34fb 01408c82b033176400fd780807f6551009
-[19:56:00.824] 📦 Réponse 02+tok -> FD02
-[19:56:00.882] 📤 RAW->34fb 02408c82b033176400fd780807f6551009
-[19:56:01.684] 📦 Echo 02+tok -> AE01
-[19:56:01.684] 📤 RAW->34fb 02408c82b033176400fd780807f6551009
-[19:56:02.285] 📦 Réplique 02+tok -> FD01
-[19:56:02.352] 📤 RAW->34fb 02408c82b033176400fd780807f6551009
-[19:56:03.154] 📦 Réponse 11+tok -> FD02
-[19:56:03.222] 📤 RAW->34fb 11408c82b033176400fd780807f6551009
-[19:56:04.023] 📦 Echo 11+tok -> AE01
-[19:56:04.024] 📤 RAW->34fb 11408c82b033176400fd780807f6551009
-[19:56:04.625] 📦 Réplique 11+tok -> FD01
-[19:56:04.754] 📤 RAW->34fb 11408c82b033176400fd780807f6551009
-[19:56:05.555] 📦 Réponse tok+01 -> FD02
-[19:56:05.592] 📤 RAW->34fb 408c82b033176400fd780807f655100901
-[19:56:06.393] 📦 Echo tok+01 -> AE01
-[19:56:06.393] 📤 RAW->34fb 408c82b033176400fd780807f655100901
-[19:56:06.995] 📦 Réplique tok+01 -> FD01
-[19:56:07.064] 📤 RAW->34fb 408c82b033176400fd780807f655100901
-[19:56:07.866] 📦 Réponse 02+cmac -> FD02
-[19:56:07.932] 📤 RAW->34fb 02058077892cc0668ced42015ef2f84d53
-[19:56:08.733] 📦 Echo 02+cmac -> AE01
-[19:56:08.734] 📤 RAW->34fb 02058077892cc0668ced42015ef2f84d53
-[19:56:09.335] 📦 Réplique 02+cmac -> FD01
-[19:56:09.372] 📤 RAW->34fb 02058077892cc0668ced42015ef2f84d53
-[19:56:10.174] 📦 Réponse OTA+tok -> FD02
-[19:56:10.224] 📤 RAW->34fb 4f5441408c82b033176400fd780807f6551009
-[19:56:11.026] 📦 Echo OTA+tok -> AE01
-[19:56:11.026] 📤 RAW->34fb 4f5441408c82b033176400fd780807f6551009
-[19:56:11.628] 📦 Réplique OTA+tok -> FD01
-[19:56:11.682] 📤 RAW->34fb 4f5441408c82b033176400fd780807f6551009
-[19:56:12.484] 📦 Réponse DFU+tok -> FD02
-[19:56:12.552] 📤 RAW->34fb 444655408c82b033176400fd780807f6551009
-[19:56:13.353] 📦 Echo DFU+tok -> AE01
-[19:56:13.353] 📤 RAW->34fb 444655408c82b033176400fd780807f6551009
-[19:56:13.954] 📦 Réplique DFU+tok -> FD01
-[19:56:14.023] 📤 RAW->34fb 444655408c82b033176400fd780807f6551009
-[19:56:14.825] 📦 Réponse BOOT+tok -> FD02
-[19:56:14.861] 📤 RAW->34fb 424f4f54408c82b033176400fd780807f6551009
-[19:56:15.662] 📦 Echo BOOT+tok -> AE01
-[19:56:15.663] 📤 RAW->34fb 424f4f54408c82b033176400fd780807f6551009
-[19:56:16.265] 📦 Réplique BOOT+tok -> FD01
-[19:56:16.301] 📤 RAW->34fb 424f4f54408c82b033176400fd780807f6551009
-[19:56:17.103] 📦 Réponse ERASE+tok -> FD02
-[19:56:17.141] 📤 RAW->34fb 4552415345408c82b033176400fd780807f65510
-[19:56:17.942] 📦 Echo ERASE+tok -> AE01
-[19:56:17.943] 📤 RAW->34fb 4552415345408c82b033176400fd780807f65510
-[19:56:18.544] 📦 Réplique ERASE+tok -> FD01
-[19:56:18.582] 📤 RAW->34fb 4552415345408c82b033176400fd780807f65510
-[19:56:19.383] 📦 Réponse START+tok -> FD02
-[19:56:19.422] 📤 RAW->34fb 5354415254408c82b033176400fd780807f65510
-[19:56:20.224] 📦 Echo START+tok -> AE01
-[19:56:20.224] 📤 RAW->34fb 5354415254408c82b033176400fd780807f65510
-[19:56:20.826] 📦 Réplique START+tok -> FD01
-[19:56:20.951] 📤 RAW->34fb 5354415254408c82b033176400fd780807f65510
-[19:56:21.752] 📦 Réponse INIT+tok -> FD02
-[19:56:21.821] 📤 RAW->34fb 494e4954408c82b033176400fd780807f6551009
-[19:56:22.622] 📦 Echo INIT+tok -> AE01
-[19:56:22.623] 📤 RAW->34fb 494e4954408c82b033176400fd780807f6551009
-[19:56:23.224] 📦 Réplique INIT+tok -> FD01
-[19:56:23.261] 📤 RAW->34fb 494e4954408c82b033176400fd780807f6551009
-[19:56:24.063] 📦 Réponse DATA+tok -> FD02
-[19:56:24.101] 📤 RAW->34fb 44415441408c82b033176400fd780807f6551009
-[19:56:24.902] 📦 Echo DATA+tok -> AE01
-[19:56:24.903] 📤 RAW->34fb 44415441408c82b033176400fd780807f6551009
-[19:56:25.504] 📦 Réplique DATA+tok -> FD01
-[19:56:25.633] 📤 RAW->34fb 44415441408c82b033176400fd780807f6551009
-[19:56:26.434] 📦 Réponse DONE+tok -> FD02
-[19:56:26.562] 📤 RAW->34fb 444f4e45408c82b033176400fd780807f6551009
-[19:56:27.364] 📦 Echo DONE+tok -> AE01
-[19:56:27.366] 📤 RAW->34fb 444f4e45408c82b033176400fd780807f6551009
-[19:56:27.967] 📦 Réplique DONE+tok -> FD01
-[19:56:28.032] 📤 RAW->34fb 444f4e45408c82b033176400fd780807f6551009
-[19:56:28.834] 📦 Réponse UPDT+tok -> FD02
-[19:56:28.903] 📤 RAW->34fb 55504454408c82b033176400fd780807f6551009
-[19:56:29.704] 📦 Echo UPDT+tok -> AE01
-[19:56:29.705] 📤 RAW->34fb 55504454408c82b033176400fd780807f6551009
-[19:56:30.306] 📦 Réplique UPDT+tok -> FD01
-[19:56:30.372] 📤 RAW->34fb 55504454408c82b033176400fd780807f6551009
-[19:56:31.174] 📦 Réponse 01+OTA+tok -> FD02
-[19:56:31.332] 📤 RAW->34fb 014f5441408c82b033176400fd780807f6551009
-[19:56:32.134] 📦 Echo 01+OTA+tok -> AE01
-[19:56:32.134] 📤 RAW->34fb 014f5441408c82b033176400fd780807f6551009
-[19:56:32.735] 📦 Réplique 01+OTA+tok -> FD01
-[19:56:32.801] 📤 RAW->34fb 014f5441408c82b033176400fd780807f6551009
-[19:56:33.603] 📦 Réponse 01+DFU+tok -> FD02
-[19:56:33.672] 📤 RAW->34fb 01444655408c82b033176400fd780807f6551009
-[19:56:34.474] 📦 Echo 01+DFU+tok -> AE01
-[19:56:34.474] 📤 RAW->34fb 01444655408c82b033176400fd780807f6551009
-[19:56:35.075] 📦 Réplique 01+DFU+tok -> FD01
-[19:56:35.203] 📤 RAW->34fb 01444655408c82b033176400fd780807f6551009
-[19:56:36.005] 📦 Réponse 01+BOOT+tok -> FD02
-[19:56:36.101] 📤 RAW->34fb 01424f4f54408c82b033176400fd780807f65510
-[19:56:36.902] 📦 Echo 01+BOOT+tok -> AE01
-[19:56:36.903] 📤 RAW->34fb 01424f4f54408c82b033176400fd780807f65510
-[19:56:37.504] 📦 Réplique 01+BOOT+tok -> FD01
-[19:56:37.571] 📤 RAW->34fb 01424f4f54408c82b033176400fd780807f65510
-[19:56:38.373] 📦 Réponse 01+ERASE+tok -> FD02
-[19:56:38.472] 📤 RAW->34fb 014552415345408c82b033176400fd780807f655
-[19:56:39.273] 📦 Echo 01+ERASE+tok -> AE01
-[19:56:39.274] 📤 RAW->34fb 014552415345408c82b033176400fd780807f655
-[19:56:39.875] 📦 Réplique 01+ERASE+tok -> FD01
-[19:56:39.942] 📤 RAW->34fb 014552415345408c82b033176400fd780807f655
-[19:56:40.743] 📦 Réponse 01+START+tok -> FD02
-[19:56:40.781] 📤 RAW->34fb 015354415254408c82b033176400fd780807f655
-[19:56:41.583] 📦 Echo 01+START+tok -> AE01
-[19:56:41.583] 📤 RAW->34fb 015354415254408c82b033176400fd780807f655
-[19:56:42.185] 📦 Réplique 01+START+tok -> FD01
-[19:56:42.252] 📤 RAW->34fb 015354415254408c82b033176400fd780807f655
-[19:56:43.053] 🧾 Tokens vus: ['bf239722261d35ef7121c9814dac8650', 'cb116e48ca138d32fa47b500d53052df', '7c4701ffc1b1a1eb54293bbd9234ec00', '408c82b033176400fd780807f6551009']
-[19:56:43.054] ✅ Sondes terminées
+[20:00:41.176] 🔗 Connexion et préparation des notifications…
+[20:00:49.986] 🧭 Services avant_sonde: 3 services
+[20:00:49.986]   • Service 0000fff0-0000-1000-8000-00805f9b34fb
+[20:00:49.986]      - Char d44bc439-abfd-45a2-b575-925416129600 [write,write-without-response]
+[20:00:49.986]      - Char d44bc439-abfd-45a2-b575-92541612960a [write,write-without-response]
+[20:00:49.986]      - Char d44bc439-abfd-45a2-b575-92541612960b [write,write-without-response]
+[20:00:49.986]      - Char d44bc439-abfd-45a2-b575-925416129601 [notify]
+[20:00:49.986]   • Service 0000fd00-0000-1000-8000-00805f9b34fb
+[20:00:49.986]      - Char 0000fd01-0000-1000-8000-00805f9b34fb [write]
+[20:00:49.986]      - Char 0000fd02-0000-1000-8000-00805f9b34fb [write,notify]
+[20:00:49.986]   • Service 0000ae00-0000-1000-8000-00805f9b34fb
+[20:00:49.986]      - Char 0000ae01-0000-1000-8000-00805f9b34fb [write-without-response]
+[20:00:49.986]      - Char 0000ae02-0000-1000-8000-00805f9b34fb [notify]
+[20:00:50.075] 🔔 Notifications activées sur 0000fd02-0000-1000-8000-00805f9b34fb
+[20:00:50.121] 🔔 Notifications activées sur 0000ae02-0000-1000-8000-00805f9b34fb
+[20:00:50.121] 🧪 Préflight LIGHT…
+[20:00:50.239] 📤 LIGHT (1B args)
+[20:00:50.541] 🕳️ Aucune notification nouvelle
+[20:00:50.659] 📤 LIGHT (1B args)
+[20:00:50.961] 🕳️ Aucune notification nouvelle
+[20:00:50.961] 🔍 Groupe 1: introspection
+[20:00:51.111] 📤 FWVER (0B args)
+[20:00:51.712] 🕳️ Aucune notification nouvelle
+[20:00:51.831] 📤 VER (0B args)
+[20:00:52.432] 🕳️ Aucune notification nouvelle
+[20:00:52.550] 📤 VERS (0B args)
+[20:00:53.151] 🕳️ Aucune notification nouvelle
+[20:00:53.209] 📤 INFO (0B args)
+[20:00:53.811] 🕳️ Aucune notification nouvelle
+[20:00:53.930] 📤 STAT (0B args)
+[20:00:54.531] 🕳️ Aucune notification nouvelle
+[20:00:54.620] 📤 SYS (0B args)
+[20:00:55.222] 🕳️ Aucune notification nouvelle
+[20:00:55.311] 📤 DBG (0B args)
+[20:00:55.912] 🕳️ Aucune notification nouvelle
+[20:00:55.912] 🧪 Groupe 2: sonde modes OTA/bootloader
+[20:00:56.030] 📤 OTA (1B args)
+[20:00:57.031] 🕳️ Aucune notification nouvelle
+[20:00:57.109] 📤 OTA (1B args)
+[20:00:58.111] 🕳️ Aucune notification nouvelle
+[20:00:58.191] 📤 OTAMODE (0B args)
+[20:00:59.193] 🕳️ Aucune notification nouvelle
+[20:00:59.361] 📤 UPDATE (0B args)
+[20:01:00.362] 🕳️ Aucune notification nouvelle
+[20:01:00.470] 📤 UPDT (0B args)
+[20:01:01.472] 🕳️ Aucune notification nouvelle
+[20:01:01.641] 📤 UPGD (0B args)
+[20:01:02.641] 🕳️ Aucune notification nouvelle
+[20:01:02.749] 📤 FLASH (0B args)
+[20:01:03.750] 🕳️ Aucune notification nouvelle
+[20:01:03.800] 📤 BOOT (0B args)
+[20:01:04.801] 🕳️ Aucune notification nouvelle
+[20:01:04.909] 📤 PROGRAM (0B args)
+[20:01:05.911] 🕳️ Aucune notification nouvelle
+[20:01:06.020] 📤 READY (0B args)
+[20:01:07.022] 🕳️ Aucune notification nouvelle
+[20:01:07.022] 🧪 Groupe 2b: pings bruts sur FD01/AE01
+[20:01:07.070] 📤 RAW->34fb 00
+[20:01:07.572] 📤 RAW->34fb 00
+[20:01:07.701] 📡 AE02 notif: 0175179d9e53211dbe55d15a5abe9bfe13
+[20:01:07.701] 🔓 AE02 dec: e894edcbf267974ce208d19d0ae00da7 | .....g.L........
+[20:01:08.182] 📤 RAW->34fb 01
+[20:01:08.684] 📤 RAW->34fb 01
+[20:01:09.291] 📤 RAW->34fb aa
+[20:01:09.793] 📤 RAW->34fb aa
+[20:01:10.400] 📤 RAW->34fb 4f544101
+[20:01:10.902] 📤 RAW->34fb 4f544101
+[20:01:11.541] 📤 RAW->34fb 50494e47
+[20:01:12.043] 📤 RAW->34fb 50494e47
+[20:01:12.544] 🧪 Groupe 2c: motif chiffré OTA sur FD/AE
+[20:01:12.621] 📤 RAW->34fb 4673b4509f94581a7f475bb2e9bea86a
+[20:01:13.423] 📤 RAW->34fb 4673b4509f94581a7f475bb2e9bea86a
+[20:01:14.225] 📤 RAW->34fb 00
+[20:01:14.361] 📡 AE02 notif: 01bea95371b1c6e2c1ed0c7febe60990bd
+[20:01:14.361] 🔓 AE02 dec: 058dbcc8b21d11109f2cd06333d81a26 | .........,.c3..&
+[20:01:14.361] 🧩 Token AE02: bea95371b1c6e2c1ed0c7febe60990bd
+[20:01:14.419] 📤 RAW->34fb bea95371b1c6e2c1ed0c7febe60990bd
+[20:01:15.021] 📤 RAW->34fb bea95371b1c6e2c1ed0c7febe60990bd
+[20:01:15.770] 📤 RAW->34fb 02bea95371b1c6e2c1ed0c7febe60990
+[20:01:16.821] 📤 RAW->34fb 5b9a769dd8d620492525a81d2e248f80
+[20:01:17.622] 🧪 Groupe 2d: patterns triviaux sur FD02 (write+notify)
+[20:01:17.810] 📤 RAW->34fb 00
+[20:01:18.530] 📤 RAW->34fb 01
+[20:01:19.221] 📤 RAW->34fb 55
+[20:01:19.910] 📤 RAW->34fb aa
+[20:01:20.601] 📤 RAW->34fb 0100
+[20:01:21.351] 📤 RAW->34fb 0001
+[20:01:21.952] 🧪 Groupe 2e: motifs ASCII courts sur FD02/AE01
+[20:01:22.040] 📤 RAW->34fb 444655
+[20:01:22.542] 📤 RAW->34fb 444655
+[20:01:23.091] 📤 RAW->34fb 4f5441
+[20:01:23.593] 📤 RAW->34fb 4f5441
+[20:01:24.140] 📤 RAW->34fb 424f4f54
+[20:01:24.642] 📤 RAW->34fb 424f4f54
+[20:01:25.251] 📤 RAW->34fb 50494e47
+[20:01:25.753] 📤 RAW->34fb 50494e47
+[20:01:26.363] 📤 RAW->34fb 48454c4c4f
+[20:01:26.866] 📤 RAW->34fb 48454c4c4f
+[20:01:27.368] 🔁 Groupe 3: re-check status après sonde OTA
+[20:01:27.501] 📤 STAT (0B args)
+[20:01:28.102] 🕳️ Aucune notification nouvelle
+[20:01:28.223] 📤 INFO (0B args)
+[20:01:28.824] 🕳️ Aucune notification nouvelle
+[20:01:28.880] 📤 VER (0B args)
+[20:01:29.482] 🕳️ Aucune notification nouvelle
+[20:01:29.482] 🧭 Services apres_sonde: 3 services
+[20:01:29.482]   • Service 0000fff0-0000-1000-8000-00805f9b34fb
+[20:01:29.482]      - Char d44bc439-abfd-45a2-b575-925416129600 [write,write-without-response]
+[20:01:29.482]      - Char d44bc439-abfd-45a2-b575-92541612960a [write,write-without-response]
+[20:01:29.482]      - Char d44bc439-abfd-45a2-b575-92541612960b [write,write-without-response]
+[20:01:29.482]      - Char d44bc439-abfd-45a2-b575-925416129601 [notify]
+[20:01:29.482]   • Service 0000fd00-0000-1000-8000-00805f9b34fb
+[20:01:29.482]      - Char 0000fd01-0000-1000-8000-00805f9b34fb [write]
+[20:01:29.482]      - Char 0000fd02-0000-1000-8000-00805f9b34fb [write,notify]
+[20:01:29.482]   • Service 0000ae00-0000-1000-8000-00805f9b34fb
+[20:01:29.482]      - Char 0000ae01-0000-1000-8000-00805f9b34fb [write-without-response]
+[20:01:29.482]      - Char 0000ae02-0000-1000-8000-00805f9b34fb [notify]
+[20:01:29.482] 🔎 Scan périphériques post-OTA (3s)…
+[20:01:32.592] 🧩 Aucun périphérique DFU/OTA détecté
+[20:01:32.593] 🧪 Sweep sûr 0x00..0x0F sur AE01 et FD02
+[20:01:32.593] 📤 RAW->34fb 00
+[20:01:32.661] 📡 AE02 notif: 01bf239722261d35ef7121c9814dac8650
+[20:01:32.661] 🔓 AE02 dec: 7c3e1b749575678fe5aa156bfe6e93b0 | |>.t.ug....k.n..
+[20:01:32.841] 📤 RAW->34fb 00
+[20:01:33.343] 📤 RAW->34fb 01
+[20:01:33.651] 📤 RAW->34fb 01
+[20:01:34.153] 📤 RAW->34fb 02
+[20:01:34.400] 📤 RAW->34fb 02
+[20:01:34.902] 📤 RAW->34fb 03
+[20:01:35.180] 📤 RAW->34fb 03
+[20:01:35.682] 📤 RAW->34fb 04
+[20:01:35.960] 📤 RAW->34fb 04
+[20:01:36.462] 📤 RAW->34fb 05
+[20:01:36.711] 📤 RAW->34fb 05
+[20:01:37.213] 📤 RAW->34fb 06
+[20:01:37.460] 📤 RAW->34fb 06
+[20:01:37.961] 📤 RAW->34fb 07
+[20:01:38.210] 📤 RAW->34fb 07
+[20:01:38.712] 📤 RAW->34fb 08
+[20:01:39.021] 📤 RAW->34fb 08
+[20:01:39.523] 📤 RAW->34fb 09
+[20:01:39.801] 📤 RAW->34fb 09
+[20:01:40.303] 📤 RAW->34fb 0a
+[20:01:40.610] 📤 RAW->34fb 0a
+[20:01:41.112] 📤 RAW->34fb 0b
+[20:01:41.391] 📤 RAW->34fb 0b
+[20:01:41.893] 📤 RAW->34fb 0c
+[20:01:42.170] 📤 RAW->34fb 0c
+[20:01:42.671] 📤 RAW->34fb 0d
+[20:01:43.010] 📤 RAW->34fb 0d
+[20:01:43.512] 📤 RAW->34fb 0e
+[20:01:43.821] 📤 RAW->34fb 0e
+[20:01:44.323] 📤 RAW->34fb 0f
+[20:01:44.601] 📤 RAW->34fb 0f
+[20:01:45.102] 🧪 Token-hunt: AE02 + réponses candidates
+[20:01:45.102] 🔄 Demande token AE02 (try 1/4)
+[20:01:45.103] 📤 RAW->34fb 00
+[20:01:45.230] 📡 AE02 notif: 01d0f5092448b41a1a3c06a550686a400f
+[20:01:45.231] 🔓 AE02 dec: 0779df2a9b6c9162ade9fed7ee49ece2 | .y.*.l.b.....I..
+[20:01:45.231] 🧩 Token AE02: d0f5092448b41a1a3c06a550686a400f
+[20:01:45.250] 📦 Réponse id -> FD02
+[20:01:45.290] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a400f
+[20:01:45.441] 📦 Echo id -> AE01
+[20:01:45.442] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a400f
+[20:01:45.593] 📦 Réplique id -> FD01
+[20:01:45.681] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a400f
+[20:01:46.133] 📦 Réponse rev -> FD02
+[20:01:46.220] 📤 RAW->34fb 0f406a6850a5063c1a1ab4482409f5d0
+[20:01:47.021] 📦 Echo rev -> AE01
+[20:01:47.022] 📤 RAW->34fb 0f406a6850a5063c1a1ab4482409f5d0
+[20:01:47.623] 📦 Réplique rev -> FD01
+[20:01:47.691] 📤 RAW->34fb 0f406a6850a5063c1a1ab4482409f5d0
+[20:01:48.492] 📦 Réponse xAA -> FD02
+[20:01:48.560] 📤 RAW->34fb 7a5fa38ee21eb0b096ac0ffac2c0eaa5
+[20:01:49.361] 📦 Echo xAA -> AE01
+[20:01:49.362] 📤 RAW->34fb 7a5fa38ee21eb0b096ac0ffac2c0eaa5
+[20:01:49.963] 📦 Réplique xAA -> FD01
+[20:01:50.060] 📤 RAW->34fb 7a5fa38ee21eb0b096ac0ffac2c0eaa5
+[20:01:50.861] 📦 Réponse aesK -> FD02
+[20:01:50.990] 📤 RAW->34fb 8ce96e3b1a210630232de4932371e6eb
+[20:01:51.791] 📦 Echo aesK -> AE01
+[20:01:51.792] 📤 RAW->34fb 8ce96e3b1a210630232de4932371e6eb
+[20:01:52.393] 📦 Réplique aesK -> FD01
+[20:01:52.581] 📤 RAW->34fb 8ce96e3b1a210630232de4932371e6eb
+[20:01:53.382] 📦 Réponse aesKr -> FD02
+[20:01:53.480] 📤 RAW->34fb 2ed26e576a6bf40cd1fae1d672aaed9e
+[20:01:54.281] 📦 Echo aesKr -> AE01
+[20:01:54.282] 📤 RAW->34fb 2ed26e576a6bf40cd1fae1d672aaed9e
+[20:01:54.883] 📦 Réplique aesKr -> FD01
+[20:01:54.980] 📤 RAW->34fb 2ed26e576a6bf40cd1fae1d672aaed9e
+[20:01:55.782] 📦 Réponse aes(trev) -> FD02
+[20:01:55.910] 📤 RAW->34fb bf26d58686272a49756277a8e153b84e
+[20:01:56.711] 📦 Echo aes(trev) -> AE01
+[20:01:56.711] 📤 RAW->34fb bf26d58686272a49756277a8e153b84e
+[20:01:57.312] 📦 Réplique aes(trev) -> FD01
+[20:01:57.440] 📤 RAW->34fb bf26d58686272a49756277a8e153b84e
+[20:01:58.242] 📦 Réponse aes(xAA) -> FD02
+[20:01:58.340] 📤 RAW->34fb e80daaa2cc8e0e0a8baa3d626ff36d8a
+[20:01:59.141] 📦 Echo aes(xAA) -> AE01
+[20:01:59.142] 📤 RAW->34fb e80daaa2cc8e0e0a8baa3d626ff36d8a
+[20:01:59.743] 📦 Réplique aes(xAA) -> FD01
+[20:01:59.871] 📤 RAW->34fb e80daaa2cc8e0e0a8baa3d626ff36d8a
+[20:02:00.672] 📦 Réponse decK -> FD02
+[20:02:00.800] 📤 RAW->34fb d3d8a7a44dd31f3cdfe4b4fc8b4ae729
+[20:02:01.601] 📦 Echo decK -> AE01
+[20:02:01.602] 📤 RAW->34fb d3d8a7a44dd31f3cdfe4b4fc8b4ae729
+[20:02:02.202] 📦 Réplique decK -> FD01
+[20:02:02.331] 📤 RAW->34fb d3d8a7a44dd31f3cdfe4b4fc8b4ae729
+[20:02:03.132] 📦 Réponse cmacK -> FD02
+[20:02:03.200] 📤 RAW->34fb dad0775f537a10025452dd25223e772f
+[20:02:04.001] 📦 Echo cmacK -> AE01
+[20:02:04.002] 📤 RAW->34fb dad0775f537a10025452dd25223e772f
+[20:02:04.603] 📦 Réplique cmacK -> FD01
+[20:02:04.791] 📤 RAW->34fb dad0775f537a10025452dd25223e772f
+[20:02:05.593] 📦 Réponse 02+cmac(tok|name) -> FD02
+[20:02:05.720] 📤 RAW->34fb 023e49e8e063a96036b7e8df43caaa9065
+[20:02:05.872] 📦 Echo 02+cmac(tok|name) -> AE01
+[20:02:05.873] 📤 RAW->34fb 023e49e8e063a96036b7e8df43caaa9065
+[20:02:06.024] 📦 Réplique 02+cmac(tok|name) -> FD01
+[20:02:06.141] 📤 RAW->34fb 023e49e8e063a96036b7e8df43caaa9065
+[20:02:06.593] 📦 Réponse cmac(tok|name) -> FD02
+[20:02:06.649] 📤 RAW->34fb 3e49e8e063a96036b7e8df43caaa9065
+[20:02:07.451] 📦 Echo cmac(tok|name) -> AE01
+[20:02:07.451] 📤 RAW->34fb 3e49e8e063a96036b7e8df43caaa9065
+[20:02:08.053] 📦 Réplique cmac(tok|name) -> FD01
+[20:02:08.120] 📤 RAW->34fb 3e49e8e063a96036b7e8df43caaa9065
+[20:02:08.921] 📦 Réponse aesK=tok -> FD02
+[20:02:09.020] 📤 RAW->34fb 0075eef8641667c28abcac75b0eb3908
+[20:02:09.822] 📦 Echo aesK=tok -> AE01
+[20:02:09.822] 📤 RAW->34fb 0075eef8641667c28abcac75b0eb3908
+[20:02:09.859] 📡 AE02 notif: 0192f7caa90910a49ca84eb0762e66b091
+[20:02:09.860] 🔓 AE02 dec: 438c5f9ad9fc799393892ae09018ddd1 | C._...y...*.....
+[20:02:10.424] 📦 Réplique aesK=tok -> FD01
+[20:02:10.520] 📤 RAW->34fb 0075eef8641667c28abcac75b0eb3908
+[20:02:11.321] 📦 Réponse aesK=tok^AA -> FD02
+[20:02:11.449] 📤 RAW->34fb d107216ae82bdc3a4af95a7546f90e13
+[20:02:12.250] 📦 Echo aesK=tok^AA -> AE01
+[20:02:12.251] 📤 RAW->34fb d107216ae82bdc3a4af95a7546f90e13
+[20:02:12.852] 📦 Réplique aesK=tok^AA -> FD01
+[20:02:12.981] 📤 RAW->34fb d107216ae82bdc3a4af95a7546f90e13
+[20:02:13.782] 📦 Réponse aesK=cmac(app,mac) -> FD02
+[20:02:13.850] 📤 RAW->34fb 8c75b732df54f3237585637be2e940d2
+[20:02:14.651] 📦 Echo aesK=cmac(app,mac) -> AE01
+[20:02:14.652] 📤 RAW->34fb 8c75b732df54f3237585637be2e940d2
+[20:02:15.253] 📦 Réplique aesK=cmac(app,mac) -> FD01
+[20:02:15.350] 📤 RAW->34fb 8c75b732df54f3237585637be2e940d2
+[20:02:16.151] 📦 Réponse aesK=cmac(app,name) -> FD02
+[20:02:16.281] 📤 RAW->34fb 5c976449d8e6ed35e2e9ade32abeb46c
+[20:02:17.082] 📦 Echo aesK=cmac(app,name) -> AE01
+[20:02:17.083] 📤 RAW->34fb 5c976449d8e6ed35e2e9ade32abeb46c
+[20:02:17.684] 📦 Réplique aesK=cmac(app,name) -> FD01
+[20:02:17.751] 📤 RAW->34fb 5c976449d8e6ed35e2e9ade32abeb46c
+[20:02:18.553] 📦 Réponse aesK=app^mac -> FD02
+[20:02:18.650] 📤 RAW->34fb 8ce96e3b1a210630232de4932371e6eb
+[20:02:19.451] 📦 Echo aesK=app^mac -> AE01
+[20:02:19.452] 📤 RAW->34fb 8ce96e3b1a210630232de4932371e6eb
+[20:02:20.053] 📦 Réplique aesK=app^mac -> FD01
+[20:02:20.151] 📤 RAW->34fb 8ce96e3b1a210630232de4932371e6eb
+[20:02:20.953] 📦 Réponse aesK=app^name -> FD02
+[20:02:21.019] 📤 RAW->34fb c6f930309a8252ecd9fefc3df89cdc03
+[20:02:21.821] 📦 Echo aesK=app^name -> AE01
+[20:02:21.821] 📤 RAW->34fb c6f930309a8252ecd9fefc3df89cdc03
+[20:02:22.422] 📦 Réplique aesK=app^name -> FD01
+[20:02:22.550] 📤 RAW->34fb c6f930309a8252ecd9fefc3df89cdc03
+[20:02:23.352] 📦 Réponse tok+crc -> FD02
+[20:02:23.450] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a40bc
+[20:02:23.601] 📦 Echo tok+crc -> AE01
+[20:02:23.602] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a40bc
+[20:02:23.753] 📦 Réplique tok+crc -> FD01
+[20:02:23.900] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a40bc
+[20:02:24.352] 📦 Réponse 01+tok14+crc -> FD02
+[20:02:24.410] 📤 RAW->34fb 01d0f5092448b41a1a3c06a550686a13
+[20:02:25.211] 📦 Echo 01+tok14+crc -> AE01
+[20:02:25.212] 📤 RAW->34fb 01d0f5092448b41a1a3c06a550686a13
+[20:02:25.812] 📦 Réplique 01+tok14+crc -> FD01
+[20:02:25.941] 📤 RAW->34fb 01d0f5092448b41a1a3c06a550686a13
+[20:02:26.742] 📦 Réponse 10+tok14+crc -> FD02
+[20:02:26.810] 📤 RAW->34fb 10d0f5092448b41a1a3c06a550686ac7
+[20:02:27.611] 📦 Echo 10+tok14+crc -> AE01
+[20:02:27.612] 📤 RAW->34fb 10d0f5092448b41a1a3c06a550686ac7
+[20:02:28.212] 📦 Réplique 10+tok14+crc -> FD01
+[20:02:28.280] 📤 RAW->34fb 10d0f5092448b41a1a3c06a550686ac7
+[20:02:29.081] 📦 Réponse tok+sum -> FD02
+[20:02:29.211] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a406b
+[20:02:30.011] 📦 Echo tok+sum -> AE01
+[20:02:30.012] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a406b
+[20:02:30.614] 📦 Réplique tok+sum -> FD01
+[20:02:30.710] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a406b
+[20:02:31.511] 📦 Réponse 01+tok -> FD02
+[20:02:31.610] 📤 RAW->34fb 01d0f5092448b41a1a3c06a550686a400f
+[20:02:31.761] 📦 Echo 01+tok -> AE01
+[20:02:31.762] 📤 RAW->34fb 01d0f5092448b41a1a3c06a550686a400f
+[20:02:31.913] 📦 Réplique 01+tok -> FD01
+[20:02:32.000] 📤 RAW->34fb 01d0f5092448b41a1a3c06a550686a400f
+[20:02:32.451] 📦 Réponse 02+tok -> FD02
+[20:02:32.600] 📤 RAW->34fb 02d0f5092448b41a1a3c06a550686a400f
+[20:02:33.401] 📦 Echo 02+tok -> AE01
+[20:02:33.402] 📤 RAW->34fb 02d0f5092448b41a1a3c06a550686a400f
+[20:02:34.003] 📦 Réplique 02+tok -> FD01
+[20:02:34.100] 📤 RAW->34fb 02d0f5092448b41a1a3c06a550686a400f
+[20:02:34.901] 📦 Réponse 11+tok -> FD02
+[20:02:34.969] 📤 RAW->34fb 11d0f5092448b41a1a3c06a550686a400f
+[20:02:35.771] 📦 Echo 11+tok -> AE01
+[20:02:35.771] 📤 RAW->34fb 11d0f5092448b41a1a3c06a550686a400f
+[20:02:36.373] 📦 Réplique 11+tok -> FD01
+[20:02:36.530] 📤 RAW->34fb 11d0f5092448b41a1a3c06a550686a400f
+[20:02:37.332] 📦 Réponse tok+01 -> FD02
+[20:02:37.399] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a400f01
+[20:02:38.200] 📦 Echo tok+01 -> AE01
+[20:02:38.201] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a400f01
+[20:02:38.802] 📦 Réplique tok+01 -> FD01
+[20:02:38.869] 📤 RAW->34fb d0f5092448b41a1a3c06a550686a400f01
+[20:02:39.671] 📦 Réponse 02+cmac -> FD02
+[20:02:39.710] 📤 RAW->34fb 02dad0775f537a10025452dd25223e772f
+[20:02:40.511] 📦 Echo 02+cmac -> AE01
+[20:02:40.512] 📤 RAW->34fb 02dad0775f537a10025452dd25223e772f
+[20:02:41.112] 📦 Réplique 02+cmac -> FD01
+[20:02:41.240] 📤 RAW->34fb 02dad0775f537a10025452dd25223e772f
+[20:02:42.042] 📦 Réponse OTA+tok -> FD02
+[20:02:42.140] 📤 RAW->34fb 4f5441d0f5092448b41a1a3c06a550686a400f
+[20:02:42.941] 📦 Echo OTA+tok -> AE01
+[20:02:42.942] 📤 RAW->34fb 4f5441d0f5092448b41a1a3c06a550686a400f
+[20:02:43.543] 📦 Réplique OTA+tok -> FD01
+[20:02:43.639] 📤 RAW->34fb 4f5441d0f5092448b41a1a3c06a550686a400f
+[20:02:44.441] 📦 Réponse DFU+tok -> FD02
+[20:02:44.479] 📤 RAW->34fb 444655d0f5092448b41a1a3c06a550686a400f
+[20:02:45.280] 📦 Echo DFU+tok -> AE01
+[20:02:45.281] 📤 RAW->34fb 444655d0f5092448b41a1a3c06a550686a400f
+[20:02:45.881] 📦 Réplique DFU+tok -> FD01
+[20:02:45.980] 📤 RAW->34fb 444655d0f5092448b41a1a3c06a550686a400f
+[20:02:46.782] 📦 Réponse BOOT+tok -> FD02
+[20:02:46.849] 📤 RAW->34fb 424f4f54d0f5092448b41a1a3c06a550686a400f
+[20:02:47.650] 📦 Echo BOOT+tok -> AE01
+[20:02:47.652] 📤 RAW->34fb 424f4f54d0f5092448b41a1a3c06a550686a400f
+[20:02:48.253] 📦 Réplique BOOT+tok -> FD01
+[20:02:48.442] 📤 RAW->34fb 424f4f54d0f5092448b41a1a3c06a550686a400f
+[20:02:49.243] 📦 Réponse ERASE+tok -> FD02
+[20:02:49.371] 📤 RAW->34fb 4552415345d0f5092448b41a1a3c06a550686a40
+[20:02:50.172] 📦 Echo ERASE+tok -> AE01
+[20:02:50.172] 📤 RAW->34fb 4552415345d0f5092448b41a1a3c06a550686a40
+[20:02:50.774] 📦 Réplique ERASE+tok -> FD01
+[20:02:50.959] 📤 RAW->34fb 4552415345d0f5092448b41a1a3c06a550686a40
+[20:02:51.761] 📦 Réponse START+tok -> FD02
+[20:02:51.799] 📤 RAW->34fb 5354415254d0f5092448b41a1a3c06a550686a40
+[20:02:52.601] 📦 Echo START+tok -> AE01
+[20:02:52.602] 📤 RAW->34fb 5354415254d0f5092448b41a1a3c06a550686a40
+[20:02:53.203] 📦 Réplique START+tok -> FD01
+[20:02:53.270] 📤 RAW->34fb 5354415254d0f5092448b41a1a3c06a550686a40
+[20:02:54.071] 📦 Réponse INIT+tok -> FD02
+[20:02:54.170] 📤 RAW->34fb 494e4954d0f5092448b41a1a3c06a550686a400f
+[20:02:54.971] 📦 Echo INIT+tok -> AE01
+[20:02:54.972] 📤 RAW->34fb 494e4954d0f5092448b41a1a3c06a550686a400f
+[20:02:55.573] 📦 Réplique INIT+tok -> FD01
+[20:02:55.640] 📤 RAW->34fb 494e4954d0f5092448b41a1a3c06a550686a400f
+[20:02:56.441] 📦 Réponse DATA+tok -> FD02
+[20:02:56.540] 📤 RAW->34fb 44415441d0f5092448b41a1a3c06a550686a400f
+[20:02:57.341] 📦 Echo DATA+tok -> AE01
+[20:02:57.342] 📤 RAW->34fb 44415441d0f5092448b41a1a3c06a550686a400f
+[20:02:57.943] 📦 Réplique DATA+tok -> FD01
+[20:02:58.130] 📤 RAW->34fb 44415441d0f5092448b41a1a3c06a550686a400f
+[20:02:58.931] 📦 Réponse DONE+tok -> FD02
+[20:02:59.060] 📤 RAW->34fb 444f4e45d0f5092448b41a1a3c06a550686a400f
+[20:02:59.861] 📦 Echo DONE+tok -> AE01
+[20:02:59.862] 📤 RAW->34fb 444f4e45d0f5092448b41a1a3c06a550686a400f
+[20:03:00.462] 📦 Réplique DONE+tok -> FD01
+[20:03:00.530] 📤 RAW->34fb 444f4e45d0f5092448b41a1a3c06a550686a400f
+[20:03:01.331] 📦 Réponse UPDT+tok -> FD02
+[20:03:01.429] 📤 RAW->34fb 55504454d0f5092448b41a1a3c06a550686a400f
+[20:03:02.231] 📦 Echo UPDT+tok -> AE01
+[20:03:02.231] 📤 RAW->34fb 55504454d0f5092448b41a1a3c06a550686a400f
+[20:03:02.833] 📦 Réplique UPDT+tok -> FD01
+[20:03:02.899] 📤 RAW->34fb 55504454d0f5092448b41a1a3c06a550686a400f
+[20:03:03.701] 📦 Réponse 01+OTA+tok -> FD02
+[20:03:03.861] 📤 RAW->34fb 014f5441d0f5092448b41a1a3c06a550686a400f
+[20:03:04.662] 📦 Echo 01+OTA+tok -> AE01
+[20:03:04.674] 📤 RAW->34fb 014f5441d0f5092448b41a1a3c06a550686a400f
+[20:03:05.275] 📦 Réplique 01+OTA+tok -> FD01
+[20:03:05.359] 📤 RAW->34fb 014f5441d0f5092448b41a1a3c06a550686a400f
+[20:03:06.160] 📦 Réponse 01+DFU+tok -> FD02
+[20:03:06.261] 📤 RAW->34fb 01444655d0f5092448b41a1a3c06a550686a400f
+[20:03:07.062] 📦 Echo 01+DFU+tok -> AE01
+[20:03:07.062] 📤 RAW->34fb 01444655d0f5092448b41a1a3c06a550686a400f
+[20:03:07.664] 📦 Réplique 01+DFU+tok -> FD01
+[20:03:07.760] 📤 RAW->34fb 01444655d0f5092448b41a1a3c06a550686a400f
+[20:03:08.562] 📦 Réponse 01+BOOT+tok -> FD02
+[20:03:08.599] 📤 RAW->34fb 01424f4f54d0f5092448b41a1a3c06a550686a40
+[20:03:09.400] 📦 Echo 01+BOOT+tok -> AE01
+[20:03:09.400] 📤 RAW->34fb 01424f4f54d0f5092448b41a1a3c06a550686a40
+[20:03:10.002] 📦 Réplique 01+BOOT+tok -> FD01
+[20:03:10.070] 📤 RAW->34fb 01424f4f54d0f5092448b41a1a3c06a550686a40
+[20:03:10.871] 📦 Réponse 01+ERASE+tok -> FD02
+[20:03:11.031] 📤 RAW->34fb 014552415345d0f5092448b41a1a3c06a550686a
+[20:03:11.832] 📦 Echo 01+ERASE+tok -> AE01
+[20:03:11.833] 📤 RAW->34fb 014552415345d0f5092448b41a1a3c06a550686a
+[20:03:12.434] 📦 Réplique 01+ERASE+tok -> FD01
+[20:03:12.530] 📤 RAW->34fb 014552415345d0f5092448b41a1a3c06a550686a
+[20:03:13.332] 📦 Réponse 01+START+tok -> FD02
+[20:03:13.430] 📤 RAW->34fb 015354415254d0f5092448b41a1a3c06a550686a
+[20:03:14.231] 📦 Echo 01+START+tok -> AE01
+[20:03:14.232] 📤 RAW->34fb 015354415254d0f5092448b41a1a3c06a550686a
+[20:03:14.834] 📦 Réplique 01+START+tok -> FD01
+[20:03:14.930] 📤 RAW->34fb 015354415254d0f5092448b41a1a3c06a550686a
+[20:03:15.731] 🔄 Demande token AE02 (try 2/4)
+[20:03:15.732] 📤 RAW->34fb 00
+[20:03:15.830] 📡 AE02 notif: 01a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:03:15.831] 🔓 AE02 dec: bd273e0a3c7e65da21c7db7c61d189b0 | .'>.<~e.!..|a...
+[20:03:15.831] 🧩 Token AE02: a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:03:15.833] 📦 Réponse id -> FD02
+[20:03:15.890] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:03:16.041] 📦 Echo id -> AE01
+[20:03:16.042] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:03:16.193] 📦 Réplique id -> FD01
+[20:03:16.281] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:03:16.732] 📦 Réponse rev -> FD02
+[20:03:16.820] 📤 RAW->34fb c2c00c8f9cd2dea96e3df3eccf13f5a2
+[20:03:17.621] 📦 Echo rev -> AE01
+[20:03:17.622] 📤 RAW->34fb c2c00c8f9cd2dea96e3df3eccf13f5a2
+[20:03:18.224] 📦 Réplique rev -> FD01
+[20:03:18.290] 📤 RAW->34fb c2c00c8f9cd2dea96e3df3eccf13f5a2
+[20:03:19.091] 📦 Réponse xAA -> FD02
+[20:03:19.190] 📤 RAW->34fb 085fb965465997c40374783625a66a68
+[20:03:19.991] 📦 Echo xAA -> AE01
+[20:03:19.992] 📤 RAW->34fb 085fb965465997c40374783625a66a68
+[20:03:20.593] 📦 Réplique xAA -> FD01
+[20:03:20.689] 📤 RAW->34fb 085fb965465997c40374783625a66a68
+[20:03:21.491] 📦 Réponse aesK -> FD02
+[20:03:21.589] 📤 RAW->34fb 0356c91a69249262ad7046f1a7a6f597
+[20:03:22.390] 📦 Echo aesK -> AE01
+[20:03:22.391] 📤 RAW->34fb 0356c91a69249262ad7046f1a7a6f597
+[20:03:22.992] 📦 Réplique aesK -> FD01
+[20:03:23.059] 📤 RAW->34fb 0356c91a69249262ad7046f1a7a6f597
+[20:03:23.860] 📦 Réponse aesKr -> FD02
+[20:03:23.899] 📤 RAW->34fb 99b5d8f7e4fdf2db8a8c904647b47c52
+[20:03:24.701] 📦 Echo aesKr -> AE01
+[20:03:24.701] 📤 RAW->34fb 99b5d8f7e4fdf2db8a8c904647b47c52
+[20:03:25.303] 📦 Réplique aesKr -> FD01
+[20:03:25.339] 📤 RAW->34fb 99b5d8f7e4fdf2db8a8c904647b47c52
+[20:03:26.140] 📦 Réponse aes(trev) -> FD02
+[20:03:26.240] 📤 RAW->34fb 78cc0a8674cd7ccc0faf18ee495f8061
+[20:03:27.041] 📦 Echo aes(trev) -> AE01
+[20:03:27.041] 📤 RAW->34fb 78cc0a8674cd7ccc0faf18ee495f8061
+[20:03:27.643] 📦 Réplique aes(trev) -> FD01
+[20:03:27.710] 📤 RAW->34fb 78cc0a8674cd7ccc0faf18ee495f8061
+[20:03:28.511] 📦 Réponse aes(xAA) -> FD02
+[20:03:28.580] 📤 RAW->34fb 269d621f00eb72e80cb8a39d4de72493
+[20:03:29.381] 📦 Echo aes(xAA) -> AE01
+[20:03:29.382] 📤 RAW->34fb 269d621f00eb72e80cb8a39d4de72493
+[20:03:29.983] 📦 Réplique aes(xAA) -> FD01
+[20:03:30.050] 📤 RAW->34fb 269d621f00eb72e80cb8a39d4de72493
+[20:03:30.851] 📦 Réponse decK -> FD02
+[20:03:30.919] 📤 RAW->34fb d4cdebdb034b2ae76f8d0ec8b51c5ff7
+[20:03:31.720] 📦 Echo decK -> AE01
+[20:03:31.721] 📤 RAW->34fb d4cdebdb034b2ae76f8d0ec8b51c5ff7
+[20:03:32.322] 📦 Réplique decK -> FD01
+[20:03:32.420] 📤 RAW->34fb d4cdebdb034b2ae76f8d0ec8b51c5ff7
+[20:03:33.221] 📦 Réponse cmacK -> FD02
+[20:03:33.410] 📤 RAW->34fb a804b90908a289d0965a11a6e5c76bf0
+[20:03:34.211] 📦 Echo cmacK -> AE01
+[20:03:34.212] 📤 RAW->34fb a804b90908a289d0965a11a6e5c76bf0
+[20:03:34.814] 📦 Réplique cmacK -> FD01
+[20:03:34.910] 📤 RAW->34fb a804b90908a289d0965a11a6e5c76bf0
+[20:03:35.711] 📦 Réponse 02+cmac(tok|name) -> FD02
+[20:03:35.810] 📤 RAW->34fb 0293c9595a1350faf3d6dab905817e1bdc
+[20:03:35.962] 📦 Echo 02+cmac(tok|name) -> AE01
+[20:03:35.962] 📤 RAW->34fb 0293c9595a1350faf3d6dab905817e1bdc
+[20:03:36.114] 📦 Réplique 02+cmac(tok|name) -> FD01
+[20:03:36.231] 📤 RAW->34fb 0293c9595a1350faf3d6dab905817e1bdc
+[20:03:36.682] 📦 Réponse cmac(tok|name) -> FD02
+[20:03:36.800] 📤 RAW->34fb 93c9595a1350faf3d6dab905817e1bdc
+[20:03:37.601] 📦 Echo cmac(tok|name) -> AE01
+[20:03:37.602] 📤 RAW->34fb 93c9595a1350faf3d6dab905817e1bdc
+[20:03:38.203] 📦 Réplique cmac(tok|name) -> FD01
+[20:03:38.270] 📤 RAW->34fb 93c9595a1350faf3d6dab905817e1bdc
+[20:03:39.071] 📦 Réponse aesK=tok -> FD02
+[20:03:39.200] 📤 RAW->34fb 1992437d23975535493d5520bfdf1d9e
+[20:03:40.001] 📦 Echo aesK=tok -> AE01
+[20:03:40.002] 📤 RAW->34fb 1992437d23975535493d5520bfdf1d9e
+[20:03:40.603] 📦 Réplique aesK=tok -> FD01
+[20:03:40.671] 📤 RAW->34fb 1992437d23975535493d5520bfdf1d9e
+[20:03:41.472] 📦 Réponse aesK=tok^AA -> FD02
+[20:03:41.602] 📤 RAW->34fb 716d0f82aab84aae961e8c93b1d13544
+[20:03:42.403] 📦 Echo aesK=tok^AA -> AE01
+[20:03:42.404] 📤 RAW->34fb 716d0f82aab84aae961e8c93b1d13544
+[20:03:43.005] 📦 Réplique aesK=tok^AA -> FD01
+[20:03:43.100] 📤 RAW->34fb 716d0f82aab84aae961e8c93b1d13544
+[20:03:43.902] 📦 Réponse aesK=cmac(app,mac) -> FD02
+[20:03:43.969] 📤 RAW->34fb 4a044b9e1f11f560ee78aeba54e2955c
+[20:03:44.771] 📦 Echo aesK=cmac(app,mac) -> AE01
+[20:03:44.771] 📤 RAW->34fb 4a044b9e1f11f560ee78aeba54e2955c
+[20:03:45.372] 📦 Réplique aesK=cmac(app,mac) -> FD01
+[20:03:45.469] 📤 RAW->34fb 4a044b9e1f11f560ee78aeba54e2955c
+[20:03:46.271] 📦 Réponse aesK=cmac(app,name) -> FD02
+[20:03:46.370] 📤 RAW->34fb 3cc2de2d8b6188faedd68534e4587adc
+[20:03:47.171] 📦 Echo aesK=cmac(app,name) -> AE01
+[20:03:47.171] 📤 RAW->34fb 3cc2de2d8b6188faedd68534e4587adc
+[20:03:47.773] 📦 Réplique aesK=cmac(app,name) -> FD01
+[20:03:47.809] 📤 RAW->34fb 3cc2de2d8b6188faedd68534e4587adc
+[20:03:48.611] 📦 Réponse aesK=app^mac -> FD02
+[20:03:48.680] 📤 RAW->34fb 0356c91a69249262ad7046f1a7a6f597
+[20:03:49.481] 📦 Echo aesK=app^mac -> AE01
+[20:03:49.482] 📤 RAW->34fb 0356c91a69249262ad7046f1a7a6f597
+[20:03:50.083] 📦 Réplique aesK=app^mac -> FD01
+[20:03:50.181] 📤 RAW->34fb 0356c91a69249262ad7046f1a7a6f597
+[20:03:50.982] 📦 Réponse aesK=app^name -> FD02
+[20:03:51.110] 📤 RAW->34fb 4e645ee0d4f1badf6c56be81d32957e2
+[20:03:51.911] 📦 Echo aesK=app^name -> AE01
+[20:03:51.911] 📤 RAW->34fb 4e645ee0d4f1badf6c56be81d32957e2
+[20:03:52.512] 📦 Réplique aesK=app^name -> FD01
+[20:03:52.640] 📤 RAW->34fb 4e645ee0d4f1badf6c56be81d32957e2
+[20:03:53.442] 📦 Réponse tok+crc -> FD02
+[20:03:53.570] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0b8
+[20:03:53.722] 📦 Echo tok+crc -> AE01
+[20:03:53.722] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0b8
+[20:03:53.874] 📦 Réplique tok+crc -> FD01
+[20:03:53.990] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0b8
+[20:03:54.442] 📦 Réponse 01+tok14+crc -> FD02
+[20:03:54.500] 📤 RAW->34fb 01a2f513cfecf33d6ea9ded29c8f0cfe
+[20:03:55.301] 📦 Echo 01+tok14+crc -> AE01
+[20:03:55.302] 📤 RAW->34fb 01a2f513cfecf33d6ea9ded29c8f0cfe
+[20:03:55.911] 📦 Réplique 01+tok14+crc -> FD01
+[20:03:56.000] 📤 RAW->34fb 01a2f513cfecf33d6ea9ded29c8f0cfe
+[20:03:56.802] 📦 Réponse 10+tok14+crc -> FD02
+[20:03:56.899] 📤 RAW->34fb 10a2f513cfecf33d6ea9ded29c8f0c2a
+[20:03:57.701] 📦 Echo 10+tok14+crc -> AE01
+[20:03:57.701] 📤 RAW->34fb 10a2f513cfecf33d6ea9ded29c8f0c2a
+[20:03:58.303] 📦 Réplique 10+tok14+crc -> FD01
+[20:03:58.369] 📤 RAW->34fb 10a2f513cfecf33d6ea9ded29c8f0c2a
+[20:03:59.171] 📦 Réponse tok+sum -> FD02
+[20:03:59.239] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc053
+[20:04:00.040] 📦 Echo tok+sum -> AE01
+[20:04:00.040] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc053
+[20:04:00.642] 📦 Réplique tok+sum -> FD01
+[20:04:00.709] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc053
+[20:04:01.510] 📦 Réponse 01+tok -> FD02
+[20:04:01.640] 📤 RAW->34fb 01a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:01.791] 📦 Echo 01+tok -> AE01
+[20:04:01.792] 📤 RAW->34fb 01a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:01.943] 📦 Réplique 01+tok -> FD01
+[20:04:02.031] 📤 RAW->34fb 01a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:02.482] 📦 Réponse 02+tok -> FD02
+[20:04:02.630] 📤 RAW->34fb 02a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:03.431] 📦 Echo 02+tok -> AE01
+[20:04:03.432] 📤 RAW->34fb 02a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:04.033] 📦 Réplique 02+tok -> FD01
+[20:04:04.099] 📤 RAW->34fb 02a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:04.900] 📦 Réponse 11+tok -> FD02
+[20:04:05.029] 📤 RAW->34fb 11a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:05.831] 📦 Echo 11+tok -> AE01
+[20:04:05.831] 📤 RAW->34fb 11a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:06.433] 📦 Réplique 11+tok -> FD01
+[20:04:06.530] 📤 RAW->34fb 11a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:07.331] 📦 Réponse tok+01 -> FD02
+[20:04:07.491] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0c201
+[20:04:08.292] 📦 Echo tok+01 -> AE01
+[20:04:08.293] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0c201
+[20:04:08.894] 📦 Réplique tok+01 -> FD01
+[20:04:08.960] 📤 RAW->34fb a2f513cfecf33d6ea9ded29c8f0cc0c201
+[20:04:09.762] 📦 Réponse 02+cmac -> FD02
+[20:04:09.860] 📤 RAW->34fb 02a804b90908a289d0965a11a6e5c76bf0
+[20:04:10.661] 📦 Echo 02+cmac -> AE01
+[20:04:10.662] 📤 RAW->34fb 02a804b90908a289d0965a11a6e5c76bf0
+[20:04:11.264] 📦 Réplique 02+cmac -> FD01
+[20:04:11.390] 📤 RAW->34fb 02a804b90908a289d0965a11a6e5c76bf0
+[20:04:12.192] 📦 Réponse OTA+tok -> FD02
+[20:04:12.229] 📤 RAW->34fb 4f5441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:13.031] 📦 Echo OTA+tok -> AE01
+[20:04:13.031] 📤 RAW->34fb 4f5441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:13.633] 📦 Réplique OTA+tok -> FD01
+[20:04:13.729] 📤 RAW->34fb 4f5441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:14.531] 📦 Réponse DFU+tok -> FD02
+[20:04:14.599] 📤 RAW->34fb 444655a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:15.401] 📦 Echo DFU+tok -> AE01
+[20:04:15.401] 📤 RAW->34fb 444655a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:16.002] 📦 Réplique DFU+tok -> FD01
+[20:04:16.130] 📤 RAW->34fb 444655a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:16.932] 📦 Réponse BOOT+tok -> FD02
+[20:04:17.119] 📤 RAW->34fb 424f4f54a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:17.921] 📦 Echo BOOT+tok -> AE01
+[20:04:17.921] 📤 RAW->34fb 424f4f54a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:18.522] 📦 Réplique BOOT+tok -> FD01
+[20:04:18.620] 📤 RAW->34fb 424f4f54a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:19.421] 📦 Réponse ERASE+tok -> FD02
+[20:04:19.550] 📤 RAW->34fb 4552415345a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:20.351] 📦 Echo ERASE+tok -> AE01
+[20:04:20.352] 📤 RAW->34fb 4552415345a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:20.952] 📦 Réplique ERASE+tok -> FD01
+[20:04:21.019] 📤 RAW->34fb 4552415345a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:21.821] 📦 Réponse START+tok -> FD02
+[20:04:21.919] 📤 RAW->34fb 5354415254a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:22.720] 📦 Echo START+tok -> AE01
+[20:04:22.721] 📤 RAW->34fb 5354415254a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:23.322] 📦 Réplique START+tok -> FD01
+[20:04:23.390] 📤 RAW->34fb 5354415254a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:24.192] 📦 Réponse INIT+tok -> FD02
+[20:04:24.291] 📤 RAW->34fb 494e4954a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:25.092] 📦 Echo INIT+tok -> AE01
+[20:04:25.093] 📤 RAW->34fb 494e4954a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:25.694] 📦 Réplique INIT+tok -> FD01
+[20:04:25.820] 📤 RAW->34fb 494e4954a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:26.622] 📦 Réponse DATA+tok -> FD02
+[20:04:26.720] 📤 RAW->34fb 44415441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:27.521] 📦 Echo DATA+tok -> AE01
+[20:04:27.522] 📤 RAW->34fb 44415441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:28.123] 📦 Réplique DATA+tok -> FD01
+[20:04:28.279] 📤 RAW->34fb 44415441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:29.081] 📦 Réponse DONE+tok -> FD02
+[20:04:29.120] 📤 RAW->34fb 444f4e45a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:29.921] 📦 Echo DONE+tok -> AE01
+[20:04:29.921] 📤 RAW->34fb 444f4e45a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:30.522] 📦 Réplique DONE+tok -> FD01
+[20:04:30.620] 📤 RAW->34fb 444f4e45a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:31.421] 📦 Réponse UPDT+tok -> FD02
+[20:04:31.550] 📤 RAW->34fb 55504454a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:32.351] 📦 Echo UPDT+tok -> AE01
+[20:04:32.352] 📤 RAW->34fb 55504454a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:32.953] 📦 Réplique UPDT+tok -> FD01
+[20:04:33.079] 📤 RAW->34fb 55504454a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:33.881] 📦 Réponse 01+OTA+tok -> FD02
+[20:04:33.949] 📤 RAW->34fb 014f5441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:34.751] 📦 Echo 01+OTA+tok -> AE01
+[20:04:34.751] 📤 RAW->34fb 014f5441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:35.353] 📦 Réplique 01+OTA+tok -> FD01
+[20:04:35.509] 📤 RAW->34fb 014f5441a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:36.311] 📦 Réponse 01+DFU+tok -> FD02
+[20:04:36.379] 📤 RAW->34fb 01444655a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:37.180] 📦 Echo 01+DFU+tok -> AE01
+[20:04:37.181] 📤 RAW->34fb 01444655a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:37.782] 📦 Réplique 01+DFU+tok -> FD01
+[20:04:37.850] 📤 RAW->34fb 01444655a2f513cfecf33d6ea9ded29c8f0cc0c2
+[20:04:38.651] 📦 Réponse 01+BOOT+tok -> FD02
+[20:04:38.719] 📤 RAW->34fb 01424f4f54a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:39.520] 📦 Echo 01+BOOT+tok -> AE01
+[20:04:39.521] 📤 RAW->34fb 01424f4f54a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:40.122] 📦 Réplique 01+BOOT+tok -> FD01
+[20:04:40.249] 📤 RAW->34fb 01424f4f54a2f513cfecf33d6ea9ded29c8f0cc0
+[20:04:41.051] 📦 Réponse 01+ERASE+tok -> FD02
+[20:04:41.089] 📤 RAW->34fb 014552415345a2f513cfecf33d6ea9ded29c8f0c
+[20:04:41.891] 📦 Echo 01+ERASE+tok -> AE01
+[20:04:41.891] 📤 RAW->34fb 014552415345a2f513cfecf33d6ea9ded29c8f0c
+[20:04:42.493] 📦 Réplique 01+ERASE+tok -> FD01
+[20:04:42.620] 📤 RAW->34fb 014552415345a2f513cfecf33d6ea9ded29c8f0c
+[20:04:43.421] 📦 Réponse 01+START+tok -> FD02
+[20:04:43.519] 📤 RAW->34fb 015354415254a2f513cfecf33d6ea9ded29c8f0c
+[20:04:44.321] 📦 Echo 01+START+tok -> AE01
+[20:04:44.321] 📤 RAW->34fb 015354415254a2f513cfecf33d6ea9ded29c8f0c
+[20:04:44.922] 📦 Réplique 01+START+tok -> FD01
+[20:04:45.019] 📤 RAW->34fb 015354415254a2f513cfecf33d6ea9ded29c8f0c
+[20:04:45.821] 🔄 Demande token AE02 (try 3/4)
+[20:04:45.821] 📤 RAW->34fb 00
+[20:04:45.950] 📡 AE02 notif: 018be596ce860ecad7b8d0d62438696cbd
+[20:04:45.950] 🔓 AE02 dec: b44e5c138333f8fa46c1480d06df8e91 | .N\..3..F.H.....
+[20:04:45.950] 🧩 Token AE02: 8be596ce860ecad7b8d0d62438696cbd
+[20:04:45.951] 📦 Réponse id -> FD02
+[20:04:46.100] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cbd
+[20:04:46.251] 📦 Echo id -> AE01
+[20:04:46.252] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cbd
+[20:04:46.404] 📦 Réplique id -> FD01
+[20:04:46.459] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cbd
+[20:04:46.911] 📦 Réponse rev -> FD02
+[20:04:47.029] 📤 RAW->34fb bd6c693824d6d0b8d7ca0e86ce96e58b
+[20:04:47.830] 📦 Echo rev -> AE01
+[20:04:47.830] 📤 RAW->34fb bd6c693824d6d0b8d7ca0e86ce96e58b
+[20:04:48.432] 📦 Réplique rev -> FD01
+[20:04:48.469] 📤 RAW->34fb bd6c693824d6d0b8d7ca0e86ce96e58b
+[20:04:49.271] 📦 Réponse xAA -> FD02
+[20:04:49.369] 📤 RAW->34fb 214f3c642ca4607d127a7c8e92c3c617
+[20:04:50.170] 📦 Echo xAA -> AE01
+[20:04:50.171] 📤 RAW->34fb 214f3c642ca4607d127a7c8e92c3c617
+[20:04:50.773] 📦 Réplique xAA -> FD01
+[20:04:50.869] 📤 RAW->34fb 214f3c642ca4607d127a7c8e92c3c617
+[20:04:51.671] 📦 Réponse aesK -> FD02
+[20:04:51.709] 📤 RAW->34fb e867314086a15d1cfc7039f4fab7cb8b
+[20:04:52.513] 📦 Echo aesK -> AE01
+[20:04:52.514] 📤 RAW->34fb e867314086a15d1cfc7039f4fab7cb8b
+[20:04:53.115] 📦 Réplique aesK -> FD01
+[20:04:53.179] 📤 RAW->34fb e867314086a15d1cfc7039f4fab7cb8b
+[20:04:53.981] 📦 Réponse aesKr -> FD02
+[20:04:54.110] 📤 RAW->34fb b9bfcfd52dd2d8361aaeb0bea0c7bf5f
+[20:04:54.911] 📦 Echo aesKr -> AE01
+[20:04:54.911] 📤 RAW->34fb b9bfcfd52dd2d8361aaeb0bea0c7bf5f
+[20:04:55.513] 📦 Réplique aesKr -> FD01
+[20:04:55.579] 📤 RAW->34fb b9bfcfd52dd2d8361aaeb0bea0c7bf5f
+[20:04:56.380] 📦 Réponse aes(trev) -> FD02
+[20:04:56.450] 📤 RAW->34fb 855e615bb7d6bd363ebad65de4aa5b9b
+[20:04:57.251] 📦 Echo aes(trev) -> AE01
+[20:04:57.251] 📤 RAW->34fb 855e615bb7d6bd363ebad65de4aa5b9b
+[20:04:57.854] 📦 Réplique aes(trev) -> FD01
+[20:04:57.949] 📤 RAW->34fb 855e615bb7d6bd363ebad65de4aa5b9b
+[20:04:58.751] 📦 Réponse aes(xAA) -> FD02
+[20:04:58.849] 📤 RAW->34fb bfc013c59074974388fab64bb3d35703
+[20:04:59.650] 📦 Echo aes(xAA) -> AE01
+[20:04:59.650] 📤 RAW->34fb bfc013c59074974388fab64bb3d35703
+[20:05:00.252] 📦 Réplique aes(xAA) -> FD01
+[20:05:00.380] 📤 RAW->34fb bfc013c59074974388fab64bb3d35703
+[20:05:01.182] 📦 Réponse decK -> FD02
+[20:05:01.310] 📤 RAW->34fb 2144b2811e4c7dfca35f4666584892c7
+[20:05:02.111] 📦 Echo decK -> AE01
+[20:05:02.112] 📤 RAW->34fb 2144b2811e4c7dfca35f4666584892c7
+[20:05:02.713] 📦 Réplique decK -> FD01
+[20:05:02.779] 📤 RAW->34fb 2144b2811e4c7dfca35f4666584892c7
+[20:05:03.580] 📦 Réponse cmacK -> FD02
+[20:05:03.740] 📤 RAW->34fb c892e149d0629c9a71493dfcd2235ac7
+[20:05:04.542] 📦 Echo cmacK -> AE01
+[20:05:04.542] 📤 RAW->34fb c892e149d0629c9a71493dfcd2235ac7
+[20:05:05.143] 📦 Réplique cmacK -> FD01
+[20:05:05.240] 📤 RAW->34fb c892e149d0629c9a71493dfcd2235ac7
+[20:05:06.042] 📦 Réponse 02+cmac(tok|name) -> FD02
+[20:05:06.139] 📤 RAW->34fb 027c66b45a1d79c6b497cbed2b852ea74f
+[20:05:06.290] 📦 Echo 02+cmac(tok|name) -> AE01
+[20:05:06.291] 📤 RAW->34fb 027c66b45a1d79c6b497cbed2b852ea74f
+[20:05:06.442] 📦 Réplique 02+cmac(tok|name) -> FD01
+[20:05:06.500] 📤 RAW->34fb 027c66b45a1d79c6b497cbed2b852ea74f
+[20:05:06.951] 📦 Réponse cmac(tok|name) -> FD02
+[20:05:07.039] 📤 RAW->34fb 7c66b45a1d79c6b497cbed2b852ea74f
+[20:05:07.840] 📦 Echo cmac(tok|name) -> AE01
+[20:05:07.841] 📤 RAW->34fb 7c66b45a1d79c6b497cbed2b852ea74f
+[20:05:08.442] 📦 Réplique cmac(tok|name) -> FD01
+[20:05:08.508] 📤 RAW->34fb 7c66b45a1d79c6b497cbed2b852ea74f
+[20:05:09.310] 📦 Réponse aesK=tok -> FD02
+[20:05:09.469] 📤 RAW->34fb e7842abc27d159d0baab42ec1f0cec75
+[20:05:10.271] 📦 Echo aesK=tok -> AE01
+[20:05:10.271] 📤 RAW->34fb e7842abc27d159d0baab42ec1f0cec75
+[20:05:10.873] 📦 Réplique aesK=tok -> FD01
+[20:05:10.909] 📤 RAW->34fb e7842abc27d159d0baab42ec1f0cec75
+[20:05:11.711] 📦 Réponse aesK=tok^AA -> FD02
+[20:05:11.780] 📤 RAW->34fb 847cf9242643f63fcb5b53cdde95df18
+[20:05:12.582] 📦 Echo aesK=tok^AA -> AE01
+[20:05:12.582] 📤 RAW->34fb 847cf9242643f63fcb5b53cdde95df18
+[20:05:13.184] 📦 Réplique aesK=tok^AA -> FD01
+[20:05:13.310] 📤 RAW->34fb 847cf9242643f63fcb5b53cdde95df18
+[20:05:14.112] 📦 Réponse aesK=cmac(app,mac) -> FD02
+[20:05:14.182] 📤 RAW->34fb 960d87301c2fd456134c54a216fc594d
+[20:05:14.983] 📦 Echo aesK=cmac(app,mac) -> AE01
+[20:05:14.984] 📤 RAW->34fb 960d87301c2fd456134c54a216fc594d
+[20:05:15.585] 📦 Réplique aesK=cmac(app,mac) -> FD01
+[20:05:15.710] 📤 RAW->34fb 960d87301c2fd456134c54a216fc594d
+[20:05:16.511] 📦 Réponse aesK=cmac(app,name) -> FD02
+[20:05:16.640] 📤 RAW->34fb b317b43266aeb13d9c2587c6b7267fce
+[20:05:17.442] 📦 Echo aesK=cmac(app,name) -> AE01
+[20:05:17.442] 📤 RAW->34fb b317b43266aeb13d9c2587c6b7267fce
+[20:05:18.044] 📦 Réplique aesK=cmac(app,name) -> FD01
+[20:05:18.139] 📤 RAW->34fb b317b43266aeb13d9c2587c6b7267fce
+[20:05:18.941] 📦 Réponse aesK=app^mac -> FD02
+[20:05:19.100] 📤 RAW->34fb e867314086a15d1cfc7039f4fab7cb8b
+[20:05:19.901] 📦 Echo aesK=app^mac -> AE01
+[20:05:19.901] 📤 RAW->34fb e867314086a15d1cfc7039f4fab7cb8b
+[20:05:20.503] 📦 Réplique aesK=app^mac -> FD01
+[20:05:20.571] 📤 RAW->34fb e867314086a15d1cfc7039f4fab7cb8b
+[20:05:21.372] 📦 Réponse aesK=app^name -> FD02
+[20:05:21.500] 📤 RAW->34fb 1851a77767463869347af100ba719512
+[20:05:22.301] 📦 Echo aesK=app^name -> AE01
+[20:05:22.302] 📤 RAW->34fb 1851a77767463869347af100ba719512
+[20:05:22.903] 📦 Réplique aesK=app^name -> FD01
+[20:05:23.062] 📤 RAW->34fb 1851a77767463869347af100ba719512
+[20:05:23.862] 📦 Réponse tok+crc -> FD02
+[20:05:23.960] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cd3
+[20:05:24.111] 📦 Echo tok+crc -> AE01
+[20:05:24.112] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cd3
+[20:05:24.263] 📦 Réplique tok+crc -> FD01
+[20:05:24.350] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cd3
+[20:05:24.801] 📦 Réponse 01+tok14+crc -> FD02
+[20:05:24.949] 📤 RAW->34fb 018be596ce860ecad7b8d0d624386947
+[20:05:25.750] 📦 Echo 01+tok14+crc -> AE01
+[20:05:25.751] 📤 RAW->34fb 018be596ce860ecad7b8d0d624386947
+[20:05:26.352] 📦 Réplique 01+tok14+crc -> FD01
+[20:05:26.418] 📤 RAW->34fb 018be596ce860ecad7b8d0d624386947
+[20:05:27.220] 📦 Réponse 10+tok14+crc -> FD02
+[20:05:27.261] 📤 RAW->34fb 108be596ce860ecad7b8d0d624386993
+[20:05:28.062] 📦 Echo 10+tok14+crc -> AE01
+[20:05:28.063] 📤 RAW->34fb 108be596ce860ecad7b8d0d624386993
+[20:05:28.664] 📦 Réplique 10+tok14+crc -> FD01
+[20:05:28.789] 📤 RAW->34fb 108be596ce860ecad7b8d0d624386993
+[20:05:29.591] 📦 Réponse tok+sum -> FD02
+[20:05:29.690] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696c98
+[20:05:30.492] 📦 Echo tok+sum -> AE01
+[20:05:30.492] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696c98
+[20:05:31.093] 📦 Réplique tok+sum -> FD01
+[20:05:31.189] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696c98
+[20:05:31.990] 📦 Réponse 01+tok -> FD02
+[20:05:32.149] 📤 RAW->34fb 018be596ce860ecad7b8d0d62438696cbd
+[20:05:32.300] 📦 Echo 01+tok -> AE01
+[20:05:32.301] 📤 RAW->34fb 018be596ce860ecad7b8d0d62438696cbd
+[20:05:32.452] 📦 Réplique 01+tok -> FD01
+[20:05:32.539] 📤 RAW->34fb 018be596ce860ecad7b8d0d62438696cbd
+[20:05:32.991] 📦 Réponse 02+tok -> FD02
+[20:05:33.109] 📤 RAW->34fb 028be596ce860ecad7b8d0d62438696cbd
+[20:05:33.911] 📦 Echo 02+tok -> AE01
+[20:05:33.911] 📤 RAW->34fb 028be596ce860ecad7b8d0d62438696cbd
+[20:05:34.512] 📦 Réplique 02+tok -> FD01
+[20:05:34.639] 📤 RAW->34fb 028be596ce860ecad7b8d0d62438696cbd
+[20:05:35.441] 📦 Réponse 11+tok -> FD02
+[20:05:35.510] 📤 RAW->34fb 118be596ce860ecad7b8d0d62438696cbd
+[20:05:36.312] 📦 Echo 11+tok -> AE01
+[20:05:36.312] 📤 RAW->34fb 118be596ce860ecad7b8d0d62438696cbd
+[20:05:36.913] 📦 Réplique 11+tok -> FD01
+[20:05:37.040] 📤 RAW->34fb 118be596ce860ecad7b8d0d62438696cbd
+[20:05:37.841] 📦 Réponse tok+01 -> FD02
+[20:05:37.970] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cbd01
+[20:05:38.771] 📦 Echo tok+01 -> AE01
+[20:05:38.772] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cbd01
+[20:05:39.373] 📦 Réplique tok+01 -> FD01
+[20:05:39.470] 📤 RAW->34fb 8be596ce860ecad7b8d0d62438696cbd01
+[20:05:40.272] 📦 Réponse 02+cmac -> FD02
+[20:05:40.430] 📤 RAW->34fb 02c892e149d0629c9a71493dfcd2235ac7
+[20:05:41.230] 📦 Echo 02+cmac -> AE01
+[20:05:41.230] 📤 RAW->34fb 02c892e149d0629c9a71493dfcd2235ac7
+[20:05:41.831] 📦 Réplique 02+cmac -> FD01
+[20:05:41.930] 📤 RAW->34fb 02c892e149d0629c9a71493dfcd2235ac7
+[20:05:42.732] 📦 Réponse OTA+tok -> FD02
+[20:05:42.800] 📤 RAW->34fb 4f54418be596ce860ecad7b8d0d62438696cbd
+[20:05:43.602] 📦 Echo OTA+tok -> AE01
+[20:05:43.602] 📤 RAW->34fb 4f54418be596ce860ecad7b8d0d62438696cbd
+[20:05:44.205] 📦 Réplique OTA+tok -> FD01
+[20:05:44.389] 📤 RAW->34fb 4f54418be596ce860ecad7b8d0d62438696cbd
+[20:05:45.192] 📦 Réponse DFU+tok -> FD02
+[20:05:45.290] 📤 RAW->34fb 4446558be596ce860ecad7b8d0d62438696cbd
+[20:05:46.092] 📦 Echo DFU+tok -> AE01
+[20:05:46.093] 📤 RAW->34fb 4446558be596ce860ecad7b8d0d62438696cbd
+[20:05:46.695] 📦 Réplique DFU+tok -> FD01
+[20:05:46.789] 📤 RAW->34fb 4446558be596ce860ecad7b8d0d62438696cbd
+[20:05:47.591] 📦 Réponse BOOT+tok -> FD02
+[20:05:47.658] 📤 RAW->34fb 424f4f548be596ce860ecad7b8d0d62438696cbd
+[20:05:48.461] 📦 Echo BOOT+tok -> AE01
+[20:05:48.461] 📤 RAW->34fb 424f4f548be596ce860ecad7b8d0d62438696cbd
+[20:05:49.064] 📦 Réplique BOOT+tok -> FD01
+[20:05:49.190] 📤 RAW->34fb 424f4f548be596ce860ecad7b8d0d62438696cbd
+[20:05:49.993] 📦 Réponse ERASE+tok -> FD02
+[20:05:50.120] 📤 RAW->34fb 45524153458be596ce860ecad7b8d0d62438696c
+[20:05:50.922] 📦 Echo ERASE+tok -> AE01
+[20:05:50.923] 📤 RAW->34fb 45524153458be596ce860ecad7b8d0d62438696c
+[20:05:51.525] 📦 Réplique ERASE+tok -> FD01
+[20:05:51.649] 📤 RAW->34fb 45524153458be596ce860ecad7b8d0d62438696c
+[20:05:52.457] 📦 Réponse START+tok -> FD02
+[20:05:52.549] 📤 RAW->34fb 53544152548be596ce860ecad7b8d0d62438696c
+[20:05:53.352] 📦 Echo START+tok -> AE01
+[20:05:53.356] 📤 RAW->34fb 53544152548be596ce860ecad7b8d0d62438696c
+[20:05:53.958] 📦 Réplique START+tok -> FD01
+[20:05:54.049] 📤 RAW->34fb 53544152548be596ce860ecad7b8d0d62438696c
+[20:05:54.852] 📦 Réponse INIT+tok -> FD02
+[20:05:55.010] 📤 RAW->34fb 494e49548be596ce860ecad7b8d0d62438696cbd
+[20:05:55.811] 📦 Echo INIT+tok -> AE01
+[20:05:55.813] 📤 RAW->34fb 494e49548be596ce860ecad7b8d0d62438696cbd
+[20:05:56.415] 📦 Réplique INIT+tok -> FD01
+[20:05:56.479] 📤 RAW->34fb 494e49548be596ce860ecad7b8d0d62438696cbd
+[20:05:57.282] 📦 Réponse DATA+tok -> FD02
+[20:05:57.350] 📤 RAW->34fb 444154418be596ce860ecad7b8d0d62438696cbd
+[20:05:58.152] 📦 Echo DATA+tok -> AE01
+[20:05:58.153] 📤 RAW->34fb 444154418be596ce860ecad7b8d0d62438696cbd
+[20:05:58.755] 📦 Réplique DATA+tok -> FD01
+[20:05:58.880] 📤 RAW->34fb 444154418be596ce860ecad7b8d0d62438696cbd
+[20:05:59.683] 📦 Réponse DONE+tok -> FD02
+[20:05:59.750] 📤 RAW->34fb 444f4e458be596ce860ecad7b8d0d62438696cbd
+[20:06:00.552] 📦 Echo DONE+tok -> AE01
+[20:06:00.553] 📤 RAW->34fb 444f4e458be596ce860ecad7b8d0d62438696cbd
+[20:06:01.155] 📦 Réplique DONE+tok -> FD01
+[20:06:01.249] 📤 RAW->34fb 444f4e458be596ce860ecad7b8d0d62438696cbd
+[20:06:02.051] 📦 Réponse UPDT+tok -> FD02
+[20:06:02.149] 📤 RAW->34fb 555044548be596ce860ecad7b8d0d62438696cbd
+[20:06:02.952] 📦 Echo UPDT+tok -> AE01
+[20:06:02.953] 📤 RAW->34fb 555044548be596ce860ecad7b8d0d62438696cbd
+[20:06:03.555] 📦 Réplique UPDT+tok -> FD01
+[20:06:03.650] 📤 RAW->34fb 555044548be596ce860ecad7b8d0d62438696cbd
+[20:06:04.452] 📦 Réponse 01+OTA+tok -> FD02
+[20:06:04.550] 📤 RAW->34fb 014f54418be596ce860ecad7b8d0d62438696cbd
+[20:06:05.352] 📦 Echo 01+OTA+tok -> AE01
+[20:06:05.353] 📤 RAW->34fb 014f54418be596ce860ecad7b8d0d62438696cbd
+[20:06:05.955] 📦 Réplique 01+OTA+tok -> FD01
+[20:06:06.049] 📤 RAW->34fb 014f54418be596ce860ecad7b8d0d62438696cbd
+[20:06:06.852] 📦 Réponse 01+DFU+tok -> FD02
+[20:06:06.950] 📤 RAW->34fb 014446558be596ce860ecad7b8d0d62438696cbd
+[20:06:07.752] 📦 Echo 01+DFU+tok -> AE01
+[20:06:07.753] 📤 RAW->34fb 014446558be596ce860ecad7b8d0d62438696cbd
+[20:06:08.355] 📦 Réplique 01+DFU+tok -> FD01
+[20:06:08.450] 📤 RAW->34fb 014446558be596ce860ecad7b8d0d62438696cbd
+[20:06:09.252] 📦 Réponse 01+BOOT+tok -> FD02
+[20:06:09.349] 📤 RAW->34fb 01424f4f548be596ce860ecad7b8d0d62438696c
+[20:06:10.152] 📦 Echo 01+BOOT+tok -> AE01
+[20:06:10.152] 📤 RAW->34fb 01424f4f548be596ce860ecad7b8d0d62438696c
+[20:06:10.755] 📦 Réplique 01+BOOT+tok -> FD01
+[20:06:10.819] 📤 RAW->34fb 01424f4f548be596ce860ecad7b8d0d62438696c
+[20:06:11.622] 📦 Réponse 01+ERASE+tok -> FD02
+[20:06:11.690] 📤 RAW->34fb 0145524153458be596ce860ecad7b8d0d6243869
+[20:06:12.492] 📦 Echo 01+ERASE+tok -> AE01
+[20:06:12.493] 📤 RAW->34fb 0145524153458be596ce860ecad7b8d0d6243869
+[20:06:13.095] 📦 Réplique 01+ERASE+tok -> FD01
+[20:06:13.190] 📤 RAW->34fb 0145524153458be596ce860ecad7b8d0d6243869
+[20:06:13.993] 📦 Réponse 01+START+tok -> FD02
+[20:06:14.060] 📤 RAW->34fb 0153544152548be596ce860ecad7b8d0d6243869
+[20:06:14.862] 📦 Echo 01+START+tok -> AE01
+[20:06:14.863] 📤 RAW->34fb 0153544152548be596ce860ecad7b8d0d6243869
+[20:06:15.465] 📦 Réplique 01+START+tok -> FD01
+[20:06:15.590] 📤 RAW->34fb 0153544152548be596ce860ecad7b8d0d6243869
+[20:06:16.392] 🔄 Demande token AE02 (try 4/4)
+[20:06:16.393] 📤 RAW->34fb 00
+[20:06:16.519] 📡 AE02 notif: 01f9724585ab9136ad01021aab851cec47
+[20:06:16.520] 🔓 AE02 dec: 0ac8ea4f2a1503f1c7d80d423bcf01a2 | ...O*......B;...
+[20:06:16.520] 🧩 Token AE02: f9724585ab9136ad01021aab851cec47
+[20:06:16.523] 📦 Réponse id -> FD02
+[20:06:16.580] 📤 RAW->34fb f9724585ab9136ad01021aab851cec47
+[20:06:16.732] 📦 Echo id -> AE01
+[20:06:16.733] 📤 RAW->34fb f9724585ab9136ad01021aab851cec47
+[20:06:16.884] 📦 Réplique id -> FD01
+[20:06:17.000] 📤 RAW->34fb f9724585ab9136ad01021aab851cec47
+[20:06:17.453] 📦 Réponse rev -> FD02
+[20:06:17.509] 📤 RAW->34fb 47ec1c85ab1a0201ad3691ab854572f9
+[20:06:18.312] 📦 Echo rev -> AE01
+[20:06:18.313] 📤 RAW->34fb 47ec1c85ab1a0201ad3691ab854572f9
+[20:06:18.915] 📦 Réplique rev -> FD01
+[20:06:19.010] 📤 RAW->34fb 47ec1c85ab1a0201ad3691ab854572f9
+[20:06:19.812] 📦 Réponse xAA -> FD02
+[20:06:19.879] 📤 RAW->34fb 53d8ef2f013b9c07aba8b0012fb646ed
+[20:06:20.682] 📦 Echo xAA -> AE01
+[20:06:20.683] 📤 RAW->34fb 53d8ef2f013b9c07aba8b0012fb646ed
+[20:06:21.285] 📦 Réplique xAA -> FD01
+[20:06:21.380] 📤 RAW->34fb 53d8ef2f013b9c07aba8b0012fb646ed
+[20:06:22.182] 📦 Réponse aesK -> FD02
+[20:06:22.309] 📤 RAW->34fb eca4740d0885a63bb02f360c4b5f552b
+[20:06:23.111] 📦 Echo aesK -> AE01
+[20:06:23.112] 📤 RAW->34fb eca4740d0885a63bb02f360c4b5f552b
+[20:06:23.714] 📦 Réplique aesK -> FD01
+[20:06:23.840] 📤 RAW->34fb eca4740d0885a63bb02f360c4b5f552b
+[20:06:24.643] 📦 Réponse aesKr -> FD02
+[20:06:24.739] 📤 RAW->34fb 24d474312cabba31006bfbd5f8c2867f
+[20:06:25.542] 📦 Echo aesKr -> AE01
+[20:06:25.542] 📤 RAW->34fb 24d474312cabba31006bfbd5f8c2867f
+[20:06:26.144] 📦 Réplique aesKr -> FD01
+[20:06:26.212] 📤 RAW->34fb 24d474312cabba31006bfbd5f8c2867f
+[20:06:27.014] 📦 Réponse aes(trev) -> FD02
+[20:06:27.172] 📤 RAW->34fb 9854cb74168c9b927141357baf847d8c
+[20:06:27.974] 📦 Echo aes(trev) -> AE01
+[20:06:27.975] 📤 RAW->34fb 9854cb74168c9b927141357baf847d8c
+[20:06:28.578] 📦 Réplique aes(trev) -> FD01
+[20:06:28.669] 📤 RAW->34fb 9854cb74168c9b927141357baf847d8c
+[20:06:29.472] 📦 Réponse aes(xAA) -> FD02
+[20:06:29.600] 📤 RAW->34fb abad8b8cddae3a159a534d916400b612
+[20:06:30.402] 📦 Echo aes(xAA) -> AE01
+[20:06:30.403] 📤 RAW->34fb abad8b8cddae3a159a534d916400b612
+[20:06:31.005] 📦 Réplique aes(xAA) -> FD01
+[20:06:31.129] 📤 RAW->34fb abad8b8cddae3a159a534d916400b612
+[20:06:31.932] 📦 Réponse decK -> FD02
+[20:06:32.000] 📤 RAW->34fb 9128e184122b366f20440e4312be9317
+[20:06:32.802] 📦 Echo decK -> AE01
+[20:06:32.803] 📤 RAW->34fb 9128e184122b366f20440e4312be9317
+[20:06:33.405] 📦 Réplique decK -> FD01
+[20:06:33.469] 📤 RAW->34fb 9128e184122b366f20440e4312be9317
+[20:06:34.272] 📦 Réponse cmacK -> FD02
+[20:06:34.340] 📤 RAW->34fb 74c738bfb0a2f50f5c29dbbb7b18f5dc
+[20:06:35.142] 📦 Echo cmacK -> AE01
+[20:06:35.143] 📤 RAW->34fb 74c738bfb0a2f50f5c29dbbb7b18f5dc
+[20:06:35.744] 📦 Réplique cmacK -> FD01
+[20:06:35.839] 📤 RAW->34fb 74c738bfb0a2f50f5c29dbbb7b18f5dc
+[20:06:36.642] 📦 Réponse 02+cmac(tok|name) -> FD02
+[20:06:36.709] 📤 RAW->34fb 02e1c8942c9afa0aa3be22a9bc35eb67e2
+[20:06:36.861] 📦 Echo 02+cmac(tok|name) -> AE01
+[20:06:36.862] 📤 RAW->34fb 02e1c8942c9afa0aa3be22a9bc35eb67e2
+[20:06:37.014] 📦 Réplique 02+cmac(tok|name) -> FD01
+[20:06:37.100] 📤 RAW->34fb 02e1c8942c9afa0aa3be22a9bc35eb67e2
+[20:06:37.553] 📦 Réponse cmac(tok|name) -> FD02
+[20:06:37.670] 📤 RAW->34fb e1c8942c9afa0aa3be22a9bc35eb67e2
+[20:06:38.472] 📦 Echo cmac(tok|name) -> AE01
+[20:06:38.473] 📤 RAW->34fb e1c8942c9afa0aa3be22a9bc35eb67e2
+[20:06:39.075] 📦 Réplique cmac(tok|name) -> FD01
+[20:06:39.170] 📤 RAW->34fb e1c8942c9afa0aa3be22a9bc35eb67e2
+[20:06:39.972] 📦 Réponse aesK=tok -> FD02
+[20:06:40.070] 📤 RAW->34fb c546fca35f44214ecd3a3edca6a8cf90
+[20:06:40.872] 📦 Echo aesK=tok -> AE01
+[20:06:40.873] 📤 RAW->34fb c546fca35f44214ecd3a3edca6a8cf90
+[20:06:41.475] 📦 Réplique aesK=tok -> FD01
+[20:06:41.630] 📤 RAW->34fb c546fca35f44214ecd3a3edca6a8cf90
+[20:06:42.431] 📦 Réponse aesK=tok^AA -> FD02
+[20:06:42.499] 📤 RAW->34fb c4769e2a394263e3999e819206606ee0
+[20:06:43.302] 📦 Echo aesK=tok^AA -> AE01
+[20:06:43.302] 📤 RAW->34fb c4769e2a394263e3999e819206606ee0
+[20:06:43.905] 📦 Réplique aesK=tok^AA -> FD01
+[20:06:44.059] 📤 RAW->34fb c4769e2a394263e3999e819206606ee0
+[20:06:44.862] 📦 Réponse aesK=cmac(app,mac) -> FD02
+[20:06:44.960] 📤 RAW->34fb 830ca9642e78d3857dcd38384144030a
+[20:06:45.762] 📦 Echo aesK=cmac(app,mac) -> AE01
+[20:06:45.763] 📤 RAW->34fb 830ca9642e78d3857dcd38384144030a
+[20:06:46.365] 📦 Réplique aesK=cmac(app,mac) -> FD01
+[20:06:46.490] 📤 RAW->34fb 830ca9642e78d3857dcd38384144030a
+[20:06:47.291] 📦 Réponse aesK=cmac(app,name) -> FD02
+[20:06:47.359] 📤 RAW->34fb d3d634cffdace6f9f0c53e839e28c499
+[20:06:48.161] 📦 Echo aesK=cmac(app,name) -> AE01
+[20:06:48.163] 📤 RAW->34fb d3d634cffdace6f9f0c53e839e28c499
+[20:06:48.765] 📦 Réplique aesK=cmac(app,name) -> FD01
+[20:06:48.829] 📤 RAW->34fb d3d634cffdace6f9f0c53e839e28c499
+[20:06:49.632] 📦 Réponse aesK=app^mac -> FD02
+[20:06:49.698] 📤 RAW->34fb eca4740d0885a63bb02f360c4b5f552b
+[20:06:50.501] 📦 Echo aesK=app^mac -> AE01
+[20:06:50.502] 📤 RAW->34fb eca4740d0885a63bb02f360c4b5f552b
+[20:06:51.104] 📦 Réplique aesK=app^mac -> FD01
+[20:06:51.230] 📤 RAW->34fb eca4740d0885a63bb02f360c4b5f552b
+[20:06:52.033] 📦 Réponse aesK=app^name -> FD02
+[20:06:52.160] 📤 RAW->34fb cbef1cc49969030d726cf2a4c31d9384
+[20:06:52.962] 📦 Echo aesK=app^name -> AE01
+[20:06:52.963] 📤 RAW->34fb cbef1cc49969030d726cf2a4c31d9384
+[20:06:53.565] 📦 Réplique aesK=app^name -> FD01
+[20:06:53.750] 📤 RAW->34fb cbef1cc49969030d726cf2a4c31d9384
+[20:06:54.552] 📦 Réponse tok+crc -> FD02
+[20:06:54.680] 📤 RAW->34fb f9724585ab9136ad01021aab851cec47
+[20:06:54.830] 📦 Echo tok+crc -> AE01
+[20:06:54.831] 📤 RAW->34fb f9724585ab9136ad01021aab851cec47
+[20:06:54.983] 📦 Réplique tok+crc -> FD01
+[20:06:55.160] 📤 RAW->34fb f9724585ab9136ad01021aab851cec47
+[20:06:55.611] 📦 Réponse 01+tok14+crc -> FD02
+[20:06:55.730] 📤 RAW->34fb 01f9724585ab9136ad01021aab851c9a
+[20:06:56.532] 📦 Echo 01+tok14+crc -> AE01
+[20:06:56.533] 📤 RAW->34fb 01f9724585ab9136ad01021aab851c9a
+[20:06:57.135] 📦 Réplique 01+tok14+crc -> FD01
+[20:06:57.200] 📤 RAW->34fb 01f9724585ab9136ad01021aab851c9a
+[20:06:58.002] 📦 Réponse 10+tok14+crc -> FD02
+[20:06:58.039] 📤 RAW->34fb 10f9724585ab9136ad01021aab851c4e
+[20:06:58.842] 📦 Echo 10+tok14+crc -> AE01
+[20:06:58.842] 📤 RAW->34fb 10f9724585ab9136ad01021aab851c4e
+[20:06:59.444] 📦 Réplique 10+tok14+crc -> FD01
+[20:06:59.509] 📤 RAW->34fb 10f9724585ab9136ad01021aab851c4e
+[20:07:00.312] 📦 Réponse tok+sum -> FD02
+[20:07:00.470] 📤 RAW->34fb f9724585ab9136ad01021aab851ceca9
+[20:07:01.272] 📦 Echo tok+sum -> AE01
+[20:07:01.273] 📤 RAW->34fb f9724585ab9136ad01021aab851ceca9
+[20:07:01.874] 📦 Réplique tok+sum -> FD01
+[20:07:01.941] 📤 RAW->34fb f9724585ab9136ad01021aab851ceca9
+[20:07:02.743] 📦 Réponse 01+tok -> FD02
+[20:07:02.809] 📤 RAW->34fb 01f9724585ab9136ad01021aab851cec47
+[20:07:02.961] 📦 Echo 01+tok -> AE01
+[20:07:02.962] 📤 RAW->34fb 01f9724585ab9136ad01021aab851cec47
+[20:07:03.114] 📦 Réplique 01+tok -> FD01
+[20:07:03.171] 📤 RAW->34fb 01f9724585ab9136ad01021aab851cec47
+[20:07:03.623] 📦 Réponse 02+tok -> FD02
+[20:07:03.799] 📤 RAW->34fb 02f9724585ab9136ad01021aab851cec47
+[20:07:04.602] 📦 Echo 02+tok -> AE01
+[20:07:04.603] 📤 RAW->34fb 02f9724585ab9136ad01021aab851cec47
+[20:07:05.205] 📦 Réplique 02+tok -> FD01
+[20:07:05.360] 📤 RAW->34fb 02f9724585ab9136ad01021aab851cec47
+[20:07:06.161] 📦 Réponse 11+tok -> FD02
+[20:07:06.262] 📤 RAW->34fb 11f9724585ab9136ad01021aab851cec47
+[20:07:07.064] 📦 Echo 11+tok -> AE01
+[20:07:07.065] 📤 RAW->34fb 11f9724585ab9136ad01021aab851cec47
+[20:07:07.667] 📦 Réplique 11+tok -> FD01
+[20:07:07.760] 📤 RAW->34fb 11f9724585ab9136ad01021aab851cec47
+[20:07:08.561] 📦 Réponse tok+01 -> FD02
+[20:07:08.660] 📤 RAW->34fb f9724585ab9136ad01021aab851cec4701
+[20:07:09.462] 📦 Echo tok+01 -> AE01
+[20:07:09.463] 📤 RAW->34fb f9724585ab9136ad01021aab851cec4701
+[20:07:10.065] 📦 Réplique tok+01 -> FD01
+[20:07:10.160] 📤 RAW->34fb f9724585ab9136ad01021aab851cec4701
+[20:07:10.961] 📦 Réponse 02+cmac -> FD02
+[20:07:11.089] 📤 RAW->34fb 0274c738bfb0a2f50f5c29dbbb7b18f5dc
+[20:07:11.892] 📦 Echo 02+cmac -> AE01
+[20:07:11.893] 📤 RAW->34fb 0274c738bfb0a2f50f5c29dbbb7b18f5dc
+[20:07:12.495] 📦 Réplique 02+cmac -> FD01
+[20:07:12.619] 📤 RAW->34fb 0274c738bfb0a2f50f5c29dbbb7b18f5dc
+[20:07:13.422] 📦 Réponse OTA+tok -> FD02
+[20:07:13.549] 📤 RAW->34fb 4f5441f9724585ab9136ad01021aab851cec47
+[20:07:14.352] 📦 Echo OTA+tok -> AE01
+[20:07:14.353] 📤 RAW->34fb 4f5441f9724585ab9136ad01021aab851cec47
+[20:07:14.955] 📦 Réplique OTA+tok -> FD01
+[20:07:15.079] 📤 RAW->34fb 4f5441f9724585ab9136ad01021aab851cec47
+[20:07:15.882] 📦 Réponse DFU+tok -> FD02
+[20:07:15.980] 📤 RAW->34fb 444655f9724585ab9136ad01021aab851cec47
+[20:07:16.782] 📦 Echo DFU+tok -> AE01
+[20:07:16.783] 📤 RAW->34fb 444655f9724585ab9136ad01021aab851cec47
+[20:07:17.385] 📦 Réplique DFU+tok -> FD01
+[20:07:17.450] 📤 RAW->34fb 444655f9724585ab9136ad01021aab851cec47
+[20:07:18.252] 📦 Réponse BOOT+tok -> FD02
+[20:07:18.410] 📤 RAW->34fb 424f4f54f9724585ab9136ad01021aab851cec47
+[20:07:19.210] 📦 Echo BOOT+tok -> AE01
+[20:07:19.212] 📤 RAW->34fb 424f4f54f9724585ab9136ad01021aab851cec47
+[20:07:19.814] 📦 Réplique BOOT+tok -> FD01
+[20:07:19.910] 📤 RAW->34fb 424f4f54f9724585ab9136ad01021aab851cec47
+[20:07:20.713] 📦 Réponse ERASE+tok -> FD02
+[20:07:20.810] 📤 RAW->34fb 4552415345f9724585ab9136ad01021aab851cec
+[20:07:21.612] 📦 Echo ERASE+tok -> AE01
+[20:07:21.613] 📤 RAW->34fb 4552415345f9724585ab9136ad01021aab851cec
+[20:07:22.215] 📦 Réplique ERASE+tok -> FD01
+[20:07:22.309] 📤 RAW->34fb 4552415345f9724585ab9136ad01021aab851cec
+[20:07:23.112] 📦 Réponse START+tok -> FD02
+[20:07:23.210] 📤 RAW->34fb 5354415254f9724585ab9136ad01021aab851cec
+[20:07:24.013] 📦 Echo START+tok -> AE01
+[20:07:24.014] 📤 RAW->34fb 5354415254f9724585ab9136ad01021aab851cec
+[20:07:24.616] 📦 Réplique START+tok -> FD01
+[20:07:24.709] 📤 RAW->34fb 5354415254f9724585ab9136ad01021aab851cec
+[20:07:25.511] 📦 Réponse INIT+tok -> FD02
+[20:07:25.609] 📤 RAW->34fb 494e4954f9724585ab9136ad01021aab851cec47
+[20:07:26.410] 📦 Echo INIT+tok -> AE01
+[20:07:26.411] 📤 RAW->34fb 494e4954f9724585ab9136ad01021aab851cec47
+[20:07:27.013] 📦 Réplique INIT+tok -> FD01
+[20:07:27.110] 📤 RAW->34fb 494e4954f9724585ab9136ad01021aab851cec47
+[20:07:27.912] 📦 Réponse DATA+tok -> FD02
+[20:07:27.978] 📤 RAW->34fb 44415441f9724585ab9136ad01021aab851cec47
+[20:07:28.780] 📦 Echo DATA+tok -> AE01
+[20:07:28.781] 📤 RAW->34fb 44415441f9724585ab9136ad01021aab851cec47
+[20:07:29.383] 📦 Réplique DATA+tok -> FD01
+[20:07:29.539] 📤 RAW->34fb 44415441f9724585ab9136ad01021aab851cec47
+[20:07:30.342] 📦 Réponse DONE+tok -> FD02
+[20:07:30.500] 📤 RAW->34fb 444f4e45f9724585ab9136ad01021aab851cec47
+[20:07:31.302] 📦 Echo DONE+tok -> AE01
+[20:07:31.303] 📤 RAW->34fb 444f4e45f9724585ab9136ad01021aab851cec47
+[20:07:31.906] 📦 Réplique DONE+tok -> FD01
+[20:07:32.030] 📤 RAW->34fb 444f4e45f9724585ab9136ad01021aab851cec47
+[20:07:32.833] 📦 Réponse UPDT+tok -> FD02
+[20:07:32.930] 📤 RAW->34fb 55504454f9724585ab9136ad01021aab851cec47
+[20:07:33.732] 📦 Echo UPDT+tok -> AE01
+[20:07:33.733] 📤 RAW->34fb 55504454f9724585ab9136ad01021aab851cec47
+[20:07:34.335] 📦 Réplique UPDT+tok -> FD01
+[20:07:34.519] 📤 RAW->34fb 55504454f9724585ab9136ad01021aab851cec47
+[20:07:35.322] 📦 Réponse 01+OTA+tok -> FD02
+[20:07:35.390] 📤 RAW->34fb 014f5441f9724585ab9136ad01021aab851cec47
+[20:07:36.192] 📦 Echo 01+OTA+tok -> AE01
+[20:07:36.193] 📤 RAW->34fb 014f5441f9724585ab9136ad01021aab851cec47
+[20:07:36.795] 📦 Réplique 01+OTA+tok -> FD01
+[20:07:36.889] 📤 RAW->34fb 014f5441f9724585ab9136ad01021aab851cec47
+[20:07:37.691] 📦 Réponse 01+DFU+tok -> FD02
+[20:07:37.849] 📤 RAW->34fb 01444655f9724585ab9136ad01021aab851cec47
+[20:07:38.652] 📦 Echo 01+DFU+tok -> AE01
+[20:07:38.653] 📤 RAW->34fb 01444655f9724585ab9136ad01021aab851cec47
+[20:07:39.255] 📦 Réplique 01+DFU+tok -> FD01
+[20:07:39.320] 📤 RAW->34fb 01444655f9724585ab9136ad01021aab851cec47
+[20:07:40.122] 📦 Réponse 01+BOOT+tok -> FD02
+[20:07:40.249] 📤 RAW->34fb 01424f4f54f9724585ab9136ad01021aab851cec
+[20:07:41.052] 📦 Echo 01+BOOT+tok -> AE01
+[20:07:41.053] 📤 RAW->34fb 01424f4f54f9724585ab9136ad01021aab851cec
+[20:07:41.655] 📦 Réplique 01+BOOT+tok -> FD01
+[20:07:41.810] 📤 RAW->34fb 01424f4f54f9724585ab9136ad01021aab851cec
+[20:07:42.612] 📦 Réponse 01+ERASE+tok -> FD02
+[20:07:42.679] 📤 RAW->34fb 014552415345f9724585ab9136ad01021aab851c
+[20:07:43.481] 📦 Echo 01+ERASE+tok -> AE01
+[20:07:43.482] 📤 RAW->34fb 014552415345f9724585ab9136ad01021aab851c
+[20:07:44.084] 📦 Réplique 01+ERASE+tok -> FD01
+[20:07:44.210] 📤 RAW->34fb 014552415345f9724585ab9136ad01021aab851c
+[20:07:45.013] 📦 Réponse 01+START+tok -> FD02
+[20:07:45.110] 📤 RAW->34fb 015354415254f9724585ab9136ad01021aab851c
+[20:07:45.912] 📦 Echo 01+START+tok -> AE01
+[20:07:45.913] 📤 RAW->34fb 015354415254f9724585ab9136ad01021aab851c
+[20:07:46.515] 📦 Réplique 01+START+tok -> FD01
+[20:07:46.610] 📤 RAW->34fb 015354415254f9724585ab9136ad01021aab851c
+[20:07:47.412] 🧾 Tokens vus: ['d0f5092448b41a1a3c06a550686a400f', 'a2f513cfecf33d6ea9ded29c8f0cc0c2', '8be596ce860ecad7b8d0d62438696cbd', 'f9724585ab9136ad01021aab851cec47']
+[20:07:47.412] 🚀 Mode BURST activé (expérimental)
+[20:07:47.412] 🧪 BURST: démarrage
+[20:07:47.413] 📤 RAW->34fb 00
+[20:07:47.481] 📡 AE02 notif: 016c59db775030c36d6b5c02f59dfa46bd
+[20:07:47.481] 🔓 AE02 dec: 132e67b6e7be7aefd80691891c8ed34d | ..g...z........M
+[20:07:47.482] 🧩 Token AE02: 6c59db775030c36d6b5c02f59dfa46bd
+[20:07:47.482] BURST round 1/2 token=6c59db775030c36d6b5c02f59dfa46bd
+[20:07:47.485] BURST wave frames: 140
+[20:07:47.569] 📤 RAW->34fb 6c59db775030c36d6b5c02f59dfa46bd
+[20:07:47.719] 📤 RAW->34fb 6c59db775030c36d6b5c02f59dfa4626
+[20:07:47.899] 📤 RAW->34fb 6c59db775030c36d6b5c02f59dfa4662
+[20:07:48.018] 📤 RAW->34fb bd46fa9df5025c6b6dc3305077db596c
+[20:07:48.139] 📤 RAW->34fb bd46fa9df5025c6b6dc3305077db59dc
+[20:07:48.289] 📤 RAW->34fb bd46fa9df5025c6b6dc3305077db59b3
+[20:07:48.469] 📤 RAW->34fb c6f371ddfa9a69c7c1f6a85f3750ec17
+[20:07:48.679] 📤 RAW->34fb c6f371ddfa9a69c7c1f6a85f3750ecd9
+[20:07:48.829] 📤 RAW->34fb c6f371ddfa9a69c7c1f6a85f3750ecfc
+[20:07:48.950] 📤 RAW->34fb 390c8e22056596383e0957a0c8af13e8
+[20:07:49.100] 📤 RAW->34fb 390c8e22056596383e0957a0c8af13da
+[20:07:49.278] 📤 RAW->34fb 390c8e22056596383e0957a0c8af13f5
+[20:07:49.398] 📤 RAW->34fb 93a62488afcf3c9294a3fd0a6205b942
+[20:07:49.518] 📤 RAW->34fb 93a62488afcf3c9294a3fd0a6205b925
+[20:07:49.639] 📤 RAW->34fb 93a62488afcf3c9294a3fd0a6205b98f
+[20:07:49.789] 📤 RAW->34fb 59db775030c36d6b5c02f59dfa46bd6c
+[20:07:49.940] 📤 RAW->34fb 59db775030c36d6b5c02f59dfa46bd10
+[20:07:50.119] 📤 RAW->34fb 59db775030c36d6b5c02f59dfa46bdb3
+[20:07:50.239] 📤 RAW->34fb 312625695b77df14a336e74bf994a6ee
+[20:07:50.359] 📤 RAW->34fb 312625695b77df14a336e74bf994a666
+[20:07:50.509] 📤 RAW->34fb 312625695b77df14a336e74bf994a6e8
+[20:07:50.659] 📤 RAW->34fb 23c107f47ac1165981a3baa71a7c9df3
+[20:07:50.780] 📤 RAW->34fb 23c107f47ac1165981a3baa71a7c9de8
+[20:07:50.929] 📤 RAW->34fb 23c107f47ac1165981a3baa71a7c9d41
+[20:07:51.109] 📤 RAW->34fb d190addf50f20e6ff7643774bd5a3e7a
+[20:07:51.289] 📤 RAW->34fb d190addf50f20e6ff7643774bd5a3e4d
+[20:07:51.409] 📤 RAW->34fb d190addf50f20e6ff7643774bd5a3e07
+[20:07:51.529] 📤 RAW->34fb 016c59db775030c36d6b5c02f59dfa46bd
+[20:07:51.680] 📤 RAW->34fb 016c59db775030c36d6b5c02f59dfa4626
+[20:07:51.829] 📤 RAW->34fb 016c59db775030c36d6b5c02f59dfa4662
+[20:07:51.979] 📤 RAW->34fb 01bd46fa9df5025c6b6dc3305077db596c
+[20:07:52.219] 📤 RAW->34fb 01bd46fa9df5025c6b6dc3305077db59dc
+[20:07:52.429] 📤 RAW->34fb 01bd46fa9df5025c6b6dc3305077db59b3
+[20:07:52.579] 📤 RAW->34fb 01c6f371ddfa9a69c7c1f6a85f3750ec17
+[20:07:52.729] 📤 RAW->34fb 01c6f371ddfa9a69c7c1f6a85f3750ecd9
+[20:07:52.879] 📤 RAW->34fb 01c6f371ddfa9a69c7c1f6a85f3750ecfc
+[20:07:52.969] 📤 RAW->34fb 01390c8e22056596383e0957a0c8af13e8
+[20:07:53.119] 📤 RAW->34fb 01390c8e22056596383e0957a0c8af13da
+[20:07:53.509] 📤 RAW->34fb 01390c8e22056596383e0957a0c8af13f5
+[20:07:53.689] 📤 RAW->34fb 0193a62488afcf3c9294a3fd0a6205b942
+[20:07:53.779] 📤 RAW->34fb 0193a62488afcf3c9294a3fd0a6205b925
+[20:07:53.989] 📤 RAW->34fb 0193a62488afcf3c9294a3fd0a6205b98f
+[20:07:54.139] 📤 RAW->34fb 0159db775030c36d6b5c02f59dfa46bd6c
+[20:07:54.319] 📤 RAW->34fb 0159db775030c36d6b5c02f59dfa46bd10
+[20:07:54.469] 📤 RAW->34fb 0159db775030c36d6b5c02f59dfa46bdb3
+[20:07:54.650] 📤 RAW->34fb 01312625695b77df14a336e74bf994a6ee
+[20:07:54.800] 📤 RAW->34fb 01312625695b77df14a336e74bf994a666
+[20:07:54.950] 📤 RAW->34fb 01312625695b77df14a336e74bf994a6e8
+[20:07:55.099] 📤 RAW->34fb 0123c107f47ac1165981a3baa71a7c9df3
+[20:07:55.250] 📤 RAW->34fb 0123c107f47ac1165981a3baa71a7c9de8
+[20:07:55.429] 📤 RAW->34fb 0123c107f47ac1165981a3baa71a7c9d41
+[20:07:55.608] 📤 RAW->34fb 01d190addf50f20e6ff7643774bd5a3e7a
+[20:07:55.790] 📤 RAW->34fb 01d190addf50f20e6ff7643774bd5a3e4d
+[20:07:55.909] 📤 RAW->34fb 01d190addf50f20e6ff7643774bd5a3e07
+[20:07:56.029] 📤 RAW->34fb 026c59db775030c36d6b5c02f59dfa46bd
+[20:07:56.419] 📤 RAW->34fb 026c59db775030c36d6b5c02f59dfa4626
+[20:07:56.541] 📤 RAW->34fb 026c59db775030c36d6b5c02f59dfa4662
+[20:07:56.839] 📤 RAW->34fb 02bd46fa9df5025c6b6dc3305077db596c
+[20:07:56.959] 📤 RAW->34fb 02bd46fa9df5025c6b6dc3305077db59dc
+[20:07:57.109] 📤 RAW->34fb 02bd46fa9df5025c6b6dc3305077db59b3
+[20:07:57.289] 📤 RAW->34fb 02c6f371ddfa9a69c7c1f6a85f3750ec17
+[20:07:57.379] 📤 RAW->34fb 02c6f371ddfa9a69c7c1f6a85f3750ecd9
+[20:07:57.468] 📤 RAW->34fb 02c6f371ddfa9a69c7c1f6a85f3750ecfc
+[20:07:57.649] 📤 RAW->34fb 02390c8e22056596383e0957a0c8af13e8
+[20:07:57.769] 📤 RAW->34fb 02390c8e22056596383e0957a0c8af13da
+[20:07:57.949] 📤 RAW->34fb 02390c8e22056596383e0957a0c8af13f5
+[20:07:58.069] 📤 RAW->34fb 0293a62488afcf3c9294a3fd0a6205b942
+[20:07:58.188] 📤 RAW->34fb 0293a62488afcf3c9294a3fd0a6205b925
+[20:07:58.341] 📤 RAW->34fb 0293a62488afcf3c9294a3fd0a6205b98f
+[20:07:58.459] 📤 RAW->34fb 0259db775030c36d6b5c02f59dfa46bd6c
+[20:07:58.641] 📤 RAW->34fb 0259db775030c36d6b5c02f59dfa46bd10
+[20:07:58.819] 📤 RAW->34fb 0259db775030c36d6b5c02f59dfa46bdb3
+[20:07:58.999] 📤 RAW->34fb 02312625695b77df14a336e74bf994a6ee
+[20:07:59.179] 📤 RAW->34fb 02312625695b77df14a336e74bf994a666
+[20:07:59.389] 📤 RAW->34fb 02312625695b77df14a336e74bf994a6e8
+[20:07:59.510] 📤 RAW->34fb 0223c107f47ac1165981a3baa71a7c9df3
+[20:07:59.630] 📤 RAW->34fb 0223c107f47ac1165981a3baa71a7c9de8
+[20:07:59.779] 📤 RAW->34fb 0223c107f47ac1165981a3baa71a7c9d41
+[20:08:00.050] 📤 RAW->34fb 02d190addf50f20e6ff7643774bd5a3e7a
+[20:08:00.229] 📤 RAW->34fb 02d190addf50f20e6ff7643774bd5a3e4d
+[20:08:00.378] 📤 RAW->34fb 02d190addf50f20e6ff7643774bd5a3e07
+[20:08:00.559] 📤 RAW->34fb 116c59db775030c36d6b5c02f59dfa46bd
+[20:08:00.680] 📤 RAW->34fb 116c59db775030c36d6b5c02f59dfa4626
+[20:08:00.889] 📤 RAW->34fb 116c59db775030c36d6b5c02f59dfa4662
+[20:08:01.040] 📤 RAW->34fb 11bd46fa9df5025c6b6dc3305077db596c
+[20:08:01.159] 📤 RAW->34fb 11bd46fa9df5025c6b6dc3305077db59dc
+[20:08:01.340] 📤 RAW->34fb 11bd46fa9df5025c6b6dc3305077db59b3
+[20:08:01.549] 📤 RAW->34fb 11c6f371ddfa9a69c7c1f6a85f3750ec17
+[20:08:01.790] 📤 RAW->34fb 11c6f371ddfa9a69c7c1f6a85f3750ecd9
+[20:08:01.910] 📤 RAW->34fb 11c6f371ddfa9a69c7c1f6a85f3750ecfc
+[20:08:02.029] 📤 RAW->34fb 11390c8e22056596383e0957a0c8af13e8
+[20:08:02.269] 📤 RAW->34fb 11390c8e22056596383e0957a0c8af13da
+[20:08:02.388] 📤 RAW->34fb 11390c8e22056596383e0957a0c8af13f5
+[20:08:02.599] 📤 RAW->34fb 1193a62488afcf3c9294a3fd0a6205b942
+[20:08:02.690] 📤 RAW->34fb 1193a62488afcf3c9294a3fd0a6205b925
+[20:08:02.810] 📤 RAW->34fb 1193a62488afcf3c9294a3fd0a6205b98f
+[20:08:02.959] 📤 RAW->34fb 1159db775030c36d6b5c02f59dfa46bd6c
+[20:08:03.139] 📤 RAW->34fb 1159db775030c36d6b5c02f59dfa46bd10
+[20:08:03.319] 📤 RAW->34fb 1159db775030c36d6b5c02f59dfa46bdb3
+[20:08:03.499] 📤 RAW->34fb 11312625695b77df14a336e74bf994a6ee
+[20:08:03.680] 📤 RAW->34fb 11312625695b77df14a336e74bf994a666
+[20:08:03.769] 📤 RAW->34fb 11312625695b77df14a336e74bf994a6e8
+[20:08:03.919] 📤 RAW->34fb 1123c107f47ac1165981a3baa71a7c9df3
+[20:08:04.069] 📤 RAW->34fb 1123c107f47ac1165981a3baa71a7c9de8
+[20:08:04.279] 📤 RAW->34fb 1123c107f47ac1165981a3baa71a7c9d41
+[20:08:04.459] 📤 RAW->34fb 11d190addf50f20e6ff7643774bd5a3e7a
+[20:08:04.609] 📤 RAW->34fb 11d190addf50f20e6ff7643774bd5a3e4d
+[20:08:04.729] 📤 RAW->34fb 11d190addf50f20e6ff7643774bd5a3e07
+[20:08:04.910] 📤 RAW->34fb 106c59db775030c36d6b5c02f59dfa46bd
+[20:08:05.090] 📤 RAW->34fb 106c59db775030c36d6b5c02f59dfa4626
+[20:08:05.239] 📤 RAW->34fb 106c59db775030c36d6b5c02f59dfa4662
+[20:08:05.358] 📤 RAW->34fb 10bd46fa9df5025c6b6dc3305077db596c
+[20:08:05.600] 📤 RAW->34fb 10bd46fa9df5025c6b6dc3305077db59dc
+[20:08:05.779] 📤 RAW->34fb 10bd46fa9df5025c6b6dc3305077db59b3
+[20:08:05.899] 📤 RAW->34fb 10c6f371ddfa9a69c7c1f6a85f3750ec17
+[20:08:06.019] 📤 RAW->34fb 10c6f371ddfa9a69c7c1f6a85f3750ecd9
+[20:08:06.169] 📤 RAW->34fb 10c6f371ddfa9a69c7c1f6a85f3750ecfc
+[20:08:06.291] 📤 RAW->34fb 10390c8e22056596383e0957a0c8af13e8
+[20:08:06.469] 📤 RAW->34fb 10390c8e22056596383e0957a0c8af13da
+[20:08:06.589] 📤 RAW->34fb 10390c8e22056596383e0957a0c8af13f5
+[20:08:06.709] 📤 RAW->34fb 1093a62488afcf3c9294a3fd0a6205b942
+[20:08:07.069] 📤 RAW->34fb 1093a62488afcf3c9294a3fd0a6205b925
+[20:08:07.249] 📤 RAW->34fb 1093a62488afcf3c9294a3fd0a6205b98f
+[20:08:07.339] 📤 RAW->34fb 1059db775030c36d6b5c02f59dfa46bd6c
+[20:08:07.460] 📤 RAW->34fb 1059db775030c36d6b5c02f59dfa46bd10
+[20:08:07.549] 📤 RAW->34fb 1059db775030c36d6b5c02f59dfa46bdb3
+[20:08:07.699] 📤 RAW->34fb 10312625695b77df14a336e74bf994a6ee
+[20:08:07.880] 📤 RAW->34fb 10312625695b77df14a336e74bf994a666
+[20:08:08.119] 📤 RAW->34fb 10312625695b77df14a336e74bf994a6e8
+[20:08:08.298] 📤 RAW->34fb 1023c107f47ac1165981a3baa71a7c9df3
+[20:08:08.391] 📤 RAW->34fb 1023c107f47ac1165981a3baa71a7c9de8
+[20:08:08.570] 📤 RAW->34fb 1023c107f47ac1165981a3baa71a7c9d41
+[20:08:08.749] 📤 RAW->34fb 10d190addf50f20e6ff7643774bd5a3e7a
+[20:08:08.869] 📤 RAW->34fb 10d190addf50f20e6ff7643774bd5a3e4d
+[20:08:09.049] 📤 RAW->34fb 10d190addf50f20e6ff7643774bd5a3e07
+[20:08:09.229] 📤 RAW->34fb 556c59db775030c36d6b5c02f59dfa46bd
+[20:08:09.320] 📤 RAW->34fb 556c59db775030c36d6b5c02f59dfa4626
+[20:08:09.439] 📤 RAW->34fb 556c59db775030c36d6b5c02f59dfa4662
+[20:08:09.589] 📤 RAW->34fb 55bd46fa9df5025c6b6dc3305077db596c
+[20:08:09.739] 📤 RAW->34fb 55bd46fa9df5025c6b6dc3305077db59dc
+[20:08:09.859] 📤 RAW->34fb 01
+[20:08:09.982] 📤 RAW->34fb 01312625695b77df14a336e74bf994a6ee
+[20:08:10.162] 📤 RAW->34fb 02
+[20:08:10.279] 📤 RAW->34fb 02312625695b77df14a336e74bf994a6ee
+[20:08:10.363] 📤 RAW->34fb 00
+[20:08:10.429] 📡 AE02 notif: 013fa261d12fc125ca1ef238525f78bd0a
+[20:08:10.429] 🔓 AE02 dec: 453e86f737eb30f1a9978bdc4d59d87d | E>..7.0.....MY.}
+[20:08:10.429] 🧩 Token AE02: 3fa261d12fc125ca1ef238525f78bd0a
+[20:08:10.429] BURST round 2/2 token=3fa261d12fc125ca1ef238525f78bd0a
+[20:08:10.434] BURST wave frames: 140
+[20:08:10.522] 📤 RAW->34fb 3fa261d12fc125ca1ef238525f78bd0a
+[20:08:10.729] 📤 RAW->34fb 3fa261d12fc125ca1ef238525f78bd6a
+[20:08:10.849] 📤 RAW->34fb 3fa261d12fc125ca1ef238525f78bd20
+[20:08:11.029] 📤 RAW->34fb 0abd785f5238f21eca25c12fd161a23f
+[20:08:11.269] 📤 RAW->34fb 0abd785f5238f21eca25c12fd161a22b
+[20:08:11.450] 📤 RAW->34fb 0abd785f5238f21eca25c12fd161a2eb
+[20:08:11.569] 📤 RAW->34fb 9508cb7b856b8f60b45892f8f5d217a0
+[20:08:11.749] 📤 RAW->34fb 9508cb7b856b8f60b45892f8f5d21795
+[20:08:11.960] 📤 RAW->34fb 9508cb7b856b8f60b45892f8f5d21736
+[20:08:12.080] 📤 RAW->34fb 6af734847a94709f4ba76d070a2de85f
+[20:08:12.199] 📤 RAW->34fb 6af734847a94709f4ba76d070a2de896
+[20:08:12.378] 📤 RAW->34fb 6af734847a94709f4ba76d070a2de8bb
+[20:08:12.559] 📤 RAW->34fb c05d9e2ed03eda35e10dc7ada08742f5
+[20:08:12.679] 📤 RAW->34fb c05d9e2ed03eda35e10dc7ada0874269
+[20:08:12.828] 📤 RAW->34fb c05d9e2ed03eda35e10dc7ada08742d1
+[20:08:12.950] 📤 RAW->34fb a261d12fc125ca1ef238525f78bd0a3f
+[20:08:13.099] 📤 RAW->34fb a261d12fc125ca1ef238525f78bd0a59
+[20:08:13.249] 📤 RAW->34fb a261d12fc125ca1ef238525f78bd0aeb
+[20:08:13.429] 📤 RAW->34fb f3f011eaf000c1680d13fc001024b0a8
+[20:08:13.548] 📤 RAW->34fb f3f011eaf000c1680d13fc001024b068
+[20:08:13.760] 📤 RAW->34fb f3f011eaf000c1680d13fc001024b0f7
+[20:08:13.940] 📤 RAW->34fb dcb5ce02e33e0a23b89322335b3e9951
+[20:08:14.059] 📤 RAW->34fb dcb5ce02e33e0a23b89322335b3e9986
+[20:08:14.239] 📤 RAW->34fb dcb5ce02e33e0a23b89322335b3e9981
+[20:08:14.420] 📤 RAW->34fb d1380a78a5c6965b137f84f9da664b24
+[20:08:14.599] 📤 RAW->34fb d1380a78a5c6965b137f84f9da664b0d
+[20:08:14.719] 📤 RAW->34fb d1380a78a5c6965b137f84f9da664b81
+[20:08:14.840] 📤 RAW->34fb 013fa261d12fc125ca1ef238525f78bd0a
+[20:08:15.019] 📤 RAW->34fb 013fa261d12fc125ca1ef238525f78bd6a
+[20:08:15.169] 📤 RAW->34fb 013fa261d12fc125ca1ef238525f78bd20
+[20:08:15.349] 📤 RAW->34fb 010abd785f5238f21eca25c12fd161a23f
+[20:08:15.560] 📤 RAW->34fb 010abd785f5238f21eca25c12fd161a22b
+[20:08:15.709] 📤 RAW->34fb 010abd785f5238f21eca25c12fd161a2eb
+[20:08:15.890] 📤 RAW->34fb 019508cb7b856b8f60b45892f8f5d217a0
+[20:08:16.039] 📤 RAW->34fb 019508cb7b856b8f60b45892f8f5d21795
+[20:08:16.220] 📤 RAW->34fb 019508cb7b856b8f60b45892f8f5d21736
+[20:08:16.309] 📤 RAW->34fb 016af734847a94709f4ba76d070a2de85f
+[20:08:16.459] 📤 RAW->34fb 016af734847a94709f4ba76d070a2de896
+[20:08:16.640] 📤 RAW->34fb 016af734847a94709f4ba76d070a2de8bb
+[20:08:16.820] 📤 RAW->34fb 01c05d9e2ed03eda35e10dc7ada08742f5
+[20:08:16.939] 📤 RAW->34fb 01c05d9e2ed03eda35e10dc7ada0874269
+[20:08:17.119] 📤 RAW->34fb 01c05d9e2ed03eda35e10dc7ada08742d1
+[20:08:17.269] 📤 RAW->34fb 01a261d12fc125ca1ef238525f78bd0a3f
+[20:08:17.389] 📤 RAW->34fb 01a261d12fc125ca1ef238525f78bd0a59
+[20:08:17.539] 📤 RAW->34fb 01a261d12fc125ca1ef238525f78bd0aeb
+[20:08:17.690] 📤 RAW->34fb 01f3f011eaf000c1680d13fc001024b0a8
+[20:08:17.869] 📤 RAW->34fb 01f3f011eaf000c1680d13fc001024b068
+[20:08:18.049] 📤 RAW->34fb 01f3f011eaf000c1680d13fc001024b0f7
+[20:08:18.169] 📤 RAW->34fb 01dcb5ce02e33e0a23b89322335b3e9951
+[20:08:18.408] 📤 RAW->34fb 01dcb5ce02e33e0a23b89322335b3e9986
+[20:08:18.499] 📤 RAW->34fb 01dcb5ce02e33e0a23b89322335b3e9981
+[20:08:18.650] 📤 RAW->34fb 01d1380a78a5c6965b137f84f9da664b24
+[20:08:18.859] 📤 RAW->34fb 01d1380a78a5c6965b137f84f9da664b0d
+[20:08:19.040] 📤 RAW->34fb 01d1380a78a5c6965b137f84f9da664b81
+[20:08:19.220] 📤 RAW->34fb 023fa261d12fc125ca1ef238525f78bd0a
+[20:08:19.341] 📤 RAW->34fb 023fa261d12fc125ca1ef238525f78bd6a
+[20:08:19.488] 📤 RAW->34fb 023fa261d12fc125ca1ef238525f78bd20
+[20:08:19.610] 📤 RAW->34fb 020abd785f5238f21eca25c12fd161a23f
+[20:08:19.759] 📤 RAW->34fb 020abd785f5238f21eca25c12fd161a22b
+[20:08:19.969] 📤 RAW->34fb 020abd785f5238f21eca25c12fd161a2eb
+[20:08:20.149] 📤 RAW->34fb 029508cb7b856b8f60b45892f8f5d217a0
+[20:08:20.329] 📤 RAW->34fb 029508cb7b856b8f60b45892f8f5d21795
+[20:08:20.629] 📤 RAW->34fb 029508cb7b856b8f60b45892f8f5d21736
+[20:08:20.840] 📤 RAW->34fb 026af734847a94709f4ba76d070a2de85f
+[20:08:20.959] 📤 RAW->34fb 026af734847a94709f4ba76d070a2de896
+[20:08:21.140] 📤 RAW->34fb 026af734847a94709f4ba76d070a2de8bb
+[20:08:21.289] 📤 RAW->34fb 02c05d9e2ed03eda35e10dc7ada08742f5
+[20:08:21.439] 📤 RAW->34fb 02c05d9e2ed03eda35e10dc7ada0874269
+[20:08:21.559] 📤 RAW->34fb 02c05d9e2ed03eda35e10dc7ada08742d1
+[20:08:21.709] 📤 RAW->34fb 02a261d12fc125ca1ef238525f78bd0a3f
+[20:08:21.829] 📤 RAW->34fb 02a261d12fc125ca1ef238525f78bd0a59
+[20:08:21.979] 📤 RAW->34fb 02a261d12fc125ca1ef238525f78bd0aeb
+[20:08:22.250] 📤 RAW->34fb 02f3f011eaf000c1680d13fc001024b0a8
+[20:08:22.399] 📤 RAW->34fb 02f3f011eaf000c1680d13fc001024b068
+[20:08:22.549] 📤 RAW->34fb 02f3f011eaf000c1680d13fc001024b0f7
+[20:08:22.670] 📤 RAW->34fb 02dcb5ce02e33e0a23b89322335b3e9951
+[20:08:22.819] 📤 RAW->34fb 02dcb5ce02e33e0a23b89322335b3e9986
+[20:08:22.870] BURST limite atteinte
+[20:08:22.870] ✅ Sondes terminées

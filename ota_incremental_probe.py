@@ -18,6 +18,8 @@ from datetime import datetime
 from Crypto.Cipher import AES
 from Crypto.Hash import CMAC
 from typing import Tuple
+import itertools
+
 
 # Ajouter src/working au path
 _cur = os.path.dirname(os.path.abspath(__file__))
@@ -193,6 +195,14 @@ class OTAProbe(MaskTextDisplay):
 
             # Token-hunt + réponses candidates
             await self.token_hunt_and_responses(max_tries=4, wait_token=2.0)
+
+            # Mode burst expérimental (brute-force plus serré) si variable d'env BURST=1
+            if os.environ.get("BURST") == "1":
+                self.log("🚀 Mode BURST activé (expérimental)")
+                try:
+                    await self.burst_handshake(rounds=2)
+                except Exception as e:
+                    self.log(f"⚠️ burst_handshake: {e}")
 
             self.log("✅ Sondes terminées")
             return True
@@ -660,6 +670,102 @@ class OTAProbe(MaskTextDisplay):
                     pass
 
         self.log(f"🧾 Tokens vus: {[t.hex() for t in tokens]}")
+
+    async def burst_handshake(self, rounds: int = 2):
+        """Tentative agressive mais courte de réponses handshake en rafale.
+        Hypothèse: réponse attendue = f(token) sur FD02 en <50ms.
+        On envoie séries de frames compactes puis variants multi-étapes.
+        Sécurité: limite stricte du nombre total (< 220 frames).
+        """
+        self.log("🧪 BURST: démarrage")
+        total_sent = 0
+        for r in range(rounds):
+            tok = await self.get_ae02_token(timeout=2.0)
+            if not tok:
+                self.log("BURST: pas de token, stop")
+                break
+            self.log(f"BURST round {r+1}/{rounds} token={tok.hex()}")
+            # Transformations principales
+            def xor_const(b, c):
+                return bytes([x ^ c for x in b])
+            transforms = {
+                "id": lambda t: t,
+                "rev": lambda t: t[::-1],
+                "xaa": lambda t: xor_const(t, 0xAA),
+                "x55": lambda t: xor_const(t, 0x55),
+                "xff": lambda t: xor_const(t, 0xFF),
+                "rol1": lambda t: t[1:]+t[:1],
+            }
+            # AES / CMAC variants
+            try:
+                transforms["aes"] = lambda t: self.cipher.encrypt(t)
+            except Exception:
+                pass
+            try:
+                def _cmac(t):
+                    c = CMAC.new(_ctd.ENCRYPTION_KEY, ciphermod=AES); c.update(t); return c.digest()
+                transforms["cmac"] = _cmac
+                transforms["cmac01"] = lambda t: _cmac(b"\x01"+t)
+            except Exception:
+                pass
+            # Préfixes potentiels
+            prefixes = [b"", b"\x01", b"\x02", b"\x11", b"\x10", b"\x55", b"\xAA"]
+            # Postfix options (CRC8 / SUM)
+            def crc8(d):
+                return bytes([self._crc8(d)])
+            def ssum(d):
+                return bytes([sum(d)&0xFF])
+            postfixers = [lambda d: d, lambda d: d[:15]+crc8(d[:15]), lambda d: d[:15]+ssum(d[:15])]
+            # Build first wave single-frame
+            wave = []
+            for name,(pfx, (tname, tf), post) in enumerate(itertools.product(prefixes, transforms.items(), postfixers)):
+                base = tf(tok)
+                if not base:
+                    continue
+                frame_core = post(base)
+                frame = (pfx + frame_core)[:20]
+                wave.append((f"{tname}|{pfx.hex()}|{post.__name__ if hasattr(post,'__name__') else 'p'}", frame))
+                if len(wave) >= 140:  # cap
+                    break
+            self.log(f"BURST wave frames: {len(wave)}")
+            # Envoi rapide sur FD02 uniquement (write+notify) puis écoute d'un nouveau token
+            for label, frame in wave:
+                if total_sent > 220:
+                    self.log("BURST limite atteinte")
+                    return
+                total_sent += 1
+                await self.write_raw(self.FD_NOTIFY, frame, response=True)
+                # écoute courte
+                try:
+                    self.last_ae02 = None
+                    self.raw_event_evt.clear()
+                    await asyncio.wait_for(self.raw_event_evt.wait(), timeout=0.05)
+                    if self.last_ae02:
+                        self.log(f"BURST: nouveau AE02 après {label}: {self.last_ae02.hex()}")
+                        break  # passer round suivant
+                except asyncio.TimeoutError:
+                    pass
+            # Deuxième phase (séquences 2 frames): ACK puis frame principale
+            seq_prefixes = [b"\x01", b"\x02"]
+            for p in seq_prefixes:
+                if total_sent > 220:
+                    break
+                base = tok
+                frame2 = p + (self.cipher.encrypt(base) if hasattr(self,'cipher') else base)
+                await self.write_raw(self.FD_NOTIFY, p, response=True)
+                await asyncio.sleep(0.015)
+                await self.write_raw(self.FD_NOTIFY, frame2[:20], response=True)
+                total_sent += 2
+                try:
+                    self.last_ae02 = None
+                    self.raw_event_evt.clear()
+                    await asyncio.wait_for(self.raw_event_evt.wait(), timeout=0.08)
+                    if self.last_ae02:
+                        self.log(f"BURST: AE02 après sequence {p.hex()} -> {self.last_ae02.hex()}")
+                        break
+                except asyncio.TimeoutError:
+                    pass
+        self.log(f"BURST terminé, frames envoyées: {total_sent}")
 
 
 async def main():
