@@ -802,11 +802,120 @@ class OTAProbe(MaskTextDisplay):
                 except Exception:
                     pass
 
+    async def fast_handshake2(self, attempts: int = 3, preinit_fd01: bool = False):
+        """Mode ultra-rapide structuré (fast2).
+        Séquence stricte: (optionnel) pré-init FD01, demande token, rafale ordonnée de frames sur FD02 sans pause.
+        Chrono précis pour latences.
+        Arrêt anticipé si nouveau token apparaît avant qu'on réémette AE01=00.
+        """
+        self.log("⚡ FAST2 démarrage")
+        if not await self.connect():
+            self.log("❌ Connexion impossible")
+            return
+        try:
+            await self.enable_extra_notifications()
+            await self.dump_handle_mapping()
+            loop = asyncio.get_event_loop()
+            for r in range(attempts):
+                self.log(f"🔁 FAST2 round {r+1}/{attempts}")
+                if preinit_fd01:
+                    # pré-init simple: 00,01,02 sur FD01 rapidement
+                    for b in (b"\x00", b"\x01", b"\x02"):
+                        await self.write_raw(self.FD_WRITE, b, response=True)
+                        await asyncio.sleep(0.01)
+                # Demande token
+                start_round = loop.time()
+                tok = await self.get_ae02_token(timeout=1.2)
+                if not tok:
+                    self.log("⏳ Aucune notif token")
+                    continue
+                token_time = loop.time()
+                self.log(f"⏱️ Token obtenu en {(token_time-start_round)*1000:.1f} ms")
+                # Construire frames structurées (liste de tuples label,payload)
+                frames = []
+                def crc8(d: bytes) -> int:
+                    return self._crc8(d)
+                # 1) Echo basiques
+                frames.append(("ECHO", tok))
+                frames.append(("ECHO+01", b"\x01"+tok))
+                # 2) CMAC / AES combos
+                try:
+                    c = CMAC.new(_ctd.ENCRYPTION_KEY, ciphermod=AES); c.update(tok); cm = c.digest()
+                    frames.append(("CMAC16", cm[:16]))
+                    frames.append(("01+CMAC", b"\x01"+cm[:15]))
+                except Exception:
+                    pass
+                try:
+                    enc = self.cipher.encrypt(tok)
+                    frames.append(("AES(app)", enc))
+                    frames.append(("01+AES", b"\x01"+enc[:15]))
+                except Exception:
+                    pass
+                # 3) Framing opcode + token + checksum
+                base = tok[:14]
+                c1 = crc8(b"\x10"+base)
+                frames.append(("10+tok14+crc", b"\x10"+base+bytes([c1])))
+                c2 = crc8(b"\x11"+base)
+                frames.append(("11+tok14+crc", b"\x11"+base+bytes([c2])))
+                # 4) Splitting token (4+4+4+4) avec opcodes incrémentaux
+                t = tok
+                parts = [t[0:4], t[4:8], t[8:12], t[12:16]]
+                for idx, p in enumerate(parts):
+                    frames.append((f"SEQ{idx+1}", bytes([0x20+idx])+p))
+                frames.append(("SEQ-FINAL", b"\x2F"+tok[:15]))
+                # 5) Verb+token TLV style: 0x30 len verb token[...]
+                for verb in (b"OTA", b"DFU"):
+                    remain = 20 - (1+1+len(verb))
+                    body = verb + tok[:max(0, remain)]
+                    frames.append((f"TLV-{verb.decode()}", b"\x30"+bytes([len(body)])+body) )
+                # 6) tok15 + sum, tok15 + crc
+                p15 = tok[:15]
+                frames.append(("tok15+crc", p15+bytes([crc8(p15)])))
+                frames.append(("tok15+sum", p15+bytes([sum(p15)&0xFF])))
+                self.log(f"🚚 FAST2 frames: {len(frames)}")
+                # Rafale sur FD02 sans attendre, puis vérif après chaque mini lot
+                batch_size = 4
+                sent = 0
+                for i in range(0, len(frames), batch_size):
+                    batch = frames[i:i+batch_size]
+                    for label, payload in batch:
+                        await self.write_raw(self.FD_NOTIFY, payload, response=True)
+                        sent += 1
+                    # écoute très courte (fenêtre 25 ms)
+                    self.last_ae02 = None
+                    self.raw_event_evt.clear()
+                    try:
+                        await asyncio.wait_for(self.raw_event_evt.wait(), timeout=0.025)
+                        if self.last_ae02:
+                            new_tok = self.last_ae02.hex()
+                            self.log(f"🆕 Token intermédiaire après {sent} frames: {new_tok}")
+                            break
+                    except asyncio.TimeoutError:
+                        pass
+                # Echo global + struct finale si rien
+                if not self.last_ae02:
+                    await self.write_raw(self.AE_WRITE, tok, response=False)
+                end_round = loop.time()
+                self.log(f"⏱️ Round {r+1} terminé en {(end_round-start_round)*1000:.1f} ms")
+            self.log("✅ FAST2 terminé")
+        finally:
+            try:
+                await self.dump_handle_mapping()
+            except Exception:
+                pass
+            if self.client:
+                try:
+                    await self.client.disconnect()
+                except Exception:
+                    pass
+
 
 def _build_arg_parser():
     p = argparse.ArgumentParser(description="OTA incremental / fast handshake probe")
     p.add_argument("--fast-handshake", action="store_true", help="Activer mode handshake rapide")
+    p.add_argument("--fast2", action="store_true", help="Activer mode handshake ultra-rapide structuré")
     p.add_argument("--attempts", type=int, default=3, help="Nombre de rounds fast-handshake")
+    p.add_argument("--preinit-fd01", action="store_true", help="Dans fast2: envoie une séquence d'init sur FD01 avant chaque token")
     p.add_argument("--burst", action="store_true", help="Activer mode BURST après sonde safe")
     return p
 
@@ -815,6 +924,8 @@ async def _main_async(args):
     probe = OTAProbe()
     if args.fast_handshake:
         await probe.fast_handshake(attempts=args.attempts)
+    elif args.fast2:
+        await probe.fast_handshake2(attempts=args.attempts, preinit_fd01=args.preinit_fd01)
     else:
         if args.burst:
             os.environ["BURST"] = "1"
