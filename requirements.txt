@@ -4,3 +4,6 @@ pytest
 bleak
 pycryptodome
 Pillow
+numpy
+sounddevice
+twitchio

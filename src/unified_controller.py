@@ -433,6 +433,20 @@ class MaskInterface:
                     print("⏹️ Arrêt des animations")
                     continue
                 
+                # Décorations (ex: deco:tata_pattern)
+                elif user_input.startswith('deco:'):
+                    style = user_input.split(':', 1)[1].strip()
+                    if self.controller.set_decoration_style(style):
+                        self.display_interface(current_mode, current_speed, last_text)
+                        print(f"✅ Décorations: {style}")
+                        # Ré-appliquer sur le dernier texte si présent
+                        if last_text:
+                            self.command_queue.put(('text', (last_text, current_mode, current_speed)))
+                    else:
+                        self.display_interface(current_mode, current_speed, last_text)
+                        print("❌ Style invalide. Valeurs: lines/dots/blocks/waves/tata_pattern/none")
+                    continue
+
                 # ... Autres commandes (config, export, etc.) ...
                 
                 else:
