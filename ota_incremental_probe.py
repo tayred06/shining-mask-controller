@@ -19,6 +19,7 @@ from Crypto.Cipher import AES
 from Crypto.Hash import CMAC
 from typing import Tuple
 import itertools
+import argparse
 
 
 # Ajouter src/working au path
@@ -186,6 +187,8 @@ class OTAProbe(MaskTextDisplay):
 
             # Dump services/characteristics après sonde OTA
             await self.dump_services("apres_sonde")
+            # Tentative de mapping handles (BlueZ uniquement, best-effort)
+            await self.dump_handle_mapping()
 
             # Scan rapide pour repérer un périphérique DFU/OTA éventuel
             await self.scan_for_dfu()
@@ -231,6 +234,11 @@ class OTAProbe(MaskTextDisplay):
                         await self.client.stop_notify(extra)
                     except Exception:
                         pass
+                # Log final mapping handles si possible avant disconnect
+                try:
+                    await self.dump_handle_mapping()
+                except Exception:
+                    pass
                 try:
                     await self.client.disconnect()
                     self.log("🔌 Déconnecté")
@@ -390,6 +398,42 @@ class OTAProbe(MaskTextDisplay):
                         self.log(f"⚠️ start_notify {char}: {e}")
         except Exception as e:
             self.log(f"⚠️ enable_extra_notifications: {e}")
+
+    async def dump_handle_mapping(self):
+        """Best-effort: essayer d'afficher UUID -> handle (BlueZ/Linux)."""
+        try:
+            backend = getattr(self.client, "_backend", None)
+            printed = False
+            # bleak >=0.21 BlueZ backend: backend._characteristics: dict[handle] = BleakGATTCharacteristicBlueZDBus
+            chars_map = getattr(backend, "_characteristics", None)
+            if isinstance(chars_map, dict) and chars_map:
+                self.log("🧾 Mapping handles (brut backend._characteristics):")
+                for h, ch in sorted(chars_map.items()):
+                    try:
+                        uuid = getattr(ch, "uuid", "?")
+                        props = ",".join(getattr(ch, "properties", []) or [])
+                        self.log(f"   • 0x{h:04X} -> {uuid} [{props}]")
+                        printed = True
+                    except Exception:
+                        continue
+            # Fallback: parcourir services
+            svcs = getattr(self.client, "services", None)
+            try:
+                services = list(getattr(svcs, "services", {}).values()) or list(svcs) or []
+            except Exception:
+                services = []
+            for s in services:
+                for ch in getattr(s, "characteristics", []):
+                    h = getattr(ch, "handle", None)
+                    if isinstance(h, int):
+                        uuid = getattr(ch, "uuid", "?")
+                        props = ",".join(getattr(ch, "properties", []) or [])
+                        self.log(f"   • 0x{h:04X} -> {uuid} [{props}]")
+                        printed = True
+            if not printed:
+                self.log("ℹ️ dump_handle_mapping: aucun handle accessible (plateforme restreinte)")
+        except Exception as e:
+            self.log(f"⚠️ dump_handle_mapping: {e}")
 
     async def write_raw(self, char_uuid: str, data: bytes, response: bool):
         """Écrit un petit payload brut sur une caractéristique donnée (prudence)."""
@@ -670,6 +714,123 @@ class OTAProbe(MaskTextDisplay):
                     pass
 
         self.log(f"🧾 Tokens vus: {[t.hex() for t in tokens]}")
+
+    async def fast_handshake(self, attempts: int = 3):
+        """Mode rapide: token -> rafale de frames structurées serrées (<50ms).
+        Objectif: détecter tout changement (nouveau token immédiat, notif supplémentaire FD02).
+        """
+        self.log("⚡ FAST-HANDSHAKE démarrage")
+        if not await self.connect():
+            self.log("❌ Connexion impossible")
+            return
+        try:
+            await self.enable_extra_notifications()
+            # Préparer mapping handles (utile log)
+            await self.dump_handle_mapping()
+            for i in range(attempts):
+                self.log(f"🔄 Token round {i+1}/{attempts}")
+                tok = await self.get_ae02_token(timeout=2.0)
+                if not tok:
+                    self.log("⏳ Pas de token obtenu")
+                    continue
+                # Construire frames candidates ordonnées
+                frames = []  # (label, payload)
+                # 1. Echo bruts
+                frames.append(("id-FD02", tok))
+                frames.append(("id-AE01", tok))
+                # 2. Préfixes contrôle
+                for p in (b"\x01", b"\x02", b"\x10", b"\x11"):
+                    frames.append((f"{p.hex()}+tok", p + tok))
+                # 3. CRC / SUM framings (tok[0:15]+crc)
+                try:
+                    p = tok[:15]; crc = self._crc8(p)
+                    frames.append(("tok15+crc", p + bytes([crc])))
+                except Exception:
+                    pass
+                try:
+                    p = b"\x01" + tok[:14]; crc = self._crc8(p)
+                    frames.append(("01+tok14+crc", p + bytes([crc])))
+                except Exception:
+                    pass
+                # 4. AES transforms
+                try:
+                    frames.append(("aes(app)", self.cipher.encrypt(tok)))
+                except Exception:
+                    pass
+                # 5. CMAC variants
+                try:
+                    c = CMAC.new(_ctd.ENCRYPTION_KEY, ciphermod=AES); c.update(tok); frames.append(("cmac16", c.digest()[:16]))
+                except Exception:
+                    pass
+                # 6. Sequence pattern: short ACK + encrypted token
+                try:
+                    enc_tok = self.cipher.encrypt(tok)
+                    frames.append(("SEQ-01", b"\x01"))
+                    frames.append(("SEQ-01+enc", b"\x01" + enc_tok[:15]))
+                except Exception:
+                    pass
+                # 7. Verb+token truncated
+                for v in (b"OTA", b"DFU", b"BOOT"):
+                    cap = 20 - len(v)
+                    frames.append((f"{v.decode()}+tok", v + tok[:max(0, cap)]))
+
+                self.log(f"🚚 Envoi {len(frames)} frames candidates")
+                for label, payload in frames:
+                    # Sur FD02 (write request) pour retour éventuel
+                    await self.write_raw(self.FD_NOTIFY, payload, response=True)
+                    # Ecoute très courte pour token frais
+                    self.last_ae02 = None
+                    self.raw_event_evt.clear()
+                    try:
+                        await asyncio.wait_for(self.raw_event_evt.wait(), timeout=0.06)
+                        if self.last_ae02:
+                            self.log(f"🆕 Nouveau token après {label}: {self.last_ae02.hex()}")
+                            break
+                    except asyncio.TimeoutError:
+                        pass
+                # Echo global token sur AE01 à la fin si rien
+                await self.write_raw(self.AE_WRITE, tok, response=False)
+            self.log("✅ FAST-HANDSHAKE terminé")
+        finally:
+            try:
+                await self.dump_handle_mapping()
+            except Exception:
+                pass
+            if self.client:
+                try:
+                    await self.client.disconnect()
+                except Exception:
+                    pass
+
+
+def _build_arg_parser():
+    p = argparse.ArgumentParser(description="OTA incremental / fast handshake probe")
+    p.add_argument("--fast-handshake", action="store_true", help="Activer mode handshake rapide")
+    p.add_argument("--attempts", type=int, default=3, help="Nombre de rounds fast-handshake")
+    p.add_argument("--burst", action="store_true", help="Activer mode BURST après sonde safe")
+    return p
+
+
+async def _main_async(args):
+    probe = OTAProbe()
+    if args.fast_handshake:
+        await probe.fast_handshake(attempts=args.attempts)
+    else:
+        if args.burst:
+            os.environ["BURST"] = "1"
+        await probe.run_safe_probe()
+
+
+def main():
+    args = _build_arg_parser().parse_args()
+    try:
+        asyncio.run(_main_async(args))
+    except KeyboardInterrupt:
+        print("\nInterrupted")
+
+
+if __name__ == "__main__":
+    main()
 
     async def burst_handshake(self, rounds: int = 2):
         """Tentative agressive mais courte de réponses handshake en rafale.
