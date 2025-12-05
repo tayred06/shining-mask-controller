@@ -22,6 +22,10 @@ import argparse
 import contextlib
 from typing import Optional, Dict, Any
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis .env
+load_dotenv()
 
 # Résolution du chemin vers src (supporte exécution depuis ce sous-dossier)
 BASE_DIR = Path(__file__).resolve().parent
@@ -93,6 +97,38 @@ class MaskAnimator:
             except Exception as e:
                 print(f"[MaskAnimator] Erreur show_face: {e}")
 
+    async def show_custom_message(self, message: str, color=(255, 0, 255)):
+        """Affiche un message personnalisé défilant (prioritaire)."""
+        async with self._lock:
+            # On réserve l'affichage pour une durée estimée
+            self._overlay_until = time.time() + 30.0 
+            try:
+                await self._maybe_update()
+                await self.mask.display_text(message, color=color, background=self.bg_color)
+                await self.mask.set_display_mode(3) # Scroll left
+                
+                # Calcul durée lecture
+                try:
+                    cols = len(self.mask.text_to_bitmap(message))
+                except Exception:
+                    cols = max(10, len(message) * 8)
+                
+                # Vitesse approx: 30-50ms par colonne ? Ajuster selon le masque
+                duration = max(4.0, (cols * 0.08) + 2.0)
+                self._overlay_until = time.time() + duration
+                
+            except Exception as e:
+                print(f"[MaskAnimator] Erreur show_custom_message: {e}")
+                duration = 5.0
+                self._overlay_until = time.time() + duration
+
+        await asyncio.sleep(duration)
+        self._overlay_until = 0.0
+        # Retour à la bouche
+        await self.show_face(mouth_open=False)
+
+
+
     async def show_thank_you(self, user: str, duration: float = 5.0):
         async with self._lock:
             self._overlay_until = time.time() + duration
@@ -139,7 +175,6 @@ class MaskAnimator:
             await self.mask.show_image(1)
         except Exception as e:
             print(f"[MaskAnimator] Erreur retour image: {e}")
-
 
 class MicrophoneVAD:
     def __init__(self, samplerate=16000, blocksize=1024, threshold_on=0.020, threshold_off=0.012, device=None):
@@ -230,6 +265,16 @@ class TwitchMaskBot(commands.Bot):
         user = ctx.author.display_name if ctx and ctx.author else 'ami'
         asyncio.create_task(self.animator.show_thank_you(user))
 
+    @commands.command(name='say')
+    async def say_cmd(self, ctx, *, content: str):
+        """!say [message] (Mod/Broadcaster only)"""
+        if not (ctx.author.is_mod or ctx.author.is_broadcaster):
+            return
+            
+        print(f"[Twitch] !say command: {content}")
+        # Couleur Magenta pour les messages custom par défaut
+        asyncio.create_task(self.animator.show_custom_message(content, color=(255, 0, 255)))
+
 
 async def main():
     parser = argparse.ArgumentParser(description="Twitch Mask Bot (Raspberry Pi ready)")
@@ -319,8 +364,8 @@ async def main():
                 import requests
                 def _req():
                     return requests.get(
-                        'https://api.twitch.tv/helix/users/follows',
-                        params={'to_id': user_id, 'first': 1},
+                        'https://api.twitch.tv/helix/channels/followers',
+                        params={'broadcaster_id': user_id, 'first': 1},
                         headers={'Client-ID': client_id, 'Authorization': f'Bearer {app_token}'},
                         timeout=10,
                     )
@@ -330,8 +375,8 @@ async def main():
                     items = data.get('data', [])
                     if items:
                         top = items[0]
-                        fid = top.get('from_id')
-                        fname = top.get('from_name') or 'ami'
+                        fid = top.get('user_id')
+                        fname = top.get('user_name') or 'ami'
                         if fid and fid != last_follow_id:
                             last_follow_id = fid
                             print(f"[Helix] Nouveau follow: {fname}")
@@ -366,7 +411,7 @@ async def main():
 
     await connect_loop()
 
-    tasks = [asyncio.create_task(commands._util.run_bot(bot.start))]  # start bot
+    tasks = [asyncio.create_task(bot.start())]  # start bot
     tasks.append(asyncio.create_task(follow_watcher()))
     if vad is not None:
         async def run_vad_loop():

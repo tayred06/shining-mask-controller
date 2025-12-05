@@ -414,20 +414,17 @@ class CompleteMaskController(ScrollingMaskController):
 
     def get_text_image(self, text, width_multiplier=1.5):
         """Génère uniquement le bitmap (sans image RGB) pour le masque"""
+        # Imports sécurisés
         try:
             from PIL import Image, ImageDraw, ImageFont
-            
-            # Déterminer la taille de police
-            if self.auto_fit:
-                optimal_size = self.find_optimal_font_size(text)
-                actual_font_size = optimal_size
-                if optimal_size != self.font_size:
-                    print(f"🔧 Auto-ajustement: {self.font_size}px → {optimal_size}px")
-            else:
-                actual_font_size = self.font_size
-            
+        except ImportError:
+            print("❌ PIL manquant!")
+            return []
+
+        try:
             # Charger la police
             font_paths = [
+                "ScienceGothic.ttf",
                 "/System/Library/Fonts/Arial.ttf",
                 "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
                 "arial.ttf"
@@ -436,7 +433,7 @@ class CompleteMaskController(ScrollingMaskController):
             font = None
             for font_path in font_paths:
                 try:
-                    font = ImageFont.truetype(font_path, actual_font_size)
+                    font = ImageFont.truetype(font_path, self.font_size)
                     break
                 except:
                     continue
@@ -444,18 +441,37 @@ class CompleteMaskController(ScrollingMaskController):
             if font is None:
                 font = ImageFont.load_default()
                 
-        except:
-            from PIL import ImageFont
+        except Exception as e:
+            print(f"⚠️ Erreur police: {e}")
             font = ImageFont.load_default()
 
-        # Calcul de la largeur du texte
-        dummy_img = Image.new('L', (1, 1))  # Noir et blanc uniquement
-        dummy_draw = ImageDraw.Draw(dummy_img)
-        bbox = dummy_draw.textbbox((0, 0), text, font=font)
-        text_width = bbox[2] - bbox[0]
-        text_height = bbox[3] - bbox[1]
+        # 1. Forcer majuscules
+        text = text.upper()
+
+        # 2. Calculer la largeur avec espacement
+        char_spacing = 2  # Espace entre les lettres (en pixels)
         
-        total_width = int(text_width * width_multiplier)
+        # Initialiser dummy_draw pour les calculs
+        dummy_img = Image.new('L', (1, 1))
+        dummy_draw = ImageDraw.Draw(dummy_img)
+        
+        total_text_width = 0
+        char_widths = []
+        
+        for char in text:
+            bbox = dummy_draw.textbbox((0, 0), char, font=font)
+            w = bbox[2] - bbox[0]
+            char_widths.append(w)
+            total_text_width += w + char_spacing
+            
+        if char_widths:
+            total_text_width -= char_spacing # Retirer le dernier espace
+            
+        text_height = 12 # Hauteur max estimée
+        
+        # Largeur totale de l'image (avec marge pour défilement)
+        total_width = int(total_text_width * width_multiplier)
+        if total_width < 32: total_width = 32 # Minimum vital
         
         # Création de l'image en noir et blanc pour bitmap
         img = Image.new('L', (total_width, 16), 0)  # Fond noir
@@ -469,22 +485,27 @@ class CompleteMaskController(ScrollingMaskController):
             text_area_height = 16
             text_y_start = 0
         
-        # Positionnement du texte
-        text_bbox = draw.textbbox((0, 0), text, font=font)
-        actual_height = text_bbox[3] - text_bbox[1]
-        text_top = text_bbox[1]
+        # Positionnement du texte (centré horizontalement dans l'image large)
+        x_cursor = (total_width - total_text_width) // 2
         
-        y_offset = text_y_start + (text_area_height - actual_height) // 2 - text_top
-        x_offset = (total_width - text_width) // 2
-        
-        # Dessiner le texte en blanc
-        draw.text((x_offset, y_offset), text, fill=255, font=font)
-        
-        # Effet gras par superposition si activé
-        if self.bold_text:
-            draw.text((x_offset + 1, y_offset), text, fill=255, font=font)
-            draw.text((x_offset, y_offset + 1), text, fill=255, font=font)
-            draw.text((x_offset + 1, y_offset + 1), text, fill=255, font=font)
+        # Dessiner lettre par lettre avec espacement
+        for i, char in enumerate(text):
+            bbox = draw.textbbox((0, 0), char, font=font)
+            char_h = bbox[3] - bbox[1]
+            char_top = bbox[1]
+            
+            # Centrage vertical
+            y_pos = text_y_start + (text_area_height - char_h) // 2 - char_top
+            
+            draw.text((x_cursor, y_pos), char, fill=255, font=font)
+            
+            # Effet gras par superposition si activé
+            if self.bold_text:
+                draw.text((x_cursor + 1, y_pos), char, fill=255, font=font)
+                draw.text((x_cursor, y_pos + 1), char, fill=255, font=font)
+                draw.text((x_cursor + 1, y_pos + 1), char, fill=255, font=font)
+            
+            x_cursor += char_widths[i] + char_spacing
         
         # Ajouter les décorations directement sur le bitmap
         if self.show_decorations:
