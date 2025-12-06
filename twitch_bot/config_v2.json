@@ -1,0 +1,27 @@
+{
+  "default_anim": 1,
+  "say": {
+    "scroll_speed": 50,
+    "scroll_mode": "scroll_left",
+    "text_color": "magenta",
+    "decoration": "lines",
+    "bold": false,
+    "repeat": 1
+  },
+  "follow": {
+    "scroll_speed": 50,
+    "scroll_mode": "scroll_left",
+    "text_color": "green",
+    "decoration": "lines",
+    "bold": true,
+    "repeat": 2
+  },
+  "sub": {
+    "scroll_speed": 50,
+    "scroll_mode": "scroll_left",
+    "text_color": "yellow",
+    "decoration": "waves",
+    "bold": true,
+    "repeat": 2
+  }
+}

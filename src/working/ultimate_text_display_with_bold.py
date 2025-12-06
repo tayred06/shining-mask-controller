@@ -59,7 +59,9 @@ class CompleteMaskController(ScrollingMaskController):
             
             # 2. Configuration du mode et de la vitesse
             await self.set_mode(scroll_mode)
+            await asyncio.sleep(0.3)
             await self.set_scroll_speed(speed)
+            await asyncio.sleep(0.3)  # Attente avant upload pour éviter saturation
             
             # 3. Génération de l'image avec espace pour le défilement
             pixel_map = self.get_text_image(text, width_multiplier)
