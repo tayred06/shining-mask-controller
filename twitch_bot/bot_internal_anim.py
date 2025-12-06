@@ -20,6 +20,7 @@ import os
 import sys
 import asyncio
 import json
+import random
 from pathlib import Path
 from dotenv import load_dotenv
 from twitchio.ext import commands
@@ -140,6 +141,26 @@ class InternalAnimBot(commands.Bot):
                 # 4. Retour à l'anim
                 print("🔙 Retour animation")
                 await self.set_default_state()
+
+    @commands.command(name='randanim')
+    async def cmd_randanim(self, ctx):
+        """!randanim - Change l'animation pour une aléatoire (1-40) pendant 10s"""
+        val = random.randint(1, 40)
+        
+        # 1. Changer l'animation (sous lock pour éviter conflit avec upload)
+        async with self.display_lock:
+            await self.mask.set_animation(val)
+            await ctx.send(f"🎲 Animation aléatoire: {val} (10s)")
+            
+        # 2. Attendre 10 secondes
+        await asyncio.sleep(10)
+        
+        # 3. Revenir à la normale (sous lock)
+        async with self.display_lock:
+            # On vérifie si on n'est pas déjà en train d'afficher autre chose
+            # Mais avec le lock, on attendra que l'autre chose finisse.
+            # C'est acceptable.
+            await self.set_default_state()
 
     @commands.command(name='anim')
     async def cmd_anim(self, ctx, anim_id: str):

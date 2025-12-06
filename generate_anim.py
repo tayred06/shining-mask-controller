@@ -16,20 +16,10 @@ def create_frame(eye_direction="center", mouth_state="neutral"):
     # Let's do rectangles with cut corners (octagonal-ish)
     
     def draw_tech_eye(x, y):
-        # Friendly Tech Eye: Large rectangle with cut corners (Octagon)
-        # No angry diagonals.
-        
-        # Main body (Cross shape to make rounded rectangle)
-        draw.rectangle([x+2, y, x+8, y+10], fill=feature_color)   # Vertical center
-        draw.rectangle([x, y+2, x+10, y+8], fill=feature_color)   # Horizontal center
-        
-        # Fill in corners slightly to make it solid but soft
-        draw.point([x+1, y+1], fill=feature_color)
-        draw.point([x+9, y+1], fill=feature_color)
-        draw.point([x+1, y+9], fill=feature_color)
-        draw.point([x+9, y+9], fill=feature_color)
-
-        # Pupil (Large and cute)
+        # Main eye body
+        draw.rectangle([x+1, y, x+9, y+10], fill=feature_color) # Vertical core
+        draw.rectangle([x, y+1, x+10, y+9], fill=feature_color) # Horizontal core
+        # Pupil (darker or white)
         pupil_offset_x = -2 if eye_direction == "left" else (2 if eye_direction == "right" else 0)
         draw.rectangle([x+3+pupil_offset_x, y+3, x+7+pupil_offset_x, y+7], fill=white)
 
