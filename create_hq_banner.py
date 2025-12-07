@@ -3,7 +3,7 @@ import os
 
 def enhance_banner():
     # Previous best source
-    source_path = "/Users/mathieu/.gemini/antigravity/brain/7b9cae0b-3fb0-4084-9ba1-11dabe944cf5/twitch_branding_wide_1764997501795.png"
+    source_path = "/Users/mathieu/.gemini/antigravity/brain/7b9cae0b-3fb0-4084-9ba1-11dabe944cf5/twitch_branding_ultra_hq_1765068443416.png"
     
     if not os.path.exists(source_path):
         print("Source file not found.")

@@ -1,0 +1,1748 @@
+📺 Serveur V4 prêt sur http://localhost:8000
+127.0.0.1 - - [06/Dec/2025 00:52:10] "GET /mask_editor/ HTTP/1.1" 304 -
+
+📸 Reçu Image: 46x58
+🔗 Connexion BLE...
+Recherche du masque...
+Connexion à MASK-3B9D97 (86179C2D-07A2-AD8E-6D64-08E8BEB9B6CD)
+Connecté avec succès!
+📤 Upload Slot 1 (8004 bytes)...
+Notification reçue: ed2c12dc67056c78355a982d2b2970a0
+Données déchiffrées: 06444154534f4b000101000000000001
+Réponse du masque: DATSOK
+✅ DATSOK. Envoi données...
+Envoi paquet 0: 98 bytes
+Notification reçue: be41d32bd521b50e7e16048825cbf698
+Données déchiffrées: 0452454f4b4f4b000101000000000002
+Réponse du masque: REOK
+Envoi paquet 1: 98 bytes
+Notification reçue: 7497b10e8052594ade6e6472a498f0eb
+Données déchiffrées: 0452454f4b4f4b000101000000000003
+Réponse du masque: REOK
+Envoi paquet 2: 98 bytes
+Notification reçue: 9572468e140fe9c430516bc0e37e0795
+Données déchiffrées: 0452454f4b4f4b000101000000000004
+Réponse du masque: REOK
+Envoi paquet 3: 98 bytes
+Notification reçue: a965609fc7b76d8960119b3840b0a6ca
+Données déchiffrées: 0452454f4b4f4b000101000000000005
+Réponse du masque: REOK
+Envoi paquet 4: 98 bytes
+Notification reçue: e20b94d6df81656ae841e78627ab4db9
+Données déchiffrées: 0452454f4b4f4b000101000000000006
+Réponse du masque: REOK
+Envoi paquet 5: 98 bytes
+Notification reçue: 5b9eb8a408fce8745196d21e8eeb407d
+Données déchiffrées: 0452454f4b4f4b000101000000000007
+Réponse du masque: REOK
+Envoi paquet 6: 98 bytes
+Notification reçue: 603fad22a0b4b6114296a225b6794cce
+Données déchiffrées: 0452454f4b4f4b000101000000000008
+Réponse du masque: REOK
+Envoi paquet 7: 98 bytes
+Notification reçue: 75c8868c448f4760c85c745f4af899dc
+Données déchiffrées: 0452454f4b4f4b000101000000000009
+Réponse du masque: REOK
+Envoi paquet 8: 98 bytes
+Notification reçue: 794afc9d6bf0e3177683b8a46c27e8c8
+Données déchiffrées: 0452454f4b4f4b00010100000000000a
+Réponse du masque: REOK
+Envoi paquet 9: 98 bytes
+Notification reçue: 0715c9339185c4610d0576053af3aff5
+Données déchiffrées: 0452454f4b4f4b00010100000000000b
+Réponse du masque: REOK
+Envoi paquet 10: 98 bytes
+Notification reçue: f79632223ee437a92c98cf9df8248607
+Données déchiffrées: 0452454f4b4f4b00010100000000000c
+Réponse du masque: REOK
+Envoi paquet 11: 98 bytes
+Notification reçue: 2e794a7baf4ee990ef42405d40bf9287
+Données déchiffrées: 0452454f4b4f4b00010100000000000d
+Réponse du masque: REOK
+Envoi paquet 12: 98 bytes
+Notification reçue: a7d9d86bf75871105dc4b670348d6c09
+Données déchiffrées: 0452454f4b4f4b00010100000000000e
+Réponse du masque: REOK
+Envoi paquet 13: 98 bytes
+Notification reçue: 6b4a1bfe32de45708f9a777fa2a08b3a
+Données déchiffrées: 0452454f4b4f4b00010100000000000f
+Réponse du masque: REOK
+Envoi paquet 14: 98 bytes
+Notification reçue: d0ff24039e6d8fd855887889b5916e91
+Données déchiffrées: 0452454f4b4f4b000101000000000010
+Réponse du masque: REOK
+Envoi paquet 15: 98 bytes
+Notification reçue: a7616a98c8e5cbacba66f6e0e8e380b4
+Données déchiffrées: 0452454f4b4f4b000101000000000011
+Réponse du masque: REOK
+Envoi paquet 16: 98 bytes
+Notification reçue: 7f2733443b89e3fd9ed6ed5da1f0c08e
+Données déchiffrées: 0452454f4b4f4b000101000000000012
+Réponse du masque: REOK
+Envoi paquet 17: 98 bytes
+Notification reçue: 3eeffbb9e7a4ea7cdcdaf1bfd1a1dbcc
+Données déchiffrées: 0452454f4b4f4b000101000000000013
+Réponse du masque: REOK
+Envoi paquet 18: 98 bytes
+Notification reçue: 2b209934b02d59c21e17edba73f43125
+Données déchiffrées: 0452454f4b4f4b000101000000000014
+Réponse du masque: REOK
+Envoi paquet 19: 98 bytes
+Notification reçue: 52cf9e3c24af71e4b55509ae1706d9f0
+Données déchiffrées: 0452454f4b4f4b000101000000000015
+Réponse du masque: REOK
+Envoi paquet 20: 98 bytes
+Notification reçue: c7cd406dbd354d3e817c5141779dcc81
+Données déchiffrées: 0452454f4b4f4b000101000000000016
+Réponse du masque: REOK
+Envoi paquet 21: 98 bytes
+Notification reçue: 9f9208c59d71cd3c861a4aa31b736e11
+Données déchiffrées: 0452454f4b4f4b000101000000000017
+Réponse du masque: REOK
+Envoi paquet 22: 98 bytes
+Notification reçue: 542f2043f60aa930e4cb18f2f1718ddf
+Données déchiffrées: 0452454f4b4f4b000101000000000018
+Réponse du masque: REOK
+Envoi paquet 23: 98 bytes
+Notification reçue: e4919563c1b9aec8784c46f80dba5e3d
+Données déchiffrées: 0452454f4b4f4b000101000000000019
+Réponse du masque: REOK
+Envoi paquet 24: 98 bytes
+Notification reçue: 062b4238b2f9133f8cf2a947a6dfd643
+Données déchiffrées: 0452454f4b4f4b00010100000000001a
+Réponse du masque: REOK
+Envoi paquet 25: 98 bytes
+Notification reçue: 8ea81d7531b12e9962f20c5b4a863789
+Données déchiffrées: 0452454f4b4f4b00010100000000001b
+Réponse du masque: REOK
+Envoi paquet 26: 98 bytes
+Notification reçue: c4c112b9dc8a1336571651b7e1a5b261
+Données déchiffrées: 0452454f4b4f4b00010100000000001c
+Réponse du masque: REOK
+Envoi paquet 27: 98 bytes
+Notification reçue: b5c820e906a031cfb66456f6e30cae9a
+Données déchiffrées: 0452454f4b4f4b00010100000000001d
+Réponse du masque: REOK
+Envoi paquet 28: 98 bytes
+Notification reçue: 16510eddaa05642ab99218627ac61810
+Données déchiffrées: 0452454f4b4f4b00010100000000001e
+Réponse du masque: REOK
+Envoi paquet 29: 98 bytes
+Notification reçue: 3918317e5a8cd836f7496266cf54c9e6
+Données déchiffrées: 0452454f4b4f4b00010100000000001f
+Réponse du masque: REOK
+Envoi paquet 30: 98 bytes
+Notification reçue: d0db0523a9ed44514c630e076e7db2ea
+Données déchiffrées: 0452454f4b4f4b000101000000000020
+Réponse du masque: REOK
+Envoi paquet 31: 98 bytes
+Notification reçue: 8be07c9fd95a1d8180b096725f161076
+Données déchiffrées: 0452454f4b4f4b000101000000000021
+Réponse du masque: REOK
+Envoi paquet 32: 98 bytes
+Notification reçue: 446cf8518c57e32ece880c48ba020289
+Données déchiffrées: 0452454f4b4f4b000101000000000022
+Réponse du masque: REOK
+Envoi paquet 33: 98 bytes
+Notification reçue: 2fc86942d9288945efdb2d37637743c9
+Données déchiffrées: 0452454f4b4f4b000101000000000023
+Réponse du masque: REOK
+Envoi paquet 34: 98 bytes
+Notification reçue: 3fb0f57416e611f7b55a7d52d81d966d
+Données déchiffrées: 0452454f4b4f4b000101000000000024
+Réponse du masque: REOK
+Envoi paquet 35: 98 bytes
+Notification reçue: 77d24502ff688c78440a2de2b5a2a9a0
+Données déchiffrées: 0452454f4b4f4b000101000000000025
+Réponse du masque: REOK
+Envoi paquet 36: 98 bytes
+Notification reçue: 61b81768f7087c38bcc5c2271fd021b8
+Données déchiffrées: 0452454f4b4f4b000101000000000026
+Réponse du masque: REOK
+Envoi paquet 37: 98 bytes
+Notification reçue: 47aa0af95598c528d8adce9d6d462603
+Données déchiffrées: 0452454f4b4f4b000101000000000027
+Réponse du masque: REOK
+Envoi paquet 38: 98 bytes
+Notification reçue: 0f870f1fb3a2674d9ab19fc605966d6c
+Données déchiffrées: 0452454f4b4f4b000101000000000028
+Réponse du masque: REOK
+Envoi paquet 39: 98 bytes
+Notification reçue: 352682a1a79bddbbb12af276c8109a4a
+Données déchiffrées: 0452454f4b4f4b000101000000000029
+Réponse du masque: REOK
+Envoi paquet 40: 98 bytes
+Notification reçue: 9e931907c3b89679e76a158aed1985cb
+Données déchiffrées: 0452454f4b4f4b00010100000000002a
+Réponse du masque: REOK
+Envoi paquet 41: 98 bytes
+Notification reçue: 976b2fa6c38426088d7b621d2f8a819f
+Données déchiffrées: 0452454f4b4f4b00010100000000002b
+Réponse du masque: REOK
+Envoi paquet 42: 98 bytes
+Notification reçue: ad82dd07d659153aa2266eadfaea07c3
+Données déchiffrées: 0452454f4b4f4b00010100000000002c
+Réponse du masque: REOK
+Envoi paquet 43: 98 bytes
+Notification reçue: 6cf0f90eefc88690f61cba999e5b7889
+Données déchiffrées: 0452454f4b4f4b00010100000000002d
+Réponse du masque: REOK
+Envoi paquet 44: 98 bytes
+Notification reçue: 1b3088a4bc7b9ca64743c96775a912a5
+Données déchiffrées: 0452454f4b4f4b00010100000000002e
+Réponse du masque: REOK
+Envoi paquet 45: 98 bytes
+Notification reçue: a7b99b0e90aa813668c35259f3b56c7a
+Données déchiffrées: 0452454f4b4f4b00010100000000002f
+Réponse du masque: REOK
+Envoi paquet 46: 98 bytes
+Notification reçue: 0761216fa5356d70bbd2b632e6ac3932
+Données déchiffrées: 0452454f4b4f4b000101000000000030
+Réponse du masque: REOK
+Envoi paquet 47: 98 bytes
+Notification reçue: 1335aa2ac7cb3af18469a64106beac0b
+Données déchiffrées: 0452454f4b4f4b000101000000000031
+Réponse du masque: REOK
+Envoi paquet 48: 98 bytes
+Notification reçue: b39d94cde51ee9c6ddd87f1cb8ad1852
+Données déchiffrées: 0452454f4b4f4b000101000000000032
+Réponse du masque: REOK
+Envoi paquet 49: 98 bytes
+Notification reçue: d62167c1d0fa40e698feaa11139f81e6
+Données déchiffrées: 0452454f4b4f4b000101000000000033
+Réponse du masque: REOK
+Envoi paquet 50: 98 bytes
+Notification reçue: a3336490c64490556c48e5e41186416c
+Données déchiffrées: 0452454f4b4f4b000101000000000034
+Réponse du masque: REOK
+Envoi paquet 51: 98 bytes
+Notification reçue: aaf63d1845a7f24a0712179faab9738d
+Données déchiffrées: 0452454f4b4f4b000101000000000035
+Réponse du masque: REOK
+Envoi paquet 52: 98 bytes
+Notification reçue: ffbfd03290884b4d8bfd5576b1017dfd
+Données déchiffrées: 0452454f4b4f4b000101000000000036
+Réponse du masque: REOK
+Envoi paquet 53: 98 bytes
+Notification reçue: ee65569d41e72b0cb538633447a5e25a
+Données déchiffrées: 0452454f4b4f4b000101000000000037
+Réponse du masque: REOK
+Envoi paquet 54: 98 bytes
+Notification reçue: e892d0e8540b456166edeea90741054e
+Données déchiffrées: 0452454f4b4f4b000101000000000038
+Réponse du masque: REOK
+Envoi paquet 55: 98 bytes
+Notification reçue: 1094e77c42266b1e63be2b3a98917ced
+Données déchiffrées: 0452454f4b4f4b000101000000000039
+Réponse du masque: REOK
+Envoi paquet 56: 98 bytes
+Notification reçue: 2e5f44d6ec5f413552e7dc02d258fcbf
+Données déchiffrées: 0452454f4b4f4b00010100000000003a
+Réponse du masque: REOK
+Envoi paquet 57: 98 bytes
+Notification reçue: 14acac365d7fc50f351371e9ce8fb238
+Données déchiffrées: 0452454f4b4f4b00010100000000003b
+Réponse du masque: REOK
+Envoi paquet 58: 98 bytes
+Notification reçue: 21e404f51fb2d7b4efd2a0252396d8ea
+Données déchiffrées: 0452454f4b4f4b00010100000000003c
+Réponse du masque: REOK
+Envoi paquet 59: 98 bytes
+Notification reçue: 1ae283b20a2df884ad8b4d8477f0c7af
+Données déchiffrées: 0452454f4b4f4b00010100000000003d
+Réponse du masque: REOK
+Envoi paquet 60: 98 bytes
+Notification reçue: 0d381fb82686624fe42d22a70e9d6f1e
+Données déchiffrées: 0452454f4b4f4b00010100000000003e
+Réponse du masque: REOK
+Envoi paquet 61: 98 bytes
+Notification reçue: 3e48a90b0ceb2b1629e9fcd15f6a5ff5
+Données déchiffrées: 0452454f4b4f4b00010100000000003f
+Réponse du masque: REOK
+Envoi paquet 62: 98 bytes
+Notification reçue: 308eb7c0b1e54fc7c61144ce2a8a724c
+Données déchiffrées: 0452454f4b4f4b000101000000000040
+Réponse du masque: REOK
+Envoi paquet 63: 98 bytes
+Notification reçue: e709b9122dca5602fce005d0acdbd72b
+Données déchiffrées: 0452454f4b4f4b000101000000000041
+Réponse du masque: REOK
+Envoi paquet 64: 98 bytes
+Notification reçue: 6014007c0f25a8343055fd94b35eded0
+Données déchiffrées: 0452454f4b4f4b000101000000000042
+Réponse du masque: REOK
+Envoi paquet 65: 98 bytes
+Notification reçue: dbdecc153074b633d15796e4a0412145
+Données déchiffrées: 0452454f4b4f4b000101000000000043
+Réponse du masque: REOK
+Envoi paquet 66: 98 bytes
+Notification reçue: 228086287677802f555c7c14c81b236e
+Données déchiffrées: 0452454f4b4f4b000101000000000044
+Réponse du masque: REOK
+Envoi paquet 67: 98 bytes
+Notification reçue: ea6ab3c16baf9986cac72dbd293ba821
+Données déchiffrées: 0452454f4b4f4b000101000000000045
+Réponse du masque: REOK
+Envoi paquet 68: 98 bytes
+Notification reçue: 928cef22ec7692dbfd63ac507663e772
+Données déchiffrées: 0452454f4b4f4b000101000000000046
+Réponse du masque: REOK
+Envoi paquet 69: 98 bytes
+Notification reçue: aeb4f801495d18e87ecaa28b809f72c1
+Données déchiffrées: 0452454f4b4f4b000101000000000047
+Réponse du masque: REOK
+Envoi paquet 70: 98 bytes
+Notification reçue: 6d91f38480621fb28c562ffd593ada44
+Données déchiffrées: 0452454f4b4f4b000101000000000048
+Réponse du masque: REOK
+Envoi paquet 71: 98 bytes
+Notification reçue: bc1e1bb87e774d35be4cae32b87ba409
+Données déchiffrées: 0452454f4b4f4b000101000000000049
+Réponse du masque: REOK
+Envoi paquet 72: 98 bytes
+Notification reçue: 35a7dc2c2ac2c2a96f53345ba85ef19b
+Données déchiffrées: 0452454f4b4f4b00010100000000004a
+Réponse du masque: REOK
+Envoi paquet 73: 98 bytes
+Notification reçue: 8158f5e011e00d01321fd2cec8bffb50
+Données déchiffrées: 0452454f4b4f4b00010100000000004b
+Réponse du masque: REOK
+Envoi paquet 74: 98 bytes
+Notification reçue: 328ff41de167be3a5c12796b72260ac1
+Données déchiffrées: 0452454f4b4f4b00010100000000004c
+Réponse du masque: REOK
+Envoi paquet 75: 98 bytes
+Notification reçue: 6308d1f50b8c6e0487a906a3237ed581
+Données déchiffrées: 0452454f4b4f4b00010100000000004d
+Réponse du masque: REOK
+Envoi paquet 76: 98 bytes
+Notification reçue: 9ac7fd7bd4d385ed426b90e6c137a7ac
+Données déchiffrées: 0452454f4b4f4b00010100000000004e
+Réponse du masque: REOK
+Envoi paquet 77: 98 bytes
+Notification reçue: 0a52b1357a6eefbbfe0f7db09bfb5c6f
+Données déchiffrées: 0452454f4b4f4b00010100000000004f
+Réponse du masque: REOK
+Envoi paquet 78: 98 bytes
+Notification reçue: 31218060e9728a2dcc6721de6b08d0d0
+Données déchiffrées: 0452454f4b4f4b000101000000000050
+Réponse du masque: REOK
+Envoi paquet 79: 98 bytes
+Notification reçue: ebe7a0bc917dfc26af27ae2dad8edffd
+Données déchiffrées: 0452454f4b4f4b000101000000000051
+Réponse du masque: REOK
+Envoi paquet 80: 98 bytes
+Notification reçue: 26733d183b5de7480438def4e669e91a
+Données déchiffrées: 0452454f4b4f4b000101000000000052
+Réponse du masque: REOK
+Envoi paquet 81: 66 bytes
+Notification reçue: 18cd20cff93b23870b3f76131cee48af
+Données déchiffrées: 0452454f4b4f4b000101000000000053
+Réponse du masque: REOK
+✅ Données envoyées.
+Finalisation de l'upload...
+Notification reçue: 8198b2fcf5ed7924c9bb7fbed42d9600
+Données déchiffrées: 0744415443504f4b0000000000000001
+Réponse du masque: DATCPOK
+🎉 Upload Terminé!
+▶️ Activation...
+Notification reçue: 693c855335a7de8bcda874f1a95ed8a2
+Données déchiffrées: 06504c41594f4b000000000000000001
+Réponse du masque: PLAYOK
+127.0.0.1 - - [06/Dec/2025 00:52:31] "POST /preview HTTP/1.1" 200 -
+
+📸 Reçu Image: 46x58
+🔗 Connexion BLE...
+Recherche du masque...
+Connexion à MASK-3B9D97 (86179C2D-07A2-AD8E-6D64-08E8BEB9B6CD)
+Connecté avec succès!
+📤 Upload Slot 1 (8004 bytes)...
+Notification reçue: ed2c12dc67056c78355a982d2b2970a0
+Données déchiffrées: 06444154534f4b000101000000000001
+Réponse du masque: DATSOK
+✅ DATSOK. Envoi données...
+Envoi paquet 0: 98 bytes
+Notification reçue: be41d32bd521b50e7e16048825cbf698
+Données déchiffrées: 0452454f4b4f4b000101000000000002
+Réponse du masque: REOK
+Envoi paquet 1: 98 bytes
+Notification reçue: 7497b10e8052594ade6e6472a498f0eb
+Données déchiffrées: 0452454f4b4f4b000101000000000003
+Réponse du masque: REOK
+Envoi paquet 2: 98 bytes
+Notification reçue: 9572468e140fe9c430516bc0e37e0795
+Données déchiffrées: 0452454f4b4f4b000101000000000004
+Réponse du masque: REOK
+Envoi paquet 3: 98 bytes
+Notification reçue: a965609fc7b76d8960119b3840b0a6ca
+Données déchiffrées: 0452454f4b4f4b000101000000000005
+Réponse du masque: REOK
+Envoi paquet 4: 98 bytes
+Notification reçue: e20b94d6df81656ae841e78627ab4db9
+Données déchiffrées: 0452454f4b4f4b000101000000000006
+Réponse du masque: REOK
+Envoi paquet 5: 98 bytes
+Notification reçue: 5b9eb8a408fce8745196d21e8eeb407d
+Données déchiffrées: 0452454f4b4f4b000101000000000007
+Réponse du masque: REOK
+Envoi paquet 6: 98 bytes
+Notification reçue: 603fad22a0b4b6114296a225b6794cce
+Données déchiffrées: 0452454f4b4f4b000101000000000008
+Réponse du masque: REOK
+Envoi paquet 7: 98 bytes
+Notification reçue: 75c8868c448f4760c85c745f4af899dc
+Données déchiffrées: 0452454f4b4f4b000101000000000009
+Réponse du masque: REOK
+Envoi paquet 8: 98 bytes
+Notification reçue: 794afc9d6bf0e3177683b8a46c27e8c8
+Données déchiffrées: 0452454f4b4f4b00010100000000000a
+Réponse du masque: REOK
+Envoi paquet 9: 98 bytes
+Notification reçue: 0715c9339185c4610d0576053af3aff5
+Données déchiffrées: 0452454f4b4f4b00010100000000000b
+Réponse du masque: REOK
+Envoi paquet 10: 98 bytes
+Notification reçue: f79632223ee437a92c98cf9df8248607
+Données déchiffrées: 0452454f4b4f4b00010100000000000c
+Réponse du masque: REOK
+Envoi paquet 11: 98 bytes
+Notification reçue: 2e794a7baf4ee990ef42405d40bf9287
+Données déchiffrées: 0452454f4b4f4b00010100000000000d
+Réponse du masque: REOK
+Envoi paquet 12: 98 bytes
+Notification reçue: a7d9d86bf75871105dc4b670348d6c09
+Données déchiffrées: 0452454f4b4f4b00010100000000000e
+Réponse du masque: REOK
+Envoi paquet 13: 98 bytes
+Notification reçue: 6b4a1bfe32de45708f9a777fa2a08b3a
+Données déchiffrées: 0452454f4b4f4b00010100000000000f
+Réponse du masque: REOK
+Envoi paquet 14: 98 bytes
+Notification reçue: d0ff24039e6d8fd855887889b5916e91
+Données déchiffrées: 0452454f4b4f4b000101000000000010
+Réponse du masque: REOK
+Envoi paquet 15: 98 bytes
+Notification reçue: a7616a98c8e5cbacba66f6e0e8e380b4
+Données déchiffrées: 0452454f4b4f4b000101000000000011
+Réponse du masque: REOK
+Envoi paquet 16: 98 bytes
+Notification reçue: 7f2733443b89e3fd9ed6ed5da1f0c08e
+Données déchiffrées: 0452454f4b4f4b000101000000000012
+Réponse du masque: REOK
+Envoi paquet 17: 98 bytes
+Notification reçue: 3eeffbb9e7a4ea7cdcdaf1bfd1a1dbcc
+Données déchiffrées: 0452454f4b4f4b000101000000000013
+Réponse du masque: REOK
+Envoi paquet 18: 98 bytes
+Notification reçue: 2b209934b02d59c21e17edba73f43125
+Données déchiffrées: 0452454f4b4f4b000101000000000014
+Réponse du masque: REOK
+Envoi paquet 19: 98 bytes
+Notification reçue: 52cf9e3c24af71e4b55509ae1706d9f0
+Données déchiffrées: 0452454f4b4f4b000101000000000015
+Réponse du masque: REOK
+Envoi paquet 20: 98 bytes
+Notification reçue: c7cd406dbd354d3e817c5141779dcc81
+Données déchiffrées: 0452454f4b4f4b000101000000000016
+Réponse du masque: REOK
+Envoi paquet 21: 98 bytes
+Notification reçue: 9f9208c59d71cd3c861a4aa31b736e11
+Données déchiffrées: 0452454f4b4f4b000101000000000017
+Réponse du masque: REOK
+Envoi paquet 22: 98 bytes
+Notification reçue: 542f2043f60aa930e4cb18f2f1718ddf
+Données déchiffrées: 0452454f4b4f4b000101000000000018
+Réponse du masque: REOK
+Envoi paquet 23: 98 bytes
+Notification reçue: e4919563c1b9aec8784c46f80dba5e3d
+Données déchiffrées: 0452454f4b4f4b000101000000000019
+Réponse du masque: REOK
+Envoi paquet 24: 98 bytes
+Notification reçue: 062b4238b2f9133f8cf2a947a6dfd643
+Données déchiffrées: 0452454f4b4f4b00010100000000001a
+Réponse du masque: REOK
+Envoi paquet 25: 98 bytes
+Notification reçue: 8ea81d7531b12e9962f20c5b4a863789
+Données déchiffrées: 0452454f4b4f4b00010100000000001b
+Réponse du masque: REOK
+Envoi paquet 26: 98 bytes
+Notification reçue: c4c112b9dc8a1336571651b7e1a5b261
+Données déchiffrées: 0452454f4b4f4b00010100000000001c
+Réponse du masque: REOK
+Envoi paquet 27: 98 bytes
+Notification reçue: b5c820e906a031cfb66456f6e30cae9a
+Données déchiffrées: 0452454f4b4f4b00010100000000001d
+Réponse du masque: REOK
+Envoi paquet 28: 98 bytes
+Notification reçue: 16510eddaa05642ab99218627ac61810
+Données déchiffrées: 0452454f4b4f4b00010100000000001e
+Réponse du masque: REOK
+Envoi paquet 29: 98 bytes
+Notification reçue: 3918317e5a8cd836f7496266cf54c9e6
+Données déchiffrées: 0452454f4b4f4b00010100000000001f
+Réponse du masque: REOK
+Envoi paquet 30: 98 bytes
+Notification reçue: d0db0523a9ed44514c630e076e7db2ea
+Données déchiffrées: 0452454f4b4f4b000101000000000020
+Réponse du masque: REOK
+Envoi paquet 31: 98 bytes
+Notification reçue: 8be07c9fd95a1d8180b096725f161076
+Données déchiffrées: 0452454f4b4f4b000101000000000021
+Réponse du masque: REOK
+Envoi paquet 32: 98 bytes
+Notification reçue: 446cf8518c57e32ece880c48ba020289
+Données déchiffrées: 0452454f4b4f4b000101000000000022
+Réponse du masque: REOK
+Envoi paquet 33: 98 bytes
+Notification reçue: 2fc86942d9288945efdb2d37637743c9
+Données déchiffrées: 0452454f4b4f4b000101000000000023
+Réponse du masque: REOK
+Envoi paquet 34: 98 bytes
+Notification reçue: 3fb0f57416e611f7b55a7d52d81d966d
+Données déchiffrées: 0452454f4b4f4b000101000000000024
+Réponse du masque: REOK
+Envoi paquet 35: 98 bytes
+Notification reçue: 77d24502ff688c78440a2de2b5a2a9a0
+Données déchiffrées: 0452454f4b4f4b000101000000000025
+Réponse du masque: REOK
+Envoi paquet 36: 98 bytes
+Notification reçue: 61b81768f7087c38bcc5c2271fd021b8
+Données déchiffrées: 0452454f4b4f4b000101000000000026
+Réponse du masque: REOK
+Envoi paquet 37: 98 bytes
+Notification reçue: 47aa0af95598c528d8adce9d6d462603
+Données déchiffrées: 0452454f4b4f4b000101000000000027
+Réponse du masque: REOK
+Envoi paquet 38: 98 bytes
+Notification reçue: 0f870f1fb3a2674d9ab19fc605966d6c
+Données déchiffrées: 0452454f4b4f4b000101000000000028
+Réponse du masque: REOK
+Envoi paquet 39: 98 bytes
+Notification reçue: 352682a1a79bddbbb12af276c8109a4a
+Données déchiffrées: 0452454f4b4f4b000101000000000029
+Réponse du masque: REOK
+Envoi paquet 40: 98 bytes
+Notification reçue: 9e931907c3b89679e76a158aed1985cb
+Données déchiffrées: 0452454f4b4f4b00010100000000002a
+Réponse du masque: REOK
+Envoi paquet 41: 98 bytes
+Notification reçue: 976b2fa6c38426088d7b621d2f8a819f
+Données déchiffrées: 0452454f4b4f4b00010100000000002b
+Réponse du masque: REOK
+Envoi paquet 42: 98 bytes
+Notification reçue: ad82dd07d659153aa2266eadfaea07c3
+Données déchiffrées: 0452454f4b4f4b00010100000000002c
+Réponse du masque: REOK
+Envoi paquet 43: 98 bytes
+Notification reçue: 6cf0f90eefc88690f61cba999e5b7889
+Données déchiffrées: 0452454f4b4f4b00010100000000002d
+Réponse du masque: REOK
+Envoi paquet 44: 98 bytes
+Notification reçue: 1b3088a4bc7b9ca64743c96775a912a5
+Données déchiffrées: 0452454f4b4f4b00010100000000002e
+Réponse du masque: REOK
+Envoi paquet 45: 98 bytes
+Notification reçue: a7b99b0e90aa813668c35259f3b56c7a
+Données déchiffrées: 0452454f4b4f4b00010100000000002f
+Réponse du masque: REOK
+Envoi paquet 46: 98 bytes
+Notification reçue: 0761216fa5356d70bbd2b632e6ac3932
+Données déchiffrées: 0452454f4b4f4b000101000000000030
+Réponse du masque: REOK
+Envoi paquet 47: 98 bytes
+Notification reçue: 1335aa2ac7cb3af18469a64106beac0b
+Données déchiffrées: 0452454f4b4f4b000101000000000031
+Réponse du masque: REOK
+Envoi paquet 48: 98 bytes
+Notification reçue: b39d94cde51ee9c6ddd87f1cb8ad1852
+Données déchiffrées: 0452454f4b4f4b000101000000000032
+Réponse du masque: REOK
+Envoi paquet 49: 98 bytes
+Notification reçue: d62167c1d0fa40e698feaa11139f81e6
+Données déchiffrées: 0452454f4b4f4b000101000000000033
+Réponse du masque: REOK
+Envoi paquet 50: 98 bytes
+Notification reçue: a3336490c64490556c48e5e41186416c
+Données déchiffrées: 0452454f4b4f4b000101000000000034
+Réponse du masque: REOK
+Envoi paquet 51: 98 bytes
+Notification reçue: aaf63d1845a7f24a0712179faab9738d
+Données déchiffrées: 0452454f4b4f4b000101000000000035
+Réponse du masque: REOK
+Envoi paquet 52: 98 bytes
+Notification reçue: ffbfd03290884b4d8bfd5576b1017dfd
+Données déchiffrées: 0452454f4b4f4b000101000000000036
+Réponse du masque: REOK
+Envoi paquet 53: 98 bytes
+Notification reçue: ee65569d41e72b0cb538633447a5e25a
+Données déchiffrées: 0452454f4b4f4b000101000000000037
+Réponse du masque: REOK
+Envoi paquet 54: 98 bytes
+Notification reçue: e892d0e8540b456166edeea90741054e
+Données déchiffrées: 0452454f4b4f4b000101000000000038
+Réponse du masque: REOK
+Envoi paquet 55: 98 bytes
+Notification reçue: 1094e77c42266b1e63be2b3a98917ced
+Données déchiffrées: 0452454f4b4f4b000101000000000039
+Réponse du masque: REOK
+Envoi paquet 56: 98 bytes
+Notification reçue: 2e5f44d6ec5f413552e7dc02d258fcbf
+Données déchiffrées: 0452454f4b4f4b00010100000000003a
+Réponse du masque: REOK
+Envoi paquet 57: 98 bytes
+Notification reçue: 14acac365d7fc50f351371e9ce8fb238
+Données déchiffrées: 0452454f4b4f4b00010100000000003b
+Réponse du masque: REOK
+Envoi paquet 58: 98 bytes
+Notification reçue: 21e404f51fb2d7b4efd2a0252396d8ea
+Données déchiffrées: 0452454f4b4f4b00010100000000003c
+Réponse du masque: REOK
+Envoi paquet 59: 98 bytes
+Notification reçue: 1ae283b20a2df884ad8b4d8477f0c7af
+Données déchiffrées: 0452454f4b4f4b00010100000000003d
+Réponse du masque: REOK
+Envoi paquet 60: 98 bytes
+Notification reçue: 0d381fb82686624fe42d22a70e9d6f1e
+Données déchiffrées: 0452454f4b4f4b00010100000000003e
+Réponse du masque: REOK
+Envoi paquet 61: 98 bytes
+Notification reçue: 3e48a90b0ceb2b1629e9fcd15f6a5ff5
+Données déchiffrées: 0452454f4b4f4b00010100000000003f
+Réponse du masque: REOK
+Envoi paquet 62: 98 bytes
+Notification reçue: 308eb7c0b1e54fc7c61144ce2a8a724c
+Données déchiffrées: 0452454f4b4f4b000101000000000040
+Réponse du masque: REOK
+Envoi paquet 63: 98 bytes
+Notification reçue: e709b9122dca5602fce005d0acdbd72b
+Données déchiffrées: 0452454f4b4f4b000101000000000041
+Réponse du masque: REOK
+Envoi paquet 64: 98 bytes
+Notification reçue: 6014007c0f25a8343055fd94b35eded0
+Données déchiffrées: 0452454f4b4f4b000101000000000042
+Réponse du masque: REOK
+Envoi paquet 65: 98 bytes
+Notification reçue: dbdecc153074b633d15796e4a0412145
+Données déchiffrées: 0452454f4b4f4b000101000000000043
+Réponse du masque: REOK
+Envoi paquet 66: 98 bytes
+Notification reçue: 228086287677802f555c7c14c81b236e
+Données déchiffrées: 0452454f4b4f4b000101000000000044
+Réponse du masque: REOK
+Envoi paquet 67: 98 bytes
+Notification reçue: ea6ab3c16baf9986cac72dbd293ba821
+Données déchiffrées: 0452454f4b4f4b000101000000000045
+Réponse du masque: REOK
+Envoi paquet 68: 98 bytes
+Notification reçue: 928cef22ec7692dbfd63ac507663e772
+Données déchiffrées: 0452454f4b4f4b000101000000000046
+Réponse du masque: REOK
+Envoi paquet 69: 98 bytes
+Notification reçue: aeb4f801495d18e87ecaa28b809f72c1
+Données déchiffrées: 0452454f4b4f4b000101000000000047
+Réponse du masque: REOK
+Envoi paquet 70: 98 bytes
+Notification reçue: 6d91f38480621fb28c562ffd593ada44
+Données déchiffrées: 0452454f4b4f4b000101000000000048
+Réponse du masque: REOK
+Envoi paquet 71: 98 bytes
+Notification reçue: bc1e1bb87e774d35be4cae32b87ba409
+Données déchiffrées: 0452454f4b4f4b000101000000000049
+Réponse du masque: REOK
+Envoi paquet 72: 98 bytes
+Notification reçue: 35a7dc2c2ac2c2a96f53345ba85ef19b
+Données déchiffrées: 0452454f4b4f4b00010100000000004a
+Réponse du masque: REOK
+Envoi paquet 73: 98 bytes
+Notification reçue: 8158f5e011e00d01321fd2cec8bffb50
+Données déchiffrées: 0452454f4b4f4b00010100000000004b
+Réponse du masque: REOK
+Envoi paquet 74: 98 bytes
+Notification reçue: 328ff41de167be3a5c12796b72260ac1
+Données déchiffrées: 0452454f4b4f4b00010100000000004c
+Réponse du masque: REOK
+Envoi paquet 75: 98 bytes
+Notification reçue: 6308d1f50b8c6e0487a906a3237ed581
+Données déchiffrées: 0452454f4b4f4b00010100000000004d
+Réponse du masque: REOK
+Envoi paquet 76: 98 bytes
+Notification reçue: 9ac7fd7bd4d385ed426b90e6c137a7ac
+Données déchiffrées: 0452454f4b4f4b00010100000000004e
+Réponse du masque: REOK
+Envoi paquet 77: 98 bytes
+Notification reçue: 0a52b1357a6eefbbfe0f7db09bfb5c6f
+Données déchiffrées: 0452454f4b4f4b00010100000000004f
+Réponse du masque: REOK
+Envoi paquet 78: 98 bytes
+Notification reçue: 31218060e9728a2dcc6721de6b08d0d0
+Données déchiffrées: 0452454f4b4f4b000101000000000050
+Réponse du masque: REOK
+Envoi paquet 79: 98 bytes
+Notification reçue: ebe7a0bc917dfc26af27ae2dad8edffd
+Données déchiffrées: 0452454f4b4f4b000101000000000051
+Réponse du masque: REOK
+Envoi paquet 80: 98 bytes
+Notification reçue: 26733d183b5de7480438def4e669e91a
+Données déchiffrées: 0452454f4b4f4b000101000000000052
+Réponse du masque: REOK
+Envoi paquet 81: 66 bytes
+Notification reçue: 18cd20cff93b23870b3f76131cee48af
+Données déchiffrées: 0452454f4b4f4b000101000000000053
+Réponse du masque: REOK
+✅ Données envoyées.
+Finalisation de l'upload...
+Notification reçue: 8198b2fcf5ed7924c9bb7fbed42d9600
+Données déchiffrées: 0744415443504f4b0000000000000001
+Réponse du masque: DATCPOK
+🎉 Upload Terminé!
+▶️ Activation...
+Notification reçue: 693c855335a7de8bcda874f1a95ed8a2
+Données déchiffrées: 06504c41594f4b000000000000000001
+Réponse du masque: PLAYOK
+127.0.0.1 - - [06/Dec/2025 00:53:35] "POST /preview HTTP/1.1" 200 -
+
+📸 Reçu Image: 46x58
+🔗 Connexion BLE...
+Recherche du masque...
+Connexion à MASK-3B9D97 (86179C2D-07A2-AD8E-6D64-08E8BEB9B6CD)
+Connecté avec succès!
+📤 Upload Slot 1 (8004 bytes)...
+Notification reçue: ed2c12dc67056c78355a982d2b2970a0
+Données déchiffrées: 06444154534f4b000101000000000001
+Réponse du masque: DATSOK
+✅ DATSOK. Envoi données...
+Envoi paquet 0: 98 bytes
+Notification reçue: be41d32bd521b50e7e16048825cbf698
+Données déchiffrées: 0452454f4b4f4b000101000000000002
+Réponse du masque: REOK
+Envoi paquet 1: 98 bytes
+Notification reçue: 7497b10e8052594ade6e6472a498f0eb
+Données déchiffrées: 0452454f4b4f4b000101000000000003
+Réponse du masque: REOK
+Envoi paquet 2: 98 bytes
+Notification reçue: 9572468e140fe9c430516bc0e37e0795
+Données déchiffrées: 0452454f4b4f4b000101000000000004
+Réponse du masque: REOK
+Envoi paquet 3: 98 bytes
+Notification reçue: a965609fc7b76d8960119b3840b0a6ca
+Données déchiffrées: 0452454f4b4f4b000101000000000005
+Réponse du masque: REOK
+Envoi paquet 4: 98 bytes
+Notification reçue: e20b94d6df81656ae841e78627ab4db9
+Données déchiffrées: 0452454f4b4f4b000101000000000006
+Réponse du masque: REOK
+Envoi paquet 5: 98 bytes
+Notification reçue: 5b9eb8a408fce8745196d21e8eeb407d
+Données déchiffrées: 0452454f4b4f4b000101000000000007
+Réponse du masque: REOK
+Envoi paquet 6: 98 bytes
+Notification reçue: 603fad22a0b4b6114296a225b6794cce
+Données déchiffrées: 0452454f4b4f4b000101000000000008
+Réponse du masque: REOK
+Envoi paquet 7: 98 bytes
+Notification reçue: 75c8868c448f4760c85c745f4af899dc
+Données déchiffrées: 0452454f4b4f4b000101000000000009
+Réponse du masque: REOK
+Envoi paquet 8: 98 bytes
+Notification reçue: 794afc9d6bf0e3177683b8a46c27e8c8
+Données déchiffrées: 0452454f4b4f4b00010100000000000a
+Réponse du masque: REOK
+Envoi paquet 9: 98 bytes
+Notification reçue: 0715c9339185c4610d0576053af3aff5
+Données déchiffrées: 0452454f4b4f4b00010100000000000b
+Réponse du masque: REOK
+Envoi paquet 10: 98 bytes
+Notification reçue: f79632223ee437a92c98cf9df8248607
+Données déchiffrées: 0452454f4b4f4b00010100000000000c
+Réponse du masque: REOK
+Envoi paquet 11: 98 bytes
+Notification reçue: 2e794a7baf4ee990ef42405d40bf9287
+Données déchiffrées: 0452454f4b4f4b00010100000000000d
+Réponse du masque: REOK
+Envoi paquet 12: 98 bytes
+Notification reçue: a7d9d86bf75871105dc4b670348d6c09
+Données déchiffrées: 0452454f4b4f4b00010100000000000e
+Réponse du masque: REOK
+Envoi paquet 13: 98 bytes
+Notification reçue: 6b4a1bfe32de45708f9a777fa2a08b3a
+Données déchiffrées: 0452454f4b4f4b00010100000000000f
+Réponse du masque: REOK
+Envoi paquet 14: 98 bytes
+Notification reçue: d0ff24039e6d8fd855887889b5916e91
+Données déchiffrées: 0452454f4b4f4b000101000000000010
+Réponse du masque: REOK
+Envoi paquet 15: 98 bytes
+Notification reçue: a7616a98c8e5cbacba66f6e0e8e380b4
+Données déchiffrées: 0452454f4b4f4b000101000000000011
+Réponse du masque: REOK
+Envoi paquet 16: 98 bytes
+Notification reçue: 7f2733443b89e3fd9ed6ed5da1f0c08e
+Données déchiffrées: 0452454f4b4f4b000101000000000012
+Réponse du masque: REOK
+Envoi paquet 17: 98 bytes
+Notification reçue: 3eeffbb9e7a4ea7cdcdaf1bfd1a1dbcc
+Données déchiffrées: 0452454f4b4f4b000101000000000013
+Réponse du masque: REOK
+Envoi paquet 18: 98 bytes
+Notification reçue: 2b209934b02d59c21e17edba73f43125
+Données déchiffrées: 0452454f4b4f4b000101000000000014
+Réponse du masque: REOK
+Envoi paquet 19: 98 bytes
+Notification reçue: 52cf9e3c24af71e4b55509ae1706d9f0
+Données déchiffrées: 0452454f4b4f4b000101000000000015
+Réponse du masque: REOK
+Envoi paquet 20: 98 bytes
+Notification reçue: c7cd406dbd354d3e817c5141779dcc81
+Données déchiffrées: 0452454f4b4f4b000101000000000016
+Réponse du masque: REOK
+Envoi paquet 21: 98 bytes
+Notification reçue: 9f9208c59d71cd3c861a4aa31b736e11
+Données déchiffrées: 0452454f4b4f4b000101000000000017
+Réponse du masque: REOK
+Envoi paquet 22: 98 bytes
+Notification reçue: 542f2043f60aa930e4cb18f2f1718ddf
+Données déchiffrées: 0452454f4b4f4b000101000000000018
+Réponse du masque: REOK
+Envoi paquet 23: 98 bytes
+Notification reçue: e4919563c1b9aec8784c46f80dba5e3d
+Données déchiffrées: 0452454f4b4f4b000101000000000019
+Réponse du masque: REOK
+Envoi paquet 24: 98 bytes
+Notification reçue: 062b4238b2f9133f8cf2a947a6dfd643
+Données déchiffrées: 0452454f4b4f4b00010100000000001a
+Réponse du masque: REOK
+Envoi paquet 25: 98 bytes
+Notification reçue: 8ea81d7531b12e9962f20c5b4a863789
+Données déchiffrées: 0452454f4b4f4b00010100000000001b
+Réponse du masque: REOK
+Envoi paquet 26: 98 bytes
+Notification reçue: c4c112b9dc8a1336571651b7e1a5b261
+Données déchiffrées: 0452454f4b4f4b00010100000000001c
+Réponse du masque: REOK
+Envoi paquet 27: 98 bytes
+Notification reçue: b5c820e906a031cfb66456f6e30cae9a
+Données déchiffrées: 0452454f4b4f4b00010100000000001d
+Réponse du masque: REOK
+Envoi paquet 28: 98 bytes
+Notification reçue: 16510eddaa05642ab99218627ac61810
+Données déchiffrées: 0452454f4b4f4b00010100000000001e
+Réponse du masque: REOK
+Envoi paquet 29: 98 bytes
+Notification reçue: 3918317e5a8cd836f7496266cf54c9e6
+Données déchiffrées: 0452454f4b4f4b00010100000000001f
+Réponse du masque: REOK
+Envoi paquet 30: 98 bytes
+Notification reçue: d0db0523a9ed44514c630e076e7db2ea
+Données déchiffrées: 0452454f4b4f4b000101000000000020
+Réponse du masque: REOK
+Envoi paquet 31: 98 bytes
+Notification reçue: 8be07c9fd95a1d8180b096725f161076
+Données déchiffrées: 0452454f4b4f4b000101000000000021
+Réponse du masque: REOK
+Envoi paquet 32: 98 bytes
+Notification reçue: 446cf8518c57e32ece880c48ba020289
+Données déchiffrées: 0452454f4b4f4b000101000000000022
+Réponse du masque: REOK
+Envoi paquet 33: 98 bytes
+Notification reçue: 2fc86942d9288945efdb2d37637743c9
+Données déchiffrées: 0452454f4b4f4b000101000000000023
+Réponse du masque: REOK
+Envoi paquet 34: 98 bytes
+Notification reçue: 3fb0f57416e611f7b55a7d52d81d966d
+Données déchiffrées: 0452454f4b4f4b000101000000000024
+Réponse du masque: REOK
+Envoi paquet 35: 98 bytes
+Notification reçue: 77d24502ff688c78440a2de2b5a2a9a0
+Données déchiffrées: 0452454f4b4f4b000101000000000025
+Réponse du masque: REOK
+Envoi paquet 36: 98 bytes
+Notification reçue: 61b81768f7087c38bcc5c2271fd021b8
+Données déchiffrées: 0452454f4b4f4b000101000000000026
+Réponse du masque: REOK
+Envoi paquet 37: 98 bytes
+Notification reçue: 47aa0af95598c528d8adce9d6d462603
+Données déchiffrées: 0452454f4b4f4b000101000000000027
+Réponse du masque: REOK
+Envoi paquet 38: 98 bytes
+Notification reçue: 0f870f1fb3a2674d9ab19fc605966d6c
+Données déchiffrées: 0452454f4b4f4b000101000000000028
+Réponse du masque: REOK
+Envoi paquet 39: 98 bytes
+Notification reçue: 352682a1a79bddbbb12af276c8109a4a
+Données déchiffrées: 0452454f4b4f4b000101000000000029
+Réponse du masque: REOK
+Envoi paquet 40: 98 bytes
+Notification reçue: 9e931907c3b89679e76a158aed1985cb
+Données déchiffrées: 0452454f4b4f4b00010100000000002a
+Réponse du masque: REOK
+Envoi paquet 41: 98 bytes
+Notification reçue: 976b2fa6c38426088d7b621d2f8a819f
+Données déchiffrées: 0452454f4b4f4b00010100000000002b
+Réponse du masque: REOK
+Envoi paquet 42: 98 bytes
+Notification reçue: ad82dd07d659153aa2266eadfaea07c3
+Données déchiffrées: 0452454f4b4f4b00010100000000002c
+Réponse du masque: REOK
+Envoi paquet 43: 98 bytes
+Notification reçue: 6cf0f90eefc88690f61cba999e5b7889
+Données déchiffrées: 0452454f4b4f4b00010100000000002d
+Réponse du masque: REOK
+Envoi paquet 44: 98 bytes
+Notification reçue: 1b3088a4bc7b9ca64743c96775a912a5
+Données déchiffrées: 0452454f4b4f4b00010100000000002e
+Réponse du masque: REOK
+Envoi paquet 45: 98 bytes
+Notification reçue: a7b99b0e90aa813668c35259f3b56c7a
+Données déchiffrées: 0452454f4b4f4b00010100000000002f
+Réponse du masque: REOK
+Envoi paquet 46: 98 bytes
+Notification reçue: 0761216fa5356d70bbd2b632e6ac3932
+Données déchiffrées: 0452454f4b4f4b000101000000000030
+Réponse du masque: REOK
+Envoi paquet 47: 98 bytes
+Notification reçue: 1335aa2ac7cb3af18469a64106beac0b
+Données déchiffrées: 0452454f4b4f4b000101000000000031
+Réponse du masque: REOK
+Envoi paquet 48: 98 bytes
+Notification reçue: b39d94cde51ee9c6ddd87f1cb8ad1852
+Données déchiffrées: 0452454f4b4f4b000101000000000032
+Réponse du masque: REOK
+Envoi paquet 49: 98 bytes
+Notification reçue: d62167c1d0fa40e698feaa11139f81e6
+Données déchiffrées: 0452454f4b4f4b000101000000000033
+Réponse du masque: REOK
+Envoi paquet 50: 98 bytes
+Notification reçue: a3336490c64490556c48e5e41186416c
+Données déchiffrées: 0452454f4b4f4b000101000000000034
+Réponse du masque: REOK
+Envoi paquet 51: 98 bytes
+Notification reçue: aaf63d1845a7f24a0712179faab9738d
+Données déchiffrées: 0452454f4b4f4b000101000000000035
+Réponse du masque: REOK
+Envoi paquet 52: 98 bytes
+Notification reçue: ffbfd03290884b4d8bfd5576b1017dfd
+Données déchiffrées: 0452454f4b4f4b000101000000000036
+Réponse du masque: REOK
+Envoi paquet 53: 98 bytes
+Notification reçue: ee65569d41e72b0cb538633447a5e25a
+Données déchiffrées: 0452454f4b4f4b000101000000000037
+Réponse du masque: REOK
+Envoi paquet 54: 98 bytes
+Notification reçue: e892d0e8540b456166edeea90741054e
+Données déchiffrées: 0452454f4b4f4b000101000000000038
+Réponse du masque: REOK
+Envoi paquet 55: 98 bytes
+Notification reçue: 1094e77c42266b1e63be2b3a98917ced
+Données déchiffrées: 0452454f4b4f4b000101000000000039
+Réponse du masque: REOK
+Envoi paquet 56: 98 bytes
+Notification reçue: 2e5f44d6ec5f413552e7dc02d258fcbf
+Données déchiffrées: 0452454f4b4f4b00010100000000003a
+Réponse du masque: REOK
+Envoi paquet 57: 98 bytes
+Notification reçue: 14acac365d7fc50f351371e9ce8fb238
+Données déchiffrées: 0452454f4b4f4b00010100000000003b
+Réponse du masque: REOK
+Envoi paquet 58: 98 bytes
+Notification reçue: 21e404f51fb2d7b4efd2a0252396d8ea
+Données déchiffrées: 0452454f4b4f4b00010100000000003c
+Réponse du masque: REOK
+Envoi paquet 59: 98 bytes
+Notification reçue: 1ae283b20a2df884ad8b4d8477f0c7af
+Données déchiffrées: 0452454f4b4f4b00010100000000003d
+Réponse du masque: REOK
+Envoi paquet 60: 98 bytes
+Notification reçue: 0d381fb82686624fe42d22a70e9d6f1e
+Données déchiffrées: 0452454f4b4f4b00010100000000003e
+Réponse du masque: REOK
+Envoi paquet 61: 98 bytes
+Notification reçue: 3e48a90b0ceb2b1629e9fcd15f6a5ff5
+Données déchiffrées: 0452454f4b4f4b00010100000000003f
+Réponse du masque: REOK
+Envoi paquet 62: 98 bytes
+Notification reçue: 308eb7c0b1e54fc7c61144ce2a8a724c
+Données déchiffrées: 0452454f4b4f4b000101000000000040
+Réponse du masque: REOK
+Envoi paquet 63: 98 bytes
+Notification reçue: e709b9122dca5602fce005d0acdbd72b
+Données déchiffrées: 0452454f4b4f4b000101000000000041
+Réponse du masque: REOK
+Envoi paquet 64: 98 bytes
+Notification reçue: 6014007c0f25a8343055fd94b35eded0
+Données déchiffrées: 0452454f4b4f4b000101000000000042
+Réponse du masque: REOK
+Envoi paquet 65: 98 bytes
+Notification reçue: dbdecc153074b633d15796e4a0412145
+Données déchiffrées: 0452454f4b4f4b000101000000000043
+Réponse du masque: REOK
+Envoi paquet 66: 98 bytes
+Notification reçue: 228086287677802f555c7c14c81b236e
+Données déchiffrées: 0452454f4b4f4b000101000000000044
+Réponse du masque: REOK
+Envoi paquet 67: 98 bytes
+Notification reçue: ea6ab3c16baf9986cac72dbd293ba821
+Données déchiffrées: 0452454f4b4f4b000101000000000045
+Réponse du masque: REOK
+Envoi paquet 68: 98 bytes
+Notification reçue: 928cef22ec7692dbfd63ac507663e772
+Données déchiffrées: 0452454f4b4f4b000101000000000046
+Réponse du masque: REOK
+Envoi paquet 69: 98 bytes
+Notification reçue: aeb4f801495d18e87ecaa28b809f72c1
+Données déchiffrées: 0452454f4b4f4b000101000000000047
+Réponse du masque: REOK
+Envoi paquet 70: 98 bytes
+Notification reçue: 6d91f38480621fb28c562ffd593ada44
+Données déchiffrées: 0452454f4b4f4b000101000000000048
+Réponse du masque: REOK
+Envoi paquet 71: 98 bytes
+Notification reçue: bc1e1bb87e774d35be4cae32b87ba409
+Données déchiffrées: 0452454f4b4f4b000101000000000049
+Réponse du masque: REOK
+Envoi paquet 72: 98 bytes
+Notification reçue: 35a7dc2c2ac2c2a96f53345ba85ef19b
+Données déchiffrées: 0452454f4b4f4b00010100000000004a
+Réponse du masque: REOK
+Envoi paquet 73: 98 bytes
+Notification reçue: 8158f5e011e00d01321fd2cec8bffb50
+Données déchiffrées: 0452454f4b4f4b00010100000000004b
+Réponse du masque: REOK
+Envoi paquet 74: 98 bytes
+Notification reçue: 328ff41de167be3a5c12796b72260ac1
+Données déchiffrées: 0452454f4b4f4b00010100000000004c
+Réponse du masque: REOK
+Envoi paquet 75: 98 bytes
+Notification reçue: 6308d1f50b8c6e0487a906a3237ed581
+Données déchiffrées: 0452454f4b4f4b00010100000000004d
+Réponse du masque: REOK
+Envoi paquet 76: 98 bytes
+Notification reçue: 9ac7fd7bd4d385ed426b90e6c137a7ac
+Données déchiffrées: 0452454f4b4f4b00010100000000004e
+Réponse du masque: REOK
+Envoi paquet 77: 98 bytes
+Notification reçue: 0a52b1357a6eefbbfe0f7db09bfb5c6f
+Données déchiffrées: 0452454f4b4f4b00010100000000004f
+Réponse du masque: REOK
+Envoi paquet 78: 98 bytes
+Notification reçue: 31218060e9728a2dcc6721de6b08d0d0
+Données déchiffrées: 0452454f4b4f4b000101000000000050
+Réponse du masque: REOK
+Envoi paquet 79: 98 bytes
+Notification reçue: ebe7a0bc917dfc26af27ae2dad8edffd
+Données déchiffrées: 0452454f4b4f4b000101000000000051
+Réponse du masque: REOK
+Envoi paquet 80: 98 bytes
+Notification reçue: 26733d183b5de7480438def4e669e91a
+Données déchiffrées: 0452454f4b4f4b000101000000000052
+Réponse du masque: REOK
+Envoi paquet 81: 66 bytes
+Notification reçue: 18cd20cff93b23870b3f76131cee48af
+Données déchiffrées: 0452454f4b4f4b000101000000000053
+Réponse du masque: REOK
+✅ Données envoyées.
+Finalisation de l'upload...
+Notification reçue: 8198b2fcf5ed7924c9bb7fbed42d9600
+Données déchiffrées: 0744415443504f4b0000000000000001
+Réponse du masque: DATCPOK
+🎉 Upload Terminé!
+▶️ Activation...
+Notification reçue: 693c855335a7de8bcda874f1a95ed8a2
+Données déchiffrées: 06504c41594f4b000000000000000001
+Réponse du masque: PLAYOK
+127.0.0.1 - - [06/Dec/2025 00:54:49] "POST /preview HTTP/1.1" 200 -
+
+📸 Reçu Image: 46x58
+🔗 Connexion BLE...
+Recherche du masque...
+Connexion à MASK-3B9D97 (86179C2D-07A2-AD8E-6D64-08E8BEB9B6CD)
+Connecté avec succès!
+📤 Upload Slot 1 (8004 bytes)...
+Notification reçue: ed2c12dc67056c78355a982d2b2970a0
+Données déchiffrées: 06444154534f4b000101000000000001
+Réponse du masque: DATSOK
+✅ DATSOK. Envoi données...
+Envoi paquet 0: 98 bytes
+Notification reçue: be41d32bd521b50e7e16048825cbf698
+Données déchiffrées: 0452454f4b4f4b000101000000000002
+Réponse du masque: REOK
+Envoi paquet 1: 98 bytes
+Notification reçue: 7497b10e8052594ade6e6472a498f0eb
+Données déchiffrées: 0452454f4b4f4b000101000000000003
+Réponse du masque: REOK
+Envoi paquet 2: 98 bytes
+Notification reçue: 9572468e140fe9c430516bc0e37e0795
+Données déchiffrées: 0452454f4b4f4b000101000000000004
+Réponse du masque: REOK
+Envoi paquet 3: 98 bytes
+Notification reçue: a965609fc7b76d8960119b3840b0a6ca
+Données déchiffrées: 0452454f4b4f4b000101000000000005
+Réponse du masque: REOK
+Envoi paquet 4: 98 bytes
+Notification reçue: e20b94d6df81656ae841e78627ab4db9
+Données déchiffrées: 0452454f4b4f4b000101000000000006
+Réponse du masque: REOK
+Envoi paquet 5: 98 bytes
+Notification reçue: 5b9eb8a408fce8745196d21e8eeb407d
+Données déchiffrées: 0452454f4b4f4b000101000000000007
+Réponse du masque: REOK
+Envoi paquet 6: 98 bytes
+Notification reçue: 603fad22a0b4b6114296a225b6794cce
+Données déchiffrées: 0452454f4b4f4b000101000000000008
+Réponse du masque: REOK
+Envoi paquet 7: 98 bytes
+Notification reçue: 75c8868c448f4760c85c745f4af899dc
+Données déchiffrées: 0452454f4b4f4b000101000000000009
+Réponse du masque: REOK
+Envoi paquet 8: 98 bytes
+Notification reçue: 794afc9d6bf0e3177683b8a46c27e8c8
+Données déchiffrées: 0452454f4b4f4b00010100000000000a
+Réponse du masque: REOK
+Envoi paquet 9: 98 bytes
+Notification reçue: 0715c9339185c4610d0576053af3aff5
+Données déchiffrées: 0452454f4b4f4b00010100000000000b
+Réponse du masque: REOK
+Envoi paquet 10: 98 bytes
+Notification reçue: f79632223ee437a92c98cf9df8248607
+Données déchiffrées: 0452454f4b4f4b00010100000000000c
+Réponse du masque: REOK
+Envoi paquet 11: 98 bytes
+Notification reçue: 2e794a7baf4ee990ef42405d40bf9287
+Données déchiffrées: 0452454f4b4f4b00010100000000000d
+Réponse du masque: REOK
+Envoi paquet 12: 98 bytes
+Notification reçue: a7d9d86bf75871105dc4b670348d6c09
+Données déchiffrées: 0452454f4b4f4b00010100000000000e
+Réponse du masque: REOK
+Envoi paquet 13: 98 bytes
+Notification reçue: 6b4a1bfe32de45708f9a777fa2a08b3a
+Données déchiffrées: 0452454f4b4f4b00010100000000000f
+Réponse du masque: REOK
+Envoi paquet 14: 98 bytes
+Notification reçue: d0ff24039e6d8fd855887889b5916e91
+Données déchiffrées: 0452454f4b4f4b000101000000000010
+Réponse du masque: REOK
+Envoi paquet 15: 98 bytes
+Notification reçue: a7616a98c8e5cbacba66f6e0e8e380b4
+Données déchiffrées: 0452454f4b4f4b000101000000000011
+Réponse du masque: REOK
+Envoi paquet 16: 98 bytes
+Notification reçue: 7f2733443b89e3fd9ed6ed5da1f0c08e
+Données déchiffrées: 0452454f4b4f4b000101000000000012
+Réponse du masque: REOK
+Envoi paquet 17: 98 bytes
+Notification reçue: 3eeffbb9e7a4ea7cdcdaf1bfd1a1dbcc
+Données déchiffrées: 0452454f4b4f4b000101000000000013
+Réponse du masque: REOK
+Envoi paquet 18: 98 bytes
+Notification reçue: 2b209934b02d59c21e17edba73f43125
+Données déchiffrées: 0452454f4b4f4b000101000000000014
+Réponse du masque: REOK
+Envoi paquet 19: 98 bytes
+Notification reçue: 52cf9e3c24af71e4b55509ae1706d9f0
+Données déchiffrées: 0452454f4b4f4b000101000000000015
+Réponse du masque: REOK
+Envoi paquet 20: 98 bytes
+Notification reçue: c7cd406dbd354d3e817c5141779dcc81
+Données déchiffrées: 0452454f4b4f4b000101000000000016
+Réponse du masque: REOK
+Envoi paquet 21: 98 bytes
+Notification reçue: 9f9208c59d71cd3c861a4aa31b736e11
+Données déchiffrées: 0452454f4b4f4b000101000000000017
+Réponse du masque: REOK
+Envoi paquet 22: 98 bytes
+Notification reçue: 542f2043f60aa930e4cb18f2f1718ddf
+Données déchiffrées: 0452454f4b4f4b000101000000000018
+Réponse du masque: REOK
+Envoi paquet 23: 98 bytes
+Notification reçue: e4919563c1b9aec8784c46f80dba5e3d
+Données déchiffrées: 0452454f4b4f4b000101000000000019
+Réponse du masque: REOK
+Envoi paquet 24: 98 bytes
+Notification reçue: 062b4238b2f9133f8cf2a947a6dfd643
+Données déchiffrées: 0452454f4b4f4b00010100000000001a
+Réponse du masque: REOK
+Envoi paquet 25: 98 bytes
+Notification reçue: 8ea81d7531b12e9962f20c5b4a863789
+Données déchiffrées: 0452454f4b4f4b00010100000000001b
+Réponse du masque: REOK
+Envoi paquet 26: 98 bytes
+Notification reçue: c4c112b9dc8a1336571651b7e1a5b261
+Données déchiffrées: 0452454f4b4f4b00010100000000001c
+Réponse du masque: REOK
+Envoi paquet 27: 98 bytes
+Notification reçue: b5c820e906a031cfb66456f6e30cae9a
+Données déchiffrées: 0452454f4b4f4b00010100000000001d
+Réponse du masque: REOK
+Envoi paquet 28: 98 bytes
+Notification reçue: 16510eddaa05642ab99218627ac61810
+Données déchiffrées: 0452454f4b4f4b00010100000000001e
+Réponse du masque: REOK
+Envoi paquet 29: 98 bytes
+Notification reçue: 3918317e5a8cd836f7496266cf54c9e6
+Données déchiffrées: 0452454f4b4f4b00010100000000001f
+Réponse du masque: REOK
+Envoi paquet 30: 98 bytes
+Notification reçue: d0db0523a9ed44514c630e076e7db2ea
+Données déchiffrées: 0452454f4b4f4b000101000000000020
+Réponse du masque: REOK
+Envoi paquet 31: 98 bytes
+Notification reçue: 8be07c9fd95a1d8180b096725f161076
+Données déchiffrées: 0452454f4b4f4b000101000000000021
+Réponse du masque: REOK
+Envoi paquet 32: 98 bytes
+Notification reçue: 446cf8518c57e32ece880c48ba020289
+Données déchiffrées: 0452454f4b4f4b000101000000000022
+Réponse du masque: REOK
+Envoi paquet 33: 98 bytes
+Notification reçue: 2fc86942d9288945efdb2d37637743c9
+Données déchiffrées: 0452454f4b4f4b000101000000000023
+Réponse du masque: REOK
+Envoi paquet 34: 98 bytes
+Notification reçue: 3fb0f57416e611f7b55a7d52d81d966d
+Données déchiffrées: 0452454f4b4f4b000101000000000024
+Réponse du masque: REOK
+Envoi paquet 35: 98 bytes
+Notification reçue: 77d24502ff688c78440a2de2b5a2a9a0
+Données déchiffrées: 0452454f4b4f4b000101000000000025
+Réponse du masque: REOK
+Envoi paquet 36: 98 bytes
+Notification reçue: 61b81768f7087c38bcc5c2271fd021b8
+Données déchiffrées: 0452454f4b4f4b000101000000000026
+Réponse du masque: REOK
+Envoi paquet 37: 98 bytes
+Notification reçue: 47aa0af95598c528d8adce9d6d462603
+Données déchiffrées: 0452454f4b4f4b000101000000000027
+Réponse du masque: REOK
+Envoi paquet 38: 98 bytes
+Notification reçue: 0f870f1fb3a2674d9ab19fc605966d6c
+Données déchiffrées: 0452454f4b4f4b000101000000000028
+Réponse du masque: REOK
+Envoi paquet 39: 98 bytes
+Notification reçue: 352682a1a79bddbbb12af276c8109a4a
+Données déchiffrées: 0452454f4b4f4b000101000000000029
+Réponse du masque: REOK
+Envoi paquet 40: 98 bytes
+Notification reçue: 9e931907c3b89679e76a158aed1985cb
+Données déchiffrées: 0452454f4b4f4b00010100000000002a
+Réponse du masque: REOK
+Envoi paquet 41: 98 bytes
+Notification reçue: 976b2fa6c38426088d7b621d2f8a819f
+Données déchiffrées: 0452454f4b4f4b00010100000000002b
+Réponse du masque: REOK
+Envoi paquet 42: 98 bytes
+Notification reçue: ad82dd07d659153aa2266eadfaea07c3
+Données déchiffrées: 0452454f4b4f4b00010100000000002c
+Réponse du masque: REOK
+Envoi paquet 43: 98 bytes
+Notification reçue: 6cf0f90eefc88690f61cba999e5b7889
+Données déchiffrées: 0452454f4b4f4b00010100000000002d
+Réponse du masque: REOK
+Envoi paquet 44: 98 bytes
+Notification reçue: 1b3088a4bc7b9ca64743c96775a912a5
+Données déchiffrées: 0452454f4b4f4b00010100000000002e
+Réponse du masque: REOK
+Envoi paquet 45: 98 bytes
+Notification reçue: a7b99b0e90aa813668c35259f3b56c7a
+Données déchiffrées: 0452454f4b4f4b00010100000000002f
+Réponse du masque: REOK
+Envoi paquet 46: 98 bytes
+Notification reçue: 0761216fa5356d70bbd2b632e6ac3932
+Données déchiffrées: 0452454f4b4f4b000101000000000030
+Réponse du masque: REOK
+Envoi paquet 47: 98 bytes
+Notification reçue: 1335aa2ac7cb3af18469a64106beac0b
+Données déchiffrées: 0452454f4b4f4b000101000000000031
+Réponse du masque: REOK
+Envoi paquet 48: 98 bytes
+Notification reçue: b39d94cde51ee9c6ddd87f1cb8ad1852
+Données déchiffrées: 0452454f4b4f4b000101000000000032
+Réponse du masque: REOK
+Envoi paquet 49: 98 bytes
+Notification reçue: d62167c1d0fa40e698feaa11139f81e6
+Données déchiffrées: 0452454f4b4f4b000101000000000033
+Réponse du masque: REOK
+Envoi paquet 50: 98 bytes
+Notification reçue: a3336490c64490556c48e5e41186416c
+Données déchiffrées: 0452454f4b4f4b000101000000000034
+Réponse du masque: REOK
+Envoi paquet 51: 98 bytes
+Notification reçue: aaf63d1845a7f24a0712179faab9738d
+Données déchiffrées: 0452454f4b4f4b000101000000000035
+Réponse du masque: REOK
+Envoi paquet 52: 98 bytes
+Notification reçue: ffbfd03290884b4d8bfd5576b1017dfd
+Données déchiffrées: 0452454f4b4f4b000101000000000036
+Réponse du masque: REOK
+Envoi paquet 53: 98 bytes
+Notification reçue: ee65569d41e72b0cb538633447a5e25a
+Données déchiffrées: 0452454f4b4f4b000101000000000037
+Réponse du masque: REOK
+Envoi paquet 54: 98 bytes
+Notification reçue: e892d0e8540b456166edeea90741054e
+Données déchiffrées: 0452454f4b4f4b000101000000000038
+Réponse du masque: REOK
+Envoi paquet 55: 98 bytes
+Notification reçue: 1094e77c42266b1e63be2b3a98917ced
+Données déchiffrées: 0452454f4b4f4b000101000000000039
+Réponse du masque: REOK
+Envoi paquet 56: 98 bytes
+Notification reçue: 2e5f44d6ec5f413552e7dc02d258fcbf
+Données déchiffrées: 0452454f4b4f4b00010100000000003a
+Réponse du masque: REOK
+Envoi paquet 57: 98 bytes
+Notification reçue: 14acac365d7fc50f351371e9ce8fb238
+Données déchiffrées: 0452454f4b4f4b00010100000000003b
+Réponse du masque: REOK
+Envoi paquet 58: 98 bytes
+Notification reçue: 21e404f51fb2d7b4efd2a0252396d8ea
+Données déchiffrées: 0452454f4b4f4b00010100000000003c
+Réponse du masque: REOK
+Envoi paquet 59: 98 bytes
+Notification reçue: 1ae283b20a2df884ad8b4d8477f0c7af
+Données déchiffrées: 0452454f4b4f4b00010100000000003d
+Réponse du masque: REOK
+Envoi paquet 60: 98 bytes
+Notification reçue: 0d381fb82686624fe42d22a70e9d6f1e
+Données déchiffrées: 0452454f4b4f4b00010100000000003e
+Réponse du masque: REOK
+Envoi paquet 61: 98 bytes
+Notification reçue: 3e48a90b0ceb2b1629e9fcd15f6a5ff5
+Données déchiffrées: 0452454f4b4f4b00010100000000003f
+Réponse du masque: REOK
+Envoi paquet 62: 98 bytes
+Notification reçue: 308eb7c0b1e54fc7c61144ce2a8a724c
+Données déchiffrées: 0452454f4b4f4b000101000000000040
+Réponse du masque: REOK
+Envoi paquet 63: 98 bytes
+Notification reçue: e709b9122dca5602fce005d0acdbd72b
+Données déchiffrées: 0452454f4b4f4b000101000000000041
+Réponse du masque: REOK
+Envoi paquet 64: 98 bytes
+Notification reçue: 6014007c0f25a8343055fd94b35eded0
+Données déchiffrées: 0452454f4b4f4b000101000000000042
+Réponse du masque: REOK
+Envoi paquet 65: 98 bytes
+Notification reçue: dbdecc153074b633d15796e4a0412145
+Données déchiffrées: 0452454f4b4f4b000101000000000043
+Réponse du masque: REOK
+Envoi paquet 66: 98 bytes
+Notification reçue: 228086287677802f555c7c14c81b236e
+Données déchiffrées: 0452454f4b4f4b000101000000000044
+Réponse du masque: REOK
+Envoi paquet 67: 98 bytes
+Notification reçue: ea6ab3c16baf9986cac72dbd293ba821
+Données déchiffrées: 0452454f4b4f4b000101000000000045
+Réponse du masque: REOK
+Envoi paquet 68: 98 bytes
+Notification reçue: 928cef22ec7692dbfd63ac507663e772
+Données déchiffrées: 0452454f4b4f4b000101000000000046
+Réponse du masque: REOK
+Envoi paquet 69: 98 bytes
+Notification reçue: aeb4f801495d18e87ecaa28b809f72c1
+Données déchiffrées: 0452454f4b4f4b000101000000000047
+Réponse du masque: REOK
+Envoi paquet 70: 98 bytes
+Notification reçue: 6d91f38480621fb28c562ffd593ada44
+Données déchiffrées: 0452454f4b4f4b000101000000000048
+Réponse du masque: REOK
+Envoi paquet 71: 98 bytes
+Notification reçue: bc1e1bb87e774d35be4cae32b87ba409
+Données déchiffrées: 0452454f4b4f4b000101000000000049
+Réponse du masque: REOK
+Envoi paquet 72: 98 bytes
+Notification reçue: 35a7dc2c2ac2c2a96f53345ba85ef19b
+Données déchiffrées: 0452454f4b4f4b00010100000000004a
+Réponse du masque: REOK
+Envoi paquet 73: 98 bytes
+Notification reçue: 8158f5e011e00d01321fd2cec8bffb50
+Données déchiffrées: 0452454f4b4f4b00010100000000004b
+Réponse du masque: REOK
+Envoi paquet 74: 98 bytes
+Notification reçue: 328ff41de167be3a5c12796b72260ac1
+Données déchiffrées: 0452454f4b4f4b00010100000000004c
+Réponse du masque: REOK
+Envoi paquet 75: 98 bytes
+Notification reçue: 6308d1f50b8c6e0487a906a3237ed581
+Données déchiffrées: 0452454f4b4f4b00010100000000004d
+Réponse du masque: REOK
+Envoi paquet 76: 98 bytes
+Notification reçue: 9ac7fd7bd4d385ed426b90e6c137a7ac
+Données déchiffrées: 0452454f4b4f4b00010100000000004e
+Réponse du masque: REOK
+Envoi paquet 77: 98 bytes
+Notification reçue: 0a52b1357a6eefbbfe0f7db09bfb5c6f
+Données déchiffrées: 0452454f4b4f4b00010100000000004f
+Réponse du masque: REOK
+Envoi paquet 78: 98 bytes
+Notification reçue: 31218060e9728a2dcc6721de6b08d0d0
+Données déchiffrées: 0452454f4b4f4b000101000000000050
+Réponse du masque: REOK
+Envoi paquet 79: 98 bytes
+Notification reçue: ebe7a0bc917dfc26af27ae2dad8edffd
+Données déchiffrées: 0452454f4b4f4b000101000000000051
+Réponse du masque: REOK
+Envoi paquet 80: 98 bytes
+Notification reçue: 26733d183b5de7480438def4e669e91a
+Données déchiffrées: 0452454f4b4f4b000101000000000052
+Réponse du masque: REOK
+Envoi paquet 81: 66 bytes
+Notification reçue: 18cd20cff93b23870b3f76131cee48af
+Données déchiffrées: 0452454f4b4f4b000101000000000053
+Réponse du masque: REOK
+✅ Données envoyées.
+Finalisation de l'upload...
+Notification reçue: 8198b2fcf5ed7924c9bb7fbed42d9600
+Données déchiffrées: 0744415443504f4b0000000000000001
+Réponse du masque: DATCPOK
+🎉 Upload Terminé!
+▶️ Activation...
+127.0.0.1 - - [06/Dec/2025 00:55:20] "POST /preview HTTP/1.1" 200 -
+
+📸 Reçu Image: 46x58
+🔗 Connexion BLE...
+Recherche du masque...
+Connexion à MASK-3B9D97 (86179C2D-07A2-AD8E-6D64-08E8BEB9B6CD)
+Connecté avec succès!
+📤 Upload Slot 1 (8004 bytes)...
+Notification reçue: ed2c12dc67056c78355a982d2b2970a0
+Données déchiffrées: 06444154534f4b000101000000000001
+Réponse du masque: DATSOK
+✅ DATSOK. Envoi données...
+Envoi paquet 0: 98 bytes
+Notification reçue: be41d32bd521b50e7e16048825cbf698
+Données déchiffrées: 0452454f4b4f4b000101000000000002
+Réponse du masque: REOK
+Envoi paquet 1: 98 bytes
+Notification reçue: 7497b10e8052594ade6e6472a498f0eb
+Données déchiffrées: 0452454f4b4f4b000101000000000003
+Réponse du masque: REOK
+Envoi paquet 2: 98 bytes
+Notification reçue: 9572468e140fe9c430516bc0e37e0795
+Données déchiffrées: 0452454f4b4f4b000101000000000004
+Réponse du masque: REOK
+Envoi paquet 3: 98 bytes
+Notification reçue: a965609fc7b76d8960119b3840b0a6ca
+Données déchiffrées: 0452454f4b4f4b000101000000000005
+Réponse du masque: REOK
+Envoi paquet 4: 98 bytes
+Notification reçue: e20b94d6df81656ae841e78627ab4db9
+Données déchiffrées: 0452454f4b4f4b000101000000000006
+Réponse du masque: REOK
+Envoi paquet 5: 98 bytes
+Notification reçue: 5b9eb8a408fce8745196d21e8eeb407d
+Données déchiffrées: 0452454f4b4f4b000101000000000007
+Réponse du masque: REOK
+Envoi paquet 6: 98 bytes
+Notification reçue: 603fad22a0b4b6114296a225b6794cce
+Données déchiffrées: 0452454f4b4f4b000101000000000008
+Réponse du masque: REOK
+Envoi paquet 7: 98 bytes
+Notification reçue: 75c8868c448f4760c85c745f4af899dc
+Données déchiffrées: 0452454f4b4f4b000101000000000009
+Réponse du masque: REOK
+Envoi paquet 8: 98 bytes
+Notification reçue: 794afc9d6bf0e3177683b8a46c27e8c8
+Données déchiffrées: 0452454f4b4f4b00010100000000000a
+Réponse du masque: REOK
+Envoi paquet 9: 98 bytes
+Notification reçue: 0715c9339185c4610d0576053af3aff5
+Données déchiffrées: 0452454f4b4f4b00010100000000000b
+Réponse du masque: REOK
+Envoi paquet 10: 98 bytes
+Notification reçue: f79632223ee437a92c98cf9df8248607
+Données déchiffrées: 0452454f4b4f4b00010100000000000c
+Réponse du masque: REOK
+Envoi paquet 11: 98 bytes
+Notification reçue: 2e794a7baf4ee990ef42405d40bf9287
+Données déchiffrées: 0452454f4b4f4b00010100000000000d
+Réponse du masque: REOK
+Envoi paquet 12: 98 bytes
+Notification reçue: a7d9d86bf75871105dc4b670348d6c09
+Données déchiffrées: 0452454f4b4f4b00010100000000000e
+Réponse du masque: REOK
+Envoi paquet 13: 98 bytes
+Notification reçue: 6b4a1bfe32de45708f9a777fa2a08b3a
+Données déchiffrées: 0452454f4b4f4b00010100000000000f
+Réponse du masque: REOK
+Envoi paquet 14: 98 bytes
+Notification reçue: d0ff24039e6d8fd855887889b5916e91
+Données déchiffrées: 0452454f4b4f4b000101000000000010
+Réponse du masque: REOK
+Envoi paquet 15: 98 bytes
+Notification reçue: a7616a98c8e5cbacba66f6e0e8e380b4
+Données déchiffrées: 0452454f4b4f4b000101000000000011
+Réponse du masque: REOK
+Envoi paquet 16: 98 bytes
+Notification reçue: 7f2733443b89e3fd9ed6ed5da1f0c08e
+Données déchiffrées: 0452454f4b4f4b000101000000000012
+Réponse du masque: REOK
+Envoi paquet 17: 98 bytes
+Notification reçue: 3eeffbb9e7a4ea7cdcdaf1bfd1a1dbcc
+Données déchiffrées: 0452454f4b4f4b000101000000000013
+Réponse du masque: REOK
+Envoi paquet 18: 98 bytes
+Notification reçue: 2b209934b02d59c21e17edba73f43125
+Données déchiffrées: 0452454f4b4f4b000101000000000014
+Réponse du masque: REOK
+Envoi paquet 19: 98 bytes
+Notification reçue: 52cf9e3c24af71e4b55509ae1706d9f0
+Données déchiffrées: 0452454f4b4f4b000101000000000015
+Réponse du masque: REOK
+Envoi paquet 20: 98 bytes
+Notification reçue: c7cd406dbd354d3e817c5141779dcc81
+Données déchiffrées: 0452454f4b4f4b000101000000000016
+Réponse du masque: REOK
+Envoi paquet 21: 98 bytes
+Notification reçue: 9f9208c59d71cd3c861a4aa31b736e11
+Données déchiffrées: 0452454f4b4f4b000101000000000017
+Réponse du masque: REOK
+Envoi paquet 22: 98 bytes
+Notification reçue: 542f2043f60aa930e4cb18f2f1718ddf
+Données déchiffrées: 0452454f4b4f4b000101000000000018
+Réponse du masque: REOK
+Envoi paquet 23: 98 bytes
+Notification reçue: e4919563c1b9aec8784c46f80dba5e3d
+Données déchiffrées: 0452454f4b4f4b000101000000000019
+Réponse du masque: REOK
+Envoi paquet 24: 98 bytes
+Notification reçue: 062b4238b2f9133f8cf2a947a6dfd643
+Données déchiffrées: 0452454f4b4f4b00010100000000001a
+Réponse du masque: REOK
+Envoi paquet 25: 98 bytes
+Notification reçue: 8ea81d7531b12e9962f20c5b4a863789
+Données déchiffrées: 0452454f4b4f4b00010100000000001b
+Réponse du masque: REOK
+Envoi paquet 26: 98 bytes
+Notification reçue: c4c112b9dc8a1336571651b7e1a5b261
+Données déchiffrées: 0452454f4b4f4b00010100000000001c
+Réponse du masque: REOK
+Envoi paquet 27: 98 bytes
+Notification reçue: b5c820e906a031cfb66456f6e30cae9a
+Données déchiffrées: 0452454f4b4f4b00010100000000001d
+Réponse du masque: REOK
+Envoi paquet 28: 98 bytes
+Notification reçue: 16510eddaa05642ab99218627ac61810
+Données déchiffrées: 0452454f4b4f4b00010100000000001e
+Réponse du masque: REOK
+Envoi paquet 29: 98 bytes
+Notification reçue: 3918317e5a8cd836f7496266cf54c9e6
+Données déchiffrées: 0452454f4b4f4b00010100000000001f
+Réponse du masque: REOK
+Envoi paquet 30: 98 bytes
+Notification reçue: d0db0523a9ed44514c630e076e7db2ea
+Données déchiffrées: 0452454f4b4f4b000101000000000020
+Réponse du masque: REOK
+Envoi paquet 31: 98 bytes
+Notification reçue: 8be07c9fd95a1d8180b096725f161076
+Données déchiffrées: 0452454f4b4f4b000101000000000021
+Réponse du masque: REOK
+Envoi paquet 32: 98 bytes
+Notification reçue: 446cf8518c57e32ece880c48ba020289
+Données déchiffrées: 0452454f4b4f4b000101000000000022
+Réponse du masque: REOK
+Envoi paquet 33: 98 bytes
+Notification reçue: 2fc86942d9288945efdb2d37637743c9
+Données déchiffrées: 0452454f4b4f4b000101000000000023
+Réponse du masque: REOK
+Envoi paquet 34: 98 bytes
+Notification reçue: 3fb0f57416e611f7b55a7d52d81d966d
+Données déchiffrées: 0452454f4b4f4b000101000000000024
+Réponse du masque: REOK
+Envoi paquet 35: 98 bytes
+Notification reçue: 77d24502ff688c78440a2de2b5a2a9a0
+Données déchiffrées: 0452454f4b4f4b000101000000000025
+Réponse du masque: REOK
+Envoi paquet 36: 98 bytes
+Notification reçue: 61b81768f7087c38bcc5c2271fd021b8
+Données déchiffrées: 0452454f4b4f4b000101000000000026
+Réponse du masque: REOK
+Envoi paquet 37: 98 bytes
+Notification reçue: 47aa0af95598c528d8adce9d6d462603
+Données déchiffrées: 0452454f4b4f4b000101000000000027
+Réponse du masque: REOK
+Envoi paquet 38: 98 bytes
+Notification reçue: 0f870f1fb3a2674d9ab19fc605966d6c
+Données déchiffrées: 0452454f4b4f4b000101000000000028
+Réponse du masque: REOK
+Envoi paquet 39: 98 bytes
+Notification reçue: 352682a1a79bddbbb12af276c8109a4a
+Données déchiffrées: 0452454f4b4f4b000101000000000029
+Réponse du masque: REOK
+Envoi paquet 40: 98 bytes
+Notification reçue: 9e931907c3b89679e76a158aed1985cb
+Données déchiffrées: 0452454f4b4f4b00010100000000002a
+Réponse du masque: REOK
+Envoi paquet 41: 98 bytes
+Notification reçue: 976b2fa6c38426088d7b621d2f8a819f
+Données déchiffrées: 0452454f4b4f4b00010100000000002b
+Réponse du masque: REOK
+Envoi paquet 42: 98 bytes
+Notification reçue: ad82dd07d659153aa2266eadfaea07c3
+Données déchiffrées: 0452454f4b4f4b00010100000000002c
+Réponse du masque: REOK
+Envoi paquet 43: 98 bytes
+Notification reçue: 6cf0f90eefc88690f61cba999e5b7889
+Données déchiffrées: 0452454f4b4f4b00010100000000002d
+Réponse du masque: REOK
+Envoi paquet 44: 98 bytes
+Notification reçue: 1b3088a4bc7b9ca64743c96775a912a5
+Données déchiffrées: 0452454f4b4f4b00010100000000002e
+Réponse du masque: REOK
+Envoi paquet 45: 98 bytes
+Notification reçue: a7b99b0e90aa813668c35259f3b56c7a
+Données déchiffrées: 0452454f4b4f4b00010100000000002f
+Réponse du masque: REOK
+Envoi paquet 46: 98 bytes
+Notification reçue: 0761216fa5356d70bbd2b632e6ac3932
+Données déchiffrées: 0452454f4b4f4b000101000000000030
+Réponse du masque: REOK
+Envoi paquet 47: 98 bytes
+Notification reçue: 1335aa2ac7cb3af18469a64106beac0b
+Données déchiffrées: 0452454f4b4f4b000101000000000031
+Réponse du masque: REOK
+Envoi paquet 48: 98 bytes
+Notification reçue: b39d94cde51ee9c6ddd87f1cb8ad1852
+Données déchiffrées: 0452454f4b4f4b000101000000000032
+Réponse du masque: REOK
+Envoi paquet 49: 98 bytes
+Notification reçue: d62167c1d0fa40e698feaa11139f81e6
+Données déchiffrées: 0452454f4b4f4b000101000000000033
+Réponse du masque: REOK
+Envoi paquet 50: 98 bytes
+Notification reçue: a3336490c64490556c48e5e41186416c
+Données déchiffrées: 0452454f4b4f4b000101000000000034
+Réponse du masque: REOK
+Envoi paquet 51: 98 bytes
+Notification reçue: aaf63d1845a7f24a0712179faab9738d
+Données déchiffrées: 0452454f4b4f4b000101000000000035
+Réponse du masque: REOK
+Envoi paquet 52: 98 bytes
+Notification reçue: ffbfd03290884b4d8bfd5576b1017dfd
+Données déchiffrées: 0452454f4b4f4b000101000000000036
+Réponse du masque: REOK
+Envoi paquet 53: 98 bytes
+Notification reçue: ee65569d41e72b0cb538633447a5e25a
+Données déchiffrées: 0452454f4b4f4b000101000000000037
+Réponse du masque: REOK
+Envoi paquet 54: 98 bytes
+Notification reçue: e892d0e8540b456166edeea90741054e
+Données déchiffrées: 0452454f4b4f4b000101000000000038
+Réponse du masque: REOK
+Envoi paquet 55: 98 bytes
+Notification reçue: 1094e77c42266b1e63be2b3a98917ced
+Données déchiffrées: 0452454f4b4f4b000101000000000039
+Réponse du masque: REOK
+Envoi paquet 56: 98 bytes
+Notification reçue: 2e5f44d6ec5f413552e7dc02d258fcbf
+Données déchiffrées: 0452454f4b4f4b00010100000000003a
+Réponse du masque: REOK
+Envoi paquet 57: 98 bytes
+Notification reçue: 14acac365d7fc50f351371e9ce8fb238
+Données déchiffrées: 0452454f4b4f4b00010100000000003b
+Réponse du masque: REOK
+Envoi paquet 58: 98 bytes
+Notification reçue: 21e404f51fb2d7b4efd2a0252396d8ea
+Données déchiffrées: 0452454f4b4f4b00010100000000003c
+Réponse du masque: REOK
+Envoi paquet 59: 98 bytes
+Notification reçue: 1ae283b20a2df884ad8b4d8477f0c7af
+Données déchiffrées: 0452454f4b4f4b00010100000000003d
+Réponse du masque: REOK
+Envoi paquet 60: 98 bytes
+Notification reçue: 0d381fb82686624fe42d22a70e9d6f1e
+Données déchiffrées: 0452454f4b4f4b00010100000000003e
+Réponse du masque: REOK
+Envoi paquet 61: 98 bytes
+Notification reçue: 3e48a90b0ceb2b1629e9fcd15f6a5ff5
+Données déchiffrées: 0452454f4b4f4b00010100000000003f
+Réponse du masque: REOK
+Envoi paquet 62: 98 bytes
+Notification reçue: 308eb7c0b1e54fc7c61144ce2a8a724c
+Données déchiffrées: 0452454f4b4f4b000101000000000040
+Réponse du masque: REOK
+Envoi paquet 63: 98 bytes
+Notification reçue: e709b9122dca5602fce005d0acdbd72b
+Données déchiffrées: 0452454f4b4f4b000101000000000041
+Réponse du masque: REOK
+Envoi paquet 64: 98 bytes
+Notification reçue: 6014007c0f25a8343055fd94b35eded0
+Données déchiffrées: 0452454f4b4f4b000101000000000042
+Réponse du masque: REOK
+Envoi paquet 65: 98 bytes
+Notification reçue: dbdecc153074b633d15796e4a0412145
+Données déchiffrées: 0452454f4b4f4b000101000000000043
+Réponse du masque: REOK
+Envoi paquet 66: 98 bytes
+Notification reçue: 228086287677802f555c7c14c81b236e
+Données déchiffrées: 0452454f4b4f4b000101000000000044
+Réponse du masque: REOK
+Envoi paquet 67: 98 bytes
+Notification reçue: ea6ab3c16baf9986cac72dbd293ba821
+Données déchiffrées: 0452454f4b4f4b000101000000000045
+Réponse du masque: REOK
+Envoi paquet 68: 98 bytes
+Notification reçue: 928cef22ec7692dbfd63ac507663e772
+Données déchiffrées: 0452454f4b4f4b000101000000000046
+Réponse du masque: REOK
+Envoi paquet 69: 98 bytes
+Notification reçue: aeb4f801495d18e87ecaa28b809f72c1
+Données déchiffrées: 0452454f4b4f4b000101000000000047
+Réponse du masque: REOK
+Envoi paquet 70: 98 bytes
+Notification reçue: 6d91f38480621fb28c562ffd593ada44
+Données déchiffrées: 0452454f4b4f4b000101000000000048
+Réponse du masque: REOK
+Envoi paquet 71: 98 bytes
+Notification reçue: bc1e1bb87e774d35be4cae32b87ba409
+Données déchiffrées: 0452454f4b4f4b000101000000000049
+Réponse du masque: REOK
+Envoi paquet 72: 98 bytes
+Notification reçue: 35a7dc2c2ac2c2a96f53345ba85ef19b
+Données déchiffrées: 0452454f4b4f4b00010100000000004a
+Réponse du masque: REOK
+Envoi paquet 73: 98 bytes
+Notification reçue: 8158f5e011e00d01321fd2cec8bffb50
+Données déchiffrées: 0452454f4b4f4b00010100000000004b
+Réponse du masque: REOK
+Envoi paquet 74: 98 bytes
+Notification reçue: 328ff41de167be3a5c12796b72260ac1
+Données déchiffrées: 0452454f4b4f4b00010100000000004c
+Réponse du masque: REOK
+Envoi paquet 75: 98 bytes
+Notification reçue: 6308d1f50b8c6e0487a906a3237ed581
+Données déchiffrées: 0452454f4b4f4b00010100000000004d
+Réponse du masque: REOK
+Envoi paquet 76: 98 bytes
+Notification reçue: 9ac7fd7bd4d385ed426b90e6c137a7ac
+Données déchiffrées: 0452454f4b4f4b00010100000000004e
+Réponse du masque: REOK
+Envoi paquet 77: 98 bytes
+Notification reçue: 0a52b1357a6eefbbfe0f7db09bfb5c6f
+Données déchiffrées: 0452454f4b4f4b00010100000000004f
+Réponse du masque: REOK
+Envoi paquet 78: 98 bytes
+Notification reçue: 31218060e9728a2dcc6721de6b08d0d0
+Données déchiffrées: 0452454f4b4f4b000101000000000050
+Réponse du masque: REOK
+Envoi paquet 79: 98 bytes
+Notification reçue: ebe7a0bc917dfc26af27ae2dad8edffd
+Données déchiffrées: 0452454f4b4f4b000101000000000051
+Réponse du masque: REOK
+Envoi paquet 80: 98 bytes
+Notification reçue: 26733d183b5de7480438def4e669e91a
+Données déchiffrées: 0452454f4b4f4b000101000000000052
+Réponse du masque: REOK
+Envoi paquet 81: 66 bytes
+Notification reçue: 18cd20cff93b23870b3f76131cee48af
+Données déchiffrées: 0452454f4b4f4b000101000000000053
+Réponse du masque: REOK
+✅ Données envoyées.
+Finalisation de l'upload...
+Notification reçue: 8198b2fcf5ed7924c9bb7fbed42d9600
+Données déchiffrées: 0744415443504f4b0000000000000001
+Réponse du masque: DATCPOK
+🎉 Upload Terminé!
+▶️ Activation...
+127.0.0.1 - - [06/Dec/2025 00:56:18] "POST /preview HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 00:59:17] "GET /mask_editor/ HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 00:59:52] "GET /mask_editor/ HTTP/1.1" 200 -

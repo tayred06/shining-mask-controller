@@ -1,221 +1,135 @@
 #!/usr/bin/env python3
 """
-🚨 CORRECTION URGENTE - Fix du problème de flèche bloquée
-========================================================
-
-Retour à une solution stable qui évite les blocages
-tout en minimisant la visibilité de la flèche.
+Script d'upload d'image vers Shining Mask (Protocole Image Full Frame).
+Version corrigée avec stratégie anti-flèche (Luminosité).
 """
 
 import asyncio
+import struct
 import sys
 import os
+from PIL import Image
 
-# Ajouter le répertoire des modules au path
+# Ajout du path pour trouver le module working
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src'))
 
-from working.complete_text_display import MaskTextDisplay
+try:
+    from working.mask_go_compatible import MaskGoCompatible
+except ImportError:
+    print("❌ Impossible d'importer MaskGoCompatible. Vérifiez le path.")
+    sys.exit(1)
 
-class StableArrowFix(MaskTextDisplay):
-    """Solution stable pour minimiser la flèche sans blocage"""
+class ShiningMaskImageUploader(MaskGoCompatible):
     
-    def __init__(self):
-        super().__init__()
-        self.default_brightness = 150
-    
-    async def display_text_stable_minimal_arrow(self, text, color=(255, 255, 255), background=(0, 0, 0)):
-        """
-        🛡️ SOLUTION STABLE: Flèche minimisée sans risque de blocage
+    async def upload_image_file(self, image_path):
+        """Lit, redimensionne et upload une image avec stratégie anti-flèche."""
         
-        Approche: Luminosité faible (pas 0) + upload rapide
-        """
-        print(f"🛡️ Affichage stable '{text}' avec flèche minimisée...")
+        TARGET_W = 46
+        TARGET_H = 58
+        
+        # 1. Traitement Image
+        try:
+            img = Image.open(image_path)
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+            img_resized = img.resize((TARGET_W, TARGET_H), Image.Resampling.LANCZOS)
+        except Exception as e:
+            print(f"❌ Erreur lecture image: {e}")
+            return False
+            
+        # 2. Préparation Buffer (BISHOP FOX STYLE + COLUMN MAJOR)
+        # "Une ligne de chaque couleur qui s'alterne" suggère un mauvais mapping (Row vs Col).
+        # On tente COLUMN-MAJOR (Vertical) tout en RESTANT sur le protocole PURE RGB.
+        
+        bitmap_buffer = bytearray() 
+        rgb_buffer = bytearray()
+        
+        width, height = img_resized.size # 46, 58
+        pixels = img_resized.load()
+        
+        # Parcours Colonne par Colonne (x puis y)
+        for x in range(width):
+            for y in range(height):
+                r, g, b = pixels[x, y]
+                rgb_buffer.extend([r, g, b])
+                
+        rgb_data = rgb_buffer
+        if len(rgb_data) != 8004:
+            print(f"⚠️ Attention taille: {len(rgb_data)} != 8004")
+        
+        total_len = len(rgb_data)
+        image_index = 1 # Slot 1
+        
+        self.current_upload = {
+            'total_len': total_len,
+            'bytes_sent': 0,
+            'packet_count': 0,
+            'complete_buffer': rgb_data
+        }
         
         try:
-            # 1. Configuration background
-            bg_r, bg_g, bg_b = background
-            await self.set_background_color(bg_r, bg_g, bg_b, 1)
+            print("Recherche du masque...")
+            await self.connect()
             
-            # 2. Réduire luminosité à 10 (visible mais très faible)
-            print("🔅 Luminosité réduite (anti-flèche)...")
-            cmd = self.create_command("LIGHT", bytes([10]))  # 10 au lieu de 0
-            await self.client.write_gatt_char("d44bc439-abfd-45a2-b575-925416129600", cmd)
-            await asyncio.sleep(0.2)
+            # STRATEGIE: On réplique EXACTEMENT BishopFox DATS
+            # b"\x09\x44\x41\x54\x53\x1f\x44\x00\x01\x01\x00\x00\x00\x00\x00\x00"
+            # 09 DATS 1F44 0001 01
             
-            # 3. Upload NORMAL avec DATS (pas d'expérimentation)
-            print("📤 Upload standard...")
-            success = await self.display_text(text, color)
+            cmd = bytearray()
+            cmd.append(9)
+            cmd.extend(b"DATS")
+            cmd.extend(struct.pack('>H', total_len))
+            cmd.extend(struct.pack('>H', image_index))
+            cmd.append(1) # <--- LE FLAG MAGIQUE 0x01 QUE J'AVAIS MIS A 0
             
-            # 4. Restaurer luminosité IMMÉDIATEMENT
-            print("💡 Restauration luminosité...")
-            cmd = self.create_command("LIGHT", bytes([self.default_brightness]))
-            await self.client.write_gatt_char("d44bc439-abfd-45a2-b575-925416129600", cmd)
+            print(f"Envoi DATS BishopFox Style: {cmd.hex()}")
+            await self.send_command(cmd)
+            self.upload_running = True
             
-            if success:
-                print(f"✅ '{text}' affiché - flèche minimisée et stable")
-                return True
-            else:
-                print(f"❌ Échec upload pour '{text}'")
-                return False
+            # BishopFox attend 0.1s, ne check pas DATSOK explicitement dans le code simplifié ?
+            # Mais mon code attend DATSOK. On garde l'attente pour validation.
+            if not await self.wait_for_response("DATSOK", timeout=5.0):
+                 print("⚠️ Pas de DATSOK, on continue quand même (Bishop style)...")
+
+            # 5. Transfert
+            print("Transfert PURE RGB...")
+            while self.current_upload['bytes_sent'] < self.current_upload['total_len']:
+                await self.upload_part()
+                await asyncio.sleep(0.05) # BishopFox met 0.1s, on met 0.05 pour être safe
                 
+            # 6. Finalisation
+            # Bishop sends: 09 DATCP ff f9 c5 07 ...
+            # Mon code standard: 05 DATCP
+            # On essaye le mien d'abord qui marchait pour la validation
+            cmd_fin = bytearray([5]) + b"DATCP"
+            await self.send_command(cmd_fin)
+            await self.wait_for_response("DATCPOK", timeout=5.0)
+            
+            # 7. Save & Display
+            await self.send_command(b"SAVE01")
+            
+            # Force Refresh
+            # cmd_disp = bytearray([5]) + b"DISP" + b"\x01"
+            # await self.send_command(cmd_disp)
+            
+            print("✅ SUCCÈS Bishop Style!")
+            return True
+
         except Exception as e:
             print(f"❌ Erreur: {e}")
-            # TOUJOURS restaurer la luminosité en cas d'erreur
-            try:
-                cmd = self.create_command("LIGHT", bytes([self.default_brightness]))
-                await self.client.write_gatt_char("d44bc439-abfd-45a2-b575-925416129600", cmd)
-                print("🔧 Luminosité restaurée après erreur")
-            except:
-                print("⚠️ Impossible de restaurer luminosité")
-            return False
-    
-    async def display_text_ultra_fast(self, text, color=(255, 255, 255), background=(0, 0, 0)):
-        """
-        ⚡ Alternative: Upload ultra-rapide pour flèche très brève
-        """
-        print(f"⚡ Affichage ultra-rapide '{text}'...")
-        
-        try:
-            # Configuration
-            bg_r, bg_g, bg_b = background
-            await self.set_background_color(bg_r, bg_g, bg_b, 1)
-            
-            # Préparer données à l'avance
-            bitmap_columns = self.text_to_bitmap(text)
-            if not bitmap_columns:
-                return False
-            
-            bitmap_data = self.encode_bitmap(bitmap_columns)
-            color_data = self.encode_colors(len(bitmap_columns), color)
-            
-            # Upload avec timeouts réduits au minimum
-            success = await self.upload_minimal_delay(bitmap_data, color_data)
-            
-            if success:
-                await self.set_display_mode(1)
-                print(f"✅ '{text}' affiché ultra-rapidement")
-                return True
-            else:
-                return False
-                
-        except Exception as e:
-            print(f"❌ Erreur ultra-rapide: {e}")
-            return False
-    
-    async def upload_minimal_delay(self, bitmap_data, color_data):
-        """Upload avec délais minimums"""
-        import struct
-        
-        total_len = len(bitmap_data) + len(color_data)
-        bitmap_len = len(bitmap_data)
-        
-        self.responses.clear()
-        
-        # DATS
-        dats_cmd = bytearray([9])
-        dats_cmd.extend(b"DATS")
-        dats_cmd.extend(struct.pack('>H', total_len))
-        dats_cmd.extend(struct.pack('>H', bitmap_len))
-        dats_cmd.extend([0])
-        while len(dats_cmd) < 16:
-            dats_cmd.append(0)
-        
-        encrypted = self.cipher.encrypt(bytes(dats_cmd))
-        await self.client.write_gatt_char("d44bc439-abfd-45a2-b575-925416129600", encrypted)
-        
-        if not await self.wait_for_response("DATSOK", 2):
-            return False
-        
-        # Chunks ultra-rapides
-        complete_data = bitmap_data + color_data
-        max_chunk = 96
-        bytes_sent = 0
-        packet_count = 0
-        
-        while bytes_sent < len(complete_data):
-            remaining = len(complete_data) - bytes_sent
-            chunk_size = min(max_chunk, remaining)
-            chunk = complete_data[bytes_sent:bytes_sent + chunk_size]
-            packet = bytearray([chunk_size + 1, packet_count])
-            packet.extend(chunk)
-            
-            await self.client.write_gatt_char("d44bc439-abfd-45a2-b575-92541612960a", bytes(packet))
-            
-            # Pas de délai entre chunks
-            if not await self.wait_for_response("REOK", 1):
-                return False
-            
-            bytes_sent += chunk_size
-            packet_count += 1
-        
-        # DATCP
-        datcp_cmd = bytearray([5])
-        datcp_cmd.extend(b"DATCP")
-        while len(datcp_cmd) < 16:
-            datcp_cmd.append(0)
-        
-        encrypted = self.cipher.encrypt(bytes(datcp_cmd))
-        await self.client.write_gatt_char("d44bc439-abfd-45a2-b575-925416129600", encrypted)
-        
-        return await self.wait_for_response("DATCPOK", 2)
-
-# Fonction principale corrigée
-async def display_text_fixed(text, color=(255, 255, 255), background=(0, 0, 0), method="stable"):
-    """
-    🛡️ FONCTION CORRIGÉE: Affichage avec flèche minimisée SANS blocage
-    
-    Args:
-        method: "stable" (luminosité 10) ou "fast" (upload rapide)
-    """
-    display = StableArrowFix()
-    
-    if await display.connect():
-        try:
-            if method == "stable":
-                success = await display.display_text_stable_minimal_arrow(text, color, background)
-            else:  # method == "fast"
-                success = await display.display_text_ultra_fast(text, color, background)
-            
-            return success
+            import traceback
+            traceback.print_exc()
         finally:
-            await display.disconnect()
-    
-    return False
+            await self.disconnect()
 
-async def test_corrected_solution():
-    """Test de la solution corrigée"""
-    print("🛡️ TEST SOLUTION CORRIGÉE - Anti-blocage")
-    print("=" * 45)
-    print("🎯 Objectif: Flèche minimisée SANS blocage du masque")
-    print()
-    
-    # Test méthode stable
-    print("1️⃣ TEST MÉTHODE STABLE (luminosité 10)")
-    success1 = await display_text_fixed("STABLE", (255, 0, 0), method="stable")
-    if success1:
-        print("✅ Méthode stable fonctionne")
-        await asyncio.sleep(3)
+async def main():
+    if len(sys.argv) < 2:
+        image_path = "test_text.png" # Image générée précédemment
     else:
-        print("❌ Méthode stable échoue")
-    
-    # Test méthode rapide
-    print("\n2️⃣ TEST MÉTHODE RAPIDE (upload ultra-fast)")
-    success2 = await display_text_fixed("RAPID", (0, 255, 0), method="fast")
-    if success2:
-        print("✅ Méthode rapide fonctionne")
-        await asyncio.sleep(3)
-    else:
-        print("❌ Méthode rapide échoue")
-    
-    print(f"\n🎯 RÉSULTATS:")
-    if success1:
-        print("🛡️ RECOMMANDATION: Utilisez la méthode STABLE")
-        print("   → Luminosité 10, flèche très discrète, pas de blocage")
-    elif success2:
-        print("⚡ RECOMMANDATION: Utilisez la méthode RAPIDE")
-        print("   → Upload ultra-rapide, flèche brève")
-    else:
-        print("❌ Problème de connexion ou firmware")
+        image_path = sys.argv[1]
+        
+    uploader = ShiningMaskImageUploader()
+    await uploader.upload_image_file(image_path)
 
 if __name__ == "__main__":
-    asyncio.run(test_corrected_solution())
+    asyncio.run(main())

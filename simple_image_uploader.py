@@ -1,213 +1,139 @@
 #!/usr/bin/env python3
 """
-🎮 Uploader Simplifié d'Images Texte pour Contrôleur Clavier
-============================================================
-
-Au lieu d'uploader des images bitmap complexes, ce script utilise
-le système de texte existant pour créer des "images" simples et rapides
-avec des caractères ASCII et symboles Unicode.
-
-Cette approche fonctionne mieux avec le protocole BLE existant.
+Script d'upload d'image vers Shining Mask (Protocole Image Full Frame).
+Usage: python3 simple_image_uploader.py [chemin/vers/image.png]
 """
 
 import asyncio
+import struct
 import sys
 import os
+from PIL import Image
 
-# Ajouter le répertoire des modules au path
+# Ajout du path pour trouver le module working
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src'))
 
-from working.complete_text_display import MaskTextDisplay
+try:
+    from working.mask_go_compatible import MaskGoCompatible
+except ImportError:
+    print("❌ Impossible d'importer MaskGoCompatible. Vérifiez le path.")
+    sys.exit(1)
 
-class SimpleTextImageUploader:
-    """
-    Uploader simplifié qui crée des "images" à partir de texte
-    Compatible avec le système BLE existant
-    """
+class ShiningMaskImageUploader(MaskGoCompatible):
     
-    def __init__(self):
-        self.controller = MaskTextDisplay()
-        self.test_patterns = self.create_simple_patterns()
-    
-    def create_simple_patterns(self):
-        """
-        Crée 20 patterns texte simples pour remplacer les images
-        """
-        patterns = [
-            # Images 1-5: Émotions de base
-            {"name": "Sourire", "text": ":)", "color": (255, 255, 0)},      # Jaune
-            {"name": "Neutre", "text": ":|", "color": (255, 255, 255)},     # Blanc
-            {"name": "Triste", "text": ":(", "color": (0, 100, 255)},       # Bleu
-            {"name": "Surpris", "text": ":O", "color": (255, 100, 0)},      # Orange
-            {"name": "Colère", "text": ">:(", "color": (255, 0, 0)},        # Rouge
-            
-            # Images 6-10: Émotions avancées (pour clignotement)
-            {"name": "Clin œil", "text": ";)", "color": (255, 255, 0)},     # Pour clignotement
-            {"name": "Endormi", "text": "-_-", "color": (100, 100, 100)},   # Pour clignotement
-            {"name": "Cœur", "text": "<3", "color": (255, 0, 100)},         # Rose
-            {"name": "Cool", "text": "B)", "color": (0, 255, 255)},         # Cyan
-            {"name": "Étourdi", "text": "@_@", "color": (255, 0, 255)},     # Magenta
-            
-            # Images 11-15: Symboles et formes
-            {"name": "Étoile", "text": "*", "color": (255, 255, 0)},        # Jaune
-            {"name": "Carré", "text": "■", "color": (255, 255, 255)},       # Blanc
-            {"name": "Rond", "text": "●", "color": (0, 255, 0)},            # Vert
-            {"name": "Plus", "text": "+", "color": (255, 0, 0)},            # Rouge
-            {"name": "Diamant", "text": "♦", "color": (0, 100, 255)},       # Bleu
-            
-            # Images 16-20: Texte et effets
-            {"name": "OK", "text": "OK", "color": (0, 255, 0)},             # Vert
-            {"name": "Non", "text": "NO", "color": (255, 0, 0)},            # Rouge
-            {"name": "Oui", "text": "YES", "color": (0, 255, 0)},           # Vert
-            {"name": "Aide", "text": "?", "color": (255, 255, 0)},          # Jaune
-            {"name": "Exclamation", "text": "!", "color": (255, 100, 0)},    # Orange
-        ]
+    async def upload_image_file(self, image_path):
+        """Lit, redimensionne et upload une image."""
         
-        return patterns
-    
-    async def upload_text_pattern(self, pattern_id, pattern):
-        """Upload un pattern texte comme 'image'"""
+        # Dimensions cibles
+        TARGET_W = 46
+        TARGET_H = 58
+        
+        # 1. Traitement de l'image
         try:
-            print(f"📝 Upload pattern {pattern_id}: {pattern['name']} = '{pattern['text']}'")
+            img = Image.open(image_path)
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+                
+            print(f"Image originale: {img.size} -> Cible: {TARGET_W}x{TARGET_H}")
             
-            # Afficher le texte avec la couleur directement
-            await self.controller.display_text(pattern['text'], color=pattern['color'])
+            # Redimensionnement simple (Stretch) ou Fit ? 
+            # On va faire un "Fill" (Stretch pour remplir) pour l'instant
+            img_resized = img.resize((TARGET_W, TARGET_H), Image.Resampling.LANCZOS)
             
-            print(f"✅ Pattern {pattern_id} ({pattern['name']}) uploadé!")
-            
-            # Petit délai pour voir le résultat
-            await asyncio.sleep(2)
-            
-            return True
+            # Conversion en bytes RGB
+            # Note: app.py utilisait row-major. Confirmé par le succès de mon script précédent.
+            rgb_data = img_resized.tobytes()
             
         except Exception as e:
-            print(f"❌ Erreur pattern {pattern_id}: {e}")
+            print(f"❌ Erreur lecture image: {e}")
             return False
-    
-    async def demo_all_patterns(self):
-        """Démo de tous les patterns"""
-        print("🎮 === DÉMO DES PATTERNS TEXTE ===")
-        print("Simulation des 20 images du projet shining-mask")
-        print("-" * 50)
+            
+        # 2. Préparation du Mask Bitmap (Tout à 1)
+        bitmap_buffer = bytearray([0xFF] * (TARGET_W * 8)) # 8 bytes par colonne
         
-        # Connexion
+        # 3. Préparation upload
+        total_len = len(bitmap_buffer) + len(rgb_data)
+        image_index = 1 # Slot 1
+        
+        self.current_upload = {
+            'total_len': total_len,
+            'bytes_sent': 0,
+            'packet_count': 0,
+            'complete_buffer': bitmap_buffer + rgb_data
+        }
+        
+        print(f"Buffer prêt: {len(rgb_data)} bytes RGB + {len(bitmap_buffer)} bytes Bitmap.")
+        
+        # 4. Connexion
         try:
-            await self.controller.connect()
-            print("✅ Connecté au masque!")
+            print("Recherche du masque...")
+            await self.connect()
+        except:
+            print("❌ Échec connexion")
+            return False
+            
+        try:
+            # 5. Envoi DATS (Image Protocol)
+            cmd = bytearray()
+            cmd.append(9)
+            cmd.extend(b"DATS")
+            cmd.extend(struct.pack('>H', total_len)) 
+            cmd.extend(struct.pack('>H', image_index)) # Important: Image ID ici
+            cmd.append(0)
+            
+            print(f"Envoi DATS...")
+            await self.send_command(cmd)
+            self.upload_running = True
+            
+            if not await self.wait_for_response("DATSOK", timeout=5.0):
+                print("❌ Timeout DATSOK")
+                return False
+                
+            # 6. Transfert
+            print("Transfert en cours...")
+            while self.current_upload['bytes_sent'] < self.current_upload['total_len']:
+                await self.upload_part()
+                # await asyncio.sleep(0.01) # Petit throttle
+                # Note: mask_go code original utilisait wait_for_response REOK
+                # Mon test précédent montrait que REOK est bien reçu.
+                # await self.wait_for_response("REOK", timeout=1.0)
+                # On va faire simple: sleep léger
+                await asyncio.sleep(0.02)
+                
+            # 7. Finalisation
+            print("\nFinalisation...")
+            cmd_fin = bytearray([5]) + b"DATCP"
+            await self.send_command(cmd_fin)
+            await self.wait_for_response("DATCPOK", timeout=5.0)
+            
+            # 8. Sauvegarde
+            print("Sauvegarde (SAVE01)...")
+            await self.send_command(b"SAVE01")
+            print("✅ SUCCÈS! Image transférée.")
+            
         except Exception as e:
-            print(f"❌ Connexion impossible: {e}")
-            return False
-        
-        # Test de chaque pattern
-        success_count = 0
-        for i, pattern in enumerate(self.test_patterns, 1):
-            print(f"\n🔄 Test {i}/20...")
-            if await self.upload_text_pattern(i, pattern):
-                success_count += 1
-            else:
-                print(f"❌ Échec pattern {i}")
-        
-        # Déconnexion
-        await self.controller.disconnect()
-        
-        # Rapport final
-        print(f"\n🎯 === RAPPORT FINAL ===")
-        print(f"Patterns testés: {success_count}/20")
-        
-        if success_count >= 15:  # Au moins 15 sur 20
-            print("🎉 SUCCESS! Votre masque est prêt!")
-            print("🎮 Les 'images' texte sont disponibles pour le contrôleur clavier!")
-            return True
-        else:
-            print(f"⚠️ Seulement {success_count} patterns fonctionnels")
-            return False
-    
-    def show_patterns_list(self):
-        """Affiche la liste des patterns disponibles"""
-        print("📋 === PATTERNS DISPONIBLES ===")
-        print("Ces 'images' texte remplacent les 20 images du projet shining-mask:")
-        print("-" * 60)
-        
-        for i, pattern in enumerate(self.test_patterns, 1):
-            r, g, b = pattern['color']
-            color_name = self.get_color_name(r, g, b)
-            print(f"Image {i:2d}: {pattern['name']:12} = '{pattern['text']:4}' ({color_name})")
-        
-        print("\n🎮 Mapping clavier:")
-        print("Q W E R T  → Images 1-5   (Émotions de base)")
-        print("A S D F G  → Images 6-10  (Émotions avancées)")  
-        print("Z X C V B  → Images 11-15 (Symboles)")
-        print("Images 16-20 disponibles pour extension")
-    
-    def get_color_name(self, r, g, b):
-        """Retourne le nom de la couleur"""
-        if r > 200 and g > 200 and b < 50:
-            return "Jaune"
-        elif r > 200 and g < 50 and b < 50:
-            return "Rouge"
-        elif r < 50 and g > 200 and b < 50:
-            return "Vert"
-        elif r < 50 and g < 50 and b > 200:
-            return "Bleu"
-        elif r > 200 and g > 200 and b > 200:
-            return "Blanc"
-        elif r < 100 and g < 100 and b < 100:
-            return "Gris"
-        else:
-            return "Mixte"
+            print(f"❌ Erreur durant le transfert: {e}")
+            import traceback
+            traceback.print_exc()
+        finally:
+            await self.disconnect()
 
 async def main():
-    """Point d'entrée principal"""
-    print("🎮 === UPLOADER PATTERNS TEXTE SIMPLIFIÉ ===")
-    print("Alternative simple aux images bitmap complexes")
-    print("-" * 50)
-    
-    uploader = SimpleTextImageUploader()
-    
-    while True:
-        print("\nOptions disponibles:")
-        print("1. 📋 Voir la liste des patterns")
-        print("2. 🎬 Démo de tous les patterns")
-        print("3. 🎯 Test d'un pattern spécifique")
-        print("4. ❌ Quitter")
+    if len(sys.argv) < 2:
+        print("Usage: python3 simple_image_uploader.py <image_path>")
+        # Créons une image par défaut si pas d'argument
+        print("Génération d'une image de test...")
+        img = Image.new('RGB', (100, 100), color='blue')
+        d = ImageDraw.Draw(img)
+        d.rectangle([20, 20, 80, 80], fill='red')
+        img.save("test_gen.png")
+        image_path = "test_gen.png"
+    else:
+        image_path = sys.argv[1]
         
-        try:
-            choice = input("\n🎯 Votre choix (1-4): ").strip()
-            
-            if choice == '1':
-                uploader.show_patterns_list()
-                
-            elif choice == '2':
-                print("\n🎬 Lancement de la démo complète...")
-                await uploader.demo_all_patterns()
-                
-            elif choice == '3':
-                uploader.show_patterns_list()
-                pattern_id = input("\n📝 ID du pattern à tester (1-20): ").strip()
-                try:
-                    pid = int(pattern_id)
-                    if 1 <= pid <= 20:
-                        pattern = uploader.test_patterns[pid-1]
-                        await uploader.controller.connect()
-                        await uploader.upload_text_pattern(pid, pattern)
-                        await uploader.controller.disconnect()
-                    else:
-                        print("❌ ID invalide (1-20)")
-                except ValueError:
-                    print("❌ ID invalide")
-                    
-            elif choice == '4':
-                print("\n👋 Au revoir!")
-                break
-                
-            else:
-                print("❌ Choix invalide. Utilisez 1, 2, 3 ou 4.")
-                
-        except KeyboardInterrupt:
-            print("\n⚠️ Interruption par l'utilisateur")
-            break
-        except Exception as e:
-            print(f"\n❌ Erreur: {e}")
+    uploader = ShiningMaskImageUploader()
+    await uploader.upload_image_file(image_path)
 
 if __name__ == "__main__":
+    from PIL import Image, ImageDraw # Import ici au cas où
     asyncio.run(main())

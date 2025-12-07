@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shining Mask Studio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #050510;
+            --panel-bg: rgba(30, 30, 40, 0.7);
+            --panel-border: rgba(255, 255, 255, 0.1);
+            --primary: #00f2ff;
+            --secondary: #bc13fe;
+            --text-main: #ffffff;
+            --text-dim: #8b9bb4;
+            --grid-gap: 1px;
+            --cell-base: #1a1a2e;
+
+            --glow-primary: 0 0 10px rgba(0, 242, 255, 0.5);
+            --glow-secondary: 0 0 10px rgba(188, 19, 254, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.1) 0%, transparent 40%);
+            color: var(--text-main);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* Header */
+        header {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            background: rgba(10, 10, 20, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--panel-border);
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 242, 255, 0.2);
+            letter-spacing: 2px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Main Layout */
+        .workspace {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+        }
+
+        /* Tools Panel (Left) */
+        .tools-panel {
+            width: 260px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(15px);
+            border-right: 1px solid var(--panel-border);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Palette */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .color-swatch {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        .color-swatch.active {
+            border-color: #fff;
+            transform: scale(1.15);
+            box-shadow: 0 0 15px var(--active-color);
+        }
+
+        /* Custom Color Input */
+        .color-input-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="color"] {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        /* Canvas Area (Center) */
+        .canvas-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 40px;
+            overflow: auto;
+            position: relative;
+        }
+
+        /* The Mask Grid */
+        .mask-container {
+            padding: 10px;
+            background: #000;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), 0 0 0 2px #333;
+            position: relative;
+        }
+
+        .mask-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 22px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(10px);
+        }
+
+        #pixelGrid {
+            display: grid;
+            grid-template-columns: repeat(42, 1fr);
+            gap: 1px;
+            background-color: #111;
+            /* Grid lines color */
+            border: 1px solid #222;
+        }
+
+        .pixel {
+            width: 12px;
+            height: 12px;
+            background-color: #151515;
+            cursor: crosshair;
+            transition: background-color 0.05s;
+        }
+
+
+
+        /* Buttons */
+        .btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #00a8ff);
+            color: #000;
+            border: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #00f2ff, #00c3ff);
+            box-shadow: 0 6px 20px rgba(0, 242, 255, 0.5);
+            color: #000;
+        }
+
+        .btn-danger {
+            color: #ff4757;
+            border-color: rgba(255, 71, 87, 0.3);
+        }
+
+        .btn-danger:hover {
+            background: rgba(255, 71, 87, 0.1);
+            border-color: #ff4757;
+            box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
+        }
+
+        .tools-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border: 1px solid #333;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">MASK STUDIO <span style="font-size:0.5em; opacity:0.6; vertical-align: top;">BETA</span></div>
+        <div class="header-controls">
+            <button onclick="document.getElementById('imageLoader').click()" class="btn btn-primary">
+                <span>📂</span> Import Img
+            </button>
+            <input type="file" id="imageLoader" accept="image/*" style="display: none;" onchange="uploadImage(this)">
+            <button onclick="clearGrid()" class="btn btn-danger">
+                <span>✕</span> Clear
+            </button>
+            <button onclick="sendPreview()" class="btn btn-primary" id="previewBtn">
+                <span>⚡</span> Live Preview
+            </button>
+            <button onclick="downloadImage()" class="btn btn-primary">
+                <span>⬇</span> Export PNG
+            </button>
+        </div>
+    </header>
+
+    <div class="workspace">
+
+        <!-- Sidebar Tools -->
+        <div class="tools-panel">
+
+            <div>
+                <span class="section-title">Colors</span>
+                <div class="palette-grid" id="palette">
+                    <!-- Javascript will populate this -->
+                </div>
+            </div>
+
+            <div class="color-input-container">
+                <input type="color" id="customColor" value="#00ffff">
+                <span style="font-size: 0.8rem; opacity: 0.7;">Custom active color</span>
+            </div>
+
+            <div style="padding: 5px 0;">
+                <span class="section-title">Brush Size: <span id="brushSizeLabel">1</span>px</span>
+                <input type="range" id="brushSize" min="1" max="4" value="1" style="width: 100%; cursor: pointer;">
+            </div>
+
+            <div>
+                <span class="section-title">Tools</span>
+                <div class="tools-actions">
+                    <button onclick="fillGrid()" class="btn" style="flex: 1;">Fill</button>
+                    <button onclick="toggleGridLines()" class="btn" style="flex: 1;">Grid</button>
+                </div>
+            </div>
+
+            <div style="margin-top: auto; opacity: 0.5;">
+                <span class="section-title">Shortcuts</span>
+                <div style="font-size: 0.8rem; line-height: 1.6;">
+                    Left Click: Paint<br>
+                    Right Click: Erase<br>
+                    Drag: Continuous<br>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Canvas -->
+        <div class="canvas-area">
+            <div class="mask-container">
+                <div id="pixelGrid"></div>
+            </div>
+            <div id="statusBar" class="status-bar">Ready - 42x56 Grid</div>
+        </div>
+
+    </div>
+
+    <script>
+        const WIDTH = 42;
+        const HEIGHT = 56;
+        const grid = document.getElementById('pixelGrid');
+        const customColorInput = document.getElementById('customColor');
+        const statusBar = document.getElementById('statusBar');
+
+        let isDrawing = false;
+        let isErasing = false;
+        let activeColor = '#00f2ff';
+        let brushSize = 1;
+
+        const brushSizeInput = document.getElementById('brushSize');
+        const brushSizeLabel = document.getElementById('brushSizeLabel');
+
+        brushSizeInput.addEventListener('input', (e) => {
+            brushSize = parseInt(e.target.value);
+            brushSizeLabel.textContent = brushSize;
+        });
+
+        // Curated Palette
+        const paletteColors = [
+            '#000000', '#ffffff', '#ff0055', '#ff9900',
+            '#ffee00', '#00ff44', '#00f2ff', '#0099ff',
+            '#0044ff', '#7700ff', '#d900ff', '#ff00cc',
+            '#333333', '#888888', '#aaaaaa', '#e0e0e0'
+        ];
+
+        function initPalette() {
+            const container = document.getElementById('palette');
+            paletteColors.forEach(color => {
+                const div = document.createElement('div');
+                div.className = 'color-swatch';
+                div.style.backgroundColor = color;
+                div.style.setProperty('--active-color', color);
+
+                if (color === activeColor) div.classList.add('active');
+                if (color === '#000000') div.style.border = '1px solid #333';
+
+                div.onclick = () => setActiveColor(color, div);
+                container.appendChild(div);
+            });
+        }
+
+        function setActiveColor(color, element) {
+            activeColor = color;
+            customColorInput.value = color;
+
+            // Visual feedback
+            document.querySelectorAll('.color-swatch').forEach(el => el.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            } else {
+                // Find matching swatch if exists
+            }
+            showStatus(`Color set to ${color}`);
+        }
+
+        // Initialize Grid
+        function initGrid() {
+            grid.innerHTML = '';
+            for (let i = 0; i < WIDTH * HEIGHT; i++) {
+                const pixel = document.createElement('div');
+                pixel.classList.add('pixel');
+                pixel.style.backgroundColor = '#000000'; // Default black
+                pixel.dataset.index = i;
+
+                pixel.addEventListener('mousedown', (e) => {
+                    e.preventDefault();
+                    isDrawing = true;
+                    if (e.button === 2) {
+                        isErasing = true;
+                        paintArea(i, true);
+                    } else {
+                        isErasing = false;
+                        paintArea(i, false);
+                    }
+                });
+
+                pixel.addEventListener('mouseenter', (e) => {
+                    if (isDrawing) {
+                        if (isErasing) {
+                            paintArea(i, true);
+                        } else {
+                            paintArea(i, false);
+                        }
+                    }
+                });
+
+                pixel.addEventListener('contextmenu', (e) => e.preventDefault());
+                grid.appendChild(pixel);
+            }
+        }
+
+        function paintArea(centerIndex, erase) {
+            const cx = centerIndex % WIDTH;
+            const cy = Math.floor(centerIndex / WIDTH);
+
+            // Calculate range based on brush size
+            // Size 1: 0 to 0 (1x1)
+            // Size 2: 0 to 1 (2x2)
+            // Size 3: -1 to 1 (3x3)
+            // Size 4: -1 to 2 (4x4)
+
+            let startOffset, endOffset;
+            if (brushSize === 1) { startOffset = 0; endOffset = 0; }
+            else if (brushSize === 2) { startOffset = 0; endOffset = 1; }
+            else if (brushSize === 3) { startOffset = -1; endOffset = 1; }
+            else { startOffset = -1; endOffset = 2; }
+
+            const pixels = document.querySelectorAll('.pixel');
+
+            for (let dy = startOffset; dy <= endOffset; dy++) {
+                for (let dx = startOffset; dx <= endOffset; dx++) {
+                    const x = cx + dx;
+                    const y = cy + dy;
+
+                    if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
+                        const idx = y * WIDTH + x;
+                        const pixel = pixels[idx];
+                        if (!pixel) continue;
+
+                        if (erase) {
+                            pixel.style.backgroundColor = '#000000';
+                            pixel.style.boxShadow = 'none';
+                        } else {
+                            pixel.style.backgroundColor = activeColor;
+                            if (activeColor !== '#000000' && activeColor !== '#333333') {
+                                pixel.style.boxShadow = `0 0 4px ${activeColor}`;
+                            } else {
+                                pixel.style.boxShadow = 'none';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function paintPixel(pixel) {
+            // Deprecated
+        }
+
+        document.addEventListener('mouseup', () => {
+            isDrawing = false;
+            isErasing = false;
+        });
+
+        // Listen to custom color picker
+        customColorInput.addEventListener('input', (e) => {
+            activeColor = e.target.value;
+            // Deselect palette swatches
+            document.querySelectorAll('.color-swatch').forEach(el => el.classList.remove('active'));
+        });
+
+        // Tools
+        function clearGrid() {
+            if (confirm("Erase entire design?")) {
+                const pixels = document.querySelectorAll('.pixel');
+                pixels.forEach(p => {
+                    p.style.backgroundColor = '#000000';
+                    p.style.boxShadow = 'none';
+                });
+                showStatus("Grid cleared");
+            }
+        }
+
+        function fillGrid() {
+            if (confirm(`Fill all with ${activeColor}?`)) {
+                const pixels = document.querySelectorAll('.pixel');
+                pixels.forEach(p => {
+                    p.style.backgroundColor = activeColor;
+                    if (activeColor !== '#000000') p.style.boxShadow = `0 0 4px ${activeColor}`;
+                });
+                showStatus("Grid filled");
+            }
+        }
+
+        let gridVisible = true;
+        function toggleGridLines() {
+            gridVisible = !gridVisible;
+            if (gridVisible) {
+                grid.style.gap = '1px';
+                grid.style.backgroundColor = '#111';
+                showStatus("Grid lines: ON");
+            } else {
+                grid.style.gap = '0px';
+                grid.style.backgroundColor = 'transparent';
+                showStatus("Grid lines: OFF");
+            }
+        }
+
+        function showStatus(msg) {
+            statusBar.textContent = msg;
+            statusBar.style.opacity = '1';
+            setTimeout(() => {
+                statusBar.style.opacity = '0.7';
+            }, 2000);
+        }
+
+        // Export
+        function downloadImage() {
+            const canvas = document.createElement('canvas');
+            canvas.width = WIDTH;
+            canvas.height = HEIGHT;
+            const ctx = canvas.getContext('2d');
+
+            const pixels = document.querySelectorAll('.pixel');
+            pixels.forEach((p, i) => {
+                const x = i % WIDTH;
+                const y = Math.floor(i / WIDTH);
+                const color = p.style.backgroundColor || 'rgb(0,0,0)';
+                ctx.fillStyle = color;
+                ctx.fillRect(x, y, 1, 1);
+            });
+
+            const link = document.createElement('a');
+            link.download = `shining_mask_${Date.now()}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showStatus("Image downloaded!");
+        }
+
+        // Import text/image
+        function uploadImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = new Image();
+                    img.onload = function () {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = WIDTH;
+                        canvas.height = HEIGHT;
+                        const ctx = canvas.getContext('2d');
+
+                        // Clear canvas with black
+                        ctx.fillStyle = "#000000";
+                        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+                        // Draw image resized (contain or cover? let's stretch to fit for now or center)
+                        // Simple stretch to fit 42x56
+                        ctx.drawImage(img, 0, 0, WIDTH, HEIGHT);
+
+                        // Get pixel data
+                        const data = ctx.getImageData(0, 0, WIDTH, HEIGHT).data;
+                        const pixels = document.querySelectorAll('.pixel');
+
+                        for (let i = 0; i < pixels.length; i++) {
+                            const r = data[i * 4];
+                            const g = data[i * 4 + 1];
+                            const b = data[i * 4 + 2];
+                            // Ignore alpha for now or use black if transparent
+                            const a = data[i * 4 + 3];
+
+                            let color = '#000000';
+                            if (a > 128) {
+                                // RGB to Hex
+                                const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+                                color = hex;
+                            }
+
+                            pixels[i].style.backgroundColor = color;
+                            if (color !== '#000000') {
+                                pixels[i].style.boxShadow = `0 0 4px ${color}`;
+                            } else {
+                                pixels[i].style.boxShadow = 'none';
+                            }
+                        }
+                        showStatus("Image loaded!");
+                    }
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Live Preview
+        async function sendPreview() {
+            const btn = document.getElementById('previewBtn');
+            const originalText = btn.innerHTML;
+
+            // Gather pixel data
+            const pixels = [];
+            const pixelElements = document.querySelectorAll('.pixel');
+            pixelElements.forEach(p => {
+                // Get computed or inline background color
+                // Convert to hex for simplicity if needed, but RGB is fine if backend handles it
+                // We'll send the raw style value. It's usually "rgb(r, g, b)" or hex
+                let col = p.style.backgroundColor;
+                // If it's empty, it's black/default
+                if (!col || col === 'rgba(0, 0, 0, 0)') col = '#000000';
+
+                // Convert rgb to hex for Python easier parsing
+                if (col.startsWith('rgb')) {
+                    const rgb = col.match(/\d+/g);
+                    if (rgb) {
+                        col = '#' + ((1 << 24) + (parseInt(rgb[0]) << 16) + (parseInt(rgb[1]) << 8) + parseInt(rgb[2])).toString(16).slice(1);
+                    }
+                }
+
+                pixels.push(col);
+            });
+
+            btn.innerHTML = '<span>⏳</span> Sending...';
+            btn.disabled = true;
+            showStatus("Uploading to mask...");
+
+            try {
+                const response = await fetch('/preview', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ pixels: pixels })
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    showStatus("✅ Upload Successful!");
+                } else {
+                    showStatus("❌ Upload Failed: " + (result.message || 'Unknown error'));
+                }
+
+            } catch (e) {
+                console.error(e);
+                showStatus("❌ Connection Error (Is Flask running?)");
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        // Init
+        initGrid();
+        initPalette();
+    </script>
+</body>
+
+</html>
