@@ -49,5 +49,5 @@ def create_twitch_assets(source_path):
 
 if __name__ == "__main__":
     # Using the path of the generated image
-    source = "/Users/mathieu/.gemini/antigravity/brain/7b9cae0b-3fb0-4084-9ba1-11dabe944cf5/twitch_branding_wide_1764997501795.png"
+    source = "/Users/mathieu/.gemini/antigravity/brain/7b9cae0b-3fb0-4084-9ba1-11dabe944cf5/twitch_branding_anime_master_1765077387449.png"
     create_twitch_assets(source)

@@ -24,6 +24,37 @@ else:
 
 app = Flask(__name__)
 
+# --- Log Capture for Frontend Console ---
+log_buffer = []
+MAX_LOGS = 200
+
+class LogCapture:
+    def __init__(self, original_stdout):
+        self.original_stdout = original_stdout
+        
+    def write(self, text):
+        self.original_stdout.write(text)
+        if text.strip(): # Don't log empty newlines alone
+            log_buffer.append(text.strip())
+            if len(log_buffer) > MAX_LOGS:
+                log_buffer.pop(0)
+                
+    def flush(self):
+        self.original_stdout.flush()
+
+sys.stdout = LogCapture(sys.stdout)
+
+@app.route('/get_logs')
+def get_logs():
+    return jsonify({"logs": log_buffer})
+
+@app.route('/clear_logs', methods=['POST'])
+def clear_logs():
+    global log_buffer
+    log_buffer = []
+    return jsonify({"status": "cleared"})
+# ----------------------------------------
+
 # Constants for Shining Mask
 MASK_WIDTH = 46  # Official Shining Mask width is often 46? User editor is 42. We'll stick to 42 for now, or pad?
 # If we send 42 columns, and mask is 46, it might just be left aligned.
@@ -207,6 +238,33 @@ async def send_to_mask(pixels_data):
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/set_brightness', methods=['POST'])
+def set_brightness_route():
+    data = request.json
+    try:
+        percent = int(data.get('value', 50))
+        # Clamp 0-100
+        percent = max(0, min(100, percent))
+        # Map to 0-255? Actually mask_go uses 0-100 usually?
+        # Let's check emergency_arrow_fix.py. It used 10 and 150.
+        # If 150 is valid, range is likely 0-255.
+        val = int(percent * 2.55)
+        
+        print(f"Setting Brightness: {percent}% (Byte: {val})")
+        
+        async def brightness_logic():
+            mask = CustomRGBUploader()
+            await mask.connect()
+            await mask.set_brightness(val)
+            await mask.disconnect()
+            
+        asyncio.run(brightness_logic())
+        return jsonify({"status": "success"})
+        
+    except Exception as e:
+        print(f"Brightness Error: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 @app.route('/preview', methods=['POST'])
 def preview():
