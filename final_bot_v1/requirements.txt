@@ -1,0 +1,7 @@
+twitchio
+python-dotenv
+bleak
+pycryptodome
+numpy
+sounddevice
+requests
