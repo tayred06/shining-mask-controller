@@ -25,6 +25,7 @@ from dotenv import load_dotenv
 
 # Local imports
 from mask_controller import MaskTextDisplay
+from web_server import WebServer
 
 # Load environment variables
 load_dotenv()
@@ -162,27 +163,37 @@ class MaskCoordinator:
             except Exception as e:
                 print(f"❌ VAD Face Error: {e}")
 
-    async def show_overlay_message(self, text, duration=5.0, color=(0, 255, 0)):
+    async def show_overlay_message(self, text, duration=None, color=(0, 255, 0), speed=40):
         """High priority message (Alerts, Follows, Say)"""
+        if speed is None: speed = 40
+        
         async with self.lock:
             self.overlay_active = True
             
-            # Adjust duration based on text length if generic
-            if len(text) > 5 and duration == 5.0:
-                duration = 2.0 + (len(text) * 0.5)
-            
-            self.overlay_until = time.time() + duration
-            
-            print(f"🚨 Overlay: {text}")
+            calc_duration = 3.0 # Default fallback
             
             try:
                 self.mask.set_text_color_by_rgb(color)
-                # Auto-scroll if long
-                mode = 'scroll_left' if len(text) > 4 else 'steady'
-                await self.mask.set_scrolling_text(text, scroll_mode=mode, speed=50)
+                if len(text) > 3:
+                     # Scroll Mode - Get exact duration from generator
+                     calc_duration = await self.mask.set_scrolling_text(text, scroll_mode='scroll_left', speed=speed)
+                     if calc_duration is None: calc_duration = ((len(text) * 8) + 40) * (speed / 1000.0)
+                     print(f"🚨 Overlay: {text} (Exact Time: {calc_duration:.2f}s)")
+                else:
+                    # Steady Mode - Fixed time
+                    await self.mask.set_scrolling_text(text, scroll_mode='steady', speed=speed)
+                    calc_duration = 3.0 # Fixed for steady text
             except Exception as e:
                 print(f"❌ Overlay Error: {e}")
+                calc_duration = max(3.0, len(text) * 0.5)
+
+            # Use override if provided, else calculated
+            if duration is None:
+                duration = calc_duration
+
+            self.overlay_until = time.time() + duration
             
+        # Wait for the text to scroll through exactly once
         await asyncio.sleep(duration)
         
         async with self.lock:
@@ -354,6 +365,18 @@ async def main():
     # Init
     coordinator = MaskCoordinator()
     bot = FinalTwitchBot(token, channel, nick, coordinator)
+    server = WebServer(coordinator)
+    
+    # Redirect stdout to capture logs for dashboard
+    class WebLogger:
+        def write(self, message):
+            sys.__stdout__.write(message)
+            if message.strip():
+                server.log(message.strip())
+        def flush(self):
+            sys.__stdout__.flush()
+    
+    sys.stdout = WebLogger()
     
     # VAD Disabled
     vad = None
@@ -366,6 +389,11 @@ async def main():
         backoff = 2.0
         while True:
             try:
+                # First check if already connected (to avoid redundant connection attempts)
+                if coordinator.mask.client and coordinator.mask.client.is_connected:
+                    print("✅ Mask is already connected.")
+                    return
+
                 if await coordinator.connect():
                     print("✅ Mask Connected.")
                     # Default start state
@@ -375,10 +403,13 @@ async def main():
                 print(f"❌ Mask connection failed ({e}). Retrying in {backoff}s...")
             
             await asyncio.sleep(backoff)
-            backoff = min(60.0, backoff * 1.5)
+            backoff = min(15.0, backoff * 1.5) # Cap backoff at 15s
     
     # Start connection in background
     asyncio.create_task(mask_connect_loop())
+    
+    # Start Web Server
+    asyncio.create_task(server.start(port=8080))
     
     
     # Tasks
@@ -397,6 +428,7 @@ async def main():
         pass
     finally:
         print("🛑 Shutting down...")
+        await server.stop()
         await coordinator.disconnect()
         if vad: await vad.stop()
 

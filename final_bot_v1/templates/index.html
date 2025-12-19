@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask Controller</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">M</div>
+                <h2>Mask Bot</h2>
+            </div>
+            <nav>
+                <a href="#" class="active">
+                    <span>📊</span> Dashboard
+                </a>
+            </nav>
+
+            <div class="status-card">
+                <h3>System Status</h3>
+                <div class="status-indicator">
+                    <span id="connection-dot" class="dot disconnected"></span>
+                    <span id="connection-text">Disconnected</span>
+                </div>
+                <div class="mode-info">
+                    <small>Active Mode: <span id="mode-text">--</span></small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header>
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <button id="connect-btn" class="btn btn-primary" onclick="toggleConnect()">
+                        Connect Mask
+                    </button>
+                </div>
+            </header>
+
+            <div class="grid-container">
+                <!-- Row 1: Quick Controls -->
+                <div class="card control-card">
+                    <div class="card-header">
+                        <h3>⚡ Controls</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="control-group">
+                            <label style="font-size: 13px; color: var(--text-secondary);">Brightness</label>
+                            <input type="range" id="brightness-slider" min="0" max="100" value="50"
+                                onchange="setBrightness(this.value)">
+                        </div>
+                        <div class="control-group" style="margin-top: 15px;">
+                            <button class="btn"
+                                style="width: 100%; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: #fff;"
+                                onclick="setAnim(18)">
+                                ↺ Reset Animation (18)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIY Images -->
+                <div class="card diy-card">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <h3>🖼️ DIY Presets</h3>
+                            <button id="diy-edit-btn" class="btn-icon" onclick="toggleDIYEdit(event)"
+                                title="Edit Icons">✏️</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="diy-grid">
+                            <button onclick="setDIY(1)" title="Preset 1">👾</button>
+                            <button onclick="setDIY(2)" title="Preset 2">💀</button>
+                            <button onclick="setDIY(3)" title="Preset 3">🤡</button>
+                            <button onclick="setDIY(4)" title="Preset 4">👻</button>
+                            <button onclick="setDIY(5)" title="Preset 5">👽</button>
+                            <button onclick="setDIY(6)" title="Preset 6">🎃</button>
+                            <button onclick="setDIY(7)" title="Preset 7">🤖</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logs (Spans multiple rows) -->
+                <div class="card logs-card">
+                    <div class="card-header">
+                        <h3>📟 Live Terminal</h3>
+                    </div>
+                    <div class="card-body" style="height: 100%; display: flex; flex-direction: column;">
+                        <div id="log-console" class="log-console">
+                            <span style="color: #666;">Waiting for logs...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Send Text -->
+                <div class="card text-card">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <h3>💬 Broadcast Text</h3>
+                            <button id="text-edit-btn" class="btn-icon" onclick="toggleTextPresetEdit(event)"
+                                title="Edit Presets">✏️</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="flex-row" style="margin-bottom: 12px;">
+                            <input type="text" id="text-input" placeholder="Type a message..." />
+                            <input type="color" id="text-color" value="#00DC82" title="Choose Color" />
+                        </div>
+
+                        <div class="flex-row" style="margin-bottom: 15px; align-items: center;">
+                            <label style="color: var(--text-secondary); font-size: 12px; white-space: nowrap;">⚡
+                                Speed:</label>
+                            <input type="range" id="text-speed" min="1" max="10" value="8"
+                                style="flex: 1; margin: 0 10px;" title="Left=Slow, Right=Fast">
+                        </div>
+
+                        <button class="btn btn-primary" onclick="sendText()"
+                            style="width: 100%; justify-content: center;">
+                            Send Message
+                        </button>
+
+                        <div class="text-presets-grid"
+                            style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <!-- JS Generated -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animations -->
+                <div class="card anim-card">
+                    <div class="card-header">
+                        <h3>🎭 Animations Library</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="anim-grid">
+                            <!-- Generated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

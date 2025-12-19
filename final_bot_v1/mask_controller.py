@@ -65,6 +65,25 @@ class MaskTextDisplay(ScrollingMaskController):
             print(f"❌ Erreur set_animation: {e}")
             return False
 
+    async def set_diy_image(self, image_id, bank=1):
+        """
+        Affiche une image DIY (Section personnalisée) via la commande PLAY.
+        Protocol: 06 50 4C 41 59 <Bank> <ID>
+        """
+        try:
+            cmd = b"PLAY"
+            args = bytes([int(bank), int(image_id)])
+            
+            length = len(cmd) + len(args)
+            data = bytes([length]) + cmd + args
+            
+            await self.send_command(data)
+            print(f"🖼️ DIY Image {image_id} (Bank {bank}) set via PLAY")
+            return True
+        except Exception as e:
+            print(f"❌ Erreur set_diy_image: {e}")
+            return False
+
     async def set_scrolling_text(self, text, scroll_mode='scroll_left', speed=50, width_multiplier=1.2):
         """
         Version avec couleurs personnalisées compatible mask-go
@@ -109,6 +128,13 @@ class MaskTextDisplay(ScrollingMaskController):
             await self.wait_for_response("DATCPOK", timeout=3.0)
             
             print("✅ Texte défilant configuré avec succès!")
+            
+            # Return calculated time for one full scroll
+            # Distance = Text Width + Screen Width (to clear)
+            # Speed = ms per pixel shift
+            width_px = len(pixel_map)
+            duration = (width_px + 32) * (speed / 1000.0)
+            return duration
             
         except Exception as e:
             print(f"❌ Erreur upload: {e}")
