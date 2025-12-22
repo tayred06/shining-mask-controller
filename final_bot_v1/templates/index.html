@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mask Controller</title>
+    <title>Mask Controller // Oxide</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -15,139 +19,215 @@
         <aside class="sidebar">
             <div class="logo">
                 <div class="logo-icon">M</div>
-                <h2>Mask Bot</h2>
+                <h2>MASK BOT</h2>
             </div>
-            <nav>
-                <a href="#" class="active">
-                    <span>📊</span> Dashboard
-                </a>
-            </nav>
 
-            <div class="status-card">
-                <h3>System Status</h3>
-                <div class="status-indicator">
-                    <span id="connection-dot" class="dot disconnected"></span>
-                    <span id="connection-text">Disconnected</span>
+            <div class="nav-links">
+                <a href="#" class="nav-item active" id="nav-dashboard" onclick="switchView('dashboard')">
+                    <span>📊</span> DASHBOARD
+                </a>
+                <a href="#" class="nav-item" id="nav-editor" onclick="switchView('editor')">
+                    <span>🎨</span> PIXEL EDITOR
+                </a>
+            </div>
+
+            <!-- Persistent Status Widget -->
+            <div class="status-widget">
+                <div class="status-header">SYSTEM STATUS</div>
+                <div class="status-row">
+                    <div id="connection-dot" class="status-dot disconnected"></div>
+                    <span id="connection-text">DISCONNECTED</span>
                 </div>
-                <div class="mode-info">
-                    <small>Active Mode: <span id="mode-text">--</span></small>
+                <div class="status-row" style="margin-top:4px; color:var(--text-muted);">
+                    <span style="font-size:10px;">MODE:</span>
+                    <span id="mode-text" style="color:var(--accent);">--</span>
                 </div>
+                <button id="connect-btn" class="btn btn-primary" style="width:100%; margin-top:12px;"
+                    onclick="toggleConnect()">
+                    CONNECT MASK
+                </button>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="content">
-            <header>
-                <h1>Dashboard</h1>
-                <div class="header-actions">
-                    <button id="connect-btn" class="btn btn-primary" onclick="toggleConnect()">
-                        Connect Mask
-                    </button>
-                </div>
-            </header>
 
-            <div class="grid-container">
-                <!-- Row 1: Quick Controls -->
-                <div class="card control-card">
-                    <div class="card-header">
-                        <h3>⚡ Controls</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="control-group">
-                            <label style="font-size: 13px; color: var(--text-secondary);">Brightness</label>
-                            <input type="range" id="brightness-slider" min="0" max="100" value="50"
-                                onchange="setBrightness(this.value)">
-                        </div>
-                        <div class="control-group" style="margin-top: 15px;">
-                            <button class="btn"
-                                style="width: 100%; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: #fff;"
-                                onclick="setAnim(18)">
-                                ↺ Reset Animation (18)
-                            </button>
-                        </div>
-                    </div>
+            <!-- VIEW: DASHBOARD -->
+            <div id="view-dashboard" class="view-section">
+                <!-- Top Bar -->
+                <div class="top-bar">
+                    <div class="page-title">OVERVIEW</div>
                 </div>
 
-                <!-- DIY Images -->
-                <div class="card diy-card">
-                    <div class="card-header">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <h3>🖼️ DIY Presets</h3>
-                            <button id="diy-edit-btn" class="btn-icon" onclick="toggleDIYEdit(event)"
-                                title="Edit Icons">✏️</button>
+                <!-- Grid Layout -->
+                <div class="grid-layout">
+                    <!-- COL 1: Controls -->
+                    <div style="display:flex; flex-direction:column; gap:20px; min-height:0;">
+                        <!-- Quick Controls -->
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="card-title">CONTROLS</span>
+                            </div>
+                            <div class="card-body">
+                                <label
+                                    style="font-size:11px; color:var(--text-muted); font-weight:700; margin-bottom:12px; display:block;">BRIGHTNESS</label>
+                                <input type="range" id="brightness-slider" min="0" max="100" value="50"
+                                    onchange="setBrightness(this.value)">
+                                <div style="margin-top:20px;">
+                                    <button class="btn btn-danger" style="width:100%;" onclick="setAnim(18)">↺ RESET
+                                        ANIMATION</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DIY Presets -->
+                        <div class="card" style="flex:1;">
+                            <div class="card-header">
+                                <span class="card-title">DIY PRESETS</span>
+                                <button class="btn sm" onclick="toggleDIYEdit(event)">EDIT</button>
+                            </div>
+                            <div class="card-body" style="background:#000;">
+                                <div class="diy-grid" id="diy-grid-container"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="diy-grid">
-                            <button onclick="setDIY(1)" title="Preset 1">👾</button>
-                            <button onclick="setDIY(2)" title="Preset 2">💀</button>
-                            <button onclick="setDIY(3)" title="Preset 3">🤡</button>
-                            <button onclick="setDIY(4)" title="Preset 4">👻</button>
-                            <button onclick="setDIY(5)" title="Preset 5">👽</button>
-                            <button onclick="setDIY(6)" title="Preset 6">🎃</button>
-                            <button onclick="setDIY(7)" title="Preset 7">🤖</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Logs (Spans multiple rows) -->
-                <div class="card logs-card">
-                    <div class="card-header">
-                        <h3>📟 Live Terminal</h3>
-                    </div>
-                    <div class="card-body" style="height: 100%; display: flex; flex-direction: column;">
-                        <div id="log-console" class="log-console">
-                            <span style="color: #666;">Waiting for logs...</span>
+                    <!-- COL 2: Animations & Broadcast (Center) -->
+                    <div style="display:flex; flex-direction:column; gap:20px; min-height:0; overflow:hidden;">
+                        <!-- Animations -->
+                        <div class="card" style="flex:1; min-height:0;">
+                            <div class="card-header">
+                                <span class="card-title">ANIMATION LIBRARY</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="anim-grid" id="anim-grid"></div>
+                            </div>
+                        </div>
+                        <!-- Broadcast -->
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="card-title">BROADCAST TEXT</span>
+                                <button class="btn sm" onclick="toggleTextPresetEdit(event)">PRESETS</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group" style="margin-bottom:12px;">
+                                    <input type="text" id="text-input" placeholder="Message...">
+                                    <input type="color" id="text-color" value="#00DC82"
+                                        style="height:34px; width:40px; border:none; background:none; padding:0;">
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                                    <span style="font-size:10px; color:var(--text-muted); font-weight:700;">SPEED</span>
+                                    <input type="range" id="text-speed" min="1" max="10" value="8" style="flex:1;">
+                                </div>
+                                <button class="btn btn-primary" style="width:100%;" onclick="sendText()">SEND
+                                    BROADCAST</button>
+                                <div id="text-presets-container"
+                                    style="display:flex; gap:4px; flex-wrap:wrap; margin-top:12px;"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Send Text -->
-                <div class="card text-card">
-                    <div class="card-header">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <h3>💬 Broadcast Text</h3>
-                            <button id="text-edit-btn" class="btn-icon" onclick="toggleTextPresetEdit(event)"
-                                title="Edit Presets">✏️</button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="flex-row" style="margin-bottom: 12px;">
-                            <input type="text" id="text-input" placeholder="Type a message..." />
-                            <input type="color" id="text-color" value="#00DC82" title="Choose Color" />
-                        </div>
-
-                        <div class="flex-row" style="margin-bottom: 15px; align-items: center;">
-                            <label style="color: var(--text-secondary); font-size: 12px; white-space: nowrap;">⚡
-                                Speed:</label>
-                            <input type="range" id="text-speed" min="1" max="10" value="8"
-                                style="flex: 1; margin: 0 10px;" title="Left=Slow, Right=Fast">
-                        </div>
-
-                        <button class="btn btn-primary" onclick="sendText()"
-                            style="width: 100%; justify-content: center;">
-                            Send Message
-                        </button>
-
-                        <div class="text-presets-grid"
-                            style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <!-- JS Generated -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Animations -->
-                <div class="card anim-card">
-                    <div class="card-header">
-                        <h3>🎭 Animations Library</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="anim-grid">
-                            <!-- Generated by JS -->
+                    <!-- COL 3: Logs Only -->
+                    <div style="display:flex; flex-direction:column; gap:20px; min-height:0; height:100%;">
+                        <div class="card" style="flex:1; height:100%;">
+                            <div class="card-header">
+                                <span class="card-title">SYSTEM LOGS</span>
+                            </div>
+                            <div class="card-body" style="padding:0; background:#000;">
+                                <div id="log-console" class="terminal-window"
+                                    style="border:none; border-radius:0; height:100%;">
+                                    <div class="log-line info"><span class="log-ts">[INIT]</span> Dashboard Ready.</div>
+                                    <div class="log-line info"><span class="log-ts">[SYS]</span> Waiting for mask...
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- VIEW: EDITOR -->
+            <div id="view-editor" class="view-section" style="display:none;">
+                <div class="top-bar">
+                    <div class="page-title">PIXEL EDITOR</div>
+                    <div>
+                        <input type="file" id="importInput" hidden accept="image/*" onchange="handleImport(this)">
+                        <button class="btn btn-primary" onclick="sendToMask()" id="uploadBtn">⚡ SEND TO MASK</button>
+                    </div>
+                </div>
+
+                <div class="grid-layout">
+                    <!-- COL 1: Tools & Palette -->
+                    <div style="display:flex; flex-direction:column; gap:20px; min-height:0;">
+                        <!-- Tools -->
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="card-title">TOOLS</span>
+                            </div>
+                            <div class="card-body">
+                                <div style="display:flex; gap:8px; margin-bottom:12px;">
+                                    <button class="btn btn-primary" onclick="setTool('paint')" id="btnPaint"
+                                        style="flex:1">PAINT</button>
+                                    <button class="btn" onclick="setTool('erase')" id="btnErase"
+                                        style="flex:1">ERASE</button>
+                                </div>
+                                <label
+                                    style="font-size:10px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">BRUSH
+                                    SIZE: <span id="brushVal">1</span></label>
+                                <input type="range" min="1" max="4" value="1" id="brushInput"
+                                    style="margin-bottom:20px;">
+                                <div style="display:flex; gap:8px;">
+                                    <button class="btn sm" onclick="fillGrid()" style="flex:1">FILL</button>
+                                    <button class="btn sm btn-danger" onclick="clearGrid()"
+                                        style="flex:1">CLEAR</button>
+                                </div>
+                                <hr style="border:0; border-top:1px solid var(--border); margin:20px 0;">
+                                <button class="btn" style="width:100%"
+                                    onclick="document.getElementById('importInput').click()">📂 IMPORT IMG</button>
+                            </div>
+                        </div>
+                        <!-- Palette -->
+                        <div class="card">
+                            <div class="card-header"><span class="card-title">PALETTE</span></div>
+                            <div class="card-body">
+                                <div id="palette" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:8px;">
+                                </div>
+                                <div style="margin-top:12px; display:flex; align-items:center; gap:8px;">
+                                    <span
+                                        style="font-size:10px; font-weight:700; color:var(--text-muted);">CUSTOM</span>
+                                    <input type="color" id="customColor" value="#6366f1"
+                                        style="flex:1; height:30px; border:none; background:none;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COL 2: Canvas -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">CANVAS</span>
+                        </div>
+                        <div class="card-body"
+                            style="background:#0d1117; padding:0; display:flex; align-items:center; justify-content:center; background-image: radial-gradient(#161b22 1px, transparent 1px); background-size: 20px 20px;">
+                            <div id="canvas" class="pixel-grid"></div>
+                        </div>
+                    </div>
+
+                    <!-- COL 3: Logs -->
+                    <div style="display:flex; flex-direction:column; gap:20px; min-height:0; height:100%;">
+                        <div class="card" style="flex:1; height:100%;">
+                            <div class="card-header"><span class="card-title">OUTPUT LOG</span></div>
+                            <div class="card-body" style="padding:0; background:#000;">
+                                <div id="logStream" class="terminal-window"
+                                    style="border:none; border-radius:0; height:100%;">
+                                    <!-- Logs appear here -->
+                                </div>
+                                <div id="activeTask"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
     <script src="/static/script.js"></script>

@@ -15,6 +15,7 @@ class WebServer:
         
         # Setup Routes
         self.app.router.add_get('/', self.handle_index)
+        self.app.router.add_get('/editor', self.handle_editor)
         self.app.router.add_get('/api/status', self.handle_status)
         self.app.router.add_post('/api/connect', self.handle_connect)
         self.app.router.add_post('/api/disconnect', self.handle_disconnect)
@@ -22,6 +23,7 @@ class WebServer:
         self.app.router.add_post('/api/text', self.handle_text)
         self.app.router.add_post('/api/anim', self.handle_anim)
         self.app.router.add_post('/api/diy', self.handle_diy)
+        self.app.router.add_post('/api/preview', self.handle_preview)
         self.app.router.add_get('/api/logs', self.handle_logs)
         
         # Static files
@@ -57,11 +59,47 @@ class WebServer:
         except FileNotFoundError:
             return web.Response(text="Template not found", status=404)
 
+    async def handle_editor(self, request):
+        # SPA Support: Serve index.html and let frontend handle it, 
+        # or just serve the main page since it's now one file.
+        return await self.handle_index(request)
+
+    async def handle_preview(self, request):
+        data = await request.json()
+        pixels = data.get('pixels', [])
+        
+        if not self.coordinator.mask:
+             return web.json_response({"status": "error", "message": "Not connected"}, status=400)
+             
+        async with self.coordinator.lock:
+             success = await self.coordinator.mask.upload_pixel_grid(pixels)
+             
+        if success:
+             self.log(f"🎨 Custom Design Uploaded")
+             return web.json_response({"status": "ok"})
+        else:
+             return web.json_response({"status": "error", "message": "Upload failed"}, status=500)
+
     async def handle_status(self, request):
+        upload_progress = 0
+        is_uploading = False
+        
+        if self.coordinator.mask and hasattr(self.coordinator.mask, 'current_upload') and self.coordinator.mask.current_upload:
+            curr = self.coordinator.mask.current_upload
+            if curr.get('total_len', 0) > 0:
+                upload_progress = int((curr.get('bytes_sent', 0) / curr.get('total_len', 1)) * 100)
+                # Assume uploading if progress < 100 or explicitly set? 
+                # bytes_sent might equal total_len when finished but before cleanup.
+                # Let's rely on bytes check.
+                if curr.get('bytes_sent', 0) < curr.get('total_len', 1):
+                    is_uploading = True
+                    
         return web.json_response({
             "connected": self.coordinator.mask.client.is_connected if (self.coordinator.mask and self.coordinator.mask.client) else False,
             "mode": self.coordinator.mode,
-            "current_anim": self.coordinator.current_anim_id
+            "current_anim": self.coordinator.current_anim_id,
+            "uploading": is_uploading,
+            "progress": upload_progress
         })
 
     async def handle_connect(self, request):

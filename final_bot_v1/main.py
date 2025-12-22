@@ -382,31 +382,16 @@ async def main():
     vad = None
     # if not args.no_mic: ...
 
-    # Connect to Mask
-    print("🔄 Connecting to Mask...")
-        
-    async def mask_connect_loop():
-        backoff = 2.0
-        while True:
-            try:
-                # First check if already connected (to avoid redundant connection attempts)
-                if coordinator.mask.client and coordinator.mask.client.is_connected:
-                    print("✅ Mask is already connected.")
-                    return
-
-                if await coordinator.connect():
-                    print("✅ Mask Connected.")
-                    # Default start state
-                    await coordinator.set_mode_animation(18)
-                    return
-            except Exception as e:
-                print(f"❌ Mask connection failed ({e}). Retrying in {backoff}s...")
-            
-            await asyncio.sleep(backoff)
-            backoff = min(15.0, backoff * 1.5) # Cap backoff at 15s
+    # Automatic connection removed. Connection must be initiated manually from Dashboard.
+    # asyncio.create_task(mask_connect_loop())
     
-    # Start connection in background
-    asyncio.create_task(mask_connect_loop())
+    # We still define mask_connect_loop just in case, or rather we don't need it at all if we rely on manual connect.
+    # But wait, the manual connect in web_server calls handle_connect which calls coordinator.connect().
+    # That one only tries once. If we want robustness, maybe the user presses the button and expecting retries?
+    # Usually "manual connection" implies "I click, it tries".
+    # So I will simply comment out or remove the auto-connect start.
+    
+    print("ℹ️  Ready. Connect mask via Dashboard button.")
     
     # Start Web Server
     asyncio.create_task(server.start(port=8080))

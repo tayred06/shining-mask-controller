@@ -8,6 +8,8 @@ import sys
 import os
 import threading
 from queue import Queue
+from PIL import Image
+import struct
 
 # Ajouter le répertoire courant au path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -142,6 +144,80 @@ class MaskTextDisplay(ScrollingMaskController):
             self.reset_upload_state()
             import traceback
             traceback.print_exc()
+
+    async def upload_pixel_grid(self, pixels_data):
+        """Uploads a 42x56 pixel grid (flattened hex list) to the mask"""
+        SRC_WIDTH = 42
+        SRC_HEIGHT = 56
+        TARGET_WIDTH = 46
+        TARGET_HEIGHT = 58
+        
+        try:
+            # 1. Create Source Image
+            img = Image.new('RGB', (SRC_WIDTH, SRC_HEIGHT), (0,0,0))
+            pixels = img.load()
+            
+            for i, hex_color in enumerate(pixels_data):
+                if i >= SRC_WIDTH * SRC_HEIGHT: break
+                x = i % SRC_WIDTH
+                y = i // SRC_WIDTH
+                
+                if hex_color and hex_color != 'rgba(0, 0, 0, 0)':
+                    try:
+                        h = hex_color.lstrip('#')
+                        if len(h) == 6:
+                            color = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+                            pixels[x, y] = color
+                    except: pass
+            
+            # 2. Resize
+            img_resized = img.resize((TARGET_WIDTH, TARGET_HEIGHT), Image.Resampling.LANCZOS)
+            
+            # 3. Create Buffer
+            rgb_buffer = bytearray()
+            r_pixels = img_resized.load()
+            for x in range(TARGET_WIDTH):
+                for y in range(TARGET_HEIGHT):
+                    r, g, b = r_pixels[x, y]
+                    rgb_buffer.extend([r, g, b])
+            
+            # 4. Upload
+            print(f"🎨 Uploading Grid ({len(rgb_buffer)} bytes)...")
+            await self.upload_raw_rgb(rgb_buffer)
+            return True
+            
+        except Exception as e:
+            print(f"❌ Grid Upload Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
+
+    async def upload_raw_rgb(self, rgb_data, image_index=1):
+        """Standard upload flow for full RGB image"""
+        total_len = len(rgb_data)
+        
+        # Init (Command 9) with Magic 01 ending
+        cmd = bytearray([9]) + b"DATS" + struct.pack('>H', total_len) + struct.pack('>H', image_index) + b"\x01"
+        
+        await self.send_command(cmd)
+        
+        # Setup upload state
+        self.current_upload = {
+            'total_len': total_len,
+            'bytes_sent': 0,
+            'complete_buffer': rgb_data,
+            'packet_count': 0
+        }
+        
+        # Upload Loop
+        while self.current_upload['bytes_sent'] < total_len:
+            await self.upload_part()
+            await asyncio.sleep(0.005) # Fast delay
+            
+        # Finish
+        cmd_fin = bytearray([5]) + b"DATCP"
+        await self.send_command(cmd_fin)
+        await self.wait_for_response("DATCPOK", timeout=5.0)
 
 # Clean up imports for standalone usage
 
