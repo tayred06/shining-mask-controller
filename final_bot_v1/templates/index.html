@@ -161,30 +161,82 @@
                         <!-- Tools -->
                         <div class="card">
                             <div class="card-header">
-                                <span class="card-title">TOOLS</span>
+                                <span class="card-title">TOOLBOX</span>
                             </div>
                             <div class="card-body">
-                                <div style="display:flex; gap:8px; margin-bottom:12px;">
-                                    <button class="btn btn-primary" onclick="setTool('paint')" id="btnPaint"
-                                        style="flex:1">PAINT</button>
-                                    <button class="btn" onclick="setTool('erase')" id="btnErase"
-                                        style="flex:1">ERASE</button>
+
+                                <span class="section-label">DRAWING</span>
+                                <div class="tools-grid">
+                                    <button class="tool-btn active" onclick="setTool('paint')" id="btnPaint"
+                                        title="Brush (P)">
+                                        🖌️
+                                    </button>
+                                    <button class="tool-btn" onclick="setTool('erase')" id="btnErase"
+                                        title="Eraser (E)">
+                                        ⌫
+                                    </button>
+                                    <button class="tool-btn" onclick="setTool('line')" id="btnLine"
+                                        title="Line Tool (L)">
+                                        📏
+                                    </button>
+                                    <button class="tool-btn" onclick="setTool('rect')" id="btnRect"
+                                        title="Rectangle (R)">
+                                        ⬜
+                                    </button>
+                                    <button class="tool-btn" onclick="setTool('circle')" id="btnCircle"
+                                        title="Circle (C)">
+                                        ⭕
+                                    </button>
                                 </div>
-                                <label
-                                    style="font-size:10px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">BRUSH
-                                    SIZE: <span id="brushVal">1</span></label>
-                                <input type="range" min="1" max="4" value="1" id="brushInput"
-                                    style="margin-bottom:20px;">
-                                <div style="display:flex; gap:8px;">
-                                    <button class="btn sm" onclick="fillGrid()" style="flex:1">FILL</button>
-                                    <button class="btn sm btn-danger" onclick="clearGrid()"
-                                        style="flex:1">CLEAR</button>
+
+                                <span class="section-label">BRUSH SETTINGS</span>
+                                <div
+                                    style="background:#0d1117; padding:12px; border-radius:8px; border:1px solid var(--border); margin-bottom:16px;">
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                                        <span
+                                            style="font-size:11px; font-weight:600; color:var(--text-muted);">SIZE</span>
+                                        <span id="brushVal"
+                                            style="font-size:11px; font-weight:700; color:var(--accent);">1px</span>
+                                    </div>
+                                    <input type="range" min="1" max="4" value="1" id="brushInput">
                                 </div>
-                                <hr style="border:0; border-top:1px solid var(--border); margin:20px 0;">
-                                <button class="btn" style="width:100%"
-                                    onclick="document.getElementById('importInput').click()">📂 IMPORT IMG</button>
+
+                                <span class="section-label">OPTIONS</span>
+                                <label class="option-row">
+                                    <span style="font-size:12px; font-weight:500;">Fill Shapes</span>
+                                    <input type="checkbox" id="fillShapeCheck" checked hidden>
+                                    <div class="toggle-switch"></div>
+                                </label>
+
+                                <label class="option-row">
+                                    <span style="font-size:12px; font-weight:500;">Center Mode</span>
+                                    <input type="checkbox" id="centerModeCheck" hidden>
+                                    <div class="toggle-switch"></div>
+                                </label>
+
+                                <!-- Actions -->
+                                <div class="actions-grid">
+                                    <button class="btn" style="width:100%; justify-content:center;"
+                                        onclick="fillGrid()">
+                                        🌊 FILL
+                                    </button>
+                                    <button class="btn btn-danger" style="width:100%; justify-content:center;"
+                                        onclick="clearGrid()">
+                                        🗑 CLEAR
+                                    </button>
+                                </div>
+
+                                <div class="separator" style="margin:20px 0;"></div>
+
+                                <!-- Import -->
+                                <button class="btn"
+                                    style="width:100%; justify-content:center; border-style:dashed; opacity:0.7;"
+                                    onclick="document.getElementById('importInput').click()">
+                                    📂 IMPORT IMAGE
+                                </button>
                             </div>
                         </div>
+
                         <!-- Palette -->
                         <div class="card">
                             <div class="card-header"><span class="card-title">PALETTE</span></div>

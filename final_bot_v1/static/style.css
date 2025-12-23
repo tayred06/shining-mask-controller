@@ -478,7 +478,7 @@ input[type="text"]:focus {
 /* Grid System */
 .grid-layout {
     flex: 1;
-    padding: 24px 24px 0 24px;
+    padding: 24px 24px 24px 24px;
     display: grid;
     grid-template-columns: 280px 1fr 340px;
     /* Controls | Center | Logs */
@@ -536,20 +536,36 @@ input[type="text"]:focus {
 .pixel-grid {
     display: grid;
     grid-template-columns: repeat(42, 1fr);
+    grid-template-rows: repeat(56, 1fr);
     gap: 1px;
     background: #30363d;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+    /* Responsive Size */
+    height: 85vh;
+    max-height: 1200px;
+    /* Cap */
+    aspect-ratio: 42 / 56;
 }
 
 .pixel {
-    width: 10px;
-    height: 10px;
+    width: 100%;
+    height: 100%;
     background-color: #000;
     cursor: crosshair;
 }
 
 .pixel:hover {
     opacity: 0.8;
+    z-index: 10;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.pixel.hidden-pixel {
+    background: transparent !important;
+    border: none;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .swatch {
@@ -575,4 +591,118 @@ input[type="text"]:focus {
     flex: 1;
     height: 100%;
     overflow: hidden;
+}
+
+/* --- EDITOR TOOLS UI --- */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 columns */
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.tool-btn {
+    aspect-ratio: 1;
+    background: #21262d;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-btn:hover {
+    background: #30363d;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tool-btn.active {
+    background: rgba(37, 217, 107, 0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-dim);
+}
+
+.tool-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+}
+
+/* Section Label */
+.section-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Toggle Switch */
+.option-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.option-row:hover {
+    border-color: #8b949e;
+}
+
+.toggle-switch {
+    width: 36px;
+    height: 20px;
+    background: #30363d;
+    border-radius: 10px;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+input:checked+.toggle-switch {
+    background: var(--accent);
+}
+
+input:checked+.toggle-switch::after {
+    transform: translateX(16px);
+}
+
+/* Actions */
+.actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 16px;
 }
