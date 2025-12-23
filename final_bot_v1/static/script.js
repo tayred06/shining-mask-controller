@@ -118,22 +118,37 @@ function loadEditorConfig() {
 }
 
 function switchView(viewName) {
+    window.location.hash = viewName;
+}
+
+function renderView(viewName) {
     // Hide all views
     document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
 
     // Show target view
     const target = document.getElementById(`view-${viewName}`);
-    if (target) target.style.display = 'flex';
-    // Actually our views contain top-bar and grid-layout.
-    // grid-layout has flex:1.
-    // So the view-section should probably be a flex column itself to match the previous .content > .top-bar structure.
-    // We'll handle this in CSS or inline style.
+    if (target) {
+        target.style.display = 'flex';
+    } else {
+        // Fallback if view doesn't exist (e.g. invalid hash)
+        if (viewName !== 'dashboard') renderView('dashboard');
+        return;
+    }
 
     // Update Sidebar
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    const nav = document.getElementById(`nav-${viewName}`);
+    // Handle specific nav IDs or generic
+    let nav = document.getElementById(`nav-${viewName}`);
     if (nav) nav.classList.add('active');
 }
+
+function handleRouting() {
+    const hash = window.location.hash.substring(1);
+    const viewName = hash || 'dashboard'; // Default to dashboard
+    renderView(viewName);
+}
+
+window.addEventListener('hashchange', handleRouting);
 
 // --- DASHBOARD LOGIC ---
 
@@ -894,4 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveEditorConfig();
         };
     }
+
+    // Init Routing
+    handleRouting();
 });

@@ -204,6 +204,16 @@ button {
     overflow: hidden;
 }
 
+.view-section {
+    display: none;
+    /* JS toggles to flex */
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
 .top-bar {
     height: 60px;
     border-bottom: 1px solid var(--border);

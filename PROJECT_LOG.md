@@ -7,3 +7,6 @@
 [2025-12-23 00:05] [AGENT_GRAPHISTE] : UI UPDATE -> Made Pixel Editor canvas responsive. It now fills 85% of the viewport height, maximizing space usage.
 [2025-12-23 00:10] [AGENT_GRAPHISTE] : FEATURE UPDATE -> Implemented Persistence for Editor Config (Color, Tool, Size, Settings). Fixed duplicate variable declaration bug.
 [2025-12-23 00:15] [AGENT_GRAPHISTE] : BUG FIX -> Resolved SyntaxError in setTool function (unexpected token). Restored proper brace balance.
+[2025-12-23 00:10] [FRONTEND_DEV] : Action effectuée -> Implemented Hash-based Routing (e.g., #/editor). Page reload now persists the current view. Restored full Drawing Tools UI (Rect/Circle/Line + Options) and refactored script.js initialization.
+[2025-12-23 00:15] [FRONTEND_DEV] : Action effectuée -> Fixed CSS Flexbox issue where .view-section was not displaying content correctly after routing update. Added explicit flex-direction: column and min-height handling.
+[2025-12-23 00:20] [FRONTEND_DEV] : Action effectuée -> Fixed Routing Issues. Updated default view to 'dashboard' (was 'diy'). Updated Sidebar links to use href='#view' instead of onclick for robust navigation.
